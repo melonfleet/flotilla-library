@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "2026.10.13.1",
+  "version": "2026.10.13.2",
   "entries": [
     {
       "id": "actual-budget",
@@ -168,6 +168,95 @@
         "volumes": [],
         "command": [],
         "note": "Stateless container; diagrams are saved locally in the client browser or exported to disk."
+      }
+    },
+    {
+      "id": "firefly-iii-mariadb",
+      "title": "Firefly III + MariaDB",
+      "summary": "Production-grade Firefly III setup backed by a dedicated MariaDB relational database.",
+      "categories": [
+        "Finance & Accounting",
+        "Home & Personal"
+      ],
+      "kind": "stack",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "stack": {
+        "options": [
+          {
+            "id": "database",
+            "label": "Database Name",
+            "defaultValue": "firefly",
+            "help": "",
+            "email": false
+          }
+        ],
+        "services": [
+          {
+            "role": "db",
+            "title": "MariaDB",
+            "image": "docker.io/library/mariadb:13.0.2",
+            "env": [
+              "MARIADB_DATABASE={{option:database}}",
+              "MARIADB_USER=firefly"
+            ],
+            "secretEnv": [
+              {
+                "name": "MARIADB_PASSWORD",
+                "secret": "db-password"
+              },
+              {
+                "name": "MARIADB_ROOT_PASSWORD",
+                "secret": "db-root-password"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/var/lib/mysql"
+              }
+            ],
+            "command": [],
+            "wiredPort": 3306,
+            "readyPort": 3306
+          },
+          {
+            "role": "app",
+            "title": "Firefly III",
+            "image": "docker.io/fireflyiii/core:version-6.7.9",
+            "env": [
+              "DB_HOST={{host:db}}",
+              "DB_PORT={{port:db}}",
+              "DB_DATABASE={{option:database}}",
+              "DB_USERNAME=firefly",
+              "DB_CONNECTION=mysql"
+            ],
+            "secretEnv": [
+              {
+                "name": "DB_PASSWORD",
+                "secret": "db-password"
+              },
+              {
+                "name": "APP_KEY",
+                "secret": "app-key"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/var/www/html/storage/upload"
+              }
+            ],
+            "command": [],
+            "webPort": 8080
+          }
+        ],
+        "notes": [
+          "APP_KEY must be a 32-character string. Database created automatically on start."
+        ],
+        "opens": "app"
       }
     },
     {
@@ -388,6 +477,44 @@
         ],
         "command": [],
         "note": "Stateless by default unless MP_DATABASE file path inside /data is specified."
+      }
+    },
+    {
+      "id": "mariadb",
+      "title": "MariaDB",
+      "summary": "Fast, scalable, open-source relational database server derived from MySQL.",
+      "categories": [
+        "Databases",
+        "Software Development"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under GPL-2.0-only, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/library/mariadb:13.0.2",
+        "name": "mariadb",
+        "ports": [
+          "3306:3306"
+        ],
+        "env": [
+          "MARIADB_DATABASE=app",
+          "MARIADB_USER=user"
+        ],
+        "secretEnv": [
+          "MARIADB_PASSWORD",
+          "MARIADB_ROOT_PASSWORD"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/var/lib/mysql"
+          }
+        ],
+        "command": [],
+        "note": "Fresh volumes containing lost+found folder are safely handled by entrypoint in version 11+."
       }
     },
     {
@@ -735,6 +862,42 @@
           "Initial administrator credentials initialized via configured admin password."
         ],
         "opens": "app"
+      }
+    },
+    {
+      "id": "postgres",
+      "title": "PostgreSQL",
+      "summary": "Powerful open-source object-relational database system.",
+      "categories": [
+        "Databases",
+        "Software Development"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/library/postgres:18.6",
+        "name": "postgres",
+        "ports": [
+          "5432:5432"
+        ],
+        "env": [
+          "POSTGRES_DB=app",
+          "POSTGRES_USER=postgres"
+        ],
+        "secretEnv": [
+          "POSTGRES_PASSWORD"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/var/lib/postgresql"
+          }
+        ],
+        "command": [],
+        "note": "PostgreSQL 18 moved default PGDATA directory root to /var/lib/postgresql. Fresh volume must be writeable by uid 999."
       }
     },
     {
