@@ -1,0 +1,918 @@
+{
+  "schema": 1,
+  "version": "2026.10.13.1",
+  "entries": [
+    {
+      "id": "actual-budget",
+      "title": "Actual Budget",
+      "summary": "Privacy-first personal finance system using envelope budgeting.",
+      "categories": [
+        "Finance & Accounting",
+        "Home & Personal"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "ghcr.io/actualbudget/actual-server:26.10.0",
+        "name": "actual-budget",
+        "ports": [
+          "5006:5006"
+        ],
+        "env": [
+          "ACTUAL_PORT=5006"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/data"
+          }
+        ],
+        "command": [],
+        "note": "Fresh volume root directories must be writeable by non-root user uid 1000."
+      }
+    },
+    {
+      "id": "audiobookshelf",
+      "title": "Audiobookshelf Audiobooks & Podcasts",
+      "summary": "Self-hosted audiobook and podcast server featuring playback position sync across apps.",
+      "categories": [
+        "Media & Photos",
+        "Home & Personal"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "ghcr.io/advplyr/audiobookshelf:2.37.1",
+        "name": "audiobookshelf",
+        "ports": [
+          "1337:80"
+        ],
+        "env": [
+          "AUDIOBOOKSHELF_TYPE=single"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "config",
+            "path": "/config"
+          },
+          {
+            "suffix": "metadata",
+            "path": "/metadata"
+          },
+          {
+            "suffix": "audiobooks",
+            "path": "/audiobooks"
+          }
+        ],
+        "command": [],
+        "note": "Runs as non-root user 1000; persistent volumes must allow non-root file creation. Its files volume starts empty."
+      }
+    },
+    {
+      "id": "chromadb",
+      "title": "Chroma Vector Database",
+      "summary": "Open-source embeddings store for AI applications and Retrieval-Augmented Generation.",
+      "categories": [
+        "AI & Machine Learning",
+        "Databases"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/chromadb/chroma:0.6.3",
+        "name": "chromadb",
+        "ports": [
+          "8000:8000"
+        ],
+        "env": [
+          "IS_PERSISTENT=TRUE",
+          "PERSIST_DIRECTORY=/chroma/chroma"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/chroma/chroma"
+          }
+        ],
+        "command": [],
+        "note": "Runs as non-root user 1000. Persistent volume must permit non-root file creation."
+      }
+    },
+    {
+      "id": "docker-registry",
+      "title": "OCI / Docker Container Registry",
+      "summary": "Standard v2 OCI container image registry server for private image storage.",
+      "categories": [
+        "Software Development",
+        "Storage & Files"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/library/registry:3.1.2",
+        "name": "docker-registry",
+        "ports": [
+          "5000:5000"
+        ],
+        "env": [
+          "REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/var/lib/registry"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/var/lib/registry"
+          }
+        ],
+        "command": [],
+        "note": "Requires HTTP basic auth or TLS configuration if exposed beyond local network."
+      }
+    },
+    {
+      "id": "drawio",
+      "title": "Draw.io Visual Diagramming",
+      "summary": "Self-hosted diagramming software for flowcharts, architecture, and network diagrams.",
+      "categories": [
+        "Education",
+        "Business & Office"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/jgraph/drawio:32.4.1",
+        "name": "drawio",
+        "ports": [
+          "8080:8080"
+        ],
+        "env": [],
+        "secretEnv": [],
+        "volumes": [],
+        "command": [],
+        "note": "Stateless container; diagrams are saved locally in the client browser or exported to disk."
+      }
+    },
+    {
+      "id": "flowise-postgres",
+      "title": "Flowise + PostgreSQL",
+      "summary": "Production Flowise setup using PostgreSQL for robust workflow state storage.",
+      "categories": [
+        "AI & Machine Learning",
+        "Software Development"
+      ],
+      "kind": "stack",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "stack": {
+        "options": [
+          {
+            "id": "database",
+            "label": "Database Name",
+            "defaultValue": "flowise",
+            "help": "",
+            "email": false
+          }
+        ],
+        "services": [
+          {
+            "role": "db",
+            "title": "PostgreSQL",
+            "image": "docker.io/library/postgres:18.6",
+            "env": [
+              "POSTGRES_DB={{option:database}}",
+              "POSTGRES_USER=flowise"
+            ],
+            "secretEnv": [
+              {
+                "name": "POSTGRES_PASSWORD",
+                "secret": "db-password"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/var/lib/postgresql"
+              }
+            ],
+            "command": [],
+            "wiredPort": 5432,
+            "readyPort": 5432
+          },
+          {
+            "role": "app",
+            "title": "Flowise",
+            "image": "docker.io/flowiseai/flowise:3.1.4",
+            "env": [
+              "DATABASE_TYPE=postgres",
+              "DATABASE_HOST={{host:db}}",
+              "DATABASE_PORT={{port:db}}",
+              "DATABASE_NAME={{option:database}}",
+              "DATABASE_USER=flowise"
+            ],
+            "secretEnv": [
+              {
+                "name": "DATABASE_PASSWORD",
+                "secret": "db-password"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/root/.flowise"
+              }
+            ],
+            "command": [],
+            "webPort": 3000
+          }
+        ],
+        "notes": [
+          "PostgreSQL 18 database path configured to /var/lib/postgresql."
+        ],
+        "opens": "app"
+      }
+    },
+    {
+      "id": "freshrss",
+      "title": "FreshRSS Reader",
+      "summary": "Lightweight, customizable web-based RSS feed aggregator and reader.",
+      "categories": [
+        "Home & Personal",
+        "Content & Publishing"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under AGPL-3.0-only, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/freshrss/freshrss:1.30.1",
+        "name": "freshrss",
+        "ports": [
+          "8080:80"
+        ],
+        "env": [
+          "TZ=UTC"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/var/www/FreshRSS/data"
+          }
+        ],
+        "command": [],
+        "note": "Web install setup runs upon initial visit to http://localhost:8080."
+      }
+    },
+    {
+      "id": "home-assistant",
+      "title": "Home Assistant Core",
+      "summary": "Open-source home automation system prioritizing local control and user privacy.",
+      "categories": [
+        "Home & Personal",
+        "Networking & Web Servers"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/homeassistant/home-assistant:2026.10.1",
+        "name": "home-assistant",
+        "ports": [
+          "8123:8123"
+        ],
+        "env": [
+          "TZ=UTC"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/config"
+          }
+        ],
+        "command": [],
+        "note": "Container execution inside isolated VM prevents direct USB Zigbee/Z-Wave dongle pass-through."
+      }
+    },
+    {
+      "id": "kopia",
+      "title": "Kopia Backup Server",
+      "summary": "Fast, secure open-source backup engine featuring encrypted deduplicated snapshots.",
+      "categories": [
+        "Storage & Files",
+        "Security & Identity"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/kopia/kopia:0.23.1",
+        "name": "kopia",
+        "ports": [
+          "51515:51515"
+        ],
+        "env": [],
+        "secretEnv": [
+          "KOPIA_SERVER_PASSWORD"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/app/config"
+          }
+        ],
+        "command": [
+          "server",
+          "start",
+          "--insecure",
+          "--address=0.0.0.0:51515"
+        ],
+        "note": "Web UI binds to 51515. Mount target backup source volumes into container."
+      }
+    },
+    {
+      "id": "mailpit",
+      "title": "Mailpit Email Testing Tool",
+      "summary": "Fast email and SMTP testing tool with web UI and API for developers.",
+      "categories": [
+        "Software Development",
+        "Messaging & Queues"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "ghcr.io/axllent/mailpit:v1.31.5",
+        "name": "mailpit",
+        "ports": [
+          "8025:8025",
+          "1025:1025"
+        ],
+        "env": [
+          "MP_MAX_MESSAGES=500"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/data"
+          }
+        ],
+        "command": [],
+        "note": "Stateless by default unless MP_DATABASE file path inside /data is specified."
+      }
+    },
+    {
+      "id": "mealie",
+      "title": "Mealie Recipe Manager",
+      "summary": "Self-hosted recipe manager and meal planner with automated website scraping.",
+      "categories": [
+        "Home & Personal",
+        "Content & Publishing"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "ghcr.io/mealie-recipes/mealie:v3.28.0",
+        "name": "mealie",
+        "ports": [
+          "9000:9000"
+        ],
+        "env": [
+          "ALLOW_SIGNUP=true"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/app/data"
+          }
+        ],
+        "command": [],
+        "note": "Runs as non-root user 1000. Verify write permissions on attached persistent volume. BASE_URL was left unset: its default pointed at localhost."
+      }
+    },
+    {
+      "id": "metabase-postgres",
+      "title": "Metabase BI + PostgreSQL",
+      "summary": "Business intelligence platform for building visual charts and data dashboards.",
+      "categories": [
+        "Data & Analytics",
+        "Business & Office"
+      ],
+      "kind": "stack",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "stack": {
+        "options": [
+          {
+            "id": "database",
+            "label": "Database Name",
+            "defaultValue": "metabase",
+            "help": "",
+            "email": false
+          }
+        ],
+        "services": [
+          {
+            "role": "db",
+            "title": "PostgreSQL",
+            "image": "docker.io/library/postgres:18.6",
+            "env": [
+              "POSTGRES_DB={{option:database}}",
+              "POSTGRES_USER=metabase"
+            ],
+            "secretEnv": [
+              {
+                "name": "POSTGRES_PASSWORD",
+                "secret": "db-password"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/var/lib/postgresql"
+              }
+            ],
+            "command": [],
+            "wiredPort": 5432,
+            "readyPort": 5432
+          },
+          {
+            "role": "app",
+            "title": "Metabase BI",
+            "image": "docker.io/metabase/metabase:v0.64.1",
+            "env": [
+              "MB_DB_TYPE=postgres",
+              "MB_DB_DBNAME={{option:database}}",
+              "MB_DB_PORT={{port:db}}",
+              "MB_DB_USER=metabase",
+              "MB_DB_HOST={{host:db}}"
+            ],
+            "secretEnv": [
+              {
+                "name": "MB_DB_PASS",
+                "secret": "db-password"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/metabase-data"
+              }
+            ],
+            "command": [],
+            "webPort": 3000
+          }
+        ],
+        "notes": [
+          "First launch takes 1-2 minutes for Java application startup before web UI responds."
+        ],
+        "opens": "app"
+      }
+    },
+    {
+      "id": "mongodb",
+      "title": "MongoDB Community Server",
+      "summary": "Document-based NoSQL database designed for high availability and JSON processing.",
+      "categories": [
+        "Databases"
+      ],
+      "kind": "container",
+      "licenceNote": "Offered under the Server Side Public License (SSPL-1.0), which is source-available rather than OSI open source: running it as a service for others has conditions.",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/library/mongo:9.0.2",
+        "name": "mongodb",
+        "ports": [
+          "27017:27017"
+        ],
+        "env": [
+          "MONGO_INITDB_ROOT_USERNAME=root",
+          "MONGO_INITDB_DATABASE=app"
+        ],
+        "secretEnv": [
+          "MONGO_INITDB_ROOT_PASSWORD"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/data/db"
+          }
+        ],
+        "command": [],
+        "note": "ARM64 build requires ARMv8.2-A architecture extensions (supported on Apple Silicon M-series)."
+      }
+    },
+    {
+      "id": "nats",
+      "title": "NATS Cloud Native Messaging",
+      "summary": "Hyper-fast, resilient publish-subscribe messaging system for microservices and JetStream queues.",
+      "categories": [
+        "Messaging & Queues",
+        "Software Development"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/library/nats:2.15.0",
+        "name": "nats",
+        "ports": [
+          "4222:4222",
+          "8222:8222"
+        ],
+        "env": [],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/data"
+          }
+        ],
+        "command": [
+          "-m",
+          "8222",
+          "-js"
+        ],
+        "note": "Command string flag `-js` enables JetStream persistence engine."
+      }
+    },
+    {
+      "id": "navidrome",
+      "title": "Navidrome Music Server",
+      "summary": "Lightweight music server and streamer compatible with Subsonic client applications.",
+      "categories": [
+        "Media & Photos",
+        "Home & Personal"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/deluan/navidrome:0.64.2",
+        "name": "navidrome",
+        "ports": [
+          "4533:4533"
+        ],
+        "env": [
+          "ND_LOGLEVEL=info",
+          "ND_MUSICFOLDER=/music"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/data"
+          },
+          {
+            "suffix": "music",
+            "path": "/music"
+          }
+        ],
+        "command": [],
+        "note": "Container user is 1000:1000. Ensure /data path grants write access. Its files volume starts empty."
+      }
+    },
+    {
+      "id": "ollama",
+      "title": "Ollama Local LLM Runner",
+      "summary": "Get up and running with Large Language Models locally on Apple Silicon CPU.",
+      "categories": [
+        "AI & Machine Learning",
+        "Software Development"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/ollama/ollama:0.40.3",
+        "name": "ollama",
+        "ports": [
+          "11434:11434"
+        ],
+        "env": [
+          "OLLAMA_KEEP_ALIVE=5m"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/root/.ollama"
+          }
+        ],
+        "command": [],
+        "note": "Runs CPU inference inside the container VM. Allocate adequate RAM in Flotilla settings for large models."
+      }
+    },
+    {
+      "id": "photoprism-mariadb",
+      "title": "PhotoPrism + MariaDB",
+      "summary": "AI-powered photo management app that categorizes and tags family photo collections.",
+      "categories": [
+        "Media & Photos",
+        "Storage & Files"
+      ],
+      "kind": "stack",
+      "licenceNote": "AGPL-3.0 with commercial subscription options",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "stack": {
+        "options": [
+          {
+            "id": "database",
+            "label": "Database Name",
+            "defaultValue": "photoprism",
+            "help": "",
+            "email": false
+          }
+        ],
+        "services": [
+          {
+            "role": "db",
+            "title": "MariaDB",
+            "image": "docker.io/library/mariadb:13.0.2",
+            "env": [
+              "MARIADB_DATABASE={{option:database}}",
+              "MARIADB_USER=photoprism"
+            ],
+            "secretEnv": [
+              {
+                "name": "MARIADB_PASSWORD",
+                "secret": "db-password"
+              },
+              {
+                "name": "MARIADB_ROOT_PASSWORD",
+                "secret": "db-root-password"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/var/lib/mysql"
+              }
+            ],
+            "command": [],
+            "wiredPort": 3306,
+            "readyPort": 3306
+          },
+          {
+            "role": "app",
+            "title": "PhotoPrism",
+            "image": "docker.io/photoprism/photoprism:20220121",
+            "env": [
+              "PHOTOPRISM_DATABASE_DRIVER=mysql",
+              "PHOTOPRISM_DATABASE_SERVER={{host:db}}:{{port:db}}",
+              "PHOTOPRISM_DATABASE_NAME={{option:database}}",
+              "PHOTOPRISM_DATABASE_USER=photoprism"
+            ],
+            "secretEnv": [
+              {
+                "name": "PHOTOPRISM_DATABASE_PASSWORD",
+                "secret": "db-password"
+              },
+              {
+                "name": "PHOTOPRISM_ADMIN_PASSWORD",
+                "secret": "admin-password"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/photoprism/storage"
+              }
+            ],
+            "command": [],
+            "webPort": 2342
+          }
+        ],
+        "notes": [
+          "Initial administrator credentials initialized via configured admin password."
+        ],
+        "opens": "app"
+      }
+    },
+    {
+      "id": "rabbitmq",
+      "title": "RabbitMQ Message Broker",
+      "summary": "Feature-rich AMQP and MQTT message broker supporting distributed queues and exchanges.",
+      "categories": [
+        "Messaging & Queues",
+        "Software Development"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under MPL-2.0, which has file-level copyleft rather than being fully permissive.",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/library/rabbitmq:4.3.6-management",
+        "name": "rabbitmq",
+        "ports": [
+          "5672:5672",
+          "15672:15672"
+        ],
+        "env": [
+          "RABBITMQ_DEFAULT_USER=guest"
+        ],
+        "secretEnv": [
+          "RABBITMQ_DEFAULT_PASS"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/var/lib/rabbitmq"
+          }
+        ],
+        "command": [],
+        "note": "Container user is rabbitmq (uid 999). Persistent volume mount must permit non-root writes."
+      }
+    },
+    {
+      "id": "stirling-pdf",
+      "title": "Stirling-PDF Tools",
+      "summary": "Locally hosted suite for merging, splitting, converting, and editing PDF files.",
+      "categories": [
+        "Business & Office",
+        "Home & Personal"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "ghcr.io/stirling-tools/s-pdf:3.1.0",
+        "name": "stirling-pdf",
+        "ports": [
+          "8080:8080"
+        ],
+        "env": [
+          "SECURITY_ENABLE_LOGIN=false"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "tessdata",
+            "path": "/usr/share/tessdata"
+          },
+          {
+            "suffix": "configs",
+            "path": "/configs"
+          }
+        ],
+        "command": [],
+        "note": "Requires adequate RAM when processing extra-large multi-page PDF documents."
+      }
+    },
+    {
+      "id": "uptime-kuma",
+      "title": "Uptime Kuma Status & Alerting",
+      "summary": "Self-hosted monitoring tool with status pages and multi-channel notification support.",
+      "categories": [
+        "Monitoring & Operations",
+        "Networking & Web Servers"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/louislam/uptime-kuma:2.5.6",
+        "name": "uptime-kuma",
+        "ports": [
+          "3001:3001"
+        ],
+        "env": [],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/app/data"
+          }
+        ],
+        "command": [],
+        "note": "Fresh named volumes require write permissions for user uid 1000."
+      }
+    },
+    {
+      "id": "valkey",
+      "title": "Valkey Datastore",
+      "summary": "Open-source BSD-licensed fork of Redis for caching, queuing, and key-value storage.",
+      "categories": [
+        "Databases",
+        "Messaging & Queues"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/valkey/valkey:9.1.2",
+        "name": "valkey",
+        "ports": [
+          "6379:6379"
+        ],
+        "env": [],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/data"
+          }
+        ],
+        "command": [
+          "valkey-server",
+          "--save",
+          "60",
+          "1"
+        ],
+        "note": "Drop-in compatible replacement for Redis CLI and Redis protocol drivers."
+      }
+    },
+    {
+      "id": "wordpress",
+      "title": "WordPress CMS",
+      "summary": "Popular open-source Content Management System powering web sites and blogs.",
+      "categories": [
+        "Content & Publishing",
+        "Business & Office"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under GPL-2.0-or-later, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/library/wordpress:7.1.3-apache",
+        "name": "wordpress",
+        "ports": [
+          "8080:80"
+        ],
+        "env": [
+          "WORDPRESS_DB_NAME=wordpress",
+          "WORDPRESS_DB_USER=root"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/var/www/html"
+          }
+        ],
+        "command": [],
+        "note": "Apache worker drops privileges to www-data (uid 33). Data directory must allow write access. WORDPRESS_DB_HOST was left unset: its default pointed at localhost."
+      }
+    }
+  ]
+}
