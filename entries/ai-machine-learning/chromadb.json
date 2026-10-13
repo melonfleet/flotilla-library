@@ -1,0 +1,34 @@
+{
+  "categories": [
+    "AI & Machine Learning",
+    "Databases"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "IS_PERSISTENT=TRUE",
+      "PERSIST_DIRECTORY=/chroma/chroma"
+    ],
+    "image": "docker.io/chromadb/chroma:0.6.3",
+    "name": "chromadb",
+    "note": "Runs as non-root user 1000. Persistent volume must permit non-root file creation.",
+    "ports": [
+      "8000:8000"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/chroma/chroma",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "chromadb",
+  "kind": "container",
+  "summary": "Open-source embeddings store for AI applications and Retrieval-Augmented Generation.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Chroma Vector Database"
+}

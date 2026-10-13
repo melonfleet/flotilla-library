@@ -1,0 +1,33 @@
+{
+  "categories": [
+    "AI & Machine Learning",
+    "Software Development"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "OLLAMA_KEEP_ALIVE=5m"
+    ],
+    "image": "docker.io/ollama/ollama:0.40.3",
+    "name": "ollama",
+    "note": "Runs CPU inference inside the container VM. Allocate adequate RAM in Flotilla settings for large models.",
+    "ports": [
+      "11434:11434"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/root/.ollama",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "ollama",
+  "kind": "container",
+  "summary": "Get up and running with Large Language Models locally on Apple Silicon CPU.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Ollama Local LLM Runner"
+}

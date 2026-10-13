@@ -1,0 +1,57 @@
+name: Newer tags
+
+# Weekly: look up each image's newest stable tag and its arm64 support, and open one pull request
+# with the bumps (marked untested). Never touches VERSION, library.json or library.json.sig.
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tags:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    # Only this job writes, and only to open the pull request.
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Check out the library
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install the tag checker's one dependency
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --require-virtualenv -r tools/requirements.txt
+
+      - name: Look up tags
+        run: |
+          "$RUNNER_TEMP/venv/bin/python" tools/check_tags.py --apply \
+            --report "$RUNNER_TEMP/body.md" --cache "$RUNNER_TEMP/tagcache"
+          {
+            cat "$RUNNER_TEMP/body.md"
+            printf '\n> A pull request opened by this workflow does not start the Check workflow on its own'
+            printf ' (GitHub does not run workflows for pushes made with the built-in token). Close and reopen it to run the checks.\n'
+          } > "$RUNNER_TEMP/pr-body.md"
+          cat "$RUNNER_TEMP/body.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Rebuild library.json from the changed entries
+        # The Check workflow requires library.json to match entries/; VERSION and the signature stay.
+        run: python3 tools/build_library.py
+
+      - name: Open or update the pull request
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          add-paths: |
+            entries/
+            library.json
+          branch: newer-tags
+          delete-branch: true
+          commit-message: "entries: newer stable image tags (untested)"
+          title: "Newer stable image tags (untested)"
+          body-path: ${{ runner.temp }}/pr-body.md

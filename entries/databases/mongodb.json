@@ -1,0 +1,36 @@
+{
+  "categories": [
+    "Databases"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "MONGO_INITDB_ROOT_USERNAME=root",
+      "MONGO_INITDB_DATABASE=app"
+    ],
+    "image": "docker.io/library/mongo:9.0.2",
+    "name": "mongodb",
+    "note": "ARM64 build requires ARMv8.2-A architecture extensions (supported on Apple Silicon M-series).",
+    "ports": [
+      "27017:27017"
+    ],
+    "secretEnv": [
+      "MONGO_INITDB_ROOT_PASSWORD"
+    ],
+    "volumes": [
+      {
+        "path": "/data/db",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "mongodb",
+  "kind": "container",
+  "licenceNote": "Offered under the Server Side Public License (SSPL-1.0), which is source-available rather than OSI open source: running it as a service for others has conditions.",
+  "summary": "Document-based NoSQL database designed for high availability and JSON processing.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "MongoDB Community Server"
+}

@@ -1,0 +1,35 @@
+{
+  "categories": [
+    "Content & Publishing",
+    "Business & Office"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "WORDPRESS_DB_NAME=wordpress",
+      "WORDPRESS_DB_USER=root"
+    ],
+    "image": "docker.io/library/wordpress:7.1.3-apache",
+    "name": "wordpress",
+    "note": "Apache worker drops privileges to www-data (uid 33). Data directory must allow write access. WORDPRESS_DB_HOST was left unset: its default pointed at localhost.",
+    "ports": [
+      "8080:80"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/var/www/html",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "wordpress",
+  "kind": "container",
+  "licenceNote": "Licensed under GPL-2.0-or-later, a copyleft licence rather than a permissive one.",
+  "summary": "Popular open-source Content Management System powering web sites and blogs.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "WordPress CMS"
+}

@@ -1,0 +1,42 @@
+name: Check
+
+# Builds library.json from entries/, checks it the way Flotilla will, and fails a pull request that
+# couldn't be published. Read-only: no secrets, no signing, never pull_request_target.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out the library
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: library.json must be what entries/ and VERSION build
+        run: python3 tools/build_library.py --check
+
+      - name: Python checks on entries/
+        run: python3 tools/check_entries.py --library library.json
+
+      - name: Check out Flotilla (public)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: melonfleet/flotilla
+          path: flotilla
+          persist-credentials: false
+
+      - name: Flotilla's own check, in the Swift 6.1 container
+        run: |
+          docker run --rm \
+            -v "$PWD:/work" -w /work/flotilla \
+            -e FLOTILLA_LIBRARY_CHECK=/work/library.json \
+            swift:6.1 \
+            swift test --filter aLibraryFile

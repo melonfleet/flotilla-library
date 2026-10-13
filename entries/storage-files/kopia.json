@@ -1,0 +1,38 @@
+{
+  "categories": [
+    "Storage & Files",
+    "Security & Identity"
+  ],
+  "container": {
+    "command": [
+      "server",
+      "start",
+      "--insecure",
+      "--address=0.0.0.0:51515"
+    ],
+    "env": [],
+    "image": "docker.io/kopia/kopia:0.23.1",
+    "name": "kopia",
+    "note": "Web UI binds to 51515. Mount target backup source volumes into container.",
+    "ports": [
+      "51515:51515"
+    ],
+    "secretEnv": [
+      "KOPIA_SERVER_PASSWORD"
+    ],
+    "volumes": [
+      {
+        "path": "/app/config",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "kopia",
+  "kind": "container",
+  "summary": "Fast, secure open-source backup engine featuring encrypted deduplicated snapshots.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Kopia Backup Server"
+}

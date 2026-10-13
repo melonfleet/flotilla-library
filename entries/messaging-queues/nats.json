@@ -1,0 +1,36 @@
+{
+  "categories": [
+    "Messaging & Queues",
+    "Software Development"
+  ],
+  "container": {
+    "command": [
+      "-m",
+      "8222",
+      "-js"
+    ],
+    "env": [],
+    "image": "docker.io/library/nats:2.15.0",
+    "name": "nats",
+    "note": "Command string flag `-js` enables JetStream persistence engine.",
+    "ports": [
+      "4222:4222",
+      "8222:8222"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/data",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "nats",
+  "kind": "container",
+  "summary": "Hyper-fast, resilient publish-subscribe messaging system for microservices and JetStream queues.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "NATS Cloud Native Messaging"
+}

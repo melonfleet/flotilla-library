@@ -1,0 +1,81 @@
+{
+  "categories": [
+    "Data & Analytics",
+    "Business & Office"
+  ],
+  "id": "metabase-postgres",
+  "kind": "stack",
+  "stack": {
+    "notes": [
+      "First launch takes 1-2 minutes for Java application startup before web UI responds."
+    ],
+    "opens": "app",
+    "options": [
+      {
+        "defaultValue": "metabase",
+        "email": false,
+        "help": "",
+        "id": "database",
+        "label": "Database Name"
+      }
+    ],
+    "services": [
+      {
+        "command": [],
+        "env": [
+          "POSTGRES_DB={{option:database}}",
+          "POSTGRES_USER=metabase"
+        ],
+        "image": "docker.io/library/postgres:18.6",
+        "readyPort": 5432,
+        "role": "db",
+        "secretEnv": [
+          {
+            "name": "POSTGRES_PASSWORD",
+            "secret": "db-password"
+          }
+        ],
+        "title": "PostgreSQL",
+        "volumes": [
+          {
+            "path": "/var/lib/postgresql",
+            "suffix": "data"
+          }
+        ],
+        "wiredPort": 5432
+      },
+      {
+        "command": [],
+        "env": [
+          "MB_DB_TYPE=postgres",
+          "MB_DB_DBNAME={{option:database}}",
+          "MB_DB_PORT={{port:db}}",
+          "MB_DB_USER=metabase",
+          "MB_DB_HOST={{host:db}}"
+        ],
+        "image": "docker.io/metabase/metabase:v0.64.1",
+        "role": "app",
+        "secretEnv": [
+          {
+            "name": "MB_DB_PASS",
+            "secret": "db-password"
+          }
+        ],
+        "title": "Metabase BI",
+        "volumes": [
+          {
+            "path": "/metabase-data",
+            "suffix": "data"
+          }
+        ],
+        "webPort": 3000
+      }
+    ]
+  },
+  "summary": "Business intelligence platform for building visual charts and data dashboards.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Metabase BI + PostgreSQL"
+}

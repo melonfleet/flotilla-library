@@ -1,0 +1,38 @@
+{
+  "categories": [
+    "Databases",
+    "Software Development"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "MARIADB_DATABASE=app",
+      "MARIADB_USER=user"
+    ],
+    "image": "docker.io/library/mariadb:13.0.2",
+    "name": "mariadb",
+    "note": "Fresh volumes containing lost+found folder are safely handled by entrypoint in version 11+.",
+    "ports": [
+      "3306:3306"
+    ],
+    "secretEnv": [
+      "MARIADB_PASSWORD",
+      "MARIADB_ROOT_PASSWORD"
+    ],
+    "volumes": [
+      {
+        "path": "/var/lib/mysql",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "mariadb",
+  "kind": "container",
+  "licenceNote": "Licensed under GPL-2.0-only, a copyleft licence rather than a permissive one.",
+  "summary": "Fast, scalable, open-source relational database server derived from MySQL.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "MariaDB"
+}

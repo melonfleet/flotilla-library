@@ -1,0 +1,33 @@
+{
+  "categories": [
+    "Finance & Accounting",
+    "Home & Personal"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "ACTUAL_PORT=5006"
+    ],
+    "image": "ghcr.io/actualbudget/actual-server:26.10.0",
+    "name": "actual-budget",
+    "note": "Fresh volume root directories must be writeable by non-root user uid 1000.",
+    "ports": [
+      "5006:5006"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/data",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "actual-budget",
+  "kind": "container",
+  "summary": "Privacy-first personal finance system using envelope budgeting.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Actual Budget"
+}

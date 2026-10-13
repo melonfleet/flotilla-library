@@ -1,0 +1,26 @@
+{
+  "categories": [
+    "Education",
+    "Business & Office"
+  ],
+  "container": {
+    "command": [],
+    "env": [],
+    "image": "docker.io/jgraph/drawio:32.4.1",
+    "name": "drawio",
+    "note": "Stateless container; diagrams are saved locally in the client browser or exported to disk.",
+    "ports": [
+      "8080:8080"
+    ],
+    "secretEnv": [],
+    "volumes": []
+  },
+  "id": "drawio",
+  "kind": "container",
+  "summary": "Self-hosted diagramming software for flowcharts, architecture, and network diagrams.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Draw.io Visual Diagramming"
+}

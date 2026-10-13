@@ -1,0 +1,39 @@
+{
+  "categories": [
+    "Media & Photos",
+    "Home & Personal"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "ND_LOGLEVEL=info",
+      "ND_MUSICFOLDER=/music"
+    ],
+    "image": "docker.io/deluan/navidrome:0.64.2",
+    "name": "navidrome",
+    "note": "Container user is 1000:1000. Ensure /data path grants write access. Its files volume starts empty.",
+    "ports": [
+      "4533:4533"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/data",
+        "suffix": "data"
+      },
+      {
+        "path": "/music",
+        "suffix": "music"
+      }
+    ]
+  },
+  "id": "navidrome",
+  "kind": "container",
+  "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
+  "summary": "Lightweight music server and streamer compatible with Subsonic client applications.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Navidrome Music Server"
+}

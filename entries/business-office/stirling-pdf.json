@@ -1,0 +1,38 @@
+{
+  "categories": [
+    "Business & Office",
+    "Home & Personal"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "SECURITY_ENABLE_LOGIN=false"
+    ],
+    "image": "ghcr.io/stirling-tools/s-pdf:3.1.0",
+    "name": "stirling-pdf",
+    "note": "Requires adequate RAM when processing extra-large multi-page PDF documents.",
+    "ports": [
+      "8080:8080"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/usr/share/tessdata",
+        "suffix": "tessdata"
+      },
+      {
+        "path": "/configs",
+        "suffix": "configs"
+      }
+    ]
+  },
+  "id": "stirling-pdf",
+  "kind": "container",
+  "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
+  "summary": "Locally hosted suite for merging, splitting, converting, and editing PDF files.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Stirling-PDF Tools"
+}

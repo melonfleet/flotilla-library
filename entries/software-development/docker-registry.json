@@ -1,0 +1,33 @@
+{
+  "categories": [
+    "Software Development",
+    "Storage & Files"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/var/lib/registry"
+    ],
+    "image": "docker.io/library/registry:3.1.2",
+    "name": "docker-registry",
+    "note": "Requires HTTP basic auth or TLS configuration if exposed beyond local network.",
+    "ports": [
+      "5000:5000"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/var/lib/registry",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "docker-registry",
+  "kind": "container",
+  "summary": "Standard v2 OCI container image registry server for private image storage.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "OCI / Docker Container Registry"
+}

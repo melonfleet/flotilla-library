@@ -1,0 +1,89 @@
+{
+  "categories": [
+    "Media & Photos",
+    "Storage & Files"
+  ],
+  "id": "photoprism-mariadb",
+  "kind": "stack",
+  "licenceNote": "AGPL-3.0 with commercial subscription options",
+  "stack": {
+    "notes": [
+      "Initial administrator credentials initialized via configured admin password."
+    ],
+    "opens": "app",
+    "options": [
+      {
+        "defaultValue": "photoprism",
+        "email": false,
+        "help": "",
+        "id": "database",
+        "label": "Database Name"
+      }
+    ],
+    "services": [
+      {
+        "command": [],
+        "env": [
+          "MARIADB_DATABASE={{option:database}}",
+          "MARIADB_USER=photoprism"
+        ],
+        "image": "docker.io/library/mariadb:13.0.2",
+        "readyPort": 3306,
+        "role": "db",
+        "secretEnv": [
+          {
+            "name": "MARIADB_PASSWORD",
+            "secret": "db-password"
+          },
+          {
+            "name": "MARIADB_ROOT_PASSWORD",
+            "secret": "db-root-password"
+          }
+        ],
+        "title": "MariaDB",
+        "volumes": [
+          {
+            "path": "/var/lib/mysql",
+            "suffix": "data"
+          }
+        ],
+        "wiredPort": 3306
+      },
+      {
+        "command": [],
+        "env": [
+          "PHOTOPRISM_DATABASE_DRIVER=mysql",
+          "PHOTOPRISM_DATABASE_SERVER={{host:db}}:{{port:db}}",
+          "PHOTOPRISM_DATABASE_NAME={{option:database}}",
+          "PHOTOPRISM_DATABASE_USER=photoprism"
+        ],
+        "image": "docker.io/photoprism/photoprism:20220121",
+        "role": "app",
+        "secretEnv": [
+          {
+            "name": "PHOTOPRISM_DATABASE_PASSWORD",
+            "secret": "db-password"
+          },
+          {
+            "name": "PHOTOPRISM_ADMIN_PASSWORD",
+            "secret": "admin-password"
+          }
+        ],
+        "title": "PhotoPrism",
+        "volumes": [
+          {
+            "path": "/photoprism/storage",
+            "suffix": "data"
+          }
+        ],
+        "webPort": 2342
+      }
+    ]
+  },
+  "summary": "AI-powered photo management app that categorizes and tags family photo collections.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "PhotoPrism + MariaDB"
+}

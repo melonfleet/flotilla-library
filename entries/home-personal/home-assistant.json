@@ -1,0 +1,33 @@
+{
+  "categories": [
+    "Home & Personal",
+    "Networking & Web Servers"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "TZ=UTC"
+    ],
+    "image": "docker.io/homeassistant/home-assistant:2026.10.1",
+    "name": "home-assistant",
+    "note": "Container execution inside isolated VM prevents direct USB Zigbee/Z-Wave dongle pass-through.",
+    "ports": [
+      "8123:8123"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/config",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "home-assistant",
+  "kind": "container",
+  "summary": "Open-source home automation system prioritizing local control and user privacy.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Home Assistant Core"
+}

@@ -1,0 +1,89 @@
+{
+  "categories": [
+    "Finance & Accounting",
+    "Home & Personal"
+  ],
+  "id": "firefly-iii-mariadb",
+  "kind": "stack",
+  "stack": {
+    "notes": [
+      "APP_KEY must be a 32-character string. Database created automatically on start."
+    ],
+    "opens": "app",
+    "options": [
+      {
+        "defaultValue": "firefly",
+        "email": false,
+        "help": "",
+        "id": "database",
+        "label": "Database Name"
+      }
+    ],
+    "services": [
+      {
+        "command": [],
+        "env": [
+          "MARIADB_DATABASE={{option:database}}",
+          "MARIADB_USER=firefly"
+        ],
+        "image": "docker.io/library/mariadb:13.0.2",
+        "readyPort": 3306,
+        "role": "db",
+        "secretEnv": [
+          {
+            "name": "MARIADB_PASSWORD",
+            "secret": "db-password"
+          },
+          {
+            "name": "MARIADB_ROOT_PASSWORD",
+            "secret": "db-root-password"
+          }
+        ],
+        "title": "MariaDB",
+        "volumes": [
+          {
+            "path": "/var/lib/mysql",
+            "suffix": "data"
+          }
+        ],
+        "wiredPort": 3306
+      },
+      {
+        "command": [],
+        "env": [
+          "DB_HOST={{host:db}}",
+          "DB_PORT={{port:db}}",
+          "DB_DATABASE={{option:database}}",
+          "DB_USERNAME=firefly",
+          "DB_CONNECTION=mysql"
+        ],
+        "image": "docker.io/fireflyiii/core:version-6.7.9",
+        "role": "app",
+        "secretEnv": [
+          {
+            "name": "DB_PASSWORD",
+            "secret": "db-password"
+          },
+          {
+            "name": "APP_KEY",
+            "secret": "app-key"
+          }
+        ],
+        "title": "Firefly III",
+        "volumes": [
+          {
+            "path": "/var/www/html/storage/upload",
+            "suffix": "data"
+          }
+        ],
+        "webPort": 8080
+      }
+    ]
+  },
+  "summary": "Production-grade Firefly III setup backed by a dedicated MariaDB relational database.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Firefly III + MariaDB"
+}

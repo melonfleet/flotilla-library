@@ -1,0 +1,33 @@
+{
+  "categories": [
+    "Home & Personal",
+    "Content & Publishing"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "ALLOW_SIGNUP=true"
+    ],
+    "image": "ghcr.io/mealie-recipes/mealie:v3.28.0",
+    "name": "mealie",
+    "note": "Runs as non-root user 1000. Verify write permissions on attached persistent volume. BASE_URL was left unset: its default pointed at localhost.",
+    "ports": [
+      "9000:9000"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/app/data",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "mealie",
+  "kind": "container",
+  "summary": "Self-hosted recipe manager and meal planner with automated website scraping.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Mealie Recipe Manager"
+}

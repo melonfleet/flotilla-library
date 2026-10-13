@@ -1,0 +1,36 @@
+{
+  "categories": [
+    "Databases",
+    "Messaging & Queues"
+  ],
+  "container": {
+    "command": [
+      "valkey-server",
+      "--save",
+      "60",
+      "1"
+    ],
+    "env": [],
+    "image": "docker.io/valkey/valkey:9.1.2",
+    "name": "valkey",
+    "note": "Drop-in compatible replacement for Redis CLI and Redis protocol drivers.",
+    "ports": [
+      "6379:6379"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/data",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "valkey",
+  "kind": "container",
+  "summary": "Open-source BSD-licensed fork of Redis for caching, queuing, and key-value storage.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Valkey Datastore"
+}
