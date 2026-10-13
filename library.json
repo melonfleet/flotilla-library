@@ -676,12 +676,9 @@
         "Software Development"
       ],
       "kind": "container",
-      "tested": {
-        "date": "2026-10-13",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "docker.io/library/nats:2.15.0",
+        "image": "docker.io/library/nats:2.15.1",
         "name": "nats",
         "ports": [
           "4222:4222",
