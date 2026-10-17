@@ -26,7 +26,7 @@
   "kind": "container",
   "summary": "Get up and running with Large Language Models locally on Apple Silicon CPU.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "Ollama Local LLM Runner"

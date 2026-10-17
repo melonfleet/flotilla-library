@@ -1,0 +1,31 @@
+{
+  "categories": [
+    "Monitoring & Operations",
+    "Networking & Web Servers"
+  ],
+  "container": {
+    "command": [],
+    "env": [],
+    "image": "ghcr.io/twin/gatus:v5.37.0",
+    "name": "gatus",
+    "note": "User is 10000; check named volume permissions for database persistence.",
+    "ports": [
+      "8080:8080"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/data",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "gatus",
+  "kind": "container",
+  "summary": "Automated service health dashboard with status pages and threshold monitoring.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Gatus Service Health Dashboard"
+}

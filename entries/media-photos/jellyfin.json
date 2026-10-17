@@ -1,0 +1,36 @@
+{
+  "categories": [
+    "Media & Photos",
+    "Home & Personal"
+  ],
+  "container": {
+    "command": [],
+    "env": [],
+    "image": "docker.io/jellyfin/jellyfin:10.11.11",
+    "name": "jellyfin",
+    "note": "CPU software video transcoding only in Flotilla VM (hardware GPU acceleration excluded). JELLYFIN_PublishedServerUrl was left unset: its default pointed at localhost.",
+    "ports": [
+      "8096:8096"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/config",
+        "suffix": "config"
+      },
+      {
+        "path": "/cache",
+        "suffix": "cache"
+      }
+    ]
+  },
+  "id": "jellyfin",
+  "kind": "container",
+  "licenceNote": "Licensed under GPL-2.0-or-later, a copyleft licence rather than a permissive one.",
+  "summary": "Open-source media system for organizing and streaming movies, shows, and music.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Jellyfin Media Server"
+}

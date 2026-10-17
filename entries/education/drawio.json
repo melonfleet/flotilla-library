@@ -19,7 +19,7 @@
   "kind": "container",
   "summary": "Self-hosted diagramming software for flowcharts, architecture, and network diagrams.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "Draw.io Visual Diagramming"

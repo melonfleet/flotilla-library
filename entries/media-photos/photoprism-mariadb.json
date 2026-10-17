@@ -82,7 +82,7 @@
   },
   "summary": "AI-powered photo management app that categorizes and tags family photo collections.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "PhotoPrism + MariaDB"

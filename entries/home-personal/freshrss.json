@@ -27,7 +27,7 @@
   "licenceNote": "Licensed under AGPL-3.0-only, a copyleft licence rather than a permissive one.",
   "summary": "Lightweight, customizable web-based RSS feed aggregator and reader.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "FreshRSS Reader"

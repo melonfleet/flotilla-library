@@ -27,7 +27,7 @@
   "kind": "container",
   "summary": "Open-source embeddings store for AI applications and Retrieval-Augmented Generation.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "Chroma Vector Database"

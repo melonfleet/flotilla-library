@@ -27,7 +27,7 @@
   "kind": "container",
   "summary": "Fast email and SMTP testing tool with web UI and API for developers.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "Mailpit Email Testing Tool"

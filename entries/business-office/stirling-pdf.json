@@ -31,7 +31,7 @@
   "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
   "summary": "Locally hosted suite for merging, splitting, converting, and editing PDF files.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "Stirling-PDF Tools"

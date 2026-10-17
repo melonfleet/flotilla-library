@@ -74,7 +74,7 @@
   },
   "summary": "Production Flowise setup using PostgreSQL for robust workflow state storage.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "Flowise + PostgreSQL"

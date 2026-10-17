@@ -31,7 +31,7 @@
   "kind": "container",
   "summary": "Fast, secure open-source backup engine featuring encrypted deduplicated snapshots.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "Kopia Backup Server"

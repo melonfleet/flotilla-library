@@ -26,7 +26,7 @@
   "kind": "container",
   "summary": "Open-source home automation system prioritizing local control and user privacy.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "Home Assistant Core"

@@ -74,7 +74,7 @@
   },
   "summary": "Business intelligence platform for building visual charts and data dashboards.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "Metabase BI + PostgreSQL"

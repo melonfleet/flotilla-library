@@ -30,7 +30,7 @@
   "licenceNote": "Licensed under MPL-2.0, which has file-level copyleft rather than being fully permissive.",
   "summary": "Feature-rich AMQP and MQTT message broker supporting distributed queues and exchanges.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "RabbitMQ Message Broker"

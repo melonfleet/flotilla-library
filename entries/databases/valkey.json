@@ -29,7 +29,7 @@
   "kind": "container",
   "summary": "Open-source BSD-licensed fork of Redis for caching, queuing, and key-value storage.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "Valkey Datastore"

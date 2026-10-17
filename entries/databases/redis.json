@@ -1,0 +1,39 @@
+{
+  "categories": [
+    "Databases",
+    "Messaging & Queues"
+  ],
+  "container": {
+    "command": [
+      "redis-server",
+      "--save",
+      "60",
+      "1",
+      "--loglevel",
+      "warning"
+    ],
+    "env": [],
+    "image": "docker.io/library/redis:8.10.2",
+    "name": "redis",
+    "note": "Dual licensing applied in 2024 (7.4+); open-source alternative available as Valkey.",
+    "ports": [
+      "6379:6379"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/data",
+        "suffix": "data"
+      }
+    ]
+  },
+  "id": "redis",
+  "kind": "container",
+  "licenceNote": "Dual-licensed under RSALv2 / SSPLv1 starting with Redis 7.4+",
+  "summary": "High-performance in-memory key-value data structure store used as cache or broker.",
+  "tested": {
+    "date": "2026-10-13",
+    "macs": 1
+  },
+  "title": "Redis In-Memory Data Store"
+}

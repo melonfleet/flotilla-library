@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "2026.10.13.2",
+  "version": "2026.10.17.1",
   "entries": [
     {
       "id": "actual-budget",
@@ -12,7 +12,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -46,7 +46,7 @@
       "kind": "container",
       "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -87,7 +87,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -112,6 +112,43 @@
       }
     },
     {
+      "id": "clickhouse",
+      "title": "ClickHouse Analytics DB",
+      "summary": "Real-time column-oriented DBMS for high-speed analytical query processing.",
+      "categories": [
+        "Databases",
+        "Data & Analytics"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/clickhouse/clickhouse-server:26.9.17",
+        "name": "clickhouse",
+        "ports": [
+          "8123:8123",
+          "9000:9000"
+        ],
+        "env": [
+          "CLICKHOUSE_DB=default",
+          "CLICKHOUSE_USER=default"
+        ],
+        "secretEnv": [
+          "CLICKHOUSE_PASSWORD"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/var/lib/clickhouse"
+          }
+        ],
+        "command": [],
+        "note": "Requires higher memory allocation (1GB+) for processing complex column aggregations."
+      }
+    },
+    {
       "id": "docker-registry",
       "title": "OCI / Docker Container Registry",
       "summary": "Standard v2 OCI container image registry server for private image storage.",
@@ -121,7 +158,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -154,7 +191,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -269,7 +306,7 @@
       ],
       "kind": "stack",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "stack": {
@@ -351,7 +388,7 @@
       "kind": "container",
       "licenceNote": "Licensed under AGPL-3.0-only, a copyleft licence rather than a permissive one.",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -375,6 +412,117 @@
       }
     },
     {
+      "id": "gatus",
+      "title": "Gatus Service Health Dashboard",
+      "summary": "Automated service health dashboard with status pages and threshold monitoring.",
+      "categories": [
+        "Monitoring & Operations",
+        "Networking & Web Servers"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "ghcr.io/twin/gatus:v5.37.0",
+        "name": "gatus",
+        "ports": [
+          "8080:8080"
+        ],
+        "env": [],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/data"
+          }
+        ],
+        "command": [],
+        "note": "User is 10000; check named volume permissions for database persistence."
+      }
+    },
+    {
+      "id": "gitea-postgres",
+      "title": "Gitea + PostgreSQL",
+      "summary": "Production-ready Gitea installation backed by PostgreSQL.",
+      "categories": [
+        "Software Development",
+        "Communication & Collaboration"
+      ],
+      "kind": "stack",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "stack": {
+        "options": [
+          {
+            "id": "database",
+            "label": "Database Name",
+            "defaultValue": "gitea",
+            "help": "",
+            "email": false
+          }
+        ],
+        "services": [
+          {
+            "role": "db",
+            "title": "PostgreSQL",
+            "image": "docker.io/library/postgres:18.6",
+            "env": [
+              "POSTGRES_DB={{option:database}}",
+              "POSTGRES_USER=gitea"
+            ],
+            "secretEnv": [
+              {
+                "name": "POSTGRES_PASSWORD",
+                "secret": "db-password"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/var/lib/postgresql"
+              }
+            ],
+            "command": [],
+            "wiredPort": 5432,
+            "readyPort": 5432
+          },
+          {
+            "role": "app",
+            "title": "Gitea",
+            "image": "ghcr.io/go-gitea/gitea:28.1.0",
+            "env": [
+              "GITEA__database__DB_TYPE=postgres",
+              "GITEA__database__HOST={{host:db}}:{{port:db}}",
+              "GITEA__database__NAME={{option:database}}",
+              "GITEA__database__USER=gitea"
+            ],
+            "secretEnv": [
+              {
+                "name": "GITEA__database__PASSWD",
+                "secret": "db-password"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/data"
+              }
+            ],
+            "command": [],
+            "webPort": 3000
+          }
+        ],
+        "notes": [
+          "PostgreSQL 18 database path updated to /var/lib/postgresql. Complete admin user creation via UI."
+        ],
+        "opens": "app"
+      }
+    },
+    {
       "id": "home-assistant",
       "title": "Home Assistant Core",
       "summary": "Open-source home automation system prioritizing local control and user privacy.",
@@ -384,7 +532,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -408,6 +556,122 @@
       }
     },
     {
+      "id": "jellyfin",
+      "title": "Jellyfin Media Server",
+      "summary": "Open-source media system for organizing and streaming movies, shows, and music.",
+      "categories": [
+        "Media & Photos",
+        "Home & Personal"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under GPL-2.0-or-later, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/jellyfin/jellyfin:10.11.11",
+        "name": "jellyfin",
+        "ports": [
+          "8096:8096"
+        ],
+        "env": [],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "config",
+            "path": "/config"
+          },
+          {
+            "suffix": "cache",
+            "path": "/cache"
+          }
+        ],
+        "command": [],
+        "note": "CPU software video transcoding only in Flotilla VM (hardware GPU acceleration excluded). JELLYFIN_PublishedServerUrl was left unset: its default pointed at localhost."
+      }
+    },
+    {
+      "id": "jupyterhub-postgres",
+      "title": "JupyterHub + PostgreSQL",
+      "summary": "Multi-user Jupyter notebook server powered by a PostgreSQL state store.",
+      "categories": [
+        "Education",
+        "Science & Research"
+      ],
+      "kind": "stack",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "stack": {
+        "options": [
+          {
+            "id": "database",
+            "label": "Database Name",
+            "defaultValue": "jupyterhub",
+            "help": "",
+            "email": false
+          }
+        ],
+        "services": [
+          {
+            "role": "db",
+            "title": "PostgreSQL",
+            "image": "docker.io/library/postgres:18.6",
+            "env": [
+              "POSTGRES_DB={{option:database}}",
+              "POSTGRES_USER=jupyter"
+            ],
+            "secretEnv": [
+              {
+                "name": "POSTGRES_PASSWORD",
+                "secret": "db-password"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/var/lib/postgresql"
+              }
+            ],
+            "command": [],
+            "wiredPort": 5432,
+            "readyPort": 5432
+          },
+          {
+            "role": "hub",
+            "title": "JupyterHub",
+            "image": "quay.io/jupyterhub/jupyterhub:6.0.1",
+            "env": [
+              "POSTGRES_HOST={{host:db}}",
+              "POSTGRES_PORT={{port:db}}",
+              "POSTGRES_DB={{option:database}}",
+              "POSTGRES_USER=jupyter"
+            ],
+            "secretEnv": [
+              {
+                "name": "POSTGRES_PASSWORD",
+                "secret": "db-password"
+              }
+            ],
+            "volumes": [
+              {
+                "suffix": "data",
+                "path": "/srv/jupyterhub"
+              }
+            ],
+            "command": [],
+            "webPort": 8000
+          }
+        ],
+        "notes": [
+          "PostgreSQL 18 stores data in /var/lib/postgresql. Mount point modified from legacy /data path."
+        ],
+        "opens": "hub"
+      }
+    },
+    {
       "id": "kopia",
       "title": "Kopia Backup Server",
       "summary": "Fast, secure open-source backup engine featuring encrypted deduplicated snapshots.",
@@ -417,7 +681,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -455,7 +719,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -527,7 +791,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -560,7 +824,7 @@
       ],
       "kind": "stack",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "stack": {
@@ -641,7 +905,7 @@
       "kind": "container",
       "licenceNote": "Offered under the Server Side Public License (SSPL-1.0), which is source-available rather than OSI open source: running it as a service for others has conditions.",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -677,7 +941,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -714,7 +978,7 @@
       "kind": "container",
       "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -752,7 +1016,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -786,7 +1050,7 @@
       "kind": "stack",
       "licenceNote": "AGPL-3.0 with commercial subscription options",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "stack": {
@@ -911,7 +1175,7 @@
       "kind": "container",
       "licenceNote": "Licensed under MPL-2.0, which has file-level copyleft rather than being fully permissive.",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -938,6 +1202,45 @@
       }
     },
     {
+      "id": "redis",
+      "title": "Redis In-Memory Data Store",
+      "summary": "High-performance in-memory key-value data structure store used as cache or broker.",
+      "categories": [
+        "Databases",
+        "Messaging & Queues"
+      ],
+      "kind": "container",
+      "licenceNote": "Dual-licensed under RSALv2 / SSPLv1 starting with Redis 7.4+",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/library/redis:8.10.2",
+        "name": "redis",
+        "ports": [
+          "6379:6379"
+        ],
+        "env": [],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/data"
+          }
+        ],
+        "command": [
+          "redis-server",
+          "--save",
+          "60",
+          "1",
+          "--loglevel",
+          "warning"
+        ],
+        "note": "Dual licensing applied in 2024 (7.4+); open-source alternative available as Valkey."
+      }
+    },
+    {
       "id": "stirling-pdf",
       "title": "Stirling-PDF Tools",
       "summary": "Locally hosted suite for merging, splitting, converting, and editing PDF files.",
@@ -948,7 +1251,7 @@
       "kind": "container",
       "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -985,7 +1288,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -1016,7 +1319,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {
@@ -1043,6 +1346,41 @@
       }
     },
     {
+      "id": "vaultwarden",
+      "title": "Vaultwarden Password Manager",
+      "summary": "Lightweight Bitwarden-compatible password manager server written in Rust.",
+      "categories": [
+        "Security & Identity",
+        "Home & Personal"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under GPL-3.0-or-later, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-13",
+        "macs": 1
+      },
+      "container": {
+        "image": "ghcr.io/dani-garcia/vaultwarden:1.37.4",
+        "name": "vaultwarden",
+        "ports": [
+          "8080:80"
+        ],
+        "env": [
+          "WEBSOCKET_ENABLED=true",
+          "SIGNUPS_ALLOWED=true"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/data"
+          }
+        ],
+        "command": [],
+        "note": "Requires HTTPS when accessed outside localhost due to browser WebCrypto security standards."
+      }
+    },
+    {
       "id": "wordpress",
       "title": "WordPress CMS",
       "summary": "Popular open-source Content Management System powering web sites and blogs.",
@@ -1053,7 +1391,7 @@
       "kind": "container",
       "licenceNote": "Licensed under GPL-2.0-or-later, a copyleft licence rather than a permissive one.",
       "tested": {
-        "date": "2026-10-13",
+        "date": "2026-10-12",
         "macs": 1
       },
       "container": {

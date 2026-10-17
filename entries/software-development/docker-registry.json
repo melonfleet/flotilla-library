@@ -26,7 +26,7 @@
   "kind": "container",
   "summary": "Standard v2 OCI container image registry server for private image storage.",
   "tested": {
-    "date": "2026-10-13",
+    "date": "2026-10-12",
     "macs": 1
   },
   "title": "OCI / Docker Container Registry"
