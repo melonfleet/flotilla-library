@@ -1701,7 +1701,7 @@
         "Software Development"
       ],
       "kind": "container",
-      "licenceNote": "Business Source License 1.1 - non-commercial production use restrictions apply",
+      "licenceNote": "BUSL-1.1; restrictions on competitive offerings apply",
       "tested": {
         "date": "2026-10-18",
         "macs": 1
