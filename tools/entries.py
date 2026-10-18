@@ -20,7 +20,8 @@ ORDER = {
               "icon"],
     "tested": ["date", "macs"],
     "container": ["image", "name", "ports", "env", "secretEnv", "volumes", "command", "note"],
-    "volume": ["suffix", "path"],
+    "volume": ["suffix", "path", "volumeOwner"],
+    "volumeOwner": ["uid", "gid"],
     "stack": ["options", "services", "notes", "opens"],
     "option": ["id", "label", "defaultValue", "help", "email"],
     "service": ["role", "title", "image", "env", "secretEnv", "volumes", "command",
@@ -34,6 +35,7 @@ CHILDREN = {
     "container": {"volumes": "volume"},
     "stack": {"options": "option", "services": "service"},
     "service": {"volumes": "volume", "secretEnv": "secret"},
+    "volume": {"volumeOwner": "volumeOwner"},
 }
 
 

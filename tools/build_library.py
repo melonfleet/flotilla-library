@@ -17,7 +17,9 @@ import sys
 
 import entries
 
-SCHEMA = 1
+# 2 since `volumeOwner` (18 October): Flotilla builds before it read 1 only, so they refuse this
+# library rather than install recipes whose volumes they wouldn't set up.
+SCHEMA = 2
 
 
 def build():

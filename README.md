@@ -6,7 +6,16 @@ for Apple's `container`. Flotilla shows them in **Suggestions**, by category.
 ## What's here
 
 - `library.json`: the library, in the format defined by `SuggestionLibrary` in Flotilla's
-  `Sources/FlotillaCore/SuggestionLibrary.swift`.
+  `Sources/FlotillaCore/SuggestionLibrary.swift`. It is **schema 2**. Schema 2 added `volumeOwner` to a
+  volume, for an image that runs as a user other than root:
+  `{"suffix": "data", "path": "/var/lib/grafana", "volumeOwner": {"uid": 472, "gid": 0}}`.
+  Both numbers are required, as JSON integers from 0 to 2147483647. When Flotilla has just created
+  the volume, it sets the owner of the volume's top folder to that UID:GID once. It does this
+  with a BusyBox image whose digest is pinned in the app, only if the folder holds nothing but
+  `lost+found`, and never recursively. The setup can't be chosen in the library: there's no
+  command, image or flag for it. Flotilla builds that read only schema 1, including public beta 4,
+  refuse a schema-2 library and keep the copy they have. Without the bump, they would ignore
+  `volumeOwner` and install recipes that can't write to their volumes.
 - `library.json.sig`: its Ed25519 signature, base64. Both are on the **`published`** branch, with
   `icons/`, which is what Flotilla downloads; `main` holds the entries and tools they're built from.
 - `entries/<category>/<id>.json`: one file per entry, where `library.json` is built from.
@@ -24,8 +33,8 @@ for Apple's `container`. Flotilla shows them in **Suggestions**, by category.
 - **What it accepts:** only a file whose signature verifies against the public key built into
   the app, in a format the app reads, and newer than the copy it has.
 - **What it checks first:** every entry, before it is shown. The image must be pinned to a
-  version, there must be no folders from the Mac, no password written in the file, and ports
-  from 1024 up. Anything that fails is dropped.
+  version, there must be no folders from the Mac, no password written in the file, ports
+  from 1024 up, and a volume owner must be a valid UID:GID. Anything that fails is dropped.
 - **Icons:** `library.json` lists each icon's SHA-256 and size, so the signature covers the icons
   too. Flotilla fetches them from the same `published` branch, keeps one only if it matches and is a
   PNG of at most 64 KiB and 512×512, and shows the category's symbol otherwise.
@@ -46,7 +55,8 @@ says when, and on how many Macs.
    `VERSION` build (icons included); `tools/check_entries.py` passes, icons and all; and Flotilla's own check
    (`swift test --filter aLibraryFile`) passes on Linux. An untested entry fails it, on purpose.
 3. **The live test**, on real Apple silicon Macs, by hand for now: start it, answer on its port,
-   write its data folder, clean up. Put the result in the entry's `tested` (date, number of Macs).
+   write its data folder, clean up. For an entry with `volumeOwner`, do what Flotilla does:
+   create the volume, run the pinned BusyBox chown on it, then run the entry. Put the result in the entry's `tested` (date, number of Macs).
 4. **Merge** once CI is green and the live test passed.
 5. **Publish**, on Kamal's Mac only (the signing key is in his login Keychain; no workflow signs).
    Flotilla downloads from the **`published`** branch, which holds only the signed `library.json`,

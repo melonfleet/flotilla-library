@@ -125,7 +125,23 @@ def command_problem(command):
     return None
 
 
+UID_GID_MAX = 2147483647
+
+
+def volume_owner_problem(owner):
+    """`VolumeOwner.isValid`: both `uid` and `gid`, JSON integers from 0 to 2147483647."""
+    if not isinstance(owner, dict) or set(owner) != {"uid", "gid"}:
+        return "A volume owner must give both uid and gid, and nothing else."
+    if not all(isinstance(v, int) and not isinstance(v, bool) and 0 <= v <= UID_GID_MAX for v in owner.values()):
+        return f"A volume owner must use UID and GID from 0 to {UID_GID_MAX}."
+    return None
+
+
 def volume_problem(volume):
+    if volume.get("volumeOwner") is not None:
+        problem = volume_owner_problem(volume["volumeOwner"])
+        if problem:
+            return problem
     if not is_identifier(volume["suffix"]):
         return "A volume's name isn't a plain name."
     path = volume["path"]
@@ -279,7 +295,7 @@ SHAPES = {
     "tested": ({"date": str, "macs": int}, {}),
     "container": ({"image": str, "name": str, "ports": list, "env": list, "secretEnv": list,
                    "volumes": list, "command": list}, {"note": str}),
-    "volume": ({"suffix": str, "path": str}, {}),
+    "volume": ({"suffix": str, "path": str}, {"volumeOwner": dict}),
     "stack": ({"options": list, "services": list, "notes": list}, {"opens": str}),
     "option": ({"id": str, "label": str, "defaultValue": str, "help": str, "email": bool}, {}),
     "service": ({"role": str, "title": str, "image": str, "env": list, "secretEnv": list, "volumes": list,
@@ -330,7 +346,7 @@ def shape_problems(obj, kind="library", where="library"):
 
 # --- Checks added for the repo ------------------------------------------------------------------
 
-SCHEMA = 1
+SCHEMA = 2  # what build_library.py writes; 2 since `volumeOwner`
 BAD_CATEGORIES = {"Cc", "Cf", "Co", "Cn", "Cs", "Zl", "Zp"}
 
 
