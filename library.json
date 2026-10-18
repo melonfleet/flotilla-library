@@ -33,6 +33,11 @@
         ],
         "command": [],
         "note": "Fresh volume root directories must be writeable by non-root user uid 1000."
+      },
+      "icon": {
+        "file": "icons/actual-budget.png",
+        "sha256": "a997c281e95eac11106846a6e4c7702e2489492ac6bea0464c55588e319317ff",
+        "bytes": 5475
       }
     },
     {
@@ -75,6 +80,11 @@
         ],
         "command": [],
         "note": "Runs as non-root user 1000; persistent volumes must allow non-root file creation. Its files volume starts empty."
+      },
+      "icon": {
+        "file": "icons/audiobookshelf.png",
+        "sha256": "123f93cac15de5f6fc8e608d05684928d777cc54c5ea8338e6114258eab0b522",
+        "bytes": 9754
       }
     },
     {
@@ -109,6 +119,11 @@
         ],
         "command": [],
         "note": "Runs as non-root user 1000. Persistent volume must permit non-root file creation."
+      },
+      "icon": {
+        "file": "icons/chromadb.png",
+        "sha256": "8e53cd0ba96c08013045175bc24e80231100d9776d9fcceb5b41e5d445efed26",
+        "bytes": 3470
       }
     },
     {
@@ -179,6 +194,11 @@
         ],
         "command": [],
         "note": "Requires HTTP basic auth or TLS configuration if exposed beyond local network."
+      },
+      "icon": {
+        "file": "icons/docker-registry.png",
+        "sha256": "b6a5cb1611c62520d767954cd2df3f52e0110cf26acaca79e68aa0f2b2d46211",
+        "bytes": 8637
       }
     },
     {
@@ -205,6 +225,11 @@
         "volumes": [],
         "command": [],
         "note": "Stateless container; diagrams are saved locally in the client browser or exported to disk."
+      },
+      "icon": {
+        "file": "icons/drawio.png",
+        "sha256": "92d96ee0875dbee3f87bad5598feb0e8215e2361dc1b46999a3c0b4cc0989d09",
+        "bytes": 1838
       }
     },
     {
@@ -294,6 +319,11 @@
           "APP_KEY must be a 32-character string. Database created automatically on start."
         ],
         "opens": "app"
+      },
+      "icon": {
+        "file": "icons/firefly-iii-mariadb.png",
+        "sha256": "b2a97659d24974f6196ac52a804ffbb645e08348c1c01beb21328c069e2fbedf",
+        "bytes": 6714
       }
     },
     {
@@ -375,6 +405,11 @@
           "PostgreSQL 18 database path configured to /var/lib/postgresql."
         ],
         "opens": "app"
+      },
+      "icon": {
+        "file": "icons/flowise-postgres.png",
+        "sha256": "e8ccec9d77b317d4ca27e23cf1f9f9bdecfe46e2b410150ba791105532ba019a",
+        "bytes": 10260
       }
     },
     {
@@ -409,6 +444,11 @@
         ],
         "command": [],
         "note": "Web install setup runs upon initial visit to http://localhost:8080."
+      },
+      "icon": {
+        "file": "icons/freshrss.png",
+        "sha256": "3fe696fd319468f771ac1b59528b8d422feedef1200f6443871e2ad3d52a602d",
+        "bytes": 5941
       }
     },
     {
@@ -440,6 +480,11 @@
         ],
         "command": [],
         "note": "User is 10000; check named volume permissions for database persistence."
+      },
+      "icon": {
+        "file": "icons/gatus.png",
+        "sha256": "bc4ea616e26999c20625c61bf846cea189326f739dd3bf31ad30e9a8da95b856",
+        "bytes": 5819
       }
     },
     {
@@ -520,6 +565,11 @@
           "PostgreSQL 18 database path updated to /var/lib/postgresql. Complete admin user creation via UI."
         ],
         "opens": "app"
+      },
+      "icon": {
+        "file": "icons/gitea-postgres.png",
+        "sha256": "84b6ae9f1a62e00d93e7fb64a7cd4d4db45ba4f9a958204c7090ebb018b3f842",
+        "bytes": 5423
       }
     },
     {
@@ -553,6 +603,11 @@
         ],
         "command": [],
         "note": "Container execution inside isolated VM prevents direct USB Zigbee/Z-Wave dongle pass-through."
+      },
+      "icon": {
+        "file": "icons/home-assistant.png",
+        "sha256": "ec655618f7559c3b7ae464cfdcbd5f720ee29f35ab2d1122c319ecb51c681628",
+        "bytes": 3544
       }
     },
     {
@@ -589,6 +644,11 @@
         ],
         "command": [],
         "note": "CPU software video transcoding only in Flotilla VM (hardware GPU acceleration excluded). JELLYFIN_PublishedServerUrl was left unset: its default pointed at localhost."
+      },
+      "icon": {
+        "file": "icons/jellyfin.png",
+        "sha256": "2dd5e7089fdb094b2ede5a672649391dd21392fe40b20da6899d896447425f56",
+        "bytes": 10654
       }
     },
     {
@@ -707,6 +767,11 @@
           "--address=0.0.0.0:51515"
         ],
         "note": "Web UI binds to 51515. Mount target backup source volumes into container."
+      },
+      "icon": {
+        "file": "icons/kopia.png",
+        "sha256": "3d0cc977407d5eb1bbeecb3472b3f97aa6afd595bcf915cd04edec6528ca085e",
+        "bytes": 4912
       }
     },
     {
@@ -741,6 +806,11 @@
         ],
         "command": [],
         "note": "Stateless by default unless MP_DATABASE file path inside /data is specified."
+      },
+      "icon": {
+        "file": "icons/mailpit.png",
+        "sha256": "4d1ecc61cc6120c54c2a101fa89f5a5383638e6ec6538fdd7474908fb19406fe",
+        "bytes": 6302
       }
     },
     {
@@ -812,6 +882,11 @@
         ],
         "command": [],
         "note": "Runs as non-root user 1000. Verify write permissions on attached persistent volume. BASE_URL was left unset: its default pointed at localhost."
+      },
+      "icon": {
+        "file": "icons/mealie.png",
+        "sha256": "bb29d8d214cf51e444cc91120dd919dfbf6cd737ab33bbb6488018c37fb34fa8",
+        "bytes": 4808
       }
     },
     {
@@ -893,6 +968,11 @@
           "First launch takes 1-2 minutes for Java application startup before web UI responds."
         ],
         "opens": "app"
+      },
+      "icon": {
+        "file": "icons/metabase-postgres.png",
+        "sha256": "33c087d7d9af2d277f15f5929ef100d233fbb5c7e519bbea7666124212cfc749",
+        "bytes": 2664
       }
     },
     {
@@ -965,6 +1045,11 @@
           "-js"
         ],
         "note": "Command string flag `-js` enables JetStream persistence engine."
+      },
+      "icon": {
+        "file": "icons/nats.png",
+        "sha256": "c24d5cd3c3b08b94d573dc7303838c3acffb62d607530bcfd75d34c1f8cbad2e",
+        "bytes": 3249
       }
     },
     {
@@ -1004,6 +1089,11 @@
         ],
         "command": [],
         "note": "Container user is 1000:1000. Ensure /data path grants write access. Its files volume starts empty."
+      },
+      "icon": {
+        "file": "icons/navidrome.png",
+        "sha256": "6be9bcb7650547f2f6c087c3ec6bae4ce3c72cefa81c3ac70cb3d0067924d114",
+        "bytes": 8812
       }
     },
     {
@@ -1037,6 +1127,11 @@
         ],
         "command": [],
         "note": "Runs CPU inference inside the container VM. Allocate adequate RAM in Flotilla settings for large models."
+      },
+      "icon": {
+        "file": "icons/ollama.png",
+        "sha256": "21e501e671c5ce3b5c0edef54b7ff59109fe8b57b3a4bef8c9a50bf73e279abb",
+        "bytes": 3638
       }
     },
     {
@@ -1126,6 +1221,11 @@
           "Initial administrator credentials initialized via configured admin password."
         ],
         "opens": "app"
+      },
+      "icon": {
+        "file": "icons/photoprism-mariadb.png",
+        "sha256": "39e3a43a0963fefce7717fc444ff83b3000a657b68ee2f8bc9373f095924faf5",
+        "bytes": 11114
       }
     },
     {
@@ -1276,6 +1376,11 @@
         ],
         "command": [],
         "note": "Requires adequate RAM when processing extra-large multi-page PDF documents."
+      },
+      "icon": {
+        "file": "icons/stirling-pdf.png",
+        "sha256": "c54c0105c648a1ab89df0a35efe5cbc4b06b10cca95822790fe4a3064b7f2a69",
+        "bytes": 3524
       }
     },
     {
@@ -1307,6 +1412,11 @@
         ],
         "command": [],
         "note": "Fresh named volumes require write permissions for user uid 1000."
+      },
+      "icon": {
+        "file": "icons/uptime-kuma.png",
+        "sha256": "d85e4a82538c9802ea1967334430e845cb88cd55d41078c3714301f21d39edb4",
+        "bytes": 6926
       }
     },
     {
@@ -1343,6 +1453,11 @@
           "1"
         ],
         "note": "Drop-in compatible replacement for Redis CLI and Redis protocol drivers."
+      },
+      "icon": {
+        "file": "icons/valkey.png",
+        "sha256": "7f12a26d00aa64552f0322381a5edbd68adb938909134e5ca7e2d2d3e1fde414",
+        "bytes": 4665
       }
     },
     {
@@ -1378,6 +1493,11 @@
         ],
         "command": [],
         "note": "Requires HTTPS when accessed outside localhost due to browser WebCrypto security standards."
+      },
+      "icon": {
+        "file": "icons/vaultwarden.png",
+        "sha256": "87a99e641ffccc1fc3e21fd011f7575e71de9cc22454a1c1fc7c93b6e7c0eaee",
+        "bytes": 3926
       }
     },
     {
@@ -1413,6 +1533,11 @@
         ],
         "command": [],
         "note": "Apache worker drops privileges to www-data (uid 33). Data directory must allow write access. WORDPRESS_DB_HOST was left unset: its default pointed at localhost."
+      },
+      "icon": {
+        "file": "icons/wordpress.png",
+        "sha256": "d41f5de79542fcac2553ea17435ede195276292b2cce193ea97f2f284573e3e3",
+        "bytes": 8249
       }
     }
   ]

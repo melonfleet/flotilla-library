@@ -3,6 +3,7 @@
     "AI & Machine Learning",
     "Software Development"
   ],
+  "icon": "icons/flowise-postgres.png",
   "id": "flowise-postgres",
   "kind": "stack",
   "stack": {

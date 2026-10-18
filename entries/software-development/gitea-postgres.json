@@ -3,6 +3,7 @@
     "Software Development",
     "Communication & Collaboration"
   ],
+  "icon": "icons/gitea-postgres.png",
   "id": "gitea-postgres",
   "kind": "stack",
   "stack": {

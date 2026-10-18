@@ -22,6 +22,7 @@
       }
     ]
   },
+  "icon": "icons/home-assistant.png",
   "id": "home-assistant",
   "kind": "container",
   "summary": "Open-source home automation system prioritizing local control and user privacy.",

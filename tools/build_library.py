@@ -6,7 +6,10 @@
     python3 tools/build_library.py --check         fail if the committed library.json differs
 
 Entries are ordered by id, keys in library.json's usual order, so unchanged entries give a
-byte-identical file. It never reads, writes or makes library.json.sig.
+byte-identical file. An entry's `"icon": "icons/<id>.png"` becomes `{file, sha256, bytes}`, read from
+that file; the build fails if an icon is missing, isn't a PNG of at most 512×512, is over 64 KiB or
+has a bad name. So --check also fails when an icon changed and library.json wasn't rebuilt.
+It never reads, writes or makes library.json.sig.
 """
 import argparse
 import os
@@ -18,9 +21,18 @@ SCHEMA = 1
 
 
 def build():
-    found = []
+    found, problems = [], []
     for path in entries.entry_files():
-        found.append(entries.read_json(path))
+        entry = entries.read_json(path)
+        if "icon" in entry:
+            icon_problems = entries.icon_problems(entry["icon"])
+            if icon_problems:
+                problems += [f"{os.path.relpath(path, entries.ROOT)}: {p}" for p in icon_problems]
+            else:
+                entry["icon"] = entries.icon_object(entry["icon"])
+        found.append(entry)
+    if problems:
+        sys.exit("\n".join(problems) + "\nlibrary.json can't be built with these icons.")
     found.sort(key=lambda e: e["id"])
     library = {"schema": SCHEMA, "version": entries.read_version(), "entries": found}
     return entries.dumps(entries.canonical(library, "library"))

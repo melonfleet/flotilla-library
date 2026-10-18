@@ -15,6 +15,7 @@
     "secretEnv": [],
     "volumes": []
   },
+  "icon": "icons/drawio.png",
   "id": "drawio",
   "kind": "container",
   "summary": "Self-hosted diagramming software for flowcharts, architecture, and network diagrams.",

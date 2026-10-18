@@ -30,6 +30,7 @@
       }
     ]
   },
+  "icon": "icons/audiobookshelf.png",
   "id": "audiobookshelf",
   "kind": "container",
   "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",

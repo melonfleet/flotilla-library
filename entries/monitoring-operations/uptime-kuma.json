@@ -20,6 +20,7 @@
       }
     ]
   },
+  "icon": "icons/uptime-kuma.png",
   "id": "uptime-kuma",
   "kind": "container",
   "summary": "Self-hosted monitoring tool with status pages and multi-channel notification support.",

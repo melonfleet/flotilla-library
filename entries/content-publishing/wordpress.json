@@ -23,6 +23,7 @@
       }
     ]
   },
+  "icon": "icons/wordpress.png",
   "id": "wordpress",
   "kind": "container",
   "licenceNote": "Licensed under GPL-2.0-or-later, a copyleft licence rather than a permissive one.",

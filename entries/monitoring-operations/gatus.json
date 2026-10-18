@@ -20,6 +20,7 @@
       }
     ]
   },
+  "icon": "icons/gatus.png",
   "id": "gatus",
   "kind": "container",
   "summary": "Automated service health dashboard with status pages and threshold monitoring.",
