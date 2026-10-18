@@ -3,6 +3,7 @@
     "Data & Analytics",
     "Business & Office"
   ],
+  "icon": "icons/metabase-postgres.png",
   "id": "metabase-postgres",
   "kind": "stack",
   "stack": {

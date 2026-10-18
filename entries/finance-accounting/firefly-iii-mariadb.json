@@ -3,6 +3,7 @@
     "Finance & Accounting",
     "Home & Personal"
   ],
+  "icon": "icons/firefly-iii-mariadb.png",
   "id": "firefly-iii-mariadb",
   "kind": "stack",
   "stack": {

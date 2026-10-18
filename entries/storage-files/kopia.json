@@ -27,6 +27,7 @@
       }
     ]
   },
+  "icon": "icons/kopia.png",
   "id": "kopia",
   "kind": "container",
   "summary": "Fast, secure open-source backup engine featuring encrypted deduplicated snapshots.",

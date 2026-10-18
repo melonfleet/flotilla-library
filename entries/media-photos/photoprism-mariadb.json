@@ -3,6 +3,7 @@
     "Media & Photos",
     "Storage & Files"
   ],
+  "icon": "icons/photoprism-mariadb.png",
   "id": "photoprism-mariadb",
   "kind": "stack",
   "licenceNote": "AGPL-3.0 with commercial subscription options",

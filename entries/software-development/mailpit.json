@@ -23,6 +23,7 @@
       }
     ]
   },
+  "icon": "icons/mailpit.png",
   "id": "mailpit",
   "kind": "container",
   "summary": "Fast email and SMTP testing tool with web UI and API for developers.",

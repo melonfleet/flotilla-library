@@ -23,6 +23,7 @@
       }
     ]
   },
+  "icon": "icons/chromadb.png",
   "id": "chromadb",
   "kind": "container",
   "summary": "Open-source embeddings store for AI applications and Retrieval-Augmented Generation.",

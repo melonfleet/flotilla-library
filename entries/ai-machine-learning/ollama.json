@@ -22,6 +22,7 @@
       }
     ]
   },
+  "icon": "icons/ollama.png",
   "id": "ollama",
   "kind": "container",
   "summary": "Get up and running with Large Language Models locally on Apple Silicon CPU.",

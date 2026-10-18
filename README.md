@@ -7,9 +7,12 @@ for Apple's `container`. Flotilla shows them in **Suggestions**, by category.
 
 - `library.json`: the library, in the format defined by `SuggestionLibrary` in Flotilla's
   `Sources/FlotillaCore/SuggestionLibrary.swift`.
-- `library.json.sig`: its Ed25519 signature, base64. Both are on the **`published`** branch,
-  which is what Flotilla downloads; `main` holds the entries and tools they're built from.
+- `library.json.sig`: its Ed25519 signature, base64. Both are on the **`published`** branch, with
+  `icons/`, which is what Flotilla downloads; `main` holds the entries and tools they're built from.
 - `entries/<category>/<id>.json`: one file per entry, where `library.json` is built from.
+- `icons/<id>.png`: an entry's logo, 128×128, named by the entry's `"icon": "icons/<id>.png"`.
+  `icons/SOURCES.md` says where each one came from and under what licence or trademark terms;
+  entries without one show their category's symbol.
 - `VERSION`: the library's version, four numbers (`2026.10.13.2`).
 - `tools/`: `build_library.py`, `check_entries.py` and `check_tags.py`, used by CI and the
   publish step below. `.github/workflows/` holds the two workflows.
@@ -23,6 +26,9 @@ for Apple's `container`. Flotilla shows them in **Suggestions**, by category.
 - **What it checks first:** every entry, before it is shown. The image must be pinned to a
   version, there must be no folders from the Mac, no password written in the file, and ports
   from 1024 up. Anything that fails is dropped.
+- **Icons:** `library.json` lists each icon's SHA-256 and size, so the signature covers the icons
+  too. Flotilla fetches them from the same `published` branch, keeps one only if it matches and is a
+  PNG of at most 64 KiB and 512×512, and shows the category's symbol otherwise.
 - **What it never does:** run anything. An entry fills in Flotilla's Run form or a stack's form,
   which check it again like anything typed.
 
@@ -33,19 +39,20 @@ says when, and on how many Macs.
 
 1. **A pull request** adds an entry or changes one, by editing files in `entries/`. Then:
    `python3 tools/build_library.py` rebuilds `library.json` (commit it with the entries; it must
-   match). A weekly workflow (`tags.yml`) opens a pull request with newer stable image tags; it
+   match). A logo goes in `icons/<id>.png` with a row in `icons/SOURCES.md` (how, in that file);
+   the build reads its hash and size, and fails on an icon Flotilla wouldn't show. A weekly workflow (`tags.yml`) opens a pull request with newer stable image tags; it
    marks each bumped entry `tested: null`.
 2. **CI checks it** (`check.yml`, on every pull request): `library.json` is what `entries/` and
-   `VERSION` build; `tools/check_entries.py` passes; and Flotilla's own check
+   `VERSION` build (icons included); `tools/check_entries.py` passes, icons and all; and Flotilla's own check
    (`swift test --filter aLibraryFile`) passes on Linux. An untested entry fails it, on purpose.
 3. **The live test**, on real Apple silicon Macs, by hand for now: start it, answer on its port,
    write its data folder, clean up. Put the result in the entry's `tested` (date, number of Macs).
 4. **Merge** once CI is green and the live test passed.
 5. **Publish**, on Kamal's Mac only (the signing key is in his login Keychain; no workflow signs).
-   Flotilla downloads from the **`published`** branch, which holds only the signed `library.json`
-   and `library.json.sig`. So `main` can change by pull request without any Mac ever seeing a
-   file that doesn't match its signature. From this repo's root, with the Flotilla checkout beside
-   it:
+   Flotilla downloads from the **`published`** branch, which holds only the signed `library.json`,
+   `library.json.sig` and `icons/`. So `main` can change by pull request without any Mac ever
+   seeing a file that doesn't match its signature. From this repo's root, with the Flotilla
+   checkout beside it:
 
    ```sh
    git checkout main && git pull
@@ -53,19 +60,24 @@ says when, and on how many Macs.
    python3 tools/build_library.py
    python3 tools/check_entries.py --library library.json
    (cd ../Flotilla && FLOTILLA_LIBRARY_CHECK="$OLDPWD/library.json" swift test --filter aLibraryFile)
-   cp library.json /tmp/library.json
-   git checkout published && cp /tmp/library.json library.json
+   stage=$(mktemp -d) && cp -R library.json icons "$stage/"
+   python3 tools/check_entries.py --library "$stage/library.json"
+   git checkout published && rm -rf icons && cp -R "$stage/library.json" "$stage/icons" .
    swift ../Flotilla/Scripts/sign-library.swift library.json
-   git add library.json library.json.sig
+   git add -A library.json library.json.sig icons
    git commit -m "Library $(python3 -c 'import json;print(json.load(open("library.json"))["version"])')" && git push
    git checkout main
    ```
 
-   `sign-library.swift` asks to read the key from the Keychain: choose **Allow**, not Always
-   Allow. Sign last: the signature covers `library.json`'s exact bytes, so any later change to it
-   needs signing again.
+   The staged copy is checked on its own, so every icon `library.json` lists is beside it with
+   the hash and size it lists; `rm -rf icons` drops any icon no entry uses any more. Nothing new
+   is signed: the icons are covered by the hashes in `library.json`. `sign-library.swift` asks to
+   read the key from the Keychain: choose **Allow**, not Always Allow. Sign last: the signature
+   covers `library.json`'s exact bytes, so any later change to it needs signing again.
 
 ## Licence
 
 The library's own text is available under the Apache License 2.0, like Flotilla. Each image keeps
-its own licence. Entries say so where a licence isn't a permissive open-source one.
+its own licence. Entries say so where a licence isn't a permissive open-source one. The logos in
+`icons/` aren't covered by the Apache licence: they are their projects' trademarks, used to name
+the software, each on the terms in `icons/SOURCES.md`.

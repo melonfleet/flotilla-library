@@ -1,7 +1,7 @@
 name: Check
 
-# Builds library.json from entries/, checks it the way Flotilla will, and fails a pull request that
-# couldn't be published. Read-only: no secrets, no signing, never pull_request_target.
+# Builds library.json from entries/ and icons/, checks it the way Flotilla will, and fails a pull
+# request that couldn't be published. Read-only: no secrets, no signing, never pull_request_target.
 on:
   pull_request:
   push:
@@ -20,10 +20,14 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: library.json must be what entries/ and VERSION build
+      # Also fails on an icon that is missing, not a single-image PNG, over 64 KiB or 512×512, or
+      # badly named, and on one that changed without library.json being rebuilt.
+      - name: library.json must be what entries/, icons/ and VERSION build
         run: python3 tools/build_library.py --check
 
-      - name: Python checks on entries/
+      # Icons too: icons/<id>.png per entry, a row in icons/SOURCES.md, nothing else in icons/,
+      # and every icon library.json lists beside it with that SHA-256 and size.
+      - name: Python checks on entries/ and icons/
         run: python3 tools/check_entries.py --library library.json
 
       - name: Check out Flotilla (public)

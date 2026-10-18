@@ -4,12 +4,15 @@
 Every entry file is read, shape-checked (what Swift's Decodable demands), then run through a Python
 port of FlotillaCore's `LibraryEntry.problem()` rules. It also checks the repo's own layout: one
 entry per `entries/<first-category-slug>/<id>.json`, written with sorted keys, and a VERSION Flotilla
-accepts. Exits 1 and names every problem. It is a pre-check for a pull request, not a replacement
+accepts. Icons too: an entry's `icon` is `icons/<id>.png`, a PNG Flotilla accepts (64 KiB, 512×512,
+one image), listed in icons/SOURCES.md; icons/ holds nothing else. With --library, each icon in the built
+file must match the PNG beside it, byte count and SHA-256. Exits 1 and names every problem. It is a pre-check for a pull request, not a replacement
 for `swift test --filter aLibraryFile`, which stays the authority.
 
 The rules are ported from experiments' make_library.py; when Flotilla's rules change, change both.
 """
 import argparse
+import hashlib
 import os
 import re
 import sys
@@ -234,8 +237,22 @@ def entry_problem(e):
     return "Its kind isn't container or stack."
 
 
+def icon_problem(icon):
+    """A port of `LibraryIcon.problem()`. Swift decodes a malformed icon as empty fields, never failing."""
+    icon = icon if isinstance(icon, dict) else {}
+    file, sha256, size = icon.get("file"), icon.get("sha256"), icon.get("bytes")
+    if layout.icon_name_problem(file if isinstance(file, str) else ""):
+        return "Its file isn't a PNG name inside icons/."
+    if not isinstance(sha256, str) or re.fullmatch(r"[0-9a-f]{64}", sha256) is None:
+        return "Its SHA-256 isn't 64 lowercase hexadecimal digits."
+    if not isinstance(size, int) or isinstance(size, bool) or not 1 <= size <= layout.ICON_MAX_BYTES:
+        return "Its size isn't between 1 and 65536 bytes."
+    return None
+
+
 def checked(library):
-    """A port of `SuggestionLibrary.checked()`: (kept entries, [(id, problem)])."""
+    """A port of `SuggestionLibrary.checked()`: (kept entries, [(id, problem)]). A bad icon drops only
+    the icon, as in Swift, but is still named, so the check fails."""
     kept, dropped, seen = [], [], set()
     for e in library["entries"][:MAX_ENTRIES]:
         problem = entry_problem(e)
@@ -245,6 +262,8 @@ def checked(library):
             dropped.append((e["id"], "Its id is used twice."))
         else:
             seen.add(e["id"])
+            if e.get("icon") is not None and icon_problem(e["icon"]):
+                dropped.append((e["id"], "Icon ignored: " + icon_problem(e["icon"])))
             kept.append(e)
     if len(library["entries"]) > MAX_ENTRIES:
         dropped.append(("…", f"More than {MAX_ENTRIES} entries; the rest were ignored."))
@@ -256,7 +275,7 @@ def checked(library):
 SHAPES = {
     "library": ({"schema": int, "version": str, "entries": list}, {}),
     "entry": ({"id": str, "title": str, "summary": str, "categories": list, "kind": str},
-              {"licenceNote": str, "tested": dict, "container": dict, "stack": dict}),
+              {"licenceNote": str, "tested": dict, "container": dict, "stack": dict, "icon": (str, dict)}),
     "tested": ({"date": str, "macs": int}, {}),
     "container": ({"image": str, "name": str, "ports": list, "env": list, "secretEnv": list,
                    "volumes": list, "command": list}, {"note": str}),
@@ -386,26 +405,85 @@ def check_entry_file(path):
             problems.append(f"{rel}: its first category “{e['categories'][0]}” puts it in entries/{want}/")
     if raw != layout.dump_entry(e):
         problems.append(f"{rel}: not written the standard way (two-space indent, sorted keys, final newline)")
-    for message in [entry_problem(e), tested_problem(e.get("tested"))] + text_problems(e):
+    for message in [entry_problem(e), tested_problem(e.get("tested"))] + text_problems(e) + entry_icon_problems(e):
         if message:
             problems.append(f"{rel}: {message}")
     return problems
 
 
+def entry_icon_problems(e):
+    """An entry file's `icon`: the path icons/<id>.png, to a PNG that passes Flotilla's limits and has
+    a line in icons/SOURCES.md. No icon is fine: Flotilla shows the category's symbol."""
+    if e.get("icon") is None:
+        return []
+    want = f"icons/{e['id']}.png"
+    if e["icon"] != want:
+        return [f"its icon must be “{want}” (just the path; the build adds the hash and size)"]
+    problems = layout.icon_problems(want)
+    if not problems and f"`{want}`" not in _sources():
+        problems.append(f"{want} has no line in icons/SOURCES.md saying where it came from")
+    return problems
+
+
+def _sources():
+    try:
+        with open(os.path.join(layout.ICONS, "SOURCES.md"), encoding="utf-8") as f:
+            return f.read()
+    except OSError:
+        return ""
+
+
+def icons_dir_problems(referenced):
+    """icons/ holds the referenced PNGs and SOURCES.md, nothing else: whatever is there gets published."""
+    out = []
+    for path in _all_files(layout.ICONS):
+        rel = os.path.relpath(path, layout.ROOT).replace(os.sep, "/")
+        if rel == "icons/SOURCES.md":
+            continue
+        if rel not in referenced:
+            out.append(f"{rel}: not the icon of any entry (icons/ holds only entries' icons and SOURCES.md)")
+    return out
+
+
+def library_icon_problems(lib, library_path):
+    """Each icon in a built library must be the PNG beside it, as Flotilla will fetch it from published."""
+    out, base = [], os.path.dirname(os.path.abspath(library_path))
+    for e in lib["entries"]:
+        icon = e.get("icon")
+        if icon is None or icon_problem(icon):
+            continue  # named by checked()
+        path = os.path.join(base, icon["file"])
+        try:
+            with open(path, "rb") as f:
+                data = f.read()
+        except OSError:
+            out.append(f"{library_path}: {e['id']}: {icon['file']} isn't beside it")
+            continue
+        if len(data) != icon["bytes"] or hashlib.sha256(data).hexdigest() != icon["sha256"]:
+            out.append(f"{library_path}: {e['id']}: {icon['file']} isn't the file whose size and SHA-256 it lists")
+        elif layout.png_problem(data):
+            out.append(f"{library_path}: {e['id']}: {icon['file']} {layout.png_problem(data)}")
+    return out
+
+
 def check_all(library_path=None):
-    problems, seen = [], {}
+    problems, seen, icons = [], {}, set()
     files = layout.entry_files()
     stray = [p for p in _all_files(layout.ENTRIES) if p not in files]
     problems += [f"{os.path.relpath(p, layout.ROOT)}: not an entries/<category>/<id>.json file" for p in stray]
     for path in files:
         problems += check_entry_file(path)
         try:
-            eid = layout.read_json(path)["id"]
+            entry = layout.read_json(path)
+            eid = entry["id"]
         except (OSError, ValueError, KeyError, TypeError):
             continue
+        if isinstance(entry.get("icon"), str):
+            icons.add(entry["icon"])
         if eid in seen:
             problems.append(f"{os.path.relpath(path, layout.ROOT)}: id {eid} is also in {os.path.relpath(seen[eid], layout.ROOT)}")
         seen[eid] = path
+    problems += icons_dir_problems(icons)
     if len(files) > MAX_ENTRIES:
         problems.append(f"{len(files)} entries; Flotilla reads {MAX_ENTRIES}.")
     try:
@@ -422,6 +500,8 @@ def check_all(library_path=None):
                 problems.append(f"{library_path}: schema isn't {SCHEMA}")
             kept, dropped = checked(lib) if not shape_problems(lib) else ([], [])
             problems += [f"{library_path}: {i}: {p}" for i, p in dropped]
+            if not shape_problems(lib):
+                problems += library_icon_problems(lib, library_path)
         except (OSError, ValueError) as err:
             problems.append(f"{library_path}: can't be read: {err}")
     return len(files), problems
