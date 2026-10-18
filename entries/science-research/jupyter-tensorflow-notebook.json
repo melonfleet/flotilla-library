@@ -1,0 +1,38 @@
+{
+  "categories": [
+    "Science & Research",
+    "AI & Machine Learning",
+    "Education"
+  ],
+  "container": {
+    "command": [],
+    "env": [],
+    "image": "quay.io/jupyter/tensorflow-notebook:2026-10-12",
+    "name": "jupyter-tensorflow-notebook",
+    "note": "Sign in with the generated JUPYTER_TOKEN. TensorFlow runs on the CPU; give it at least 2 GB of memory. Runs as jovyan (uid 1000); Flotilla gives a new volume to 1000:100.",
+    "ports": [
+      "8888:8888"
+    ],
+    "secretEnv": [
+      "JUPYTER_TOKEN"
+    ],
+    "volumes": [
+      {
+        "path": "/home/jovyan/work",
+        "suffix": "data",
+        "volumeOwner": {
+          "gid": 100,
+          "uid": 1000
+        }
+      }
+    ]
+  },
+  "id": "jupyter-tensorflow-notebook",
+  "kind": "container",
+  "summary": "Deep learning research environment equipped with TensorFlow and Keras libraries.",
+  "tested": {
+    "date": "2026-10-18",
+    "macs": 1
+  },
+  "title": "Jupyter TensorFlow Notebook"
+}

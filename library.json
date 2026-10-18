@@ -573,6 +573,46 @@
       }
     },
     {
+      "id": "grafana",
+      "title": "Grafana Dashboards",
+      "summary": "Analytics and interactive visualization platform for metrics, logs, and traces.",
+      "categories": [
+        "Data & Analytics",
+        "Monitoring & Operations"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under AGPL-3.0-only, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/grafana/grafana:13.2.3",
+        "name": "grafana",
+        "ports": [
+          "3000:3000"
+        ],
+        "env": [
+          "GF_SECURITY_ADMIN_USER=admin"
+        ],
+        "secretEnv": [
+          "GF_SECURITY_ADMIN_PASSWORD"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/var/lib/grafana",
+            "volumeOwner": {
+              "uid": 472,
+              "gid": 0
+            }
+          }
+        ],
+        "command": [],
+        "note": "Sign in as admin with the generated GF_SECURITY_ADMIN_PASSWORD. Runs as uid 472; Flotilla gives a new volume to 472:0."
+      }
+    },
+    {
       "id": "home-assistant",
       "title": "Home Assistant Core",
       "summary": "Open-source home automation system prioritizing local control and user privacy.",
@@ -649,6 +689,82 @@
         "file": "icons/jellyfin.png",
         "sha256": "2dd5e7089fdb094b2ede5a672649391dd21392fe40b20da6899d896447425f56",
         "bytes": 10654
+      }
+    },
+    {
+      "id": "jupyter-datascience-notebook",
+      "title": "Jupyter Data Science Notebook",
+      "summary": "Comprehensive scientific environment pre-configured with Python, Julia, and R kernels.",
+      "categories": [
+        "Science & Research",
+        "Education",
+        "Data & Analytics"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "quay.io/jupyter/datascience-notebook:2026-10-12",
+        "name": "jupyter-datascience-notebook",
+        "ports": [
+          "8888:8888"
+        ],
+        "env": [],
+        "secretEnv": [
+          "JUPYTER_TOKEN"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/home/jovyan/work",
+            "volumeOwner": {
+              "uid": 1000,
+              "gid": 100
+            }
+          }
+        ],
+        "command": [],
+        "note": "Sign in with the generated JUPYTER_TOKEN. Includes R and Julia; give it at least 2 GB of memory. Runs as jovyan (uid 1000); Flotilla gives a new volume to 1000:100."
+      }
+    },
+    {
+      "id": "jupyter-tensorflow-notebook",
+      "title": "Jupyter TensorFlow Notebook",
+      "summary": "Deep learning research environment equipped with TensorFlow and Keras libraries.",
+      "categories": [
+        "Science & Research",
+        "AI & Machine Learning",
+        "Education"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "quay.io/jupyter/tensorflow-notebook:2026-10-12",
+        "name": "jupyter-tensorflow-notebook",
+        "ports": [
+          "8888:8888"
+        ],
+        "env": [],
+        "secretEnv": [
+          "JUPYTER_TOKEN"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/home/jovyan/work",
+            "volumeOwner": {
+              "uid": 1000,
+              "gid": 100
+            }
+          }
+        ],
+        "command": [],
+        "note": "Sign in with the generated JUPYTER_TOKEN. TensorFlow runs on the CPU; give it at least 2 GB of memory. Runs as jovyan (uid 1000); Flotilla gives a new volume to 1000:100."
       }
     },
     {
@@ -772,6 +888,44 @@
         "file": "icons/kopia.png",
         "sha256": "3d0cc977407d5eb1bbeecb3472b3f97aa6afd595bcf915cd04edec6528ca085e",
         "bytes": 4912
+      }
+    },
+    {
+      "id": "loki",
+      "title": "Grafana Loki Log Aggregation",
+      "summary": "Horizontal, multi-tenant log aggregation system designed to be highly cost-effective.",
+      "categories": [
+        "Monitoring & Operations",
+        "Storage & Files"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under AGPL-3.0-only, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/grafana/loki:3.7.8",
+        "name": "loki",
+        "ports": [
+          "3100:3100"
+        ],
+        "env": [],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/loki",
+            "volumeOwner": {
+              "uid": 10001,
+              "gid": 10001
+            }
+          }
+        ],
+        "command": [
+          "-config.file=/etc/loki/local-config.yaml"
+        ],
+        "note": "An API, not a web page: add it to Grafana as a Loki data source. Runs as uid 10001; Flotilla gives a new volume to 10001:10001."
       }
     },
     {
@@ -1135,6 +1289,45 @@
       }
     },
     {
+      "id": "pgadmin4",
+      "title": "pgAdmin 4 PostgreSQL Management",
+      "summary": "Web management console and SQL query editor for PostgreSQL databases.",
+      "categories": [
+        "Databases",
+        "Software Development"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/dpage/pgadmin4:9.18.0",
+        "name": "pgadmin4",
+        "ports": [
+          "5050:80"
+        ],
+        "env": [
+          "PGADMIN_DEFAULT_EMAIL=admin@example.com"
+        ],
+        "secretEnv": [
+          "PGADMIN_DEFAULT_PASSWORD"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/var/lib/pgadmin",
+            "volumeOwner": {
+              "uid": 5050,
+              "gid": 0
+            }
+          }
+        ],
+        "command": [],
+        "note": "Sign in as admin@example.com with the generated PGADMIN_DEFAULT_PASSWORD. Runs as uid 5050; Flotilla gives a new volume to 5050:0."
+      }
+    },
+    {
       "id": "photoprism-mariadb",
       "title": "PhotoPrism + MariaDB",
       "summary": "AI-powered photo management app that categorizes and tags family photo collections.",
@@ -1262,6 +1455,45 @@
         ],
         "command": [],
         "note": "PostgreSQL 18 moved default PGDATA directory root to /var/lib/postgresql. Fresh volume must be writeable by uid 999."
+      }
+    },
+    {
+      "id": "prometheus",
+      "title": "Prometheus Time-Series Metrics",
+      "summary": "Time-series database and monitoring server with powerful PromQL query language.",
+      "categories": [
+        "Monitoring & Operations",
+        "Databases"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/prom/prometheus:v3.15.0",
+        "name": "prometheus",
+        "ports": [
+          "9090:9090"
+        ],
+        "env": [],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/prometheus",
+            "volumeOwner": {
+              "uid": 65534,
+              "gid": 65534
+            }
+          }
+        ],
+        "command": [
+          "--config.file=/etc/prometheus/prometheus.yml",
+          "--storage.tsdb.path=/prometheus",
+          "--web.enable-lifecycle"
+        ],
+        "note": "Runs as nobody (uid 65534); Flotilla gives a new volume to 65534:65534. It scrapes only itself until you change its configuration."
       }
     },
     {
@@ -1458,6 +1690,47 @@
         "file": "icons/valkey.png",
         "sha256": "7f12a26d00aa64552f0322381a5edbd68adb938909134e5ca7e2d2d3e1fde414",
         "bytes": 4665
+      }
+    },
+    {
+      "id": "vault",
+      "title": "HashiCorp Vault Secrets Manager",
+      "summary": "Identity-based secrets management system for securing API keys, tokens, and passwords.",
+      "categories": [
+        "Security & Identity",
+        "Software Development"
+      ],
+      "kind": "container",
+      "licenceNote": "Business Source License 1.1 - non-commercial production use restrictions apply",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/hashicorp/vault:2.1.2",
+        "name": "vault",
+        "ports": [
+          "8200:8200"
+        ],
+        "env": [],
+        "secretEnv": [
+          "VAULT_DEV_ROOT_TOKEN_ID"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/vault/file",
+            "volumeOwner": {
+              "uid": 100,
+              "gid": 1000
+            }
+          }
+        ],
+        "command": [
+          "server",
+          "-dev"
+        ],
+        "note": "Dev mode, for trying it out: unsealed, in memory, signed in with the generated VAULT_DEV_ROOT_TOKEN_ID. Production needs its own configuration and unseal keys. Flotilla gives a new volume to 100:1000."
       }
     },
     {

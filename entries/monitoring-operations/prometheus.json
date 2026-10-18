@@ -1,0 +1,39 @@
+{
+  "categories": [
+    "Monitoring & Operations",
+    "Databases"
+  ],
+  "container": {
+    "command": [
+      "--config.file=/etc/prometheus/prometheus.yml",
+      "--storage.tsdb.path=/prometheus",
+      "--web.enable-lifecycle"
+    ],
+    "env": [],
+    "image": "docker.io/prom/prometheus:v3.15.0",
+    "name": "prometheus",
+    "note": "Runs as nobody (uid 65534); Flotilla gives a new volume to 65534:65534. It scrapes only itself until you change its configuration.",
+    "ports": [
+      "9090:9090"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/prometheus",
+        "suffix": "data",
+        "volumeOwner": {
+          "gid": 65534,
+          "uid": 65534
+        }
+      }
+    ]
+  },
+  "id": "prometheus",
+  "kind": "container",
+  "summary": "Time-series database and monitoring server with powerful PromQL query language.",
+  "tested": {
+    "date": "2026-10-18",
+    "macs": 1
+  },
+  "title": "Prometheus Time-Series Metrics"
+}

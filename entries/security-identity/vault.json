@@ -1,0 +1,41 @@
+{
+  "categories": [
+    "Security & Identity",
+    "Software Development"
+  ],
+  "container": {
+    "command": [
+      "server",
+      "-dev"
+    ],
+    "env": [],
+    "image": "docker.io/hashicorp/vault:2.1.2",
+    "name": "vault",
+    "note": "Dev mode, for trying it out: unsealed, in memory, signed in with the generated VAULT_DEV_ROOT_TOKEN_ID. Production needs its own configuration and unseal keys. Flotilla gives a new volume to 100:1000.",
+    "ports": [
+      "8200:8200"
+    ],
+    "secretEnv": [
+      "VAULT_DEV_ROOT_TOKEN_ID"
+    ],
+    "volumes": [
+      {
+        "path": "/vault/file",
+        "suffix": "data",
+        "volumeOwner": {
+          "gid": 1000,
+          "uid": 100
+        }
+      }
+    ]
+  },
+  "id": "vault",
+  "kind": "container",
+  "licenceNote": "Business Source License 1.1 - non-commercial production use restrictions apply",
+  "summary": "Identity-based secrets management system for securing API keys, tokens, and passwords.",
+  "tested": {
+    "date": "2026-10-18",
+    "macs": 1
+  },
+  "title": "HashiCorp Vault Secrets Manager"
+}
