@@ -23,15 +23,22 @@ import json
 import os
 import re
 import sys
+import unicodedata
 
 MAX_BYTES = 2 * 1024 * 1024
 MAX_FINDINGS_PER_IMAGE = 500
-MAX_STRING = 256
+MAX_DIGESTS = 8
+MAX_STRING = 256  # UTF-8 bytes, not characters: the consumer counts bytes
+MAX_ID = 64
+MAX_REFERENCE = 256
 SEVERITIES = ("critical", "high", "medium", "low")
 SHOWN = ("Critical", "High")
 DIGEST = re.compile(r"sha256:[0-9a-f]{64}")
-# An image reference as the library writes it; refuses anything that could be read as an option.
-REFERENCE = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.\-/:@]{0,511}")
+# The exact timestamp form Flotilla accepts; anything else is not published.
+TIMESTAMP = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z")
+# An image reference as the library writes it (at most MAX_REFERENCE bytes, which is what Flotilla
+# accepts); refuses anything that could be read as an option.
+REFERENCE = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.\-/:@]{0,255}")
 
 
 def library_images(library):
@@ -48,9 +55,36 @@ def library_images(library):
     return sorted(found)
 
 
-def clip(text):
-    text = " ".join(str(text).split())
-    return text if len(text) <= MAX_STRING else text[: MAX_STRING - 1] + "…"
+def plain(text):
+    """Single-line plain text, by the consumer's rule (`VulnerabilityReport.isText`): control and
+    format characters and every whitespace other than a space become a space, then runs collapse."""
+    return " ".join("".join(
+        " " if unicodedata.category(c) in ("Cc", "Cf", "Cs", "Zl", "Zp", "Zs") or c.isspace() else c
+        for c in str(text)).split())
+
+
+def clip(text, limit=MAX_STRING):
+    """`plain` text of at most `limit` UTF-8 bytes, cut on a character boundary with an ellipsis."""
+    text = plain(text)
+    if len(text.encode("utf-8")) <= limit:
+        return text
+    return text.encode("utf-8")[: limit - 3].decode("utf-8", "ignore").rstrip() + "…"
+
+
+def required(text, limit=MAX_STRING):
+    """Like `clip`, for a field Flotilla refuses to see empty."""
+    return clip(text, limit) or "unknown"
+
+
+def timestamp(text):
+    """`text` if it is exactly `YYYY-MM-DDTHH:MM:SSZ` and a real moment, else None."""
+    if not isinstance(text, str) or TIMESTAMP.fullmatch(text) is None:
+        return None
+    try:
+        datetime.datetime.strptime(text, "%Y-%m-%dT%H:%M:%SZ")
+    except ValueError:
+        return None
+    return text
 
 
 def finding_id(vulnerability, related):
@@ -62,12 +96,10 @@ def finding_id(vulnerability, related):
     return cves[0] if cves else vid
 
 
-def fixed_version(vulnerability):
+def fix_versions(vulnerability):
+    """The versions that fix it, as a set; empty if none is known."""
     fix = vulnerability.get("fix") or {}
-    versions = sorted(str(v) for v in fix.get("versions") or [])
-    if fix.get("state") == "fixed" and versions:
-        return clip(", ".join(versions[:3]))
-    return None
+    return {str(v) for v in fix.get("versions") or []} if fix.get("state") == "fixed" else set()
 
 
 def image_entry(scan):
@@ -79,30 +111,32 @@ def image_entry(scan):
     digests = sorted(d for d in digests if DIGEST.fullmatch(d))
     if not digests:
         return None
-    counts = dict.fromkeys(SEVERITIES, 0)
-    seen = set()
-    findings = []
+    if len(digests) > MAX_DIGESTS:
+        raise ValueError("%s has more than %d digests" % (target["userInput"], MAX_DIGESTS))
+    # One finding per (id, package, installed version): the same package found at two paths, or
+    # matched twice. Duplicates merge so the result never depends on which came first: the highest
+    # severity wins and the fixes are the sorted union of every duplicate's.
+    merged = {}
     for match in scan.get("matches", []):
         vulnerability = match["vulnerability"]
         severity = str(vulnerability.get("severity", "")).lower()
-        if severity not in counts:
+        if severity not in SEVERITIES:
             continue  # negligible and unknown are in neither the counts nor the list
         artifact = match["artifact"]
-        found = {
-            "id": clip(finding_id(vulnerability, match.get("relatedVulnerabilities") or [])),
-            "severity": severity.capitalize(),
-            "package": clip(artifact.get("name", "")),
-            "installed": clip(artifact.get("version", "")),
-            "fixed": fixed_version(vulnerability),
-        }
-        # The same package found at two paths is one finding.
-        key = (found["id"], found["package"], found["installed"])
-        if key in seen:
-            continue
-        seen.add(key)
+        key = (required(finding_id(vulnerability, match.get("relatedVulnerabilities") or []), MAX_ID),
+               required(artifact.get("name", "")), clip(artifact.get("version", "")))
+        entry = merged.setdefault(key, {"rank": len(SEVERITIES), "fixes": set()})
+        entry["rank"] = min(entry["rank"], SEVERITIES.index(severity))
+        entry["fixes"] |= fix_versions(vulnerability)
+    counts = dict.fromkeys(SEVERITIES, 0)
+    findings = []
+    for (vid, package, installed), entry in merged.items():
+        severity = SEVERITIES[entry["rank"]]
         counts[severity] += 1
-        if found["severity"] in SHOWN:
-            findings.append(found)
+        if severity.capitalize() in SHOWN:
+            fixed = clip(", ".join(sorted(entry["fixes"])[:3])) if entry["fixes"] else ""
+            findings.append({"id": vid, "severity": severity.capitalize(), "package": package,
+                             "installed": installed, "fixed": fixed or None})
     findings.sort(key=lambda f: (SHOWN.index(f["severity"]), f["id"], f["package"], f["installed"]))
     return {"reference": target["userInput"], "digests": digests, "counts": counts, "findings": findings}
 
@@ -143,6 +177,8 @@ def fit(report):
 
 def build(library, scans, generated):
     """`scans` are decoded Grype results. Returns (report, problems)."""
+    if timestamp(generated) is None:
+        raise ValueError("generated must be YYYY-MM-DDTHH:MM:SSZ")
     wanted = set(library_images(library))
     images, problems, seen = [], [], set()
     for scan in scans:
@@ -173,8 +209,8 @@ def build(library, scans, generated):
     first = scans[0]["descriptor"]
     scanner = {
         "name": "grype",
-        "version": first["version"],
-        "dbBuilt": (first.get("db") or {}).get("status", {}).get("built", ""),
+        "version": required(first["version"]),
+        "dbBuilt": timestamp((first.get("db") or {}).get("status", {}).get("built", "")) or "",
     }
     report = {"schema": 1, "generated": generated, "scanner": scanner, "images": images}
     dropped = fit(report)

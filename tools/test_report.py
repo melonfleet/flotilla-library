@@ -9,6 +9,7 @@ import copy
 import json
 import os
 import sys
+import unicodedata
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -46,6 +47,18 @@ def scan(reference="docker.io/library/nats:2.15.0", matches=(), index=INDEX, arm
 def library(*images):
     return {"schema": 1, "version": "1", "entries": [
         {"id": "x%d" % n, "kind": "container", "container": {"image": image}} for n, image in enumerate(images)]}
+
+
+# The same inputs as VulnerabilityReportTests.nastyText in Flotilla; keep the two lists together.
+NASTY = ["x\u001b[31mred", "a\u202eevil", "zero\u200bwidth", "tab\there", "line\nbreak", "nb\u00a0sp",
+         "sep\u2028sep", "a" * 255 + "\u00e9", "\u00e9" * 200, "\u202e\n", "x" * 1000]
+
+
+def consumer_accepts(text, limit=256, required=False):
+    """Mirror of `VulnerabilityReport.isText`: bounded bytes, no control, format or non-space whitespace."""
+    if len(text.encode("utf-8")) > limit or (required and not text):
+        return False
+    return not any(unicodedata.category(c) in ("Cc", "Cf") or (c.isspace() and c != " ") for c in text)
 
 
 class BuildReport(unittest.TestCase):
@@ -89,6 +102,59 @@ class BuildReport(unittest.TestCase):
         matches = [match("CVE-3", "High"), match("CVE-9", "Critical"), match("CVE-1", "High"), match("CVE-2", "Critical")]
         image = self.build([scan(matches=matches)])[0]["images"][0]
         self.assertEqual([f["id"] for f in image["findings"]], ["CVE-2", "CVE-9", "CVE-1", "CVE-3"])
+
+    def test_nasty_text_is_made_plain_and_within_the_consumers_byte_limits(self):
+        for text in NASTY:
+            report, _ = self.build([scan(matches=[match(text, "Critical", name=text, version=text, fixed=(text,))])])
+            image = report["images"][0]
+            self.assertEqual(image["counts"]["critical"], 1, repr(text))
+            finding = image["findings"][0]
+            self.assertTrue(consumer_accepts(finding["id"], 64, True), repr(text))
+            self.assertTrue(consumer_accepts(finding["package"], required=True), repr(text))
+            self.assertTrue(consumer_accepts(finding["installed"]), repr(text))
+            self.assertTrue(finding["fixed"] is None or consumer_accepts(finding["fixed"], required=True), repr(text))
+        self.assertEqual(br.clip("a\u001b[0m\u202eb"), "a [0m b")
+        self.assertEqual(br.clip("a" * 255 + "\u00e9").encode("utf-8")[-3:], "…".encode("utf-8"))
+
+    def test_text_that_is_nothing_but_controls_is_still_a_nonempty_name(self):
+        report, _ = self.build([scan(matches=[match("\u202e", "High", name="\u001b", version="")])])
+        finding = report["images"][0]["findings"][0]
+        self.assertEqual((finding["id"], finding["package"], finding["installed"]), ("unknown", "unknown", ""))
+
+    def test_a_scan_with_untrustworthy_timestamps_is_not_published(self):
+        for bad in ["2026-10-18T07:00:00Z\n\u202eUNTRUSTED", "2026-10-18", "2026-13-18T07:00:00Z", "2026-10-18T07:00:00+00:00"]:
+            with self.assertRaises(ValueError):
+                br.build(library("docker.io/library/nats:2.15.0"), [scan()], bad)
+        odd = scan()
+        odd["descriptor"]["db"]["status"]["built"] = "2026-10-18T06:27:17.123456789+02:00"
+        report, _ = self.build([odd])
+        self.assertEqual(report["scanner"]["dbBuilt"], "")
+
+    def test_a_long_reference_is_refused_before_it_can_invalidate_the_report(self):
+        with self.assertRaises(ValueError):
+            br.library_images(library("docker.io/library/" + "a" * 250 + ":1"))
+
+    def test_duplicates_keep_the_highest_severity_whatever_the_order(self):
+        medium = match("CVE-2026-9", "Medium", fixed=("3.0.3",))
+        critical = match("CVE-2026-9", "Critical", fixed=("3.0.2",))
+        results = []
+        for order in ([medium, critical], [critical, medium]):
+            report, _ = self.build([scan(matches=order)])
+            image = report["images"][0]
+            self.assertEqual(image["counts"], {"critical": 1, "high": 0, "medium": 0, "low": 0})
+            results.append(image)
+        self.assertEqual(results[0], results[1])
+        self.assertEqual(results[0]["findings"][0]["severity"], "Critical")
+        self.assertEqual(results[0]["findings"][0]["fixed"], "3.0.2, 3.0.3")
+
+    def test_duplicates_with_and_without_a_fix_agree_in_either_order(self):
+        unfixed = match("CVE-2026-9", "High", fixed=(), state="not-fixed")
+        fixed = match("CVE-2026-9", "High", fixed=("3.0.2",))
+        a, _ = self.build([scan(matches=[unfixed, fixed])])
+        b, _ = self.build([scan(matches=[fixed, unfixed])])
+        self.assertEqual(a, b)
+        self.assertEqual(a["images"][0]["findings"][0]["fixed"], "3.0.2")
+        self.assertEqual(a["images"][0]["counts"]["high"], 1)
 
     def test_deterministic_whatever_the_input_order(self):
         a = scan("docker.io/library/a:1", [match("CVE-1", "High"), match("CVE-2", "High")], arm="sha256:" + "1" * 64)
