@@ -55,7 +55,10 @@ NASTY = ["x\u001b[31mred", "a\u202eevil", "zero\u200bwidth", "tab\there", "line\
          "sep\u2028sep", "a" * 255 + "\u00e9", "\u00e9" * 200, "\u202e\n", "x" * 1000,
          # U+0890 and U+0891 are format characters in Unicode 14+ and unassigned (Cn) in older Python
          # databases; U+1343 is as given in review; U+0378 is unassigned in every version.
-         "pkg\u0890evil", "pkg\u1343" "9name", "pkg\u08919name", "pkg\u0378name"]
+         "pkg\u0890evil", "pkg\u1343" "9name", "pkg\u08919name", "pkg\u0378name",
+         # Invisible look-alikes (default-ignorables) and U+13439 as Kyle meant it.
+         "pkg\U00013439name", "open\u034fssl", "open\ufe0fssl", "open\u3164ssl", "open\u1160ssl",
+         "open\u115fssl", "open\u00adssl", "open\U000e0041ssl"]
 
 
 # Disallowed by the app whatever this Python's Unicode database says about them.
@@ -69,7 +72,7 @@ def consumer_accepts(text, limit=256, required=False):
     if len(text.encode("utf-8")) > limit or (required and not text):
         return False
     return not any(unicodedata.category(c) in ("Cc", "Cf", "Cn") or ord(c) in KNOWN_UNASSIGNED_OR_FORMAT
-                   or (c.isspace() and c != " ") for c in text)
+                   or br.default_ignorable(c) or (c.isspace() and c != " ") for c in text)
 
 
 class BuildReport(unittest.TestCase):

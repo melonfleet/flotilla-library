@@ -61,13 +61,28 @@ def library_images(library):
     return sorted(found)
 
 
+# Default_Ignorable_Code_Point (DerivedCoreProperties, Unicode 15): the same ranges as
+# `VulnerabilityReport.defaultIgnorableRanges` in the app. Invisible characters such as U+034F would
+# let "open\u034fssl" pass for "openssl" (Kyle, 19 October); Python has no such property to ask.
+DEFAULT_IGNORABLE = [(0x00AD, 0x00AD), (0x034F, 0x034F), (0x061C, 0x061C), (0x115F, 0x1160), (0x17B4, 0x17B5),
+                     (0x180B, 0x180F), (0x200B, 0x200F), (0x202A, 0x202E), (0x2060, 0x206F), (0x3164, 0x3164),
+                     (0xFE00, 0xFE0F), (0xFEFF, 0xFEFF), (0xFFA0, 0xFFA0), (0xFFF0, 0xFFF8), (0x1BCA0, 0x1BCA3),
+                     (0x1D173, 0x1D17A), (0xE0000, 0xE0FFF)]
+
+
+def default_ignorable(c):
+    code = ord(c)
+    return any(low <= code <= high for low, high in DEFAULT_IGNORABLE)
+
+
 def plain(text):
     """Single-line plain text, by the consumer's rule (`VulnerabilityReport.isText`): control, format
     and unassigned characters and every whitespace other than a space become a space, then runs
     collapse. Unassigned (`Cn`) is by *this* Python's Unicode database, which may be older or newer
     than the app's, so it cannot be the only guard; the app replaces what it dislikes too."""
     return " ".join("".join(
-        " " if unicodedata.category(c) in ("Cc", "Cf", "Cn", "Cs", "Zl", "Zp", "Zs") or c.isspace() else c
+        " " if unicodedata.category(c) in ("Cc", "Cf", "Cn", "Cs", "Zl", "Zp", "Zs") or c.isspace()
+        or default_ignorable(c) else c
         for c in str(text)).split())
 
 
