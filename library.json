@@ -1897,5 +1897,67 @@
       }
     }
   ],
-  "artwork": []
+  "artwork": [
+    {
+      "id": "distro.arch",
+      "icon": {
+        "file": "icons/distro-arch.png",
+        "sha256": "15d8ef0f0b25181a45696f7f3858662da4e8d32cc25c0ae5f7a9b85545baf08d",
+        "bytes": 6540
+      },
+      "attribution": "Arch Linux and the Arch Linux logo are used under the Arch Linux trademark policy."
+    },
+    {
+      "id": "distro.debian",
+      "icon": {
+        "file": "icons/distro-debian.png",
+        "sha256": "c219abcc1024ac5e9ad49d8fe311f1e26a920127121f44f9537a137adef1d9e4",
+        "bytes": 5937
+      },
+      "attribution": "Debian is a registered trademark owned by Software in the Public Interest, Inc. Debian Open Use Logo © 1999 Software in the Public Interest, Inc., CC BY-SA 3.0."
+    },
+    {
+      "id": "distro.fallback",
+      "icon": {
+        "file": "icons/distro-fallback.png",
+        "sha256": "b94c8f3e385d58a4c1ed138801b11a1f846dff0def55e258325b4142d98dc747",
+        "bytes": 10742
+      },
+      "attribution": "Tux by Larry Ewing (original, made with the GIMP) and Garrett LeSage (vector)."
+    },
+    {
+      "id": "distro.kali",
+      "icon": {
+        "file": "icons/distro-kali.png",
+        "sha256": "8122b11fe861b59ae09a6e9966a90999367354f3c6950159167b1df151e4e532",
+        "bytes": 2288
+      },
+      "attribution": "KALI LINUX ™ is a trademark of OffSec."
+    },
+    {
+      "id": "distro.mint",
+      "icon": {
+        "file": "icons/distro-mint.png",
+        "sha256": "9e4511004d6d58c975dc24c3d7662e5095ed33ecbef9c7f0611da374513db456",
+        "bytes": 4737
+      }
+    },
+    {
+      "id": "distro.void",
+      "icon": {
+        "file": "icons/distro-void.png",
+        "sha256": "720005a24f9c8812edc805d9cb7964589bdf1f479c79206c42ce60c8e2b2d9fb",
+        "bytes": 6431
+      }
+    },
+    {
+      "id": "registry.registry.k8s.io",
+      "icon": {
+        "file": "icons/registry-k8s.png",
+        "sha256": "c454fd28e80cb2577d3e4d303ef8b97f7ccbc2380be87ff18996900e7711b843",
+        "bytes": 9498
+      },
+      "attribution": "Kubernetes and the Kubernetes logo are registered trademarks of The Linux Foundation."
+    }
+  ]
 }

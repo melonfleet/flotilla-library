@@ -47,12 +47,10 @@ go in root `artwork.json` as `{ "id": "distro.debian", "icon": "icons/distro-deb
 
 ## Distribution and registry artwork
 
-**Pending source downloads (19 October 2026):** none of these seven PNGs is included yet. Shell
-downloads failed at DNS resolution; browser access could read some GitHub pages but did not provide
-the source image files. `artwork.json` is therefore empty. Sizes and final hashes remain unavailable;
-the table records the requested sources and credits, not completed processing. Void and Tux still
-need full commit pins before downloading; the Mint pin was resolved through its commit history,
-and the CNCF pin is the same repository revision used above for Distribution and NATS.
+**Fetched 19 October 2026.** GitHub and GitLab sources are pinned to the commit fetched (for GitHub,
+the latest commit touching the file; Mint's and the CNCF pin are the earlier pins, the Mint file being
+identical at the latest commit). Debian's and Arch's come from their websites, which have no
+revisions, so the SHA-256 of the SVG fetched is recorded instead. Processed as described above.
 
 Use the same render/read, trim, fit 112×112, transparent 128×128 canvas and oxipng process described
 above. Do not recolour the marks or bake in a background: Flotilla supplies the light tile for dark
@@ -64,13 +62,13 @@ The ids were checked against the adjacent Flotilla checkout's
 
 | Id / intended icon | Official source | Licence or trademark note | Attribution |
 |---|---|---|---|
-| `distro.debian` / `icons/distro-debian.png` | [Debian Open Use logo](https://www.debian.org/logos/openlogo-nd.svg) | CC BY-SA 3.0; retain the ©1999 SPI credit. Resizing and rasterisation only. | Debian is a registered trademark owned by Software in the Public Interest, Inc. Debian Open Use Logo © 1999 Software in the Public Interest, Inc., CC BY-SA 3.0. |
+| `distro.debian` / `icons/distro-debian.png` | [Debian Open Use logo](https://www.debian.org/logos/openlogo-nd.svg) (SVG sha256 `89a3ca1a1bc91610edcc637457e7275a159309f4621829b2a0170e28970cac20`) | CC BY-SA 3.0; retain the ©1999 SPI credit. Resizing and rasterisation only. | Debian is a registered trademark owned by Software in the Public Interest, Inc. Debian Open Use Logo © 1999 Software in the Public Interest, Inc., CC BY-SA 3.0. |
 | `distro.mint` / `icons/distro-mint.png` | [linuxmint/brand-logo badge.svg](https://github.com/linuxmint/brand-logo/blob/540ac3b08e987866d77a340f557f994c988ac2ae/badge.svg) | Official Linux Mint badge; no attribution required. | None required. |
-| `distro.void` / `icons/distro-void.png` | [void-linux/void-packages void-logo-notext.svg](https://github.com/void-linux/void-packages/blob/master/srcpkgs/void-artwork/files/icons/void-logo-notext.svg) (commit pin pending) | Public domain. | None. |
-| `distro.arch` / `icons/distro-arch.png` | [Arch Linux crystal icon](https://archlinux.org/logos/archlinux-icon-crystal-64.svg) | Non-commercial use under the Arch Linux trademark policy. | Arch Linux and the Arch Linux logo are used under the Arch Linux trademark policy. |
-| `distro.kali` / `icons/distro-kali.png` | [Kali press pack black transparent dragon](https://gitlab.com/kalilinux/documentation/press-pack/-/raw/main/Kali/Logomark/kali-dragon-black-transparent.png) | Non-commercial use. KALI LINUX ™ is a trademark of OffSec. | KALI LINUX ™ is a trademark of OffSec. |
+| `distro.void` / `icons/distro-void.png` | [void-linux/void-packages void-logo-notext.svg](https://github.com/void-linux/void-packages/blob/f578bc2984db3c9afddc992100388e4e6f9840d0/srcpkgs/void-artwork/files/icons/void-logo-notext.svg) | Public domain. | None. |
+| `distro.arch` / `icons/distro-arch.png` | [Arch Linux crystal icon](https://archlinux.org/logos/archlinux-icon-crystal-64.svg) (SVG sha256 `ed1ebed24f527f9c4db2cff78e7c4ebb2d4f20243c90196f1d0ea0996d800758`) | Non-commercial use under the Arch Linux trademark policy. | Arch Linux and the Arch Linux logo are used under the Arch Linux trademark policy. |
+| `distro.kali` / `icons/distro-kali.png` | [Kali press pack black transparent dragon](https://gitlab.com/kalilinux/documentation/press-pack/-/raw/360c018b5cf65179ad3883d393b8ccbdfa674bc7/Kali/Logomark/kali-dragon-black-transparent.png) | Non-commercial use. KALI LINUX ™ is a trademark of OffSec. | KALI LINUX ™ is a trademark of OffSec. |
 | `registry.registry.k8s.io` / `icons/registry-k8s.png` | [cncf/artwork Kubernetes colour icon](https://github.com/cncf/artwork/blob/fedb3dbbf74327337fb750eae0a4ec7c8b7398c0/projects/kubernetes/icon/color/kubernetes-icon-color.svg) | Linux Foundation trademarks; use under the LF trademark usage guidelines, without recolouring or alteration. | Kubernetes and the Kubernetes logo are registered trademarks of The Linux Foundation. |
-| `distro.fallback` / `icons/distro-fallback.png` | [garrett/Tux tux.svg](https://github.com/garrett/Tux/blob/main/tux.svg) (commit pin pending) | Larry Ewing's original permits use with credit to him and the GIMP; credit Garrett LeSage for the vector. | Tux by Larry Ewing (original, made with the GIMP) and Garrett LeSage (vector). |
+| `distro.fallback` / `icons/distro-fallback.png` | [garrett/Tux tux.svg](https://github.com/garrett/Tux/blob/c2618b0cc4832166ef95828dde369356cf32f116/tux.svg) | Larry Ewing's original permits use with credit to him and the GIMP; credit Garrett LeSage for the vector. | Tux by Larry Ewing (original, made with the GIMP) and Garrett LeSage (vector). |
 
 **Left out:** NixOS. Its brand guide calls for about 36pt including clear space; Flotilla's rows
 are 20pt, so the mark cannot meet that minimum here.
