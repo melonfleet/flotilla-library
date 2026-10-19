@@ -25,7 +25,8 @@ for Apple's `container`. Flotilla shows them in **Suggestions**, by category.
 - `VERSION`: the library's version, four numbers (`2026.10.13.2`).
 - `report.json` and `report.json.sig`, also on `published`: the daily vulnerability report (below).
 - `tools/`: `build_library.py`, `check_entries.py` and `check_tags.py`, used by CI and the
-  publish step below; `build_report.py`, `sign_report.py` and `make-report-key.sh` for reports.
+  publish step below; `build_report.py`, `platform_report.py`, `sign_report.py` and
+  `make-report-key.sh` for reports.
   `.github/workflows/` holds the workflows.
 
 ## How Flotilla trusts it
@@ -112,6 +113,21 @@ the library doesn't list has no report, and Flotilla then shows nothing, not "no
 - **Least privilege.** The scan job reads and has no secret; the publish job is the only one that can
   write, only to `published`, and only `report.json` and `report.json.sig`. A run whose report differs
   from the last only in `generated` commits nothing.
+- **macOS and the container kernel.** The same report has an optional `platform` section
+  (`tools/platform_report.py`), which older Flotillas ignore, so the format stays `schema` 1. The
+  scan job fetches the sources:
+  - Apple's version feed (`gdmf.apple.com/v2/pmv`, read trusting only the Apple Root CA in
+    `tools/apple-root-ca.pem`, whose hash the workflow checks);
+  - Apple's security releases page (`support.apple.com/100100`) and each macOS 26+ note it links;
+  - apple/container's release tags and the kernel each release recommends;
+  - OSV's Linux export.
+
+  The section lists each macOS release's CVEs and the exploited ones. For the kernel it gives
+  `container`'s recommended kernel, and for each older kernel a `container` release recommended,
+  how many high and critical CVEs the recommended one fixes there, plus the top five. Flotilla
+  matches a host's macOS version and kernel against it on the admin Mac. A source that fails to
+  parse leaves that section as it was the day before. The captured sources the tests use are in
+  `tools/fixtures/platform/` (see its `CAPTURED.md`).
 - **Tests.** `python3 -m unittest discover -s tools -p 'test_*.py'` (the signing tests need
   `pip install -r tools/requirements-sign.txt`); CI runs them.
 

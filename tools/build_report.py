@@ -3,6 +3,7 @@
 
   python3 tools/build_report.py images  library.json            # one image reference per line
   python3 tools/build_report.py build   library.json SCANS_DIR  # writes report.json
+  python3 tools/build_report.py platform SOURCES_DIR           # writes platform.json (platform_report.py)
 
 `build` reads every `*.json` in SCANS_DIR (one `grype -o json` result per image, scanned for
 linux/arm64), keeps the ones whose image the library really lists, and writes `report.json`:
@@ -11,7 +12,10 @@ the critical and high findings of each image, counts of every severity, and both
 (`manifestDigest`). Flotilla matches by digest only. It is advisory: nothing in the app acts on it.
 
 The output is deterministic: images, digests and findings are sorted, keys are sorted, and the only
-thing that changes between two runs on the same input is `generated`. The file is capped at 2 MB;
+thing that changes between two runs on the same input is `generated`. `build --platform` adds the
+optional `platform` section (macOS and the container kernel; see platform_report.py), which older
+apps ignore, so `schema` stays 1. A section that is missing or doesn't pass its check is taken from
+`--previous` (yesterday's report) instead, and left out if that has none either. The file is capped at 2 MB;
 if it would be larger, high findings are dropped first, then critical ones (from the last image
 backwards), and `omitted` says how many. Counts always cover everything.
 
@@ -26,6 +30,11 @@ import os
 import re
 import sys
 import unicodedata
+import zipfile
+
+# Beside this file, also under `python3 -I` (which leaves the script's folder off the path).
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import platform_report  # noqa: E402
 
 MAX_BYTES = 2 * 1024 * 1024
 MAX_IMAGES = 2_000
@@ -37,6 +46,8 @@ MAX_REFERENCE = 256  # the app allows 512 (VulnerabilityReport.maxReference); th
 MAX_APP_REFERENCE = 512
 MAX_COUNT = 10_000_000
 MAX_OMITTED = 100_000_000
+# Builder only: the platform section may not take more than this of the 2 MB, whatever happens to it.
+MAX_PLATFORM_BYTES = 256 * 1024
 SEVERITIES = ("critical", "high", "medium", "low")
 SHOWN = ("Critical", "High")
 DIGEST = re.compile(r"sha256:[0-9a-f]{64}")
@@ -202,8 +213,30 @@ def fit(report):
     return {k: v for k, v in dropped.items() if v}
 
 
-def build(library, scans, generated):
-    """`scans` are decoded Grype results. Returns (report, problems)."""
+def platform_section(new, previous):
+    """The `platform` section to publish, and problems: each of macOS and kernel from `new` if it
+    passes its check, else from `previous` (the last published report's) if that does, else none."""
+    checks = {"macOS": platform_report.macos_problem, "kernel": platform_report.kernel_problem}
+    section, problems = {}, []
+    for key, check in checks.items():
+        fresh = (new or {}).get(key) if isinstance(new, dict) else None
+        old = ((previous or {}).get("platform") or {}).get(key) if isinstance(previous, dict) else None
+        why = check(fresh, timestamp, plain) if isinstance(fresh, dict) else "it is missing"
+        if why is None:
+            section[key] = fresh
+            continue
+        problems.append("platform %s not used (%s)" % (key, why))
+        if isinstance(old, dict) and check(old, timestamp, plain) is None:
+            section[key] = old
+            problems.append("platform %s kept from the previous report, checked %s" % (key, old["checked"]))
+    if section and len(encode(section)) > MAX_PLATFORM_BYTES:
+        raise ValueError("the platform section is over %d bytes" % MAX_PLATFORM_BYTES)
+    return section or None, problems
+
+
+def build(library, scans, generated, platform_sources=None, previous=None):
+    """`scans` are decoded Grype results; `platform_sources` is platform.json's content, and
+    `previous` the last published report, both optional. Returns (report, problems)."""
     if timestamp(generated) is None:
         raise ValueError("generated must be YYYY-MM-DDTHH:MM:SSZ")
     wanted = set(library_images(library))
@@ -242,6 +275,11 @@ def build(library, scans, generated):
         "dbBuilt": timestamp((first.get("db") or {}).get("status", {}).get("built", "")) or "",
     }
     report = {"schema": 1, "generated": generated, "scanner": scanner, "images": images}
+    section, platform_problems = platform_section(platform_sources, previous)
+    if platform_sources is not None or previous is not None:
+        problems.extend(platform_problems)
+    if section:
+        report["platform"] = section
     dropped = fit(report)
     if dropped:
         problems.append("over 2 MB, so findings were dropped: %s" % ", ".join("%d %s" % (n, k) for k, n in sorted(dropped.items())))
@@ -249,8 +287,55 @@ def build(library, scans, generated):
 
 
 def same_apart_from_generated(a, b):
-    strip = lambda r: {k: v for k, v in r.items() if k != "generated"}
+    """Also apart from when each platform source was last read: a day on which nothing Apple, the
+    kernel or the scans say has changed is not worth a commit."""
+    def strip(report):
+        out = {k: v for k, v in report.items() if k != "generated"}
+        if isinstance(out.get("platform"), dict):
+            out["platform"] = {k: ({n: m for n, m in v.items() if n != "checked"} if isinstance(v, dict) else v)
+                               for k, v in out["platform"].items()}
+        return out
     return strip(a) == strip(b)
+
+
+def read_platform_sources(folder, checked):
+    """platform.json's content from the scan job's downloads in `folder` (layout in scan.yml), and
+    problems. A section whose sources are missing or doubtful is left out, with the reason."""
+    def text(*parts):
+        with open(os.path.join(folder, *parts), encoding="utf-8") as handle:
+            return handle.read(platform_report.MAX_HTML_BYTES + 1)
+
+    section, problems = {}, []
+    try:
+        notes = {}
+        notes_folder = os.path.join(folder, "apple-notes")
+        for name in sorted(os.listdir(notes_folder)):
+            if re.fullmatch(r"[0-9]{1,9}\.html", name):
+                notes[name[:-5]] = text("apple-notes", name)
+        with open(os.path.join(folder, "gdmf-pmv.json"), "rb") as handle:
+            pmv = handle.read(platform_report.MAX_PMV_BYTES + 1)
+        section["macOS"] = platform_report.macos_section(text("apple-security-releases.html"), notes, pmv, checked)
+    except (OSError, ValueError, AttributeError, TypeError, KeyError) as error:
+        problems.append("macOS left out: %s" % error)
+    try:
+        latest = platform_report.latest_container(text("container-latest.txt"))
+        configs = {}
+        for tag in platform_report.release_tags(text("container-tags.txt"), latest):
+            try:
+                configs[tag] = text("container-config", tag + ".swift")
+            except OSError:
+                problems.append("no configuration for container %s" % tag)
+        section["kernel"] = platform_report.kernel_section(configs, latest, os.path.join(folder, "osv-linux.zip"),
+                                                           checked, clip)
+    except (OSError, ValueError, zipfile.BadZipFile, AttributeError, TypeError, KeyError) as error:
+        problems.append("kernel left out: %s" % error)
+    for key, check in (("macOS", platform_report.macos_problem), ("kernel", platform_report.kernel_problem)):
+        if key in section:
+            why = check(section[key], timestamp, plain)
+            if why:
+                problems.append("%s left out: %s" % (key, why))
+                del section[key]
+    return section, problems
 
 
 def main(argv=None):
@@ -262,6 +347,16 @@ def main(argv=None):
     b.add_argument("scans")
     b.add_argument("--out", default="report.json")
     b.add_argument("--generated", help="ISO 8601, default now (UTC)")
+    b.add_argument("--platform", help="platform.json from `platform`; optional")
+    b.add_argument("--previous", help="the last published report.json, for sections that failed today")
+    p = sub.add_parser("platform", help="platform.json from the scan job's downloads")
+    p.add_argument("sources")
+    p.add_argument("--out", default="platform.json")
+    n = sub.add_parser("platform-notes", help="the Apple note ids to download, one per line")
+    n.add_argument("index")
+    t = sub.add_parser("platform-tags", help="the apple/container tags whose configuration to download")
+    t.add_argument("tags")
+    t.add_argument("latest")
     c = sub.add_parser("same", help="exit 0 if two reports differ only in `generated`")
     c.add_argument("a")
     c.add_argument("b")
@@ -272,7 +367,26 @@ def main(argv=None):
         except (OSError, ValueError):
             ok = False
         return 0 if ok else 1
-    library = json.load(open(args.library))
+    now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    if args.command == "platform-notes":
+        with open(args.index, encoding="utf-8") as handle:
+            rows = platform_report.security_releases(handle.read(platform_report.MAX_HTML_BYTES + 1))
+        print("\n".join(sorted({r["note"] for r in rows if r["note"]})))
+        return 0
+    if args.command == "platform-tags":
+        with open(args.tags, encoding="utf-8") as tags, open(args.latest, encoding="utf-8") as latest:
+            print("\n".join(platform_report.release_tags(tags.read(), platform_report.latest_container(latest.read()))))
+        return 0
+    if args.command == "platform":
+        section, problems = read_platform_sources(args.sources, now)
+        with open(args.out, "wb") as handle:
+            handle.write(encode(section))
+        for problem in problems:
+            print("::warning::platform: %s" % problem, file=sys.stderr)
+        print("%s: %s" % (args.out, ", ".join(sorted(section)) or "nothing"))
+        return 0
+    with open(args.library) as handle:
+        library = json.load(handle)
     if args.command == "images":
         print("\n".join(library_images(library)))
         return 0
@@ -281,8 +395,22 @@ def main(argv=None):
         if name.endswith(".json"):
             with open(os.path.join(args.scans, name)) as handle:
                 scans.append(json.load(handle))
-    generated = args.generated or datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    report, problems = build(library, scans, generated)
+    generated = args.generated or now
+    platform = previous = None
+    for name in ("platform", "previous"):
+        path = getattr(args, name)
+        if path:
+            try:
+                with open(path) as handle:
+                    value = json.load(handle)
+            except (OSError, ValueError) as error:
+                print("warning: %s not read: %s" % (name, error), file=sys.stderr)
+                continue
+            if name == "platform":
+                platform = value
+            else:
+                previous = value
+    report, problems = build(library, scans, generated, platform, previous)
     with open(args.out, "wb") as handle:
         handle.write(encode(report))
     for problem in problems:

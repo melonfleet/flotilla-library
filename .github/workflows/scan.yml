@@ -1,7 +1,7 @@
 name: Scan
 
-# Daily: scan the linux/arm64 build of every image in the published library with Grype, build
-# report.json from the results, sign it with the report key, and commit report.json and
+# Daily: scan the linux/arm64 build of every image in the published library with Grype, read the
+# macOS and container-kernel advisories (tools/platform_report.py), build report.json from both, sign it with the report key, and commit report.json and
 # report.json.sig to the `published` branch. Flotilla shows the findings and acts on nothing.
 # (DECISIONS Q62.) Never touches library.json, library.json.sig or icons/, and never uses the
 # library key: that one is in the owner's Keychain and no workflow has it.
@@ -24,6 +24,9 @@ env:
   GRYPE_VERSION: "0.120.1"
   GRYPE_LINUX_AMD64_SHA256: "0a9ee97ef5ae2ee953b0a80098105052e846cdbe319a57d808b519c33cd1343d"
   GRYPE_CHECK_FOR_APP_UPDATE: "false"
+  # gdmf.apple.com's chain ends in Apple Root CA, which isn't in Ubuntu's bundle. tools/apple-root-ca.pem
+  # is that certificate (from https://www.apple.com/appleca/); this is the SHA-256 of its DER form.
+  APPLE_ROOT_CA_SHA256: "b0b1730ecbc7ff4505142c49f1295e6eda6bcaed7e2c68c5be91b5a11001f024"
 
 jobs:
   scan:
@@ -98,6 +101,61 @@ jobs:
           if-no-files-found: error
           retention-days: 3
 
+      # The report's `platform` section (macOS and the container kernel; tools/platform_report.py).
+      # Public sources only, read with curl and git; nothing is run from them. Each failure is a
+      # warning, never a failed job: the publish job then keeps yesterday's copy of that section.
+      - name: Fetch the platform sources
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        run: |
+          set -u
+          src="$RUNNER_TEMP/platform-src"
+          mkdir -p "$src/apple-notes" "$src/container-config"
+          get() {  # get MAX_BYTES OUT URL [curl options]: HTTPS only, no redirects, size-capped
+            max=$1 out=$2 url=$3; shift 3
+            curl --fail --silent --show-error --proto '=https' --tlsv1.2 --max-time 300 \
+              --max-filesize "$max" --output "$out" "$@" "$url" || { echo "::warning::could not fetch $url"; rm -f "$out"; }
+          }
+          openssl x509 -in main/tools/apple-root-ca.pem -outform DER > "$RUNNER_TEMP/apple-root.der"
+          if echo "${APPLE_ROOT_CA_SHA256}  $RUNNER_TEMP/apple-root.der" | sha256sum --check --strict --quiet -; then
+            get 4194304 "$src/gdmf-pmv.json" https://gdmf.apple.com/v2/pmv --cacert main/tools/apple-root-ca.pem
+          else
+            echo "::warning::tools/apple-root-ca.pem is not the pinned Apple Root CA; macOS versions not fetched"
+          fi
+          get 4194304 "$src/apple-security-releases.html" https://support.apple.com/en-us/100100
+          if [ -f "$src/apple-security-releases.html" ]; then
+            python3 main/tools/build_report.py platform-notes "$src/apple-security-releases.html" > "$RUNNER_TEMP/notes.txt" || : > "$RUNNER_TEMP/notes.txt"
+            while IFS= read -r id; do
+              case "$id" in *[!0-9]*|"") continue ;; esac
+              get 4194304 "$src/apple-notes/$id.html" "https://support.apple.com/en-us/$id"
+            done < "$RUNNER_TEMP/notes.txt"
+          fi
+          # Where /releases/latest redirects names apple/container's latest release; not followed.
+          curl --silent --show-error --proto '=https' --tlsv1.2 --max-time 60 --output /dev/null \
+            --write-out '%{redirect_url}' https://github.com/apple/container/releases/latest > "$src/container-latest.txt" || :
+          git ls-remote --tags --refs https://github.com/apple/container.git > "$src/container-tags.txt" || rm -f "$src/container-tags.txt"
+          if [ -f "$src/container-tags.txt" ]; then
+            python3 main/tools/build_report.py platform-tags "$src/container-tags.txt" "$src/container-latest.txt" > "$RUNNER_TEMP/tags.txt" || : > "$RUNNER_TEMP/tags.txt"
+            while IFS= read -r tag; do
+              case "$tag" in *[!0-9.]*|"") continue ;; esac
+              get 262144 "$src/container-config/$tag.swift" \
+                "https://raw.githubusercontent.com/apple/container/$tag/Sources/ContainerPersistence/ContainerSystemConfig.swift"
+            done < "$RUNNER_TEMP/tags.txt"
+          fi
+          get 314572800 "$src/osv-linux.zip" https://osv-vulnerabilities.storage.googleapis.com/Linux/all.zip
+          mkdir -p "$RUNNER_TEMP/platform"
+          python3 main/tools/build_report.py platform "$src" --out "$RUNNER_TEMP/platform/platform.json"
+
+      - name: Keep the platform section for the publish job
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: platform
+          path: ${{ runner.temp }}/platform/platform.json
+          if-no-files-found: warn
+          retention-days: 3
+
       - name: Fail if any image could not be scanned
         run: |
           [ "${failed}" = 0 ] || { echo "::error::${failed} image(s) were not scanned and are missing from the report"; exit 1; }
@@ -132,6 +190,14 @@ jobs:
           name: scans
           path: ${{ runner.temp }}/scans
 
+      # Absent if the scan job couldn't read the platform sources; yesterday's section is kept then.
+      - name: Fetch the platform section
+        continue-on-error: true
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: platform
+          path: ${{ runner.temp }}/platform
+
       - name: Install the signing tool's one dependency
         run: |
           python3 -m venv "$RUNNER_TEMP/venv"
@@ -139,8 +205,12 @@ jobs:
 
       - name: Build report.json
         run: |
+          set -o pipefail
+          extra=()
+          [ -f "$RUNNER_TEMP/platform/platform.json" ] && extra+=(--platform "$RUNNER_TEMP/platform/platform.json")
+          [ -f published/report.json ] && extra+=(--previous published/report.json)
           python3 main/tools/build_report.py build published/library.json "$RUNNER_TEMP/scans" \
-            --out "$RUNNER_TEMP/report.json" | tee -a "$GITHUB_STEP_SUMMARY"
+            --out "$RUNNER_TEMP/report.json" "${extra[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Sign report.json with the report key
         env:
