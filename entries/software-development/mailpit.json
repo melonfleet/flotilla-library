@@ -8,7 +8,7 @@
     "env": [
       "MP_MAX_MESSAGES=500"
     ],
-    "image": "ghcr.io/axllent/mailpit:v1.31.5",
+    "image": "ghcr.io/axllent/mailpit:v1.31.6",
     "name": "mailpit",
     "note": "Stateless by default unless MP_DATABASE file path inside /data is specified.",
     "ports": [
@@ -27,9 +27,6 @@
   "id": "mailpit",
   "kind": "container",
   "summary": "Fast email and SMTP testing tool with web UI and API for developers.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Mailpit Email Testing Tool"
 }

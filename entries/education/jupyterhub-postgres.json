@@ -52,7 +52,7 @@
           "POSTGRES_DB={{option:database}}",
           "POSTGRES_USER=jupyter"
         ],
-        "image": "quay.io/jupyterhub/jupyterhub:6.0.1",
+        "image": "quay.io/jupyterhub/jupyterhub:6.1.0",
         "role": "hub",
         "secretEnv": [
           {
@@ -72,9 +72,6 @@
     ]
   },
   "summary": "Multi-user Jupyter notebook server powered by a PostgreSQL state store.",
-  "tested": {
-    "date": "2026-10-13",
-    "macs": 1
-  },
+  "tested": null,
   "title": "JupyterHub + PostgreSQL"
 }

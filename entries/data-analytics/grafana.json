@@ -8,7 +8,7 @@
     "env": [
       "GF_SECURITY_ADMIN_USER=admin"
     ],
-    "image": "docker.io/grafana/grafana:13.2.3",
+    "image": "docker.io/grafana/grafana:13.2.4",
     "name": "grafana",
     "note": "Sign in as admin with the generated GF_SECURITY_ADMIN_PASSWORD. Runs as uid 472; Flotilla gives a new volume to 472:0.",
     "ports": [
@@ -32,9 +32,6 @@
   "kind": "container",
   "licenceNote": "Licensed under AGPL-3.0-only, a copyleft licence rather than a permissive one.",
   "summary": "Analytics and interactive visualization platform for metrics, logs, and traces.",
-  "tested": {
-    "date": "2026-10-18",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Grafana Dashboards"
 }

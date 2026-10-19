@@ -8,7 +8,7 @@
     "env": [
       "OLLAMA_KEEP_ALIVE=5m"
     ],
-    "image": "docker.io/ollama/ollama:0.40.3",
+    "image": "docker.io/ollama/ollama:0.40.6",
     "name": "ollama",
     "note": "Runs CPU inference inside the container VM. Allocate adequate RAM in Flotilla settings for large models.",
     "ports": [
@@ -26,9 +26,6 @@
   "id": "ollama",
   "kind": "container",
   "summary": "Get up and running with Large Language Models locally on Apple Silicon CPU.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Ollama Local LLM Runner"
 }
