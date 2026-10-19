@@ -580,6 +580,12 @@ def macos_regression(fresh, old):
     if not today:
         return "it lists no release" if old["releases"] else None
     oldest = min(macos_version(v) for v in today)
+    # Older releases may age out of Apple's index one or two at a time, never most of them at once:
+    # a truncated index that keeps only the current rows must not replace yesterday's history
+    # (Kyle, 19 October).
+    gone = [r for r in old["releases"] if r["version"] not in today]
+    if len(gone) > 2:
+        return "it lost %d of yesterday's %d releases" % (len(gone), len(old["releases"]))
     for r in old["releases"]:
         new = today.get(r["version"])
         if new is None:

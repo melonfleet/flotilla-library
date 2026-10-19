@@ -477,6 +477,33 @@ class PlatformSources(unittest.TestCase):
         newer["releases"][0]["cves"] += ["CVE-2026-0001"]
         self.assertIsNone(pr.macos_regression(newer, old))
 
+    def test_most_of_yesterdays_releases_vanishing_is_refused(self):
+        old = macos_from_fixtures(index=captured_index())
+        self.assertGreater(len(old["releases"]), 3)
+        cut = copy.deepcopy(old)  # a truncated index: only the newest two rows survive
+        cut["releases"] = cut["releases"][:2]
+        self.assertIn("lost", pr.macos_regression(cut, old))
+        aged = copy.deepcopy(old)  # one old release ageing out is normal
+        aged["releases"] = aged["releases"][:-1]
+        self.assertIsNone(pr.macos_regression(aged, old))
+
+    def test_the_platform_section_goes_before_any_finding_does(self):
+        many = [match("CVE-%06d" % n, "High" if n % 2 else "Critical", name="pkg%d" % n) for n in range(300)]
+        platform = {"macOS": macos_from_fixtures(index=captured_index())}
+        bare, _ = br.build(library("docker.io/library/nats:2.15.0"), [scan(matches=many)], "2026-10-18T07:00:00Z")
+        size = len(br.encode(bare))
+        small = br.MAX_BYTES
+        try:
+            br.MAX_BYTES = size + 64  # the findings fit alone, not with the platform section
+            report, problems = br.build(library("docker.io/library/nats:2.15.0"), [scan(matches=many)],
+                                        "2026-10-18T07:00:00Z", platform_sources=platform)
+        finally:
+            br.MAX_BYTES = small
+        self.assertNotIn("platform", report)
+        self.assertNotIn("omitted", report)
+        self.assertEqual(len(report["images"][0]["findings"]), 300)
+        self.assertTrue(any("platform left out" in p for p in problems))
+
     def test_versions_compare_as_numbers(self):
         self.assertLess(pr.macos_version("26.9"), pr.macos_version("26.10"))
         self.assertEqual(pr.macos_version("26"), (26, 0, 0))

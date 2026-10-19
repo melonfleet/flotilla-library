@@ -300,13 +300,22 @@ def build(library, scans, generated, platform_sources=None, previous=None):
         problems.extend(platform_problems)
     if section:
         report["platform"] = section
-    try:
-        dropped = fit(copy.deepcopy(report))
-    except ValueError:
-        if "platform" not in report:
-            raise
-        del report["platform"]  # never let the platform section be why the image findings don't publish
-        problems.append("platform left out: the report doesn't fit 2 MB with it")
+    # The platform section goes before a single image finding does (Kyle, 19 October): if the report
+    # would need trimming with it, and the images alone fit untrimmed, it is left out.
+    if "platform" in report:
+        try:
+            with_platform = fit(copy.deepcopy(report))
+        except ValueError:
+            with_platform = None
+        without = {k: v for k, v in report.items() if k != "platform"}
+        if with_platform != {}:
+            try:
+                alone = fit(copy.deepcopy(without))
+            except ValueError:
+                alone = None
+            if with_platform is None or alone is not None:
+                del report["platform"]  # never let the platform section cost the image findings anything
+                problems.append("platform left out: the report doesn't fit 2 MB with it and every finding")
     dropped = fit(report)
     if dropped:
         problems.append("over 2 MB, so findings were dropped: %s" % ", ".join("%d %s" % (n, k) for k, n in sorted(dropped.items())))
