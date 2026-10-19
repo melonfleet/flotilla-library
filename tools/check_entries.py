@@ -283,13 +283,15 @@ def checked(library):
             kept.append(e)
     if len(library["entries"]) > MAX_ENTRIES:
         dropped.append(("…", f"More than {MAX_ENTRIES} entries; the rest were ignored."))
+    dropped += [("artwork", p) for p in artwork_problems(library.get("artwork") or [])]
     return kept, dropped
 
 
 # What Swift's synthesized Decodable demands: every non-optional key present, no wrong types. A file
 # that misses one is refused whole ("The library couldn't be read"), so check it here too.
 SHAPES = {
-    "library": ({"schema": int, "version": str, "entries": list}, {}),
+    "library": ({"schema": int, "version": str, "entries": list}, {"artwork": list}),
+    "artwork": ({"id": str, "icon": (str, dict)}, {"attribution": str}),
     "entry": ({"id": str, "title": str, "summary": str, "categories": list, "kind": str},
               {"licenceNote": str, "tested": dict, "container": dict, "stack": dict, "icon": (str, dict)}),
     "tested": ({"date": str, "macs": int}, {}),
@@ -324,7 +326,7 @@ def shape_problems(obj, kind="library", where="library"):
     if out:
         return out
     children = {
-        "library": [("entries", "entry")],
+        "library": [("entries", "entry"), ("artwork", "artwork")],
         "entry": [("tested", "tested"), ("container", "container"), ("stack", "stack")],
         "container": [("volumes", "volume")],
         "stack": [("options", "option"), ("services", "service")],
@@ -352,11 +354,13 @@ BAD_CATEGORIES = {"Cc", "Cf", "Co", "Cn", "Cs", "Zl", "Zp"}
 
 def plain_text(text, limit, required=False):
     """Port of `Library.isPlainText`: NFC, bounded, and no control, format, private-use or unassigned scalars."""
+    if any(unicodedata.category(c) in BAD_CATEGORIES for c in text):
+        return False
     if (required and not text) or len(text) > limit or len(text.encode("utf-8")) > limit * 4:
         return False
     if unicodedata.normalize("NFC", text) != text:
         return False
-    return not any(unicodedata.category(c) in BAD_CATEGORIES for c in text)
+    return True
 
 
 def tested_problem(t):
@@ -449,6 +453,47 @@ def _sources():
         return ""
 
 
+def artwork_problems(artwork, source=False):
+    """Validate source definitions or built artwork, including duplicate ids and icon limits."""
+    if not isinstance(artwork, list):
+        return ["artwork: not an array"]
+    out, seen = [], set()
+    if len(artwork) > MAX_ENTRIES:
+        out.append(f"artwork: more than {MAX_ENTRIES} items")
+    for i, item in enumerate(artwork):
+        where = f"artwork[{i}]"
+        shape = shape_problems(item, "artwork", where)
+        if shape:
+            out += shape
+            continue
+        aid = item["id"]
+        if re.fullmatch(r"(distro|registry)\.[a-z0-9.-]{1,80}", aid) is None:
+            out.append(f"{where}: its id isn't a distro or registry artwork id")
+        if aid in seen:
+            out.append(f"{where}: its id is used twice ({aid})")
+        seen.add(aid)
+        attribution = item.get("attribution")
+        if attribution is not None and not plain_text(attribution, 300, required=True):
+            out.append(f"{where}: its attribution is empty, too long, or isn't plain text")
+        icon = item["icon"]
+        if source:
+            problems = layout.icon_problems(icon)
+            if not problems and f"`{icon}`" not in _sources():
+                problems.append(f"{icon} has no line in icons/SOURCES.md saying where it came from")
+        else:
+            problem = icon_problem(icon)
+            problems = [problem] if problem else []
+        out += [f"{where} ({aid}): {p}" for p in problems]
+    return out
+
+
+def check_artwork_file():
+    try:
+        return artwork_problems(layout.read_artwork(), source=True)
+    except (OSError, ValueError) as err:
+        return [f"artwork.json: can't be read: {err}"]
+
+
 def icons_dir_problems(referenced):
     """icons/ holds the referenced PNGs and SOURCES.md, nothing else: whatever is there gets published."""
     out = []
@@ -457,14 +502,14 @@ def icons_dir_problems(referenced):
         if rel == "icons/SOURCES.md":
             continue
         if rel not in referenced:
-            out.append(f"{rel}: not the icon of any entry (icons/ holds only entries' icons and SOURCES.md)")
+            out.append(f"{rel}: not the icon of any entry or artwork (icons/ holds only referenced icons and SOURCES.md)")
     return out
 
 
 def library_icon_problems(lib, library_path):
     """Each icon in a built library must be the PNG beside it, as Flotilla will fetch it from published."""
     out, base = [], os.path.dirname(os.path.abspath(library_path))
-    for e in lib["entries"]:
+    for e in lib["entries"] + (lib.get("artwork") or []):
         icon = e.get("icon")
         if icon is None or icon_problem(icon):
             continue  # named by checked()
@@ -499,6 +544,14 @@ def check_all(library_path=None):
         if eid in seen:
             problems.append(f"{os.path.relpath(path, layout.ROOT)}: id {eid} is also in {os.path.relpath(seen[eid], layout.ROOT)}")
         seen[eid] = path
+    problems += check_artwork_file()
+    try:
+        artwork = layout.read_artwork()
+        if isinstance(artwork, list):
+            icons.update(a["icon"] for a in artwork
+                         if isinstance(a, dict) and isinstance(a.get("icon"), str))
+    except (OSError, ValueError):
+        pass  # reported by check_artwork_file()
     problems += icons_dir_problems(icons)
     if len(files) > MAX_ENTRIES:
         problems.append(f"{len(files)} entries; Flotilla reads {MAX_ENTRIES}.")

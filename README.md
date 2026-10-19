@@ -19,6 +19,10 @@ for Apple's `container`. Flotilla shows them in **Suggestions**, by category.
 - `library.json.sig`: its Ed25519 signature, base64. Both are on the **`published`** branch, with
   `icons/`, which is what Flotilla downloads; `main` holds the entries and tools they're built from.
 - `entries/<category>/<id>.json`: one file per entry, where `library.json` is built from.
+- `artwork.json`: distribution and registry artwork definitions (`id`, an `icon` path, and optional
+  plain-text `attribution`, at most 300 characters). The build sorts them by id and adds each PNG's
+  SHA-256 and size to the library's optional `artwork` array. These use the same icon limits and
+  source documentation as entry logos. The app shows credits in Settings ▸ About ▸ Logos.
 - `icons/<id>.png`: an entry's logo, 128×128, named by the entry's `"icon": "icons/<id>.png"`.
   `icons/SOURCES.md` says where each one came from and under what licence or trademark terms;
   entries without one show their category's symbol.
@@ -55,7 +59,7 @@ says when, and on how many Macs.
    the build reads its hash and size, and fails on an icon Flotilla wouldn't show. A weekly workflow (`tags.yml`) opens a pull request with newer stable image tags; it
    marks each bumped entry `tested: null`.
 2. **CI checks it** (`check.yml`, on every pull request): `library.json` is what `entries/` and
-   `VERSION` build (icons included); `tools/check_entries.py` passes, icons and all; and Flotilla's own check
+   `artwork.json` and `VERSION` build (icons included); `tools/check_entries.py` passes, icons and all; and Flotilla's own check
    (`swift test --filter aLibraryFile`) passes on Linux. An untested entry fails it, on purpose.
 3. **The live test**, on real Apple silicon Macs, by hand for now: start it, answer on its port,
    write its data folder, clean up. For an entry with `volumeOwner`, do what Flotilla does:

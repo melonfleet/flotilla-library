@@ -11,11 +11,13 @@ import zlib
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ENTRIES = os.path.join(ROOT, "entries")
 ICONS = os.path.join(ROOT, "icons")
+ARTWORK = os.path.join(ROOT, "artwork.json")
 
 # The key order library.json has always had (the order of Swift's `LibraryEntry` and friends).
 # Entry files are written with sorted keys, so the build puts this order back.
 ORDER = {
-    "library": ["schema", "version", "entries"],
+    "library": ["schema", "version", "entries", "artwork"],
+    "artwork": ["id", "icon", "attribution"],
     "entry": ["id", "title", "summary", "categories", "kind", "licenceNote", "tested", "container", "stack",
               "icon"],
     "tested": ["date", "macs"],
@@ -30,7 +32,8 @@ ORDER = {
     "icon": ["file", "sha256", "bytes"],
 }
 CHILDREN = {
-    "library": {"entries": "entry"},
+    "library": {"entries": "entry", "artwork": "artwork"},
+    "artwork": {"icon": "icon"},
     "entry": {"tested": "tested", "container": "container", "stack": "stack", "icon": "icon"},
     "container": {"volumes": "volume"},
     "stack": {"options": "option", "services": "service"},
@@ -81,6 +84,11 @@ def read_json(path):
 def read_version():
     with open(os.path.join(ROOT, "VERSION"), encoding="utf-8") as f:
         return f.read().strip()
+
+
+def read_artwork():
+    """Source artwork uses icon paths; the build adds each file's hash and size."""
+    return read_json(ARTWORK)
 
 
 # --- Icons ----------------------------------------------------------------------------------------

@@ -13,7 +13,9 @@ corners are rounded to match the tile Flotilla draws. Only the final PNGs are ke
 
 **Adding one:** put `icons/<id>.png` here (128×128, ≤ 64 KiB, at most 512×512), add
 `"icon": "icons/<id>.png"` to the entry, add a row below and run `python3 tools/build_library.py`.
-`tools/check_entries.py` fails for an icon without a row here.
+`tools/check_entries.py` fails for an icon without a row here. Distribution and registry icons instead
+go in root `artwork.json` as `{ "id": "distro.debian", "icon": "icons/distro-debian.png",
+"attribution": "…" }`; the attribution is optional, plain text, and at most 300 characters.
 
 | Icon | Project | Source (pinned) | Licence or trademark note |
 |---|---|---|---|
@@ -42,6 +44,36 @@ corners are rounded to match the tile Flotilla draws. Only the final PNGs are ke
 | `icons/valkey.png` | Valkey | [valkey-io/valkey-website `static/img/Valkey-logo.svg`](https://github.com/valkey-io/valkey-website/blob/e8759953258687a5c6e7e3c360f5e4cacaf14649/static/img/Valkey-logo.svg) | BSD-3-Clause (website repository licence). “Valkey and the Valkey logo are trademarks of LF Projects, LLC”, used under its [trademark policy](https://lfprojects.org/policies/trademark-policy/) (no recolouring or alteration). |
 | `icons/vaultwarden.png` | Vaultwarden | [dani-garcia/vaultwarden `resources/vaultwarden-icon.svg`](https://github.com/dani-garcia/vaultwarden/blob/58a980f850464f7d9cdc99a765df36f0a3308b91/resources/vaultwarden-icon.svg) | AGPL-3.0 (repository licence). |
 | `icons/wordpress.png` | WordPress | [wordpress.org/about/logos](https://wordpress.org/about/logos/): [W mark, BaseGray on transparent](https://s.w.org/style/images/about/WordPress-logotype-wmark.png) | WordPress Foundation trademark. Its [trademark policy](https://wordpressfoundation.org/trademark-policy/) lets anyone use the name and logo “to refer to and explain their services”, but not as part of a product's name or branding, nor to suggest endorsement. |
+
+## Distribution and registry artwork
+
+**Pending source downloads (19 October 2026):** none of these seven PNGs is included yet. Shell
+downloads failed at DNS resolution; browser access could read some GitHub pages but did not provide
+the source image files. `artwork.json` is therefore empty. Sizes and final hashes remain unavailable;
+the table records the requested sources and credits, not completed processing. Void and Tux still
+need full commit pins before downloading; the Mint pin was resolved through its commit history,
+and the CNCF pin is the same repository revision used above for Distribution and NATS.
+
+Use the same render/read, trim, fit 112×112, transparent 128×128 canvas and oxipng process described
+above. Do not recolour the marks or bake in a background: Flotilla supplies the light tile for dark
+marks. Keep Debian's © 1999 SPI credit in the attribution; distribute its PNG under CC BY-SA 3.0.
+
+The ids were checked against the adjacent Flotilla checkout's
+`Sources/FlotillaCore/LinuxDistribution.swift` (`id` is `distro.` plus the raw value; fallback is
+`distro.fallback`) and `Sources/Flotilla/SuggestionLogo.swift` (`registry.` plus the normalised host).
+
+| Id / intended icon | Official source | Licence or trademark note | Attribution |
+|---|---|---|---|
+| `distro.debian` / `icons/distro-debian.png` | [Debian Open Use logo](https://www.debian.org/logos/openlogo-nd.svg) | CC BY-SA 3.0; retain the ©1999 SPI credit. Resizing and rasterisation only. | Debian is a registered trademark owned by Software in the Public Interest, Inc. Debian Open Use Logo © 1999 Software in the Public Interest, Inc., CC BY-SA 3.0. |
+| `distro.mint` / `icons/distro-mint.png` | [linuxmint/brand-logo badge.svg](https://github.com/linuxmint/brand-logo/blob/540ac3b08e987866d77a340f557f994c988ac2ae/badge.svg) | Official Linux Mint badge; no attribution required. | None required. |
+| `distro.void` / `icons/distro-void.png` | [void-linux/void-packages void-logo-notext.svg](https://github.com/void-linux/void-packages/blob/master/srcpkgs/void-artwork/files/icons/void-logo-notext.svg) (commit pin pending) | Public domain. | None. |
+| `distro.arch` / `icons/distro-arch.png` | [Arch Linux crystal icon](https://archlinux.org/logos/archlinux-icon-crystal-64.svg) | Non-commercial use under the Arch Linux trademark policy. | Arch Linux and the Arch Linux logo are used under the Arch Linux trademark policy. |
+| `distro.kali` / `icons/distro-kali.png` | [Kali press pack black transparent dragon](https://gitlab.com/kalilinux/documentation/press-pack/-/raw/main/Kali/Logomark/kali-dragon-black-transparent.png) | Non-commercial use. KALI LINUX ™ is a trademark of OffSec. | KALI LINUX ™ is a trademark of OffSec. |
+| `registry.registry.k8s.io` / `icons/registry-k8s.png` | [cncf/artwork Kubernetes colour icon](https://github.com/cncf/artwork/blob/fedb3dbbf74327337fb750eae0a4ec7c8b7398c0/projects/kubernetes/icon/color/kubernetes-icon-color.svg) | Linux Foundation trademarks; use under the LF trademark usage guidelines, without recolouring or alteration. | Kubernetes and the Kubernetes logo are registered trademarks of The Linux Foundation. |
+| `distro.fallback` / `icons/distro-fallback.png` | [garrett/Tux tux.svg](https://github.com/garrett/Tux/blob/main/tux.svg) (commit pin pending) | Larry Ewing's original permits use with credit to him and the GIMP; credit Garrett LeSage for the vector. | Tux by Larry Ewing (original, made with the GIMP) and Garrett LeSage (vector). |
+
+**Left out:** NixOS. Its brand guide calls for about 36pt including clear space; Flotilla's rows
+are 20pt, so the mark cannot meet that minimum here.
 
 ## Entries without an icon
 
