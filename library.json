@@ -135,12 +135,9 @@
         "Data & Analytics"
       ],
       "kind": "container",
-      "tested": {
-        "date": "2026-10-13",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "docker.io/clickhouse/clickhouse-server:26.9.17",
+        "image": "docker.io/clickhouse/clickhouse-server:26.9.21",
         "name": "clickhouse",
         "ports": [
           "8123:8123",
@@ -210,12 +207,9 @@
         "Business & Office"
       ],
       "kind": "container",
-      "tested": {
-        "date": "2026-10-12",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "docker.io/jgraph/drawio:32.4.1",
+        "image": "docker.io/jgraph/drawio:32.5.5",
         "name": "drawio",
         "ports": [
           "8080:8080"
@@ -541,10 +535,7 @@
         "Communication & Collaboration"
       ],
       "kind": "stack",
-      "tested": {
-        "date": "2026-10-13",
-        "macs": 1
-      },
+      "tested": null,
       "stack": {
         "options": [
           {
@@ -583,7 +574,7 @@
           {
             "role": "app",
             "title": "Gitea",
-            "image": "ghcr.io/go-gitea/gitea:28.1.0",
+            "image": "ghcr.io/go-gitea/gitea:28.2.0",
             "env": [
               "GITEA__database__DB_TYPE=postgres",
               "GITEA__database__HOST={{host:db}}:{{port:db}}",
@@ -627,12 +618,9 @@
       ],
       "kind": "container",
       "licenceNote": "Licensed under AGPL-3.0-only, a copyleft licence rather than a permissive one.",
-      "tested": {
-        "date": "2026-10-18",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "docker.io/grafana/grafana:13.2.3",
+        "image": "docker.io/grafana/grafana:13.2.4",
         "name": "grafana",
         "ports": [
           "3000:3000"
@@ -666,12 +654,9 @@
         "Networking & Web Servers"
       ],
       "kind": "container",
-      "tested": {
-        "date": "2026-10-12",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "docker.io/homeassistant/home-assistant:2026.10.1",
+        "image": "docker.io/homeassistant/home-assistant:2026.10.2",
         "name": "home-assistant",
         "ports": [
           "8123:8123"
@@ -746,12 +731,9 @@
         "Data & Analytics"
       ],
       "kind": "container",
-      "tested": {
-        "date": "2026-10-18",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "quay.io/jupyter/datascience-notebook:2026-10-12",
+        "image": "quay.io/jupyter/datascience-notebook:2026-10-19",
         "name": "jupyter-datascience-notebook",
         "ports": [
           "8888:8888"
@@ -784,12 +766,9 @@
         "Science & Research"
       ],
       "kind": "container",
-      "tested": {
-        "date": "2026-10-19",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "quay.io/jupyter/scipy-notebook:2026-10-12",
+        "image": "quay.io/jupyter/scipy-notebook:2026-10-19",
         "name": "jupyter-scipy-notebook",
         "ports": [
           "8888:8888"
@@ -822,12 +801,9 @@
         "Education"
       ],
       "kind": "container",
-      "tested": {
-        "date": "2026-10-18",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "quay.io/jupyter/tensorflow-notebook:2026-10-12",
+        "image": "quay.io/jupyter/tensorflow-notebook:2026-10-19",
         "name": "jupyter-tensorflow-notebook",
         "ports": [
           "8888:8888"
@@ -859,10 +835,7 @@
         "Science & Research"
       ],
       "kind": "stack",
-      "tested": {
-        "date": "2026-10-13",
-        "macs": 1
-      },
+      "tested": null,
       "stack": {
         "options": [
           {
@@ -901,7 +874,7 @@
           {
             "role": "hub",
             "title": "JupyterHub",
-            "image": "quay.io/jupyterhub/jupyterhub:6.0.1",
+            "image": "quay.io/jupyterhub/jupyterhub:6.1.0",
             "env": [
               "POSTGRES_HOST={{host:db}}",
               "POSTGRES_PORT={{port:db}}",
@@ -1020,12 +993,9 @@
         "Messaging & Queues"
       ],
       "kind": "container",
-      "tested": {
-        "date": "2026-10-12",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "ghcr.io/axllent/mailpit:v1.31.5",
+        "image": "ghcr.io/axllent/mailpit:v1.31.6",
         "name": "mailpit",
         "ports": [
           "8025:8025",
@@ -1097,12 +1067,9 @@
         "Content & Publishing"
       ],
       "kind": "container",
-      "tested": {
-        "date": "2026-10-12",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "ghcr.io/mealie-recipes/mealie:v3.28.0",
+        "image": "ghcr.io/mealie-recipes/mealie:v3.29.0",
         "name": "mealie",
         "ports": [
           "9000:9000"
@@ -1135,10 +1102,7 @@
         "Business & Office"
       ],
       "kind": "stack",
-      "tested": {
-        "date": "2026-10-12",
-        "macs": 1
-      },
+      "tested": null,
       "stack": {
         "options": [
           {
@@ -1177,7 +1141,7 @@
           {
             "role": "app",
             "title": "Metabase BI",
-            "image": "docker.io/metabase/metabase:v0.64.1",
+            "image": "docker.io/metabase/metabase:v0.64.2",
             "env": [
               "MB_DB_TYPE=postgres",
               "MB_DB_DBNAME={{option:database}}",
@@ -1221,12 +1185,9 @@
       ],
       "kind": "container",
       "licenceNote": "Offered under the Server Side Public License (SSPL-1.0), which is source-available rather than OSI open source: running it as a service for others has conditions.",
-      "tested": {
-        "date": "2026-10-12",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "docker.io/library/mongo:9.0.2",
+        "image": "docker.io/library/mongo:9.0.4",
         "name": "mongodb",
         "ports": [
           "27017:27017"
@@ -1257,12 +1218,9 @@
         "Software Development"
       ],
       "kind": "container",
-      "tested": {
-        "date": "2026-10-12",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "docker.io/library/nats:2.15.0",
+        "image": "docker.io/library/nats:2.15.1",
         "name": "nats",
         "ports": [
           "4222:4222",
@@ -1342,12 +1300,9 @@
         "Software Development"
       ],
       "kind": "container",
-      "tested": {
-        "date": "2026-10-12",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "docker.io/ollama/ollama:0.40.3",
+        "image": "docker.io/ollama/ollama:0.40.6",
         "name": "ollama",
         "ports": [
           "11434:11434"
@@ -1665,12 +1620,9 @@
       ],
       "kind": "container",
       "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
-      "tested": {
-        "date": "2026-10-12",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "ghcr.io/stirling-tools/s-pdf:3.1.0",
+        "image": "ghcr.io/stirling-tools/s-pdf:3.2.0",
         "name": "stirling-pdf",
         "ports": [
           "8080:8080"
@@ -1785,12 +1737,9 @@
       ],
       "kind": "container",
       "licenceNote": "BUSL-1.1; restrictions on competitive offerings apply",
-      "tested": {
-        "date": "2026-10-18",
-        "macs": 1
-      },
+      "tested": null,
       "container": {
-        "image": "docker.io/hashicorp/vault:2.1.2",
+        "image": "docker.io/hashicorp/vault:2.2.0",
         "name": "vault",
         "ports": [
           "8200:8200"

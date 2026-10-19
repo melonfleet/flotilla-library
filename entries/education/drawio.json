@@ -6,7 +6,7 @@
   "container": {
     "command": [],
     "env": [],
-    "image": "docker.io/jgraph/drawio:32.4.1",
+    "image": "docker.io/jgraph/drawio:32.5.5",
     "name": "drawio",
     "note": "Stateless container; diagrams are saved locally in the client browser or exported to disk.",
     "ports": [
@@ -19,9 +19,6 @@
   "id": "drawio",
   "kind": "container",
   "summary": "Self-hosted diagramming software for flowcharts, architecture, and network diagrams.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Draw.io Visual Diagramming"
 }

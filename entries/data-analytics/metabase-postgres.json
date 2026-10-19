@@ -54,7 +54,7 @@
           "MB_DB_USER=metabase",
           "MB_DB_HOST={{host:db}}"
         ],
-        "image": "docker.io/metabase/metabase:v0.64.1",
+        "image": "docker.io/metabase/metabase:v0.64.2",
         "role": "app",
         "secretEnv": [
           {
@@ -74,9 +74,6 @@
     ]
   },
   "summary": "Business intelligence platform for building visual charts and data dashboards.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Metabase BI + PostgreSQL"
 }

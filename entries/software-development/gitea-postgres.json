@@ -53,7 +53,7 @@
           "GITEA__database__NAME={{option:database}}",
           "GITEA__database__USER=gitea"
         ],
-        "image": "ghcr.io/go-gitea/gitea:28.1.0",
+        "image": "ghcr.io/go-gitea/gitea:28.2.0",
         "role": "app",
         "secretEnv": [
           {
@@ -73,9 +73,6 @@
     ]
   },
   "summary": "Production-ready Gitea installation backed by PostgreSQL.",
-  "tested": {
-    "date": "2026-10-13",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Gitea + PostgreSQL"
 }

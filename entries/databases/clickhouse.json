@@ -9,7 +9,7 @@
       "CLICKHOUSE_DB=default",
       "CLICKHOUSE_USER=default"
     ],
-    "image": "docker.io/clickhouse/clickhouse-server:26.9.17",
+    "image": "docker.io/clickhouse/clickhouse-server:26.9.21",
     "name": "clickhouse",
     "note": "Requires higher memory allocation (1GB+) for processing complex column aggregations.",
     "ports": [
@@ -29,9 +29,6 @@
   "id": "clickhouse",
   "kind": "container",
   "summary": "Real-time column-oriented DBMS for high-speed analytical query processing.",
-  "tested": {
-    "date": "2026-10-13",
-    "macs": 1
-  },
+  "tested": null,
   "title": "ClickHouse Analytics DB"
 }
