@@ -23,8 +23,10 @@ for Apple's `container`. Flotilla shows them in **Suggestions**, by category.
   `icons/SOURCES.md` says where each one came from and under what licence or trademark terms;
   entries without one show their category's symbol.
 - `VERSION`: the library's version, four numbers (`2026.10.13.2`).
+- `report.json` and `report.json.sig`, also on `published`: the daily vulnerability report (below).
 - `tools/`: `build_library.py`, `check_entries.py` and `check_tags.py`, used by CI and the
-  publish step below. `.github/workflows/` holds the two workflows.
+  publish step below; `build_report.py`, `sign_report.py` and `make-report-key.sh` for reports.
+  `.github/workflows/` holds the workflows.
 
 ## How Flotilla trusts it
 
@@ -84,6 +86,34 @@ says when, and on how many Macs.
    is signed: the icons are covered by the hashes in `library.json`. `sign-library.swift` asks to
    read the key from the Keychain: choose **Allow**, not Always Allow. Sign last: the signature
    covers `library.json`'s exact bytes, so any later change to it needs signing again.
+
+## Vulnerability reports
+
+`scan.yml` runs once a day (and on demand from the Actions tab). It scans the **linux/arm64** build of
+every image in the published `library.json` with [Grype](https://github.com/anchore/grype), at a
+version pinned in the workflow and checked against a SHA-256 written in it, and commits a signed
+`report.json` and `report.json.sig` to `published`. For each image the report has both digests a
+local `container` image can show (the index digest and the arm64 manifest digest), counts of
+critical, high, medium and low findings, and the critical and high ones with the version that fixes
+them. Flotilla downloads it beside the library, with the same anonymous request, and matches it
+against your images **on your Mac, by digest**; nothing about your images is sent anywhere. An image
+the library doesn't list has no report, and Flotilla then shows nothing, not "no vulnerabilities".
+
+- **A second key.** Reports are signed with their own Ed25519 key, held as the Actions secret
+  `REPORT_SIGNING_KEY` and used only by the publish job. The library key stays in the owner's
+  Keychain and no workflow touches it. Flotilla accepts the report key for reports only and the
+  library key for the library only, so a leaked report key can at worst show a false or missing
+  warning; it can never change a recipe. Make the key once, on the owner's Mac, with
+  `sh tools/make-report-key.sh`: it sends the private half straight to GitHub without showing or saving
+  it, and prints the public half for the app.
+- **Advisory only.** A finding never stops, pulls, rebuilds or restarts anything. A scanner reports what its
+  database knows about the packages it can see: no finding is not a promise of safety, and a finding
+  may not be reachable in how you run the image.
+- **Least privilege.** The scan job reads and has no secret; the publish job is the only one that can
+  write, only to `published`, and only `report.json` and `report.json.sig`. A run whose report differs
+  from the last only in `generated` commits nothing.
+- **Tests.** `python3 -m unittest discover -s tools -p 'test_*.py'` (the signing tests need
+  `pip install -r tools/requirements-sign.txt`); CI runs them.
 
 ## Licence
 

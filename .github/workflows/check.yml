@@ -30,6 +30,13 @@ jobs:
       - name: Python checks on entries/ and icons/
         run: python3 tools/check_entries.py --library library.json
 
+      # build_report.py and sign_report.py (the daily scan's tools); see scan.yml.
+      - name: Tests for the report tools
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --require-virtualenv -r tools/requirements-sign.txt
+          "$RUNNER_TEMP/venv/bin/python" -I -W error -m unittest discover -s tools -p 'test_*.py'
+
       - name: Check out Flotilla (public)
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:

@@ -1,0 +1,175 @@
+name: Scan
+
+# Daily: scan the linux/arm64 build of every image in the published library with Grype, build
+# report.json from the results, sign it with the report key, and commit report.json and
+# report.json.sig to the `published` branch. Flotilla shows the findings and acts on nothing.
+# (DECISIONS Q62.) Never touches library.json, library.json.sig or icons/, and never uses the
+# library key: that one is in the owner's Keychain and no workflow has it.
+on:
+  schedule:
+    - cron: "41 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One at a time, so two runs can't race to push; a manual run waits for the scheduled one.
+concurrency:
+  group: scan
+  cancel-in-progress: false
+
+env:
+  # Grype is downloaded from Anchore's GitHub release and checked against this SHA-256, taken from
+  # the release's grype_0.120.1_checksums.txt. To move to a new version change all three together.
+  GRYPE_VERSION: "0.120.1"
+  GRYPE_LINUX_AMD64_SHA256: "0a9ee97ef5ae2ee953b0a80098105052e846cdbe319a57d808b519c33cd1343d"
+  GRYPE_CHECK_FOR_APP_UPDATE: "false"
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    # No secrets here, and no write access: this job only talks to registries.
+    permissions:
+      contents: read
+    steps:
+      - name: Check out the tools
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: main
+          persist-credentials: false
+
+      - name: Check out the published library
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: published
+          path: published
+          persist-credentials: false
+
+      - name: Install Grype (pinned, checksum-verified)
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/grype-dl" "$RUNNER_TEMP/bin"
+          cd "$RUNNER_TEMP/grype-dl"
+          archive="grype_${GRYPE_VERSION}_linux_amd64.tar.gz"
+          curl --fail --silent --show-error --location --proto '=https' --tlsv1.2 \
+            --output "$archive" \
+            "https://github.com/anchore/grype/releases/download/v${GRYPE_VERSION}/${archive}"
+          echo "${GRYPE_LINUX_AMD64_SHA256}  ${archive}" | sha256sum --check --strict -
+          tar -xzf "$archive" -C "$RUNNER_TEMP/bin" grype
+          "$RUNNER_TEMP/bin/grype" version
+
+      - name: Update Grype's vulnerability database
+        run: |
+          "$RUNNER_TEMP/bin/grype" db update
+          "$RUNNER_TEMP/bin/grype" db status
+
+      # Each image once, as linux/arm64 (what a Mac running `container` pulls). Grype reads the
+      # registry itself; nothing is run. One image failing doesn't stop the others; it is left out
+      # of the report, and the job fails at the end so it is seen.
+      - name: Scan every image in library.json
+        run: |
+          set -u
+          mkdir -p "$RUNNER_TEMP/scans"
+          python3 main/tools/build_report.py images published/library.json > "$RUNNER_TEMP/images.txt"
+          echo "$(wc -l < "$RUNNER_TEMP/images.txt") images"
+          failed=0
+          n=0
+          while IFS= read -r image; do
+            n=$((n + 1))
+            out="$RUNNER_TEMP/scans/$(printf '%03d' "$n").json"
+            ok=0
+            for attempt in 1 2 3; do
+              if "$RUNNER_TEMP/bin/grype" "registry:$image" --platform linux/arm64 \
+                   --output json --quiet --file "$out"; then ok=1; break; fi
+              echo "attempt $attempt failed for $image" >&2
+              sleep 15
+            done
+            if [ "$ok" = 0 ]; then echo "::error::could not scan $image"; rm -f "$out"; failed=$((failed + 1)); fi
+          done < "$RUNNER_TEMP/images.txt"
+          echo "failed=$failed" >> "$GITHUB_ENV"
+          [ "$failed" -lt "$n" ]
+
+      - name: Keep the scan results for the publish job
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: scans
+          path: ${{ runner.temp }}/scans/*.json
+          if-no-files-found: error
+          retention-days: 3
+
+      - name: Fail if any image could not be scanned
+        run: |
+          [ "${failed}" = 0 ] || { echo "::error::${failed} image(s) were not scanned and are missing from the report"; exit 1; }
+
+  publish:
+    # Runs even when some images failed to scan: the rest are still worth publishing.
+    needs: scan
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # The only job that can write, and only to the published branch.
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the tools
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: main
+          persist-credentials: false
+
+      - name: Check out the published branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: published
+          path: published
+          # Kept for the push below, and only in this directory; nothing from it is executed.
+          persist-credentials: true
+
+      - name: Fetch the scan results
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: scans
+          path: ${{ runner.temp }}/scans
+
+      - name: Install the signing tool's one dependency
+        run: |
+          python3 -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --require-virtualenv -r main/tools/requirements-sign.txt
+
+      - name: Build report.json
+        run: |
+          python3 main/tools/build_report.py build published/library.json "$RUNNER_TEMP/scans" \
+            --out "$RUNNER_TEMP/report.json" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Sign report.json with the report key
+        env:
+          REPORT_SIGNING_KEY: ${{ secrets.REPORT_SIGNING_KEY }}
+        run: |
+          "$RUNNER_TEMP/venv/bin/python" main/tools/sign_report.py "$RUNNER_TEMP/report.json"
+
+      # A report that differs only in `generated` isn't worth a commit.
+      - name: Commit report.json and report.json.sig to published
+        run: |
+          set -eu
+          cd published
+          if [ -f report.json ] && python3 ../main/tools/build_report.py same report.json "$RUNNER_TEMP/report.json"; then
+            echo "Nothing changed except the date; not committing." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          cp "$RUNNER_TEMP/report.json" "$RUNNER_TEMP/report.json.sig" .
+          git add -- report.json report.json.sig
+          # Only these two files, whatever else is in the tree.
+          staged=$(git diff --cached --name-only | sort | tr '\n' ' ')
+          case "$staged" in
+            "report.json report.json.sig "|"report.json "|"report.json.sig ") ;;
+            *) echo "::error::refusing to commit: staged $staged"; exit 1 ;;
+          esac
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Vulnerability report $(date -u +%Y-%m-%d)"
+          for attempt in 1 2 3; do
+            git push origin HEAD:published && exit 0
+            git pull --rebase origin published
+          done
+          echo "::error::could not push to published"; exit 1
