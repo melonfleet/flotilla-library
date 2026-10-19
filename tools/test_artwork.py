@@ -47,7 +47,9 @@ class Artwork(unittest.TestCase):
                     "registry.host:5000", "distro." + "a" * 81):
             with self.subTest(aid=aid):
                 self.assertTrue(check.artwork_problems([{**self.item, "id": aid}], source=True))
-        self.assertEqual(check.artwork_problems([{**self.item, "id": "distro." + "a" * 80}], source=True), [])
+        # The app's limit is 64 bytes in all: "distro." plus 57 is the most it takes (Kyle, 19 October).
+        self.assertEqual(check.artwork_problems([{**self.item, "id": "distro." + "a" * 57}], source=True), [])
+        self.assertNotEqual(check.artwork_problems([{**self.item, "id": "distro." + "a" * 58}], source=True), [])
 
     def test_duplicate_ids(self):
         self.assertTrue(any("used twice" in p for p in check.artwork_problems([self.item] * 2, source=True)))
