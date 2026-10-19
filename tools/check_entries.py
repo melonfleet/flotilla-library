@@ -467,7 +467,11 @@ def artwork_problems(artwork, source=False):
             out += shape
             continue
         aid = item["id"]
-        if re.fullmatch(r"(distro|registry)\.[a-z0-9.-]{1,80}", aid) is None:
+        # The app's rule exactly (`LibraryArtwork`): at most 64 bytes, dot-separated segments of
+        # lowercase letters and digits joined by single hyphens, so `a..b` and `-` fail here as
+        # they would there (Kyle, 19 October).
+        if len(aid.encode("utf-8")) > 64 or \
+                re.fullmatch(r"(distro|registry)(\.[a-z0-9]+(-[a-z0-9]+)*)+", aid) is None:
             out.append(f"{where}: its id isn't a distro or registry artwork id")
         if aid in seen:
             out.append(f"{where}: its id is used twice ({aid})")

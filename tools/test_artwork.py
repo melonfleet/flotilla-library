@@ -140,5 +140,19 @@ class Artwork(unittest.TestCase):
         self.assertTrue(check.checked({**lib, "artwork": [self.item]})[1])
 
 
+
+class ArtworkIdMatchesTheApp(unittest.TestCase):
+    """The app refuses these ids (`LibraryArtwork`), so the library must too (Kyle, 19 October)."""
+
+    def test_ids_follow_the_apps_rule(self):
+        import re
+        def ok(aid):
+            return len(aid.encode("utf-8")) <= 64 and \
+                re.fullmatch(r"(distro|registry)(\.[a-z0-9]+(-[a-z0-9]+)*)+", aid) is not None
+        for good in ("distro.debian", "distro.fallback", "registry.registry.k8s.io", "registry.ghcr.io"):
+            self.assertTrue(ok(good), good)
+        for bad in ("distro.a..b", "distro.-", "distro.a-", "registry.", "distro." + "a" * 60, "Distro.debian"):
+            self.assertFalse(ok(bad), bad)
+
 if __name__ == "__main__":
     unittest.main()

@@ -1914,7 +1914,7 @@
         "sha256": "c219abcc1024ac5e9ad49d8fe311f1e26a920127121f44f9537a137adef1d9e4",
         "bytes": 5937
       },
-      "attribution": "Debian is a registered trademark owned by Software in the Public Interest, Inc. Debian Open Use Logo © 1999 Software in the Public Interest, Inc., CC BY-SA 3.0."
+      "attribution": "Debian is a registered trademark owned by Software in the Public Interest, Inc. Debian Open Use Logo © 1999 Software in the Public Interest, Inc., CC BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/"
     },
     {
       "id": "distro.fallback",
