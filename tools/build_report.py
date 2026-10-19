@@ -15,7 +15,9 @@ thing that changes between two runs on the same input is `generated`. The file i
 if it would be larger, high findings are dropped first, then critical ones (from the last image
 backwards), and `omitted` says how many. Counts always cover everything.
 
-The limits here match `VulnerabilityReport` in Flotilla's FlotillaCore; change both together.
+The limits here match `VulnerabilityReport` in Flotilla's FlotillaCore; change both together
+(test_report.py compares them with the app's source when it can find it). The builder enforces every
+one of them: the app refuses a report that breaks a structural cap, and repairs only free text.
 """
 import argparse
 import datetime
@@ -26,11 +28,15 @@ import sys
 import unicodedata
 
 MAX_BYTES = 2 * 1024 * 1024
+MAX_IMAGES = 2_000
 MAX_FINDINGS_PER_IMAGE = 500
 MAX_DIGESTS = 8
 MAX_STRING = 256  # UTF-8 bytes, not characters: the consumer counts bytes
 MAX_ID = 64
-MAX_REFERENCE = 256
+MAX_REFERENCE = 256  # the app allows 512 (VulnerabilityReport.maxReference); the library's own limit is tighter
+MAX_APP_REFERENCE = 512
+MAX_COUNT = 10_000_000
+MAX_OMITTED = 100_000_000
 SEVERITIES = ("critical", "high", "medium", "low")
 SHOWN = ("Critical", "High")
 DIGEST = re.compile(r"sha256:[0-9a-f]{64}")
@@ -56,10 +62,12 @@ def library_images(library):
 
 
 def plain(text):
-    """Single-line plain text, by the consumer's rule (`VulnerabilityReport.isText`): control and
-    format characters and every whitespace other than a space become a space, then runs collapse."""
+    """Single-line plain text, by the consumer's rule (`VulnerabilityReport.isText`): control, format
+    and unassigned characters and every whitespace other than a space become a space, then runs
+    collapse. Unassigned (`Cn`) is by *this* Python's Unicode database, which may be older or newer
+    than the app's, so it cannot be the only guard; the app replaces what it dislikes too."""
     return " ".join("".join(
-        " " if unicodedata.category(c) in ("Cc", "Cf", "Cs", "Zl", "Zp", "Zs") or c.isspace() else c
+        " " if unicodedata.category(c) in ("Cc", "Cf", "Cn", "Cs", "Zl", "Zp", "Zs") or c.isspace() else c
         for c in str(text)).split())
 
 
@@ -113,9 +121,10 @@ def image_entry(scan):
         return None
     if len(digests) > MAX_DIGESTS:
         raise ValueError("%s has more than %d digests" % (target["userInput"], MAX_DIGESTS))
-    # One finding per (id, package, installed version): the same package found at two paths, or
+    # One finding per raw (id, package, installed version): the same package found at two paths, or
     # matched twice. Duplicates merge so the result never depends on which came first: the highest
-    # severity wins and the fixes are the sorted union of every duplicate's.
+    # severity wins and the fixes are the sorted union of every duplicate's. The key is the raw
+    # identity, clipped only afterwards: distinct ids that share their first 61 bytes stay distinct.
     merged = {}
     for match in scan.get("matches", []):
         vulnerability = match["vulnerability"]
@@ -123,21 +132,24 @@ def image_entry(scan):
         if severity not in SEVERITIES:
             continue  # negligible and unknown are in neither the counts nor the list
         artifact = match["artifact"]
-        key = (required(finding_id(vulnerability, match.get("relatedVulnerabilities") or []), MAX_ID),
-               required(artifact.get("name", "")), clip(artifact.get("version", "")))
+        key = (str(finding_id(vulnerability, match.get("relatedVulnerabilities") or [])),
+               str(artifact.get("name", "")), str(artifact.get("version", "")))
         entry = merged.setdefault(key, {"rank": len(SEVERITIES), "fixes": set()})
         entry["rank"] = min(entry["rank"], SEVERITIES.index(severity))
         entry["fixes"] |= fix_versions(vulnerability)
     counts = dict.fromkeys(SEVERITIES, 0)
     findings = []
-    for (vid, package, installed), entry in merged.items():
+    for (raw_id, raw_package, raw_installed), entry in merged.items():
+        vid, package, installed = required(raw_id, MAX_ID), required(raw_package), clip(raw_installed)
         severity = SEVERITIES[entry["rank"]]
         counts[severity] += 1
         if severity.capitalize() in SHOWN:
             fixed = clip(", ".join(sorted(entry["fixes"])[:3])) if entry["fixes"] else ""
             findings.append({"id": vid, "severity": severity.capitalize(), "package": package,
                              "installed": installed, "fixed": fixed or None})
-    findings.sort(key=lambda f: (SHOWN.index(f["severity"]), f["id"], f["package"], f["installed"]))
+    if any(n > MAX_COUNT for n in counts.values()):
+        raise ValueError("%s has more than %d findings of one severity" % (target["userInput"], MAX_COUNT))
+    findings.sort(key=lambda f: (SHOWN.index(f["severity"]), f["id"], f["package"], f["installed"], f["fixed"] or ""))
     return {"reference": target["userInput"], "digests": digests, "counts": counts, "findings": findings}
 
 
@@ -202,6 +214,8 @@ def build(library, scans, generated):
         seen.add(reference)
         images.append(entry)
     images.sort(key=lambda i: i["reference"])
+    if len(images) > MAX_IMAGES:
+        raise ValueError("%d images is over the %d the app reads" % (len(images), MAX_IMAGES))
     for reference in sorted(wanted - seen):
         problems.append("%s has no scan, so it is not in the report" % reference)
     if not images:

@@ -8,6 +8,7 @@ import base64
 import copy
 import json
 import os
+import re
 import sys
 import unicodedata
 import unittest
@@ -51,14 +52,24 @@ def library(*images):
 
 # The same inputs as VulnerabilityReportTests.nastyText in Flotilla; keep the two lists together.
 NASTY = ["x\u001b[31mred", "a\u202eevil", "zero\u200bwidth", "tab\there", "line\nbreak", "nb\u00a0sp",
-         "sep\u2028sep", "a" * 255 + "\u00e9", "\u00e9" * 200, "\u202e\n", "x" * 1000]
+         "sep\u2028sep", "a" * 255 + "\u00e9", "\u00e9" * 200, "\u202e\n", "x" * 1000,
+         # U+0890 and U+0891 are format characters in Unicode 14+ and unassigned (Cn) in older Python
+         # databases; U+1343 is as given in review; U+0378 is unassigned in every version.
+         "pkg\u0890evil", "pkg\u1343" "9name", "pkg\u08919name", "pkg\u0378name"]
+
+
+# Disallowed by the app whatever this Python's Unicode database says about them.
+KNOWN_UNASSIGNED_OR_FORMAT = {0x0378, 0x0890, 0x0891}
 
 
 def consumer_accepts(text, limit=256, required=False):
-    """Mirror of `VulnerabilityReport.isText`: bounded bytes, no control, format or non-space whitespace."""
+    """Mirror of `VulnerabilityReport.isText`: bounded bytes, no control, format, unassigned or
+    non-space whitespace. Never relies on this Python's Unicode version for the known cases: they are
+    listed by code point as well."""
     if len(text.encode("utf-8")) > limit or (required and not text):
         return False
-    return not any(unicodedata.category(c) in ("Cc", "Cf") or (c.isspace() and c != " ") for c in text)
+    return not any(unicodedata.category(c) in ("Cc", "Cf", "Cn") or ord(c) in KNOWN_UNASSIGNED_OR_FORMAT
+                   or (c.isspace() and c != " ") for c in text)
 
 
 class BuildReport(unittest.TestCase):
@@ -155,6 +166,55 @@ class BuildReport(unittest.TestCase):
         self.assertEqual(a, b)
         self.assertEqual(a["images"][0]["findings"][0]["fixed"], "3.0.2")
         self.assertEqual(a["images"][0]["counts"]["high"], 1)
+
+    def test_distinct_ids_sharing_a_clipped_prefix_stay_distinct(self):
+        prefix = "GHSA-" + "x" * 80  # clips to the same 64 bytes
+        unfixed = match(prefix + "-a", "Critical", fixed=(), state="not-fixed")
+        fixed = match(prefix + "-b", "High", fixed=("1.1",))
+        for order in ([unfixed, fixed], [fixed, unfixed]):
+            image = self.build([scan(matches=order)])[0]["images"][0]
+            self.assertEqual(image["counts"], {"critical": 1, "high": 1, "medium": 0, "low": 0})
+            self.assertEqual([(f["severity"], f["fixed"]) for f in image["findings"]],
+                             [("Critical", None), ("High", "1.1")])
+        # The same goes for package names and versions that clip alike.
+        a = match("CVE-1", "High", name="p" * 300 + "a")
+        b = match("CVE-1", "High", name="p" * 300 + "b")
+        self.assertEqual(self.build([scan(matches=[a, b])])[0]["images"][0]["counts"]["high"], 2)
+
+    def test_the_image_cap_is_the_apps(self):
+        names = ["docker.io/library/i%d:1" % n for n in range(br.MAX_IMAGES + 1)]
+        scans = [scan(name, arm="sha256:%064x" % n, index="sha256:%064x" % (n + 10 ** 6)) for n, name in enumerate(names)]
+        with self.assertRaises(ValueError):
+            self.build(scans, names)
+        report, _ = self.build(scans[:-1], names[:-1])
+        self.assertEqual(len(report["images"]), br.MAX_IMAGES)
+
+    def test_too_many_digests_or_a_huge_count_skips_that_scan(self):
+        many = scan()
+        many["source"]["target"]["repoDigests"] = ["x@sha256:%064x" % n for n in range(br.MAX_DIGESTS + 1)]
+        with self.assertRaises(ValueError):
+            self.build([many])
+
+    def test_caps_equal_the_apps(self):
+        """Reads the app's source if it is checked out beside this repo (or at $FLOTILLA_SOURCE)."""
+        here = os.path.dirname(os.path.abspath(__file__))
+        path = os.path.join(os.environ.get("FLOTILLA_SOURCE", os.path.join(here, "..", "..", "Flotilla")),
+                            "Sources", "FlotillaCore", "VulnerabilityReport.swift")
+        if not os.path.exists(path):
+            self.skipTest("the app's source isn't checked out beside this repo; set FLOTILLA_SOURCE")
+        with open(path, encoding="utf-8") as handle:
+            source = handle.read()
+        app = {name: eval(expr.replace("_", ""), {"__builtins__": {}}) for name, expr in
+               re.findall(r"static let (max\w+) = ([0-9_ *]+)\n", source)}
+        pairs = {"maxBytes": br.MAX_BYTES, "maxImages": br.MAX_IMAGES,
+                 "maxFindingsPerImage": br.MAX_FINDINGS_PER_IMAGE, "maxDigestsPerImage": br.MAX_DIGESTS,
+                 "maxText": br.MAX_STRING, "maxID": br.MAX_ID, "maxReference": br.MAX_APP_REFERENCE,
+                 "maxCount": br.MAX_COUNT, "maxOmitted": br.MAX_OMITTED}
+        for name, ours in pairs.items():
+            self.assertIn(name, app, "%s not found in the app's source" % name)
+            self.assertEqual(app[name], ours, name)
+        self.assertEqual(set(app), set(pairs), "the app has a cap the builder doesn't know")
+        self.assertLessEqual(br.MAX_REFERENCE, app["maxReference"])
 
     def test_deterministic_whatever_the_input_order(self):
         a = scan("docker.io/library/a:1", [match("CVE-1", "High"), match("CVE-2", "High")], arm="sha256:" + "1" * 64)
