@@ -233,6 +233,51 @@
       }
     },
     {
+      "id": "filebrowser",
+      "title": "File Browser Web Portal",
+      "summary": "Sleek web interface for managing, browsing, uploading, and sharing local server files.",
+      "categories": [
+        "Storage & Files",
+        "Home & Personal"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-19",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/filebrowser/filebrowser:v2.63.23",
+        "name": "filebrowser",
+        "ports": [
+          "8080:8080"
+        ],
+        "env": [
+          "FB_PORT=8080"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "files",
+            "path": "/srv",
+            "volumeOwner": {
+              "uid": 1000,
+              "gid": 1000
+            }
+          },
+          {
+            "suffix": "database",
+            "path": "/database",
+            "volumeOwner": {
+              "uid": 1000,
+              "gid": 1000
+            }
+          }
+        ],
+        "command": [],
+        "note": "Its first start prints a generated admin password in the logs; change it after signing in. Runs as uid 1000, so it listens on 8080 (FB_PORT) rather than port 80; Flotilla gives both new volumes to 1000:1000. Its files volume starts empty."
+      }
+    },
+    {
       "id": "firefly-iii-mariadb",
       "title": "Firefly III + MariaDB",
       "summary": "Production-grade Firefly III setup backed by a dedicated MariaDB relational database.",
@@ -727,6 +772,44 @@
         ],
         "command": [],
         "note": "Sign in with the generated JUPYTER_TOKEN. Includes R and Julia; give it at least 2 GB of memory. Runs as jovyan (uid 1000); Flotilla gives a new volume to 1000:100."
+      }
+    },
+    {
+      "id": "jupyter-scipy-notebook",
+      "title": "Jupyter SciPy Notebook",
+      "summary": "Scientific Python environment with Jupyter Notebook and Lab web interface.",
+      "categories": [
+        "Education",
+        "Data & Analytics",
+        "Science & Research"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-19",
+        "macs": 1
+      },
+      "container": {
+        "image": "quay.io/jupyter/scipy-notebook:2026-10-12",
+        "name": "jupyter-scipy-notebook",
+        "ports": [
+          "8888:8888"
+        ],
+        "env": [],
+        "secretEnv": [
+          "JUPYTER_TOKEN"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/home/jovyan/work",
+            "volumeOwner": {
+              "uid": 1000,
+              "gid": 100
+            }
+          }
+        ],
+        "command": [],
+        "note": "Sign in with the generated JUPYTER_TOKEN. Give it at least 1 GB of memory. Runs as jovyan (uid 1000); Flotilla gives a new volume to 1000:100."
       }
     },
     {

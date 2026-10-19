@@ -1,0 +1,45 @@
+{
+  "categories": [
+    "Storage & Files",
+    "Home & Personal"
+  ],
+  "container": {
+    "command": [],
+    "env": [
+      "FB_PORT=8080"
+    ],
+    "image": "docker.io/filebrowser/filebrowser:v2.63.23",
+    "name": "filebrowser",
+    "note": "Its first start prints a generated admin password in the logs; change it after signing in. Runs as uid 1000, so it listens on 8080 (FB_PORT) rather than port 80; Flotilla gives both new volumes to 1000:1000. Its files volume starts empty.",
+    "ports": [
+      "8080:8080"
+    ],
+    "secretEnv": [],
+    "volumes": [
+      {
+        "path": "/srv",
+        "suffix": "files",
+        "volumeOwner": {
+          "gid": 1000,
+          "uid": 1000
+        }
+      },
+      {
+        "path": "/database",
+        "suffix": "database",
+        "volumeOwner": {
+          "gid": 1000,
+          "uid": 1000
+        }
+      }
+    ]
+  },
+  "id": "filebrowser",
+  "kind": "container",
+  "summary": "Sleek web interface for managing, browsing, uploading, and sharing local server files.",
+  "tested": {
+    "date": "2026-10-19",
+    "macs": 1
+  },
+  "title": "File Browser Web Portal"
+}

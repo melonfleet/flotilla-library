@@ -1,0 +1,38 @@
+{
+  "categories": [
+    "Education",
+    "Data & Analytics",
+    "Science & Research"
+  ],
+  "container": {
+    "command": [],
+    "env": [],
+    "image": "quay.io/jupyter/scipy-notebook:2026-10-12",
+    "name": "jupyter-scipy-notebook",
+    "note": "Sign in with the generated JUPYTER_TOKEN. Give it at least 1 GB of memory. Runs as jovyan (uid 1000); Flotilla gives a new volume to 1000:100.",
+    "ports": [
+      "8888:8888"
+    ],
+    "secretEnv": [
+      "JUPYTER_TOKEN"
+    ],
+    "volumes": [
+      {
+        "path": "/home/jovyan/work",
+        "suffix": "data",
+        "volumeOwner": {
+          "gid": 100,
+          "uid": 1000
+        }
+      }
+    ]
+  },
+  "id": "jupyter-scipy-notebook",
+  "kind": "container",
+  "summary": "Scientific Python environment with Jupyter Notebook and Lab web interface.",
+  "tested": {
+    "date": "2026-10-19",
+    "macs": 1
+  },
+  "title": "Jupyter SciPy Notebook"
+}
