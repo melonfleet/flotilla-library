@@ -180,10 +180,11 @@ def _day(text):
 ROW_NAME = re.compile(r"macOS ([A-Z][A-Za-z]{1,20}(?: [A-Z][A-Za-z]{1,20}){0,2}) ([0-9]{1,3}(?:\.[0-9]{1,3}){0,2})")
 
 
-def security_releases(page):
+def security_releases(page, pending=None):
     """The macOS rows of Apple's security releases page, newest first as listed:
     [{"name", "version", "released", "note" (id or None), "noCVEs" (bool)}]. Rows for other
-    products, and macOS rows older than MIN_MACOS_MAJOR, are skipped."""
+    products, and macOS rows older than MIN_MACOS_MAJOR, are skipped. A "details coming soon" row is
+    left out of the result, but its version is added to `pending` if a list is given."""
     rows, current = [], None
     for tag, text, links in blocks(page):
         if tag == "tr":
@@ -211,6 +212,8 @@ def security_releases(page):
         notes = [m.group(1) for link in cells[0][0][1] for m in [NOTE_URL.fullmatch(link)] if m]
         no_cves = any("no published CVE entries" in text for text, _ in cells[0][1:])
         if not notes and not no_cves:
+            if pending is not None:
+                pending.append(match.group(2))
             continue  # "details coming soon": not yet a release with a known list
         found.append({"name": name, "version": match.group(2), "released": released,
                       "note": notes[0] if notes else None, "noCVEs": not notes})
@@ -227,13 +230,18 @@ def note_fixes(page, name):
     The note must be for `name` (its first <h2>), and is read up to the next <h2> ("Additional
     recognition" has credits, not fixes). An entry begins at each <h3>; its CVEs are the paragraphs
     that *begin* with a CVE id, so "CVE-2025-14174 was also issued in response" in an Impact line is
-    not counted. A note with no CVE at all is refused: a linked note always has some."""
+    not counted. A note with no CVE at all is refused: a linked note always has some, and so is one
+    with no <h2> after the security section (it was cut short)."""
     items = blocks(page)
     headings = [i for i, (tag, _, _) in enumerate(items) if tag == "h2"]
     start = next((i for i in headings if items[i][1] == name), None)
     if start is None:
         raise SourceError("the note for %s is about something else" % name)
-    end = next((i for i in headings if i > start), len(items))
+    end = next((i for i in headings if i > start), None)
+    if end is None:
+        # Apple's notes close with "Additional recognition" and the footer, both <h2>. A page that ends
+        # inside the security section was cut short, and would count fewer CVEs without saying so.
+        raise SourceError("the note for %s ends inside its security section; it looks truncated" % name)
     cves, exploited = set(), set()
     entry_cves, entry_exploited = set(), False
 
@@ -285,8 +293,8 @@ def current_versions(pmv_bytes):
 def macos_section(index_page, notes, pmv_bytes, checked):
     """`notes` maps a note id to its page. Raises SourceError on anything doubtful."""
     current = current_versions(pmv_bytes)
-    releases, seen = [], set()
-    for row in security_releases(index_page):
+    releases, seen, pending = [], set(), []
+    for row in security_releases(index_page, pending):
         key = macos_version(row["version"])
         if key in seen:
             raise SourceError("%s is listed twice" % row["name"])
@@ -299,6 +307,12 @@ def macos_section(index_page, notes, pmv_bytes, checked):
             cves, exploited = note_fixes(notes[row["note"]], row["name"])
         releases.append({"version": row["version"], "name": row["name"], "released": row["released"],
                          "cves": sorted(cves), "exploited": sorted(exploited)})
+    # Coverage: an index that lost rows (cut short, or reshaped) must not keep the current versions
+    # and lose their security rows. Each version Apple offers now has a row, or is announced there.
+    listed = {macos_version(r["version"]) for r in releases} | {macos_version(v) for v in pending}
+    missing = [v for v in current if macos_version(v) not in listed]
+    if missing:
+        raise SourceError("the security releases page has no row for current macOS %s" % ", ".join(missing))
     releases.sort(key=lambda r: macos_version(r["version"]), reverse=True)
     return {"checked": checked, "current": current, "releases": releases}
 
@@ -385,7 +399,7 @@ def cvss3_score(vector):
 
 def osv_affects(record, version):
     """Whether an OSV Linux record says kernel `version` (a `kernel_version` tuple) is affected:
-    True, False, or None when a range can't be read, so the record is skipped rather than guessed."""
+    True, False, or None when a range can't be read; `kernel_section` then refuses the section rather than count short."""
     try:
         return _osv_affects(record, version)
     except (AttributeError, TypeError, KeyError):
@@ -401,7 +415,7 @@ def _osv_affects(record, version):
         for span in affected.get("ranges") or []:
             if span.get("type") != "ECOSYSTEM":
                 continue
-            introduced = None
+            introduced, closed = None, False
             for event in span.get("events") or []:
                 if set(event) == {"introduced"}:
                     introduced = kernel_version(event["introduced"])
@@ -409,10 +423,11 @@ def _osv_affects(record, version):
                         return None
                 elif set(event) == {"fixed"}:
                     fixed = kernel_version(event["fixed"])
-                    if fixed is None or introduced is None:
+                    if fixed is None or (introduced is None and not closed):
                         return None
-                    found = found or introduced <= version < fixed
-                    introduced = None
+                    if introduced is not None:  # the kernel CNA lists one fix per branch after the first
+                        found = found or introduced <= version < fixed
+                    introduced, closed = None, True
                 else:
                     return None  # last_affected, limit, or anything else: not read, so not judged
             if introduced is not None and introduced <= version:
@@ -464,6 +479,7 @@ def kernel_section(configs, latest, osv_path, checked, clip, min_records=MIN_OSV
             older[release] = binary
     if len(older) > MAX_KERNELS:
         raise SourceError("more than %d older kernels" % MAX_KERNELS)
+    uncertain = []
     tallies = {release: {"critical": 0, "high": 0, "unscored": 0, "scored": []} for release in older}
     versions = {release: kernel_version(release) for release in older}
     records = 0
@@ -473,14 +489,21 @@ def kernel_section(configs, latest, osv_path, checked, clip, min_records=MIN_OSV
         if not isinstance(rid, str) or CVE.fullmatch(rid) is None:
             continue
         on_target = osv_affects(record, target)
-        if on_target is None or on_target:
-            continue  # unreadable, or the recommended kernel has it too
+        if on_target:
+            continue  # the recommended kernel has it too
+        if on_target is None:
+            uncertain.append(rid)
+            continue
         severity = record.get("severity")
         vectors = [s.get("score") for s in (severity if isinstance(severity, list) else [])
                    if isinstance(s, dict) and s.get("type") == "CVSS_V3"]
         score = cvss3_score(vectors[0]) if len(vectors) == 1 else None
         for release, version in versions.items():
-            if osv_affects(record, version) is not True:
+            affects = osv_affects(record, version)
+            if affects is None:
+                uncertain.append(rid)  # not judged: the totals would be "at least", which the section can't say
+                break
+            if not affects:
                 continue
             tally = tallies[release]
             if score is None:
@@ -490,6 +513,9 @@ def kernel_section(configs, latest, osv_path, checked, clip, min_records=MIN_OSV
                 tally["scored"].append((score, rid, record.get("summary") or ""))
     if records < min_records:
         raise SourceError("the OSV export has only %d records; it looks truncated" % records)
+    if uncertain:
+        raise SourceError("%d CVE records have a range that can't be read (%s...), so the counts would be incomplete"
+                          % (len(uncertain), ", ".join(sorted(set(uncertain))[:3])))
     kernels = []
     for release in sorted(older, key=kernel_version, reverse=True):
         tally = tallies[release]
@@ -542,6 +568,27 @@ def macos_problem(section, timestamp, plain):
                 return "a release's CVEs"
     except (KeyError, TypeError, AttributeError):
         return "its shape"
+    return None
+
+
+def macos_regression(fresh, old):
+    """Why a fresh macOS section looks like a loss against yesterday's valid copy, or None. A release
+    both list must not lose more than half its CVEs (of four or more), nor more than half its
+    exploited ones; and a release of yesterday's that is as new as the oldest of today's must still be
+    there. Both sections have passed `macos_problem`."""
+    today = {r["version"]: r for r in fresh["releases"]}
+    if not today:
+        return "it lists no release" if old["releases"] else None
+    oldest = min(macos_version(v) for v in today)
+    for r in old["releases"]:
+        new = today.get(r["version"])
+        if new is None:
+            if macos_version(r["version"]) >= oldest:
+                return "it lost release %s" % r["version"]
+        elif (len(r["cves"]) >= 4 and len(new["cves"]) * 2 < len(r["cves"])) \
+                or (r["exploited"] and len(new["exploited"]) * 2 < len(r["exploited"])):
+            return "release %s dropped from %d CVEs (%d exploited) to %d (%d)" % (
+                r["version"], len(r["cves"]), len(r["exploited"]), len(new["cves"]), len(new["exploited"]))
     return None
 
 

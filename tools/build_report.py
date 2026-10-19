@@ -24,6 +24,7 @@ The limits here match `VulnerabilityReport` in Flotilla's FlotillaCore; change b
 one of them: the app refuses a report that breaks a structural cap, and repairs only free text.
 """
 import argparse
+import copy
 import datetime
 import json
 import os
@@ -215,22 +216,41 @@ def fit(report):
 
 def platform_section(new, previous):
     """The `platform` section to publish, and problems: each of macOS and kernel from `new` if it
-    passes its check, else from `previous` (the last published report's) if that does, else none."""
+    passes its check (and, for macOS, doesn't look like a loss against `previous`), else from
+    `previous` (the last published report's) if that does, else none. The whole section stays within
+    MAX_PLATFORM_BYTES: a fresh part that doesn't fit gives way to its previous copy. A doubtful
+    platform section never replaces a good one, and never raises: the image findings don't wait for it."""
     checks = {"macOS": platform_report.macos_problem, "kernel": platform_report.kernel_problem}
-    section, problems = {}, []
+    fresh_ok, old_ok, problems = {}, {}, []
     for key, check in checks.items():
         fresh = (new or {}).get(key) if isinstance(new, dict) else None
         old = ((previous or {}).get("platform") or {}).get(key) if isinstance(previous, dict) else None
+        old_good = isinstance(old, dict) and check(old, timestamp, plain) is None
         why = check(fresh, timestamp, plain) if isinstance(fresh, dict) else "it is missing"
+        if why is None and old_good and key == "macOS":
+            why = platform_report.macos_regression(fresh, old)
         if why is None:
-            section[key] = fresh
-            continue
-        problems.append("platform %s not used (%s)" % (key, why))
-        if isinstance(old, dict) and check(old, timestamp, plain) is None:
+            fresh_ok[key] = fresh
+        else:
+            problems.append("platform %s not used (%s)" % (key, why))
+        if old_good:
+            old_ok[key] = old
+    section = dict(fresh_ok)
+    for key, old in old_ok.items():
+        if key not in section:
             section[key] = old
             problems.append("platform %s kept from the previous report, checked %s" % (key, old["checked"]))
-    if section and len(encode(section)) > MAX_PLATFORM_BYTES:
-        raise ValueError("the platform section is over %d bytes" % MAX_PLATFORM_BYTES)
+    # The byte limit applies to what is accepted: the biggest fresh part is swapped for yesterday's
+    # copy (or left out) until the section fits.
+    while section and len(encode(section)) > MAX_PLATFORM_BYTES:
+        key = max(section, key=lambda k: len(encode(section[k])))
+        if section[key] is fresh_ok.get(key) and key in old_ok and len(encode({key: old_ok[key]})) <= MAX_PLATFORM_BYTES:
+            section[key] = old_ok[key]
+            problems.append("platform %s not used (over %d bytes); kept from the previous report, checked %s"
+                            % (key, MAX_PLATFORM_BYTES, old_ok[key]["checked"]))
+        else:
+            del section[key]
+            problems.append("platform %s left out (over %d bytes)" % (key, MAX_PLATFORM_BYTES))
     return section or None, problems
 
 
@@ -280,6 +300,13 @@ def build(library, scans, generated, platform_sources=None, previous=None):
         problems.extend(platform_problems)
     if section:
         report["platform"] = section
+    try:
+        dropped = fit(copy.deepcopy(report))
+    except ValueError:
+        if "platform" not in report:
+            raise
+        del report["platform"]  # never let the platform section be why the image findings don't publish
+        problems.append("platform left out: the report doesn't fit 2 MB with it")
     dropped = fit(report)
     if dropped:
         problems.append("over 2 MB, so findings were dropped: %s" % ", ".join("%d %s" % (n, k) for k, n in sorted(dropped.items())))
@@ -298,7 +325,7 @@ def same_apart_from_generated(a, b):
     return strip(a) == strip(b)
 
 
-def read_platform_sources(folder, checked):
+def read_platform_sources(folder, checked, min_records=platform_report.MIN_OSV_RECORDS):
     """platform.json's content from the scan job's downloads in `folder` (layout in scan.yml), and
     problems. A section whose sources are missing or doubtful is left out, with the reason."""
     def text(*parts):
@@ -324,9 +351,10 @@ def read_platform_sources(folder, checked):
             try:
                 configs[tag] = text("container-config", tag + ".swift")
             except OSError:
-                problems.append("no configuration for container %s" % tag)
+                # A kernel whose release can't be read would silently drop out of the table.
+                raise ValueError("no configuration for container %s" % tag)
         section["kernel"] = platform_report.kernel_section(configs, latest, os.path.join(folder, "osv-linux.zip"),
-                                                           checked, clip)
+                                                           checked, clip, min_records)
     except (OSError, ValueError, zipfile.BadZipFile, AttributeError, TypeError, KeyError) as error:
         problems.append("kernel left out: %s" % error)
     for key, check in (("macOS", platform_report.macos_problem), ("kernel", platform_report.kernel_problem)):

@@ -331,6 +331,32 @@ def macos_from_fixtures(**change):
                             change.get("pmv", fixture("gdmf-pmv.json", "rb")), CHECKED)
 
 
+def captured_index(drop=None):
+    """The captured index cut to the rows whose notes are captured (and those with none), without
+    the row for version `drop`."""
+    index = fixture("apple-security-releases-100100.html")
+    keep = {"149228", "125886", "148281", None}
+    rows = re.findall(r"<tr>.*?</tr>", index, re.S)
+    kept = [row for row in rows if (not re.search(r"support\.apple\.com/en-us/(\d+)", row)
+                                    or re.search(r"support\.apple\.com/en-us/(\d+)", row).group(1) in keep)
+            and not (drop and re.search(r"macOS [A-Za-z ]+ %s<" % re.escape(drop), row))]
+    return "<table>" + "".join(kept) + "</table>"
+
+
+def sources_folder(folder, tags=("1.5.0", "1.2.2"), osv=None):
+    """The scan job's download folder, from the captured sources (layout in scan.yml)."""
+    import shutil
+    os.makedirs(os.path.join(folder, "container-config"))
+    for tag in tags:
+        with open(os.path.join(folder, "container-config", tag + ".swift"), "w", encoding="utf-8") as handle:
+            handle.write(fixture("container-%s-ContainerSystemConfig.swift" % tag))
+    with open(os.path.join(folder, "container-latest.txt"), "w") as handle:
+        handle.write("https://github.com/apple/container/releases/tag/1.5.0")
+    with open(os.path.join(folder, "container-tags.txt"), "w") as handle:
+        handle.write("".join("0000 refs/tags/%s\n" % tag for tag in ("1.5.0", "1.2.2")))
+    shutil.copy(osv or os.path.join(FIXTURES, "osv-linux-sample.zip"), os.path.join(folder, "osv-linux.zip"))
+
+
 def configs():
     return {"1.5.0": fixture("container-1.5.0-ContainerSystemConfig.swift"),
             "1.2.2": fixture("container-1.2.2-ContainerSystemConfig.swift")}
@@ -406,6 +432,50 @@ class PlatformSources(unittest.TestCase):
         self.assertEqual(versions, sorted(versions, key=pr.macos_version, reverse=True))
         self.assertIn("26.7.1", versions)
         self.assertTrue(len(rows) > len(section["releases"]))
+
+    def test_a_truncated_note_is_refused_not_counted_short(self):
+        # Kyle, 19 October: the 26.2 note cut after its first CVE read as 1 CVE, 0 exploited.
+        page = fixture("apple-note-125886.html")
+        name = "macOS Tahoe 26.2"
+        full_cves, full_exploited = pr.note_fixes(page, name)
+        self.assertEqual(len(full_exploited), 2)
+        cut = page.index("CVE-", page.index("<h3")) + 20
+        cut = page.index("</p>", cut)
+        with self.assertRaises(pr.SourceError):
+            pr.note_fixes(page[:cut], name)
+        with self.assertRaises(pr.SourceError):
+            pr.note_fixes(page[:cut] + "</p></html>", name)
+        notes = {n: fixture("apple-note-%s.html" % n) for n in ("149228", "125886", "148281")}
+        notes["125886"] = page[:cut]
+        with self.assertRaises(pr.SourceError):
+            macos_from_fixtures(index=captured_index(), notes=notes)
+
+    def test_an_index_that_lost_a_current_versions_row_is_refused(self):
+        self.assertEqual(macos_from_fixtures(index=captured_index())["current"], ["27.0.1", "26.7.1"])
+        with self.assertRaises(pr.SourceError):
+            macos_from_fixtures(index=captured_index(drop="27.0.1"))
+        with self.assertRaises(pr.SourceError):
+            macos_from_fixtures(index=captured_index(drop="26.7.1"))
+
+    def test_a_fresh_macos_section_that_lost_most_of_yesterdays_counts_is_not_used(self):
+        old = macos_from_fixtures(index=captured_index())
+        fresh = copy.deepcopy(old)
+        r = next(r for r in fresh["releases"] if r["version"] == "26.2")
+        self.assertEqual(len(r["exploited"]), 2)
+        r["cves"], r["exploited"] = r["cves"][:1], []
+        self.assertIsNone(pr.macos_problem(fresh, br.timestamp, br.plain))
+        self.assertIn("26.2", pr.macos_regression(fresh, old))
+        section, problems = br.platform_section({"macOS": fresh}, {"platform": {"macOS": old}})
+        self.assertEqual(section["macOS"], old)
+        self.assertTrue(any("kept from the previous report" in p for p in problems))
+        shorter = copy.deepcopy(old)  # rows cut off the end of the index
+        shorter["releases"] = [x for x in shorter["releases"] if x["version"] != "26.7.1"]
+        self.assertIn("26.7.1", pr.macos_regression(shorter, old))
+        self.assertIsNone(pr.macos_regression(old, old))
+        # Releases that gain CVEs, or a new release, are no loss.
+        newer = copy.deepcopy(old)
+        newer["releases"][0]["cves"] += ["CVE-2026-0001"]
+        self.assertIsNone(pr.macos_regression(newer, old))
 
     def test_versions_compare_as_numbers(self):
         self.assertLess(pr.macos_version("26.9"), pr.macos_version("26.10"))
@@ -503,6 +573,52 @@ class PlatformSources(unittest.TestCase):
                 with self.assertRaises(pr.SourceError):
                     pr.kernel_section(configs(), "1.5.0", path, CHECKED, br.clip, min_records=0)
 
+    def sample_with(self, folder, change):
+        """A copy of the sample OSV export in `folder` with record CVE-2026-23240 changed by `change`."""
+        import zipfile
+        path = os.path.join(folder, "changed.zip")
+        with zipfile.ZipFile(os.path.join(FIXTURES, "osv-linux-sample.zip")) as source, zipfile.ZipFile(path, "w") as out:
+            for member in source.infolist():
+                data = source.read(member)
+                if member.filename == "CVE-2026-23240.json":
+                    record = json.loads(data)
+                    change(record)
+                    data = json.dumps(record).encode()
+                out.writestr(member.filename, data)
+        return path
+
+    def test_an_osv_range_that_cant_be_read_fails_the_section_rather_than_count_short(self):
+        # Kyle, 19 October: one critical record with a last_affected range took the count from 3 to 2.
+        import tempfile
+
+        def last_affected(record):
+            for affected in record["affected"]:
+                for span in affected.get("ranges", []):
+                    if span["type"] == "ECOSYSTEM":
+                        span["events"] = [{"introduced": "6.1"}, {"last_affected": "6.18.20"}]
+        with tempfile.TemporaryDirectory() as folder:
+            path = self.sample_with(folder, last_affected)
+            with self.assertRaises(pr.SourceError) as caught:
+                pr.kernel_section(configs(), "1.5.0", path, CHECKED, br.clip, min_records=1)
+            self.assertIn("CVE-2026-23240", str(caught.exception))
+            sources_folder(os.path.join(folder, "s"), osv=path)
+            section, problems = br.read_platform_sources(os.path.join(folder, "s"), CHECKED, min_records=1)
+            self.assertNotIn("kernel", section)
+            self.assertTrue(any("can't be read" in p for p in problems))
+
+    def test_a_missing_historical_configuration_fails_the_kernel_section(self):
+        # Kyle, 19 October: without 1.2.2's configuration the table came out empty, and valid.
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            sources_folder(os.path.join(folder, "all"))
+            section, problems = br.read_platform_sources(os.path.join(folder, "all"), CHECKED, min_records=1)
+            self.assertEqual(len(section["kernel"]["kernels"]), 1)
+            sources_folder(os.path.join(folder, "gone"))
+            os.remove(os.path.join(folder, "gone", "container-config", "1.2.2.swift"))
+            section, problems = br.read_platform_sources(os.path.join(folder, "gone"), CHECKED, min_records=1)
+            self.assertNotIn("kernel", section)
+            self.assertTrue(any("1.2.2" in p for p in problems))
+
     def test_without_the_latest_configuration_there_is_no_kernel_section(self):
         with self.assertRaises(pr.SourceError):
             kernel_from_fixtures(configs={"1.2.2": configs()["1.2.2"]})
@@ -582,13 +698,43 @@ class PlatformInTheReport(unittest.TestCase):
         report, problems = self.build("not a dict", "neither")
         self.assertNotIn("platform", report)
 
-    def test_the_platform_section_has_its_own_size_cap(self):
+    def big_macos(self, releases=30, cves=1000):
+        """Structurally valid, within every declared cap, and over the platform byte budget."""
+        return {"checked": CHECKED, "current": ["26.7.1"], "releases": [
+            {"version": "26.%d" % n, "name": "macOS Tahoe 26.%d" % n, "released": "2026-01-01",
+             "cves": ["CVE-2026-%d" % (10000 + n * 1000 + i) for i in range(cves)], "exploited": []}
+            for n in range(releases)]}
+
+    def test_the_platform_section_has_its_own_size_cap_and_gives_way_to_yesterdays_copy(self):
+        # Kyle, 19 October: 30 releases of 1,000 CVEs raised, so no image finding published either.
+        big = self.big_macos()
+        self.assertIsNone(pr.macos_problem(big, br.timestamp, br.plain))
+        self.assertGreater(len(br.encode({"macOS": big})), br.MAX_PLATFORM_BYTES)
+        kernel = kernel_from_fixtures()
+        old = {"checked": "2026-10-18T10:00:00Z", "current": ["26.7"], "releases": [
+            {"version": "26.7", "name": "macOS Tahoe 26.7", "released": "2026-09-14",
+             "cves": ["CVE-2026-1000"], "exploited": []}]}
+        report, problems = self.build({"macOS": big, "kernel": kernel}, {"platform": {"macOS": old}})
+        self.assertEqual(report["platform"], {"macOS": old, "kernel": kernel})
+        self.assertEqual(len(report["images"]), 1)
+        self.assertTrue(any("over %d bytes" % br.MAX_PLATFORM_BYTES in p for p in problems))
+        self.assertLessEqual(len(br.encode(report["platform"])), br.MAX_PLATFORM_BYTES)
+        # With no previous copy, the part is left out: still no error, and the kernel part stays.
+        report, problems = self.build({"macOS": big, "kernel": kernel})
+        self.assertEqual(report["platform"], {"kernel": kernel})
+        self.assertEqual(len(report["images"]), 1)
+        # A previous copy that is itself too big is not trusted either.
+        report, _ = self.build({"macOS": big}, {"platform": {"macOS": big}})
+        self.assertNotIn("platform", report)
+        self.assertEqual(len(report["images"]), 1)
+
+    def test_a_small_byte_budget_never_raises(self):
         kernel = kernel_from_fixtures()
         cap = br.MAX_PLATFORM_BYTES
         try:
             br.MAX_PLATFORM_BYTES = 100
-            with self.assertRaises(ValueError):
-                self.build({"kernel": kernel})
+            report, _ = self.build({"kernel": kernel})
+            self.assertNotIn("platform", report)
         finally:
             br.MAX_PLATFORM_BYTES = cap
 
