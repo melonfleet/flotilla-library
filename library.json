@@ -1,6 +1,6 @@
 {
-  "schema": 1,
-  "version": "2026.10.18.1",
+  "schema": 2,
+  "version": "2026.10.20.1",
   "entries": [
     {
       "id": "actual-budget",
@@ -230,6 +230,51 @@
         "file": "icons/drawio.png",
         "sha256": "92d96ee0875dbee3f87bad5598feb0e8215e2361dc1b46999a3c0b4cc0989d09",
         "bytes": 1838
+      }
+    },
+    {
+      "id": "filebrowser",
+      "title": "File Browser Web Portal",
+      "summary": "Sleek web interface for managing, browsing, uploading, and sharing local server files.",
+      "categories": [
+        "Storage & Files",
+        "Home & Personal"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-19",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/filebrowser/filebrowser:v2.63.23",
+        "name": "filebrowser",
+        "ports": [
+          "8080:8080"
+        ],
+        "env": [
+          "FB_PORT=8080"
+        ],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "files",
+            "path": "/srv",
+            "volumeOwner": {
+              "uid": 1000,
+              "gid": 1000
+            }
+          },
+          {
+            "suffix": "database",
+            "path": "/database",
+            "volumeOwner": {
+              "uid": 1000,
+              "gid": 1000
+            }
+          }
+        ],
+        "command": [],
+        "note": "Its first start prints a generated admin password in the logs; change it after signing in. Runs as uid 1000, so it listens on 8080 (FB_PORT) rather than port 80; Flotilla gives both new volumes to 1000:1000. Its files volume starts empty."
       }
     },
     {
@@ -573,6 +618,46 @@
       }
     },
     {
+      "id": "grafana",
+      "title": "Grafana Dashboards",
+      "summary": "Analytics and interactive visualization platform for metrics, logs, and traces.",
+      "categories": [
+        "Data & Analytics",
+        "Monitoring & Operations"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under AGPL-3.0-only, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/grafana/grafana:13.2.3",
+        "name": "grafana",
+        "ports": [
+          "3000:3000"
+        ],
+        "env": [
+          "GF_SECURITY_ADMIN_USER=admin"
+        ],
+        "secretEnv": [
+          "GF_SECURITY_ADMIN_PASSWORD"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/var/lib/grafana",
+            "volumeOwner": {
+              "uid": 472,
+              "gid": 0
+            }
+          }
+        ],
+        "command": [],
+        "note": "Sign in as admin with the generated GF_SECURITY_ADMIN_PASSWORD. Runs as uid 472; Flotilla gives a new volume to 472:0."
+      }
+    },
+    {
       "id": "home-assistant",
       "title": "Home Assistant Core",
       "summary": "Open-source home automation system prioritizing local control and user privacy.",
@@ -649,6 +734,120 @@
         "file": "icons/jellyfin.png",
         "sha256": "2dd5e7089fdb094b2ede5a672649391dd21392fe40b20da6899d896447425f56",
         "bytes": 10654
+      }
+    },
+    {
+      "id": "jupyter-datascience-notebook",
+      "title": "Jupyter Data Science Notebook",
+      "summary": "Comprehensive scientific environment pre-configured with Python, Julia, and R kernels.",
+      "categories": [
+        "Science & Research",
+        "Education",
+        "Data & Analytics"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "quay.io/jupyter/datascience-notebook:2026-10-12",
+        "name": "jupyter-datascience-notebook",
+        "ports": [
+          "8888:8888"
+        ],
+        "env": [],
+        "secretEnv": [
+          "JUPYTER_TOKEN"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/home/jovyan/work",
+            "volumeOwner": {
+              "uid": 1000,
+              "gid": 100
+            }
+          }
+        ],
+        "command": [],
+        "note": "Sign in with the generated JUPYTER_TOKEN. Includes R and Julia; give it at least 2 GB of memory. Runs as jovyan (uid 1000); Flotilla gives a new volume to 1000:100."
+      }
+    },
+    {
+      "id": "jupyter-scipy-notebook",
+      "title": "Jupyter SciPy Notebook",
+      "summary": "Scientific Python environment with Jupyter Notebook and Lab web interface.",
+      "categories": [
+        "Education",
+        "Data & Analytics",
+        "Science & Research"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-19",
+        "macs": 1
+      },
+      "container": {
+        "image": "quay.io/jupyter/scipy-notebook:2026-10-12",
+        "name": "jupyter-scipy-notebook",
+        "ports": [
+          "8888:8888"
+        ],
+        "env": [],
+        "secretEnv": [
+          "JUPYTER_TOKEN"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/home/jovyan/work",
+            "volumeOwner": {
+              "uid": 1000,
+              "gid": 100
+            }
+          }
+        ],
+        "command": [],
+        "note": "Sign in with the generated JUPYTER_TOKEN. Give it at least 1 GB of memory. Runs as jovyan (uid 1000); Flotilla gives a new volume to 1000:100."
+      }
+    },
+    {
+      "id": "jupyter-tensorflow-notebook",
+      "title": "Jupyter TensorFlow Notebook",
+      "summary": "Deep learning research environment equipped with TensorFlow and Keras libraries.",
+      "categories": [
+        "Science & Research",
+        "AI & Machine Learning",
+        "Education"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "quay.io/jupyter/tensorflow-notebook:2026-10-12",
+        "name": "jupyter-tensorflow-notebook",
+        "ports": [
+          "8888:8888"
+        ],
+        "env": [],
+        "secretEnv": [
+          "JUPYTER_TOKEN"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/home/jovyan/work",
+            "volumeOwner": {
+              "uid": 1000,
+              "gid": 100
+            }
+          }
+        ],
+        "command": [],
+        "note": "Sign in with the generated JUPYTER_TOKEN. TensorFlow runs on the CPU; give it at least 2 GB of memory. Runs as jovyan (uid 1000); Flotilla gives a new volume to 1000:100."
       }
     },
     {
@@ -775,6 +974,44 @@
       }
     },
     {
+      "id": "loki",
+      "title": "Grafana Loki Log Aggregation",
+      "summary": "Horizontal, multi-tenant log aggregation system designed to be highly cost-effective.",
+      "categories": [
+        "Monitoring & Operations",
+        "Storage & Files"
+      ],
+      "kind": "container",
+      "licenceNote": "Licensed under AGPL-3.0-only, a copyleft licence rather than a permissive one.",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/grafana/loki:3.7.8",
+        "name": "loki",
+        "ports": [
+          "3100:3100"
+        ],
+        "env": [],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/loki",
+            "volumeOwner": {
+              "uid": 10001,
+              "gid": 10001
+            }
+          }
+        ],
+        "command": [
+          "-config.file=/etc/loki/local-config.yaml"
+        ],
+        "note": "An API, not a web page: add it to Grafana as a Loki data source. Runs as uid 10001; Flotilla gives a new volume to 10001:10001."
+      }
+    },
+    {
       "id": "mailpit",
       "title": "Mailpit Email Testing Tool",
       "summary": "Fast email and SMTP testing tool with web UI and API for developers.",
@@ -784,7 +1021,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-12",
+        "date": "2026-10-20",
         "macs": 1
       },
       "container": {
@@ -795,7 +1032,8 @@
           "1025:1025"
         ],
         "env": [
-          "MP_MAX_MESSAGES=500"
+          "MP_MAX_MESSAGES=500",
+          "MP_DATABASE=/data/mailpit.db"
         ],
         "secretEnv": [],
         "volumes": [
@@ -805,7 +1043,7 @@
           }
         ],
         "command": [],
-        "note": "Stateless by default unless MP_DATABASE file path inside /data is specified."
+        "note": "MP_DATABASE keeps mail in /data/mailpit.db on the volume, so messages survive replacing the container."
       },
       "icon": {
         "file": "icons/mailpit.png",
@@ -1021,7 +1259,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-12",
+        "date": "2026-10-20",
         "macs": 1
       },
       "container": {
@@ -1040,11 +1278,13 @@
           }
         ],
         "command": [
+          "-js",
+          "-sd",
+          "/data",
           "-m",
-          "8222",
-          "-js"
+          "8222"
         ],
-        "note": "Command string flag `-js` enables JetStream persistence engine."
+        "note": "`-js -sd /data` keeps JetStream streams in /data/jetstream on the volume, so they survive replacing the container."
       },
       "icon": {
         "file": "icons/nats.png",
@@ -1132,6 +1372,45 @@
         "file": "icons/ollama.png",
         "sha256": "21e501e671c5ce3b5c0edef54b7ff59109fe8b57b3a4bef8c9a50bf73e279abb",
         "bytes": 3638
+      }
+    },
+    {
+      "id": "pgadmin4",
+      "title": "pgAdmin 4 PostgreSQL Management",
+      "summary": "Web management console and SQL query editor for PostgreSQL databases.",
+      "categories": [
+        "Databases",
+        "Software Development"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/dpage/pgadmin4:9.18.0",
+        "name": "pgadmin4",
+        "ports": [
+          "5050:80"
+        ],
+        "env": [
+          "PGADMIN_DEFAULT_EMAIL=admin@example.com"
+        ],
+        "secretEnv": [
+          "PGADMIN_DEFAULT_PASSWORD"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/var/lib/pgadmin",
+            "volumeOwner": {
+              "uid": 5050,
+              "gid": 0
+            }
+          }
+        ],
+        "command": [],
+        "note": "Sign in as admin@example.com with the generated PGADMIN_DEFAULT_PASSWORD. Runs as uid 5050; Flotilla gives a new volume to 5050:0."
       }
     },
     {
@@ -1262,6 +1541,45 @@
         ],
         "command": [],
         "note": "PostgreSQL 18 moved default PGDATA directory root to /var/lib/postgresql. Fresh volume must be writeable by uid 999."
+      }
+    },
+    {
+      "id": "prometheus",
+      "title": "Prometheus Time-Series Metrics",
+      "summary": "Time-series database and monitoring server with powerful PromQL query language.",
+      "categories": [
+        "Monitoring & Operations",
+        "Databases"
+      ],
+      "kind": "container",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/prom/prometheus:v3.15.0",
+        "name": "prometheus",
+        "ports": [
+          "9090:9090"
+        ],
+        "env": [],
+        "secretEnv": [],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/prometheus",
+            "volumeOwner": {
+              "uid": 65534,
+              "gid": 65534
+            }
+          }
+        ],
+        "command": [
+          "--config.file=/etc/prometheus/prometheus.yml",
+          "--storage.tsdb.path=/prometheus",
+          "--web.enable-lifecycle"
+        ],
+        "note": "Runs as nobody (uid 65534); Flotilla gives a new volume to 65534:65534. It scrapes only itself until you change its configuration."
       }
     },
     {
@@ -1461,6 +1779,47 @@
       }
     },
     {
+      "id": "vault",
+      "title": "HashiCorp Vault Secrets Manager",
+      "summary": "Identity-based secrets management system for securing API keys, tokens, and passwords.",
+      "categories": [
+        "Security & Identity",
+        "Software Development"
+      ],
+      "kind": "container",
+      "licenceNote": "BUSL-1.1; restrictions on competitive offerings apply",
+      "tested": {
+        "date": "2026-10-18",
+        "macs": 1
+      },
+      "container": {
+        "image": "docker.io/hashicorp/vault:2.1.2",
+        "name": "vault",
+        "ports": [
+          "8200:8200"
+        ],
+        "env": [],
+        "secretEnv": [
+          "VAULT_DEV_ROOT_TOKEN_ID"
+        ],
+        "volumes": [
+          {
+            "suffix": "data",
+            "path": "/vault/file",
+            "volumeOwner": {
+              "uid": 100,
+              "gid": 1000
+            }
+          }
+        ],
+        "command": [
+          "server",
+          "-dev"
+        ],
+        "note": "Dev mode, for trying it out: unsealed, in memory, signed in with the generated VAULT_DEV_ROOT_TOKEN_ID. Production needs its own configuration and unseal keys. Flotilla gives a new volume to 100:1000."
+      }
+    },
+    {
       "id": "vaultwarden",
       "title": "Vaultwarden Password Manager",
       "summary": "Lightweight Bitwarden-compatible password manager server written in Rust.",
@@ -1539,6 +1898,69 @@
         "sha256": "d41f5de79542fcac2553ea17435ede195276292b2cce193ea97f2f284573e3e3",
         "bytes": 8249
       }
+    }
+  ],
+  "artwork": [
+    {
+      "id": "distro.arch",
+      "icon": {
+        "file": "icons/distro-arch.png",
+        "sha256": "15d8ef0f0b25181a45696f7f3858662da4e8d32cc25c0ae5f7a9b85545baf08d",
+        "bytes": 6540
+      },
+      "attribution": "Arch Linux and the Arch Linux logo are used under the Arch Linux trademark policy."
+    },
+    {
+      "id": "distro.debian",
+      "icon": {
+        "file": "icons/distro-debian.png",
+        "sha256": "c219abcc1024ac5e9ad49d8fe311f1e26a920127121f44f9537a137adef1d9e4",
+        "bytes": 5937
+      },
+      "attribution": "Debian is a registered trademark owned by Software in the Public Interest, Inc. Debian Open Use Logo © 1999 Software in the Public Interest, Inc., CC BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "id": "distro.fallback",
+      "icon": {
+        "file": "icons/distro-fallback.png",
+        "sha256": "b94c8f3e385d58a4c1ed138801b11a1f846dff0def55e258325b4142d98dc747",
+        "bytes": 10742
+      },
+      "attribution": "Tux by Larry Ewing (original, made with the GIMP) and Garrett LeSage (vector)."
+    },
+    {
+      "id": "distro.kali",
+      "icon": {
+        "file": "icons/distro-kali.png",
+        "sha256": "8122b11fe861b59ae09a6e9966a90999367354f3c6950159167b1df151e4e532",
+        "bytes": 2288
+      },
+      "attribution": "KALI LINUX ™ is a trademark of OffSec."
+    },
+    {
+      "id": "distro.mint",
+      "icon": {
+        "file": "icons/distro-mint.png",
+        "sha256": "9e4511004d6d58c975dc24c3d7662e5095ed33ecbef9c7f0611da374513db456",
+        "bytes": 4737
+      }
+    },
+    {
+      "id": "distro.void",
+      "icon": {
+        "file": "icons/distro-void.png",
+        "sha256": "720005a24f9c8812edc805d9cb7964589bdf1f479c79206c42ce60c8e2b2d9fb",
+        "bytes": 6431
+      }
+    },
+    {
+      "id": "registry.registry.k8s.io",
+      "icon": {
+        "file": "icons/registry-k8s.png",
+        "sha256": "c454fd28e80cb2577d3e4d303ef8b97f7ccbc2380be87ff18996900e7711b843",
+        "bytes": 9498
+      },
+      "attribution": "Kubernetes and the Kubernetes logo are registered trademarks of The Linux Foundation."
     }
   ]
 }
