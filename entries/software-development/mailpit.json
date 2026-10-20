@@ -6,11 +6,12 @@
   "container": {
     "command": [],
     "env": [
-      "MP_MAX_MESSAGES=500"
+      "MP_MAX_MESSAGES=500",
+      "MP_DATABASE=/data/mailpit.db"
     ],
     "image": "ghcr.io/axllent/mailpit:v1.31.5",
     "name": "mailpit",
-    "note": "Stateless by default unless MP_DATABASE file path inside /data is specified.",
+    "note": "MP_DATABASE keeps mail in /data/mailpit.db on the volume, so messages survive replacing the container.",
     "ports": [
       "8025:8025",
       "1025:1025"
@@ -28,7 +29,7 @@
   "kind": "container",
   "summary": "Fast email and SMTP testing tool with web UI and API for developers.",
   "tested": {
-    "date": "2026-10-12",
+    "date": "2026-10-20",
     "macs": 1
   },
   "title": "Mailpit Email Testing Tool"

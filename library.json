@@ -1021,7 +1021,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-12",
+        "date": "2026-10-20",
         "macs": 1
       },
       "container": {
@@ -1032,7 +1032,8 @@
           "1025:1025"
         ],
         "env": [
-          "MP_MAX_MESSAGES=500"
+          "MP_MAX_MESSAGES=500",
+          "MP_DATABASE=/data/mailpit.db"
         ],
         "secretEnv": [],
         "volumes": [
@@ -1042,7 +1043,7 @@
           }
         ],
         "command": [],
-        "note": "Stateless by default unless MP_DATABASE file path inside /data is specified."
+        "note": "MP_DATABASE keeps mail in /data/mailpit.db on the volume, so messages survive replacing the container."
       },
       "icon": {
         "file": "icons/mailpit.png",
@@ -1258,7 +1259,7 @@
       ],
       "kind": "container",
       "tested": {
-        "date": "2026-10-12",
+        "date": "2026-10-20",
         "macs": 1
       },
       "container": {
@@ -1277,11 +1278,13 @@
           }
         ],
         "command": [
+          "-js",
+          "-sd",
+          "/data",
           "-m",
-          "8222",
-          "-js"
+          "8222"
         ],
-        "note": "Command string flag `-js` enables JetStream persistence engine."
+        "note": "`-js -sd /data` keeps JetStream streams in /data/jetstream on the volume, so they survive replacing the container."
       },
       "icon": {
         "file": "icons/nats.png",
