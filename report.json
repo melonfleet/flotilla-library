@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-19T08:29:19Z",
+  "generated": "2026-10-20T09:04:06Z",
   "images": [
     {
       "counts": {
@@ -1876,7 +1876,7 @@
         "critical": 0,
         "high": 1,
         "low": 26,
-        "medium": 107
+        "medium": 122
       },
       "digests": [
         "sha256:387ebbcca253026def04dc79e83d2323ac7d97bf309ddd090a8a3c702573e01a",
@@ -6454,10 +6454,10 @@
     },
     {
       "counts": {
-        "critical": 351,
-        "high": 1204,
+        "critical": 352,
+        "high": 1209,
         "low": 175,
-        "medium": 1393
+        "medium": 1395
       },
       "digests": [
         "sha256:3922767afb52a5777759fd8b28a3c9eee864daea96018a791f2429eae2a76571",
@@ -6796,6 +6796,13 @@
         {
           "fixed": null,
           "id": "CVE-2026-110165",
+          "installed": "149.0.7827.53-r0",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-110916",
           "installed": "149.0.7827.53-r0",
           "package": "chromium",
           "severity": "Critical"
@@ -9953,13 +9960,6 @@
         {
           "fixed": null,
           "id": "CVE-2026-106387",
-          "installed": "149.0.7827.53-r0",
-          "package": "chromium",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-106393",
           "installed": "149.0.7827.53-r0",
           "package": "chromium",
           "severity": "High"
@@ -15713,9 +15713,9 @@
     {
       "counts": {
         "critical": 1,
-        "high": 8,
-        "low": 13,
-        "medium": 213
+        "high": 10,
+        "low": 47,
+        "medium": 222
       },
       "digests": [
         "sha256:19ecfcc825f5925fdc7142a605335a54fd83fb0101be1232b6f5062cee01f785",
@@ -15758,6 +15758,20 @@
           "severity": "High"
         },
         {
+          "fixed": "8.18.0-1ubuntu2.8",
+          "id": "CVE-2026-92392",
+          "installed": "8.18.0-1ubuntu2.7",
+          "package": "curl",
+          "severity": "High"
+        },
+        {
+          "fixed": "8.18.0-1ubuntu2.8",
+          "id": "CVE-2026-92392",
+          "installed": "8.18.0-1ubuntu2.7",
+          "package": "libcurl4t64",
+          "severity": "High"
+        },
+        {
           "fixed": "1.26.9, 1.27.2",
           "id": "CVE-2026-94439",
           "installed": "go1.26.7",
@@ -15792,8 +15806,8 @@
       "counts": {
         "critical": 14,
         "high": 70,
-        "low": 64,
-        "medium": 269
+        "low": 80,
+        "medium": 283
       },
       "digests": [
         "sha256:89fd95ee2942880ca00eae964266958a394421ddbdf69bca62e38afc55f5900e",
@@ -16396,7 +16410,7 @@
         "critical": 1,
         "high": 8,
         "low": 10,
-        "medium": 514
+        "medium": 531
       },
       "digests": [
         "sha256:0e4bb0f339feba125d1154fbacd36c16ec8518f52e44e1f82ecec7d6771caf39",
@@ -16473,8 +16487,8 @@
       "counts": {
         "critical": 2,
         "high": 15,
-        "low": 7,
-        "medium": 90
+        "low": 16,
+        "medium": 101
       },
       "digests": [
         "sha256:a18a67668df9389cbfe49d81ca9bd20428fa6b82ce9ae0b79961dadf56281493",
@@ -17303,7 +17317,7 @@
         "critical": 0,
         "high": 0,
         "low": 8,
-        "medium": 66
+        "medium": 67
       },
       "digests": [
         "sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
@@ -23118,7 +23132,7 @@
         "critical": 4,
         "high": 33,
         "low": 11,
-        "medium": 92
+        "medium": 93
       },
       "digests": [
         "sha256:56587518b22609f472d56847251d1453a2796aea8a1cb84b7ce22ff9adad77ce",
@@ -30566,8 +30580,8 @@
       "counts": {
         "critical": 17,
         "high": 126,
-        "low": 96,
-        "medium": 1211
+        "low": 123,
+        "medium": 1223
       },
       "digests": [
         "sha256:63859e7302a0533a773655c99071756bbc4a0c710ea3259f1e02671b56cdf8dd",
@@ -31724,7 +31738,7 @@
         "critical": 4,
         "high": 29,
         "low": 19,
-        "medium": 574
+        "medium": 591
       },
       "digests": [
         "sha256:03351170e47f8e04eea9edcc0d14fb3433f4e5ec5d7e64e2012084b80819eb9b",
@@ -31968,10 +31982,10 @@
   ],
   "omitted": {
     "critical": 326,
-    "high": 3511
+    "high": 3517
   },
   "scanner": {
-    "dbBuilt": "2026-10-19T06:39:15Z",
+    "dbBuilt": "2026-10-20T06:29:49Z",
     "name": "grype",
     "version": "0.120.1"
   },
