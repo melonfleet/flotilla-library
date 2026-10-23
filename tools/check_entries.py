@@ -5,7 +5,8 @@ Every entry file is read, shape-checked (what Swift's Decodable demands), then r
 port of FlotillaCore's `LibraryEntry.problem()` rules. It also checks the repo's own layout: one
 entry per `entries/<first-category-slug>/<id>.json`, written with sorted keys, and a VERSION Flotilla
 accepts. Icons too: an entry's `icon` is `icons/<id>.png`, a PNG Flotilla accepts (64 KiB, 512×512,
-one image), listed in icons/SOURCES.md; icons/ holds nothing else. With --library, each icon in the built
+one image), listed in icons/SOURCES.md; icons/ holds nothing else. An `attributedIcon` is the same icon
+with the plain-text attribution its owner requires (at most 300 characters), in place of `icon`. With --library, each icon in the built
 file must match the PNG beside it, byte count and SHA-256. Exits 1 and names every problem. It is a pre-check for a pull request, not a replacement
 for `swift test --filter aLibraryFile`, which stays the authority.
 
@@ -266,6 +267,18 @@ def icon_problem(icon):
     return None
 
 
+def attributed_icon_problem(attributed):
+    """A port of `LibraryAttributedIcon.problem()`: the icon's rules, then an attribution as artwork's."""
+    attributed = attributed if isinstance(attributed, dict) else {}
+    problem = icon_problem(attributed.get("icon"))
+    if problem:
+        return problem
+    attribution = attributed.get("attribution")
+    if not isinstance(attribution, str) or not plain_text(attribution, 300, required=True):
+        return "Its attribution is empty, too long, or has characters that aren't plain text."
+    return None
+
+
 def checked(library):
     """A port of `SuggestionLibrary.checked()`: (kept entries, [(id, problem)]). A bad icon drops only
     the icon, as in Swift, but is still named, so the check fails."""
@@ -280,6 +293,8 @@ def checked(library):
             seen.add(e["id"])
             if e.get("icon") is not None and icon_problem(e["icon"]):
                 dropped.append((e["id"], "Icon ignored: " + icon_problem(e["icon"])))
+            if e.get("attributedIcon") is not None and attributed_icon_problem(e["attributedIcon"]):
+                dropped.append((e["id"], "Attributed icon ignored: " + attributed_icon_problem(e["attributedIcon"])))
             kept.append(e)
     if len(library["entries"]) > MAX_ENTRIES:
         dropped.append(("…", f"More than {MAX_ENTRIES} entries; the rest were ignored."))
@@ -293,7 +308,9 @@ SHAPES = {
     "library": ({"schema": int, "version": str, "entries": list}, {"artwork": list}),
     "artwork": ({"id": str, "icon": (str, dict)}, {"attribution": str}),
     "entry": ({"id": str, "title": str, "summary": str, "categories": list, "kind": str},
-              {"licenceNote": str, "tested": dict, "container": dict, "stack": dict, "icon": (str, dict)}),
+              {"licenceNote": str, "tested": dict, "container": dict, "stack": dict, "icon": (str, dict),
+               "attributedIcon": dict}),
+    "attributedIcon": ({"icon": (str, dict), "attribution": str}, {}),
     "tested": ({"date": str, "macs": int}, {}),
     "container": ({"image": str, "name": str, "ports": list, "env": list, "secretEnv": list,
                    "volumes": list, "command": list}, {"note": str}),
@@ -327,7 +344,8 @@ def shape_problems(obj, kind="library", where="library"):
         return out
     children = {
         "library": [("entries", "entry"), ("artwork", "artwork")],
-        "entry": [("tested", "tested"), ("container", "container"), ("stack", "stack")],
+        "entry": [("tested", "tested"), ("container", "container"), ("stack", "stack"),
+                  ("attributedIcon", "attributedIcon")],
         "container": [("volumes", "volume")],
         "stack": [("options", "option"), ("services", "service")],
         "service": [("volumes", "volume"), ("secretEnv", "secret")],
@@ -433,11 +451,24 @@ def check_entry_file(path):
 
 def entry_icon_problems(e):
     """An entry file's `icon`: the path icons/<id>.png, to a PNG that passes Flotilla's limits and has
-    a line in icons/SOURCES.md. No icon is fine: Flotilla shows the category's symbol."""
-    if e.get("icon") is None:
+    a line in icons/SOURCES.md. No icon is fine: Flotilla shows the category's symbol.
+
+    Or its `attributedIcon`: the same icon, with the attribution its owner requires wherever it is
+    shown. Beta 5 reads only `icon` and can't show an attribution, so such a logo goes here, never in
+    `icon`; one entry has one or the other, since both would be icons/<id>.png."""
+    attributed = e.get("attributedIcon")
+    if attributed is not None and e.get("icon") is not None:
+        return ["it has both icon and attributedIcon; a logo that needs an attribution goes only in attributedIcon"]
+    if attributed is not None:
+        if not plain_text(attributed["attribution"], 300, required=True):
+            return ["its attributedIcon's attribution is empty, over 300 characters, or isn't plain text"]
+        icon = attributed["icon"]
+    elif e.get("icon") is not None:
+        icon = e["icon"]
+    else:
         return []
     want = f"icons/{e['id']}.png"
-    if e["icon"] != want:
+    if icon != want:
         return [f"its icon must be “{want}” (just the path; the build adds the hash and size)"]
     problems = layout.icon_problems(want)
     if not problems and f"`{want}`" not in _sources():
@@ -513,7 +544,10 @@ def icons_dir_problems(referenced):
 def library_icon_problems(lib, library_path):
     """Each icon in a built library must be the PNG beside it, as Flotilla will fetch it from published."""
     out, base = [], os.path.dirname(os.path.abspath(library_path))
-    for e in lib["entries"] + (lib.get("artwork") or []):
+    holders = lib["entries"] + (lib.get("artwork") or [])
+    holders += [dict(e["attributedIcon"], id=e["id"]) for e in lib["entries"]
+                if isinstance(e.get("attributedIcon"), dict)]
+    for e in holders:
         icon = e.get("icon")
         if icon is None or icon_problem(icon):
             continue  # named by checked()
@@ -545,6 +579,8 @@ def check_all(library_path=None):
             continue
         if isinstance(entry.get("icon"), str):
             icons.add(entry["icon"])
+        if isinstance(entry.get("attributedIcon"), dict) and isinstance(entry["attributedIcon"].get("icon"), str):
+            icons.add(entry["attributedIcon"]["icon"])
         if eid in seen:
             problems.append(f"{os.path.relpath(path, layout.ROOT)}: id {eid} is also in {os.path.relpath(seen[eid], layout.ROOT)}")
         seen[eid] = path

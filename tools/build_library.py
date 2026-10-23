@@ -7,7 +7,7 @@
 
 Entries are ordered by id, keys in library.json's usual order, so unchanged entries give a
 byte-identical file. An entry's `"icon": "icons/<id>.png"` becomes `{file, sha256, bytes}`, read from
-that file; the build fails if an icon is missing, isn't a PNG of at most 512×512, is over 64 KiB or
+that file, and so does the `icon` inside its `attributedIcon`; the build fails if an icon is missing, isn't a PNG of at most 512×512, is over 64 KiB or
 has a bad name. So --check also fails when an icon changed and library.json wasn't rebuilt.
 It never reads, writes or makes library.json.sig.
 """
@@ -28,12 +28,15 @@ def build():
     problems += check_artwork_file()
     for path in entries.entry_files():
         entry = entries.read_json(path)
-        if "icon" in entry:
-            icon_problems = entries.icon_problems(entry["icon"])
+        # `attributedIcon` is hashed like `icon`, so the signature covers it too.
+        for holder in [entry] + ([entry["attributedIcon"]] if isinstance(entry.get("attributedIcon"), dict) else []):
+            if "icon" not in holder:
+                continue
+            icon_problems = entries.icon_problems(holder["icon"])
             if icon_problems:
                 problems += [f"{os.path.relpath(path, entries.ROOT)}: {p}" for p in icon_problems]
             else:
-                entry["icon"] = entries.icon_object(entry["icon"])
+                holder["icon"] = entries.icon_object(holder["icon"])
         found.append(entry)
     if problems:
         sys.exit("\n".join(problems) + "\nlibrary.json can't be built with these icons.")

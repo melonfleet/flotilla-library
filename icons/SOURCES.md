@@ -1,7 +1,7 @@
 # Where each icon comes from
 
-Every PNG here is a project's own logo, taken from the project's own repository or brand page (never
-Docker Hub or an icon pack), so Flotilla can show it beside the suggestion. Each one is used unaltered
+Every PNG here is a project's own logo, taken from the project's own repository or brand page, or
+sent by its owner (never Docker Hub or an icon pack), so Flotilla can show it beside the suggestion. Each one is used unaltered
 to name the software the suggestion runs, without suggesting that the project endorses Flotilla. The
 logos are the projects' trademarks; the licence column is for the file itself, and the repo's Apache
 2.0 licence doesn't cover them.
@@ -13,7 +13,11 @@ corners are rounded to match the tile Flotilla draws. Only the final PNGs are ke
 
 **Adding one:** put `icons/<id>.png` here (128×128, ≤ 64 KiB, at most 512×512), add
 `"icon": "icons/<id>.png"` to the entry, add a row below and run `python3 tools/build_library.py`.
-`tools/check_entries.py` fails for an icon without a row here. Distribution and registry icons instead
+`tools/check_entries.py` fails for an icon without a row here. A logo whose owner requires an
+attribution wherever it appears goes in `"attributedIcon": {"icon": "icons/<id>.png", "attribution":
+"…"}` instead (plain text, at most 300 characters), never in `icon`: Flotilla beta 5 reads only `icon`
+and can't show the attribution, so it must not get the logo. Later builds show the attribution under
+Suggestions, under a group's Add Service picker and in About. Distribution and registry icons instead
 go in root `artwork.json` as `{ "id": "distro.debian", "icon": "icons/distro-debian.png",
 "attribution": "…" }`; the attribution is optional, plain text, and at most 300 characters.
 
@@ -39,6 +43,7 @@ go in root `artwork.json` as `{ "id": "distro.debian", "icon": "icons/distro-deb
 | `icons/navidrome.png` | Navidrome | [navidrome/navidrome `ui/public/android-chrome-512x512.png`](https://github.com/navidrome/navidrome/blob/df77c462e85dfb732b3a366693088bef2cff4bcb/ui/public/android-chrome-512x512.png) | GPL-3.0 (repository licence). |
 | `icons/ollama.png` | Ollama | [ollama/ollama `docs/ollama-logo.svg`](https://github.com/ollama/ollama/blob/36a6e994d2f6c4ab94b3555185154d069e5dba87/docs/ollama-logo.svg) | MIT (repository licence). |
 | `icons/photoprism-mariadb.png` | PhotoPrism (stack with MariaDB) | [photoprism/photoprism `assets/static/icons/logo.svg`](https://github.com/photoprism/photoprism/blob/1b075ef0f568fd6029a67f3a5f44766e128128f4/assets/static/icons/logo.svg) | PhotoPrism® trademark. Its [brand guidelines](https://www.photoprism.app/trademark) allow, as fair use, “indicating that software we distribute is available for installation without implying affiliation or endorsement”, with the official logo unaltered; never as the logo of another app. |
+| `icons/redis.png` | Redis (`attributedIcon`) | The official standalone R logomark (`redis-official.png`, 80×80 PNG), sent by Redis Ltd. with its written permission of 23 October 2026 (sha256 `aec1d661e36762dcd2bd19cec1cfff45835422ce49be8a74355c1a0ab5dfeb9b`). The source is only 80 px, so the mark (70×60 once trimmed) is enlarged to 112×96. | Redis Ltd. trademark, used with its written permission on gallery and search tiles and beside containers and images running the official `redis` image. Its attribution is required, so it is shown at the foot of Suggestions (and the Add Service picker) and in About ▸ Acknowledgements: “Redis is a registered trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd.” |
 | `icons/stirling-pdf.png` | Stirling-PDF | [Stirling-Tools/Stirling-PDF `app/core/src/main/resources/static/favicon.svg`](https://github.com/Stirling-Tools/Stirling-PDF/blob/30dab558887f14872dc6dd7b17b59a51fb35dee4/app/core/src/main/resources/static/favicon.svg) | MIT (repository licence; `app/core` isn't one of its proprietary directories). |
 | `icons/uptime-kuma.png` | Uptime Kuma | [louislam/uptime-kuma `public/icon.svg`](https://github.com/louislam/uptime-kuma/blob/b092505f894d66669b67f46e1da72b51016eceab/public/icon.svg) | MIT (repository licence). |
 | `icons/valkey.png` | Valkey | [valkey-io/valkey-website `static/img/Valkey-logo.svg`](https://github.com/valkey-io/valkey-website/blob/e8759953258687a5c6e7e3c360f5e4cacaf14649/static/img/Valkey-logo.svg) | BSD-3-Clause (website repository licence). “Valkey and the Valkey logo are trademarks of LF Projects, LLC”, used under its [trademark policy](https://lfprojects.org/policies/trademark-policy/) (no recolouring or alteration). |
@@ -85,4 +90,3 @@ They keep their category's symbol. Each could get one later, with the owner's pe
 | `mongodb` | MongoDB's [brand resources](https://www.mongodb.com/company/newsroom/brand-resources): any use of the logo is subject to its Trademark Standards, and they ask you to request approval. |
 | `postgres` | The PostgreSQL [trademark policy](https://www.postgresql.org/about/policies/trademarks/) allows the names in factual statements without approval; the Slonik logo needs permission for “pretty much any use not discussed”. |
 | `rabbitmq` | Broadcom's [RabbitMQ trademark guidelines](https://www.rabbitmq.com/trademark-guidelines): nominative use “does not allow you to use the logo”, which is “reserved solely for use by Broadcom”. |
-| `redis` | Redis Ltd.'s [trademark policy](https://redis.io/legal/trademark-guidelines/) asks for an attribution statement on each page where the logo appears, and its permission can be revoked; a gallery tile can't carry that. |

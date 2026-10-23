@@ -1,4 +1,8 @@
 {
+  "attributedIcon": {
+    "attribution": "Redis is a registered trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd.",
+    "icon": "icons/redis.png"
+  },
   "categories": [
     "Databases",
     "Messaging & Queues"
@@ -23,7 +27,11 @@
     "volumes": [
       {
         "path": "/data",
-        "suffix": "data"
+        "suffix": "data",
+        "volumeOwner": {
+          "gid": 999,
+          "uid": 999
+        }
       }
     ]
   },

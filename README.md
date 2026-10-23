@@ -25,7 +25,9 @@ for Apple's `container`. Flotilla shows them in **Suggestions**, by category.
   source documentation as entry logos. The app shows credits in Settings ▸ About ▸ Logos.
 - `icons/<id>.png`: an entry's logo, 128×128, named by the entry's `"icon": "icons/<id>.png"`.
   `icons/SOURCES.md` says where each one came from and under what licence or trademark terms;
-  entries without one show their category's symbol.
+  entries without one show their category's symbol. A logo whose owner requires an attribution is
+  named by `"attributedIcon": {"icon": "icons/<id>.png", "attribution": "…"}` instead, which builds
+  before it (beta 5) ignore, so they never show it without the attribution.
 - `VERSION`: the library's version, four numbers (`2026.10.13.2`).
 - `report.json` and `report.json.sig`, also on `published`: the daily vulnerability report (below).
 - `tools/`: `build_library.py`, `check_entries.py` and `check_tags.py`, used by CI and the
