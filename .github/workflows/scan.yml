@@ -24,6 +24,11 @@ env:
   GRYPE_VERSION: "0.120.1"
   GRYPE_LINUX_AMD64_SHA256: "0a9ee97ef5ae2ee953b0a80098105052e846cdbe319a57d808b519c33cd1343d"
   GRYPE_CHECK_FOR_APP_UPDATE: "false"
+  # Per attempt, so one stuck pull can't eat the job. Images that are several GB get the longer one
+  # (a case pattern, matched against the image reference).
+  SCAN_TIMEOUT: "20m"
+  SCAN_TIMEOUT_LARGE: "40m"
+  LARGE_IMAGES: "quay.io/jupyter/*"
   # gdmf.apple.com's chain ends in Apple Root CA, which isn't in Ubuntu's bundle. tools/apple-root-ca.pem
   # is that certificate (from https://www.apple.com/appleca/); this is the SHA-256 of its DER form.
   APPLE_ROOT_CA_SHA256: "b0b1730ecbc7ff4505142c49f1295e6eda6bcaed7e2c68c5be91b5a11001f024"
@@ -31,11 +36,32 @@ env:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 150
     # No secrets here, and no write access: this job only talks to registries.
     permissions:
       contents: read
     steps:
+      # Grype unpacks a registry image's layers to disk, and a multi-GB image overflows the runner's
+      # root disk. Drop toolchains this job never uses, then send Grype's temp files and database to
+      # whichever of / and /mnt has more room. (First, so nothing below has written much yet.)
+      - name: Free disk space and choose Grype's scratch disk
+        run: |
+          set -eu
+          df -h / /mnt
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /usr/local/.ghcup \
+            /opt/hostedtoolcache/CodeQL /usr/local/share/boost /usr/share/swift
+          sudo docker image prune --all --force >/dev/null 2>&1 || true
+          best=/
+          if [ "$(df --output=avail -k /mnt | tail -1)" -gt "$(df --output=avail -k / | tail -1)" ]; then best=/mnt; fi
+          scratch="${best%/}/grype-scratch"
+          sudo mkdir -p "$scratch"
+          sudo chown "$(id -u):$(id -g)" "$scratch"
+          mkdir -p "$scratch/tmp" "$scratch/cache"
+          echo "TMPDIR=$scratch/tmp" >> "$GITHUB_ENV"
+          echo "GRYPE_DB_CACHE_DIR=$scratch/cache" >> "$GITHUB_ENV"
+          echo "Grype scratch: $scratch"
+          df -h / /mnt
+
       - name: Check out the tools
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -82,10 +108,20 @@ jobs:
             n=$((n + 1))
             out="$RUNNER_TEMP/scans/$(printf '%03d' "$n").json"
             ok=0
+            limit="$SCAN_TIMEOUT"
+            case "$image" in $LARGE_IMAGES) limit="$SCAN_TIMEOUT_LARGE" ;; esac
             for attempt in 1 2 3; do
-              if "$RUNNER_TEMP/bin/grype" "registry:$image" --platform linux/arm64 \
-                   --output json --quiet --file "$out"; then ok=1; break; fi
-              echo "attempt $attempt failed for $image" >&2
+              err="$RUNNER_TEMP/grype.err"
+              rc=0
+              timeout "$limit" "$RUNNER_TEMP/bin/grype" "registry:$image" --platform linux/arm64 \
+                --output json --quiet --file "$out" 2> "$err" || rc=$?
+              if [ "$rc" = 0 ]; then ok=1; break; fi
+              echo "attempt $attempt failed for $image (exit $rc, limit $limit; 124 = timed out)" >&2
+              # Grype's own error, last 20 lines. This job holds no secrets; still, cut each line
+              # short and defuse anything that looks like a workflow command.
+              tail -n 20 "$err" | cut -c1-400 | sed 's/^::/ ::/' | sed 's/^/  grype: /' >&2
+              df -h "$TMPDIR" | tail -n 1 | sed 's/^/  disk: /' >&2
+              rm -rf "${TMPDIR:?}"/* 2>/dev/null || true
               sleep 15
             done
             if [ "$ok" = 0 ]; then echo "::error::could not scan $image"; rm -f "$out"; failed=$((failed + 1)); fi
