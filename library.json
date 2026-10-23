@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "version": "2026.10.20.1",
+  "version": "2026.10.23.1",
   "entries": [
     {
       "id": "actual-budget",
@@ -1644,7 +1644,11 @@
         "volumes": [
           {
             "suffix": "data",
-            "path": "/data"
+            "path": "/data",
+            "volumeOwner": {
+              "uid": 999,
+              "gid": 999
+            }
           }
         ],
         "command": [
@@ -1656,6 +1660,14 @@
           "warning"
         ],
         "note": "Dual licensing applied in 2024 (7.4+); open-source alternative available as Valkey."
+      },
+      "attributedIcon": {
+        "icon": {
+          "file": "icons/redis.png",
+          "sha256": "92239876d66b960b63c87933525fb1f40b429617ea7f2e0288aaf30447aed8bf",
+          "bytes": 5838
+        },
+        "attribution": "Redis is a registered trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd."
       }
     },
     {
