@@ -7,7 +7,7 @@
   "container": {
     "command": [],
     "env": [],
-    "image": "quay.io/jupyter/datascience-notebook:2026-10-12",
+    "image": "quay.io/jupyter/datascience-notebook:2026-10-26",
     "name": "jupyter-datascience-notebook",
     "note": "Sign in with the generated JUPYTER_TOKEN. Includes R and Julia; give it at least 2 GB of memory. Runs as jovyan (uid 1000); Flotilla gives a new volume to 1000:100.",
     "ports": [
@@ -30,9 +30,6 @@
   "id": "jupyter-datascience-notebook",
   "kind": "container",
   "summary": "Comprehensive scientific environment pre-configured with Python, Julia, and R kernels.",
-  "tested": {
-    "date": "2026-10-18",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Jupyter Data Science Notebook"
 }

@@ -8,7 +8,7 @@
     "env": [
       "ALLOW_SIGNUP=true"
     ],
-    "image": "ghcr.io/mealie-recipes/mealie:v3.28.0",
+    "image": "ghcr.io/mealie-recipes/mealie:v3.29.0",
     "name": "mealie",
     "note": "Runs as non-root user 1000. Verify write permissions on attached persistent volume. BASE_URL was left unset: its default pointed at localhost.",
     "ports": [
@@ -26,9 +26,6 @@
   "id": "mealie",
   "kind": "container",
   "summary": "Self-hosted recipe manager and meal planner with automated website scraping.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Mealie Recipe Manager"
 }
