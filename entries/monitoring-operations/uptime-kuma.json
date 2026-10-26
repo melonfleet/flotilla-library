@@ -6,7 +6,7 @@
   "container": {
     "command": [],
     "env": [],
-    "image": "docker.io/louislam/uptime-kuma:2.5.6",
+    "image": "docker.io/louislam/uptime-kuma:2.5.7",
     "name": "uptime-kuma",
     "note": "Fresh named volumes require write permissions for user uid 1000.",
     "ports": [
@@ -24,9 +24,6 @@
   "id": "uptime-kuma",
   "kind": "container",
   "summary": "Self-hosted monitoring tool with status pages and multi-channel notification support.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Uptime Kuma Status & Alerting"
 }

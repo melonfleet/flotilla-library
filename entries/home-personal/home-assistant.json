@@ -8,7 +8,7 @@
     "env": [
       "TZ=UTC"
     ],
-    "image": "docker.io/homeassistant/home-assistant:2026.10.1",
+    "image": "docker.io/homeassistant/home-assistant:2026.10.4",
     "name": "home-assistant",
     "note": "Container execution inside isolated VM prevents direct USB Zigbee/Z-Wave dongle pass-through.",
     "ports": [
@@ -26,9 +26,6 @@
   "id": "home-assistant",
   "kind": "container",
   "summary": "Open-source home automation system prioritizing local control and user privacy.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Home Assistant Core"
 }

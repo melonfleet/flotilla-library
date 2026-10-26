@@ -8,7 +8,7 @@
     "env": [
       "SECURITY_ENABLE_LOGIN=false"
     ],
-    "image": "ghcr.io/stirling-tools/s-pdf:3.1.0",
+    "image": "ghcr.io/stirling-tools/s-pdf:3.2.2",
     "name": "stirling-pdf",
     "note": "Requires adequate RAM when processing extra-large multi-page PDF documents.",
     "ports": [
@@ -31,9 +31,6 @@
   "kind": "container",
   "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
   "summary": "Locally hosted suite for merging, splitting, converting, and editing PDF files.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Stirling-PDF Tools"
 }

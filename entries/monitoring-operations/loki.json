@@ -8,7 +8,7 @@
       "-config.file=/etc/loki/local-config.yaml"
     ],
     "env": [],
-    "image": "docker.io/grafana/loki:3.7.8",
+    "image": "docker.io/grafana/loki:3.7.9",
     "name": "loki",
     "note": "An API, not a web page: add it to Grafana as a Loki data source. Runs as uid 10001; Flotilla gives a new volume to 10001:10001.",
     "ports": [
@@ -30,9 +30,6 @@
   "kind": "container",
   "licenceNote": "Licensed under AGPL-3.0-only, a copyleft licence rather than a permissive one.",
   "summary": "Horizontal, multi-tenant log aggregation system designed to be highly cost-effective.",
-  "tested": {
-    "date": "2026-10-18",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Grafana Loki Log Aggregation"
 }
