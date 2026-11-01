@@ -1,10 +1,10 @@
 {
-  "generated": "2026-10-31T10:20:51Z",
+  "generated": "2026-11-01T11:09:13Z",
   "images": [
     {
       "counts": {
         "critical": 42,
-        "high": 254,
+        "high": 246,
         "low": 37,
         "medium": 243
       },
@@ -1668,62 +1668,6 @@
         {
           "fixed": null,
           "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux-extra",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "1:2.38.1-5+deb12u3",
-          "package": "bsdutils",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libblkid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libmount1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libsmartcols1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libuuid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "mount",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
           "installed": "2.38.1-5+deb12u3",
           "package": "util-linux-extra",
           "severity": "High"
@@ -19591,7 +19535,7 @@
         "medium": 86
       },
       "digests": [
-        "sha256:979bccfde35445db618c65107d27d08c6c21339d8dc3ad4c830c6633947be0e4",
+        "sha256:3a4264520e121176619f54ff867d12774bc81e95e7b84db58d63bccdb6144b81",
         "sha256:9a74990a5c776ff210361b67616b347750c66c36ea0dfbb4f575d19fcc3d8437"
       ],
       "findings": [
@@ -22376,7 +22320,7 @@
     {
       "counts": {
         "critical": 922,
-        "high": 3140,
+        "high": 3131,
         "low": 321,
         "medium": 3222
       },
@@ -27758,7 +27702,7 @@
     {
       "counts": {
         "critical": 9,
-        "high": 107,
+        "high": 99,
         "low": 16,
         "medium": 112
       },
@@ -28400,62 +28344,6 @@
         {
           "fixed": null,
           "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux-extra",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "1:2.38.1-5+deb12u3",
-          "package": "bsdutils",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libblkid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libmount1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libsmartcols1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libuuid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "mount",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78409",
           "installed": "2.38.1-5+deb12u3",
           "package": "util-linux-extra",
           "severity": "High"
@@ -38486,10 +38374,10 @@
   ],
   "omitted": {
     "critical": 422,
-    "high": 4640
+    "high": 4631
   },
   "scanner": {
-    "dbBuilt": "2026-10-31T06:18:17Z",
+    "dbBuilt": "2026-11-01T06:20:12Z",
     "name": "grype",
     "version": "0.120.1"
   },
