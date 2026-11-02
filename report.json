@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-01T11:09:13Z",
+  "generated": "2026-11-02T12:04:00Z",
   "images": [
     {
       "counts": {
         "critical": 42,
-        "high": 246,
-        "low": 37,
-        "medium": 243
+        "high": 233,
+        "low": 38,
+        "medium": 258
       },
       "digests": [
         "sha256:7c2ac97dfc3881daf4a5a4b6c50c9b7848f504e4eec26edf61c7a8a6ab2a0ba3",
@@ -812,6 +812,27 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.40.1-2+deb12u1",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.40.1-2+deb12u1",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.40.1-2+deb12u1",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
           "fixed": "3.10.21, 3.11.16, 3.12.14",
           "id": "CVE-2026-11940",
           "installed": "3.11.11",
@@ -1558,118 +1579,6 @@
           "id": "CVE-2026-7383",
           "installed": "3.0.15-1~deb12u1",
           "package": "openssl",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "1:2.38.1-5+deb12u3",
-          "package": "bsdutils",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libblkid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libmount1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libsmartcols1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libuuid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "mount",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux-extra",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "1:2.38.1-5+deb12u3",
-          "package": "bsdutils",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libblkid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libmount1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libsmartcols1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libuuid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "mount",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux-extra",
           "severity": "High"
         },
         {
@@ -5602,9 +5511,9 @@
     {
       "counts": {
         "critical": 18,
-        "high": 171,
-        "low": 31,
-        "medium": 118
+        "high": 174,
+        "low": 32,
+        "medium": 184
       },
       "digests": [
         "sha256:6915a020d5b0c97f7dd1c0ff19221536510ac117c1aac84dc53ea54981b255a6",
@@ -5987,6 +5896,27 @@
           "id": "CVE-2026-115506",
           "installed": "2.9.0-1~deb13u1",
           "package": "libexpat1",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
           "severity": "High"
         },
         {
@@ -10455,9 +10385,9 @@
     {
       "counts": {
         "critical": 38,
-        "high": 172,
-        "low": 18,
-        "medium": 82
+        "high": 175,
+        "low": 19,
+        "medium": 97
       },
       "digests": [
         "sha256:48b63b9bc3d042a1301c32971b01af8841c7f059b452589c5bf77f475ba44c61",
@@ -10952,6 +10882,27 @@
           "id": "CVE-2026-115506",
           "installed": "2.8.3-1~deb13u1",
           "package": "libexpat1",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
           "severity": "High"
         },
         {
@@ -16431,9 +16382,9 @@
     {
       "counts": {
         "critical": 41,
-        "high": 264,
-        "low": 42,
-        "medium": 185
+        "high": 267,
+        "low": 43,
+        "medium": 200
       },
       "digests": [
         "sha256:7536c1009c6ea50dadd2b244165efb357504ca0f2670abefbceb1c773cc7e13d",
@@ -16884,6 +16835,27 @@
         {
           "fixed": "3.46.1-7+deb13u2",
           "id": "CVE-2026-11824",
+          "installed": "3.46.1-7+deb13u1",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.46.1-7+deb13u1",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.46.1-7+deb13u1",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
           "installed": "3.46.1-7+deb13u1",
           "package": "libsqlite3-0",
           "severity": "High"
@@ -19530,9 +19502,9 @@
     {
       "counts": {
         "critical": 1,
-        "high": 89,
-        "low": 33,
-        "medium": 86
+        "high": 92,
+        "low": 34,
+        "medium": 101
       },
       "digests": [
         "sha256:3a4264520e121176619f54ff867d12774bc81e95e7b84db58d63bccdb6144b81",
@@ -19635,6 +19607,27 @@
           "id": "CVE-2026-107778",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
           "severity": "High"
         },
         {
@@ -20189,9 +20182,9 @@
     {
       "counts": {
         "critical": 0,
-        "high": 56,
-        "low": 11,
-        "medium": 47
+        "high": 59,
+        "low": 12,
+        "medium": 62
       },
       "digests": [
         "sha256:701d27eed8cbd5042c98ec4035146ed036c2390a31ddd9f3f617b4a5e316e12d",
@@ -20238,6 +20231,27 @@
           "id": "CVE-2026-102010",
           "installed": "14.2.0-19",
           "package": "libstdc++6",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
           "severity": "High"
         },
         {
@@ -20723,9 +20737,9 @@
     {
       "counts": {
         "critical": 18,
-        "high": 208,
-        "low": 75,
-        "medium": 307
+        "high": 211,
+        "low": 76,
+        "medium": 373
       },
       "digests": [
         "sha256:3ce2f1f06b5bd75e4a324ba34a93cb69fb74aa1561f48b6c5318537feef66890",
@@ -21297,6 +21311,27 @@
           "id": "CVE-2026-116149",
           "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
           "package": "libmagickwand-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
           "severity": "High"
         },
         {
@@ -22320,9 +22355,9 @@
     {
       "counts": {
         "critical": 922,
-        "high": 3131,
-        "low": 321,
-        "medium": 3222
+        "high": 3120,
+        "low": 323,
+        "medium": 3247
       },
       "digests": [
         "sha256:9912da7d7d9b6ddc0c2d904beb84d24689c1ed9c33b81419eb9008663a92a329",
@@ -27232,9 +27267,9 @@
     {
       "counts": {
         "critical": 0,
-        "high": 65,
-        "low": 18,
-        "medium": 57
+        "high": 68,
+        "low": 19,
+        "medium": 72
       },
       "digests": [
         "sha256:418652cfb58ef879d4978c33553735d7147016032d5aefaa14c828e611eb9dfd",
@@ -27288,6 +27323,27 @@
           "id": "CVE-2026-103111",
           "installed": "10.46-1~deb13u2",
           "package": "libpcre2-8-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
           "severity": "High"
         },
         {
@@ -27702,9 +27758,9 @@
     {
       "counts": {
         "critical": 9,
-        "high": 99,
+        "high": 83,
         "low": 16,
-        "medium": 112
+        "medium": 121
       },
       "digests": [
         "sha256:24645e971da6bb1a1f953d6859e307a0b29be1e8b4130a35b3220c209b5b860c",
@@ -28234,118 +28290,6 @@
           "id": "CVE-2026-73566",
           "installed": "7.5.19",
           "package": "tar",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "1:2.38.1-5+deb12u3",
-          "package": "bsdutils",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libblkid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libmount1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libsmartcols1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libuuid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "mount",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76642",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux-extra",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "1:2.38.1-5+deb12u3",
-          "package": "bsdutils",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libblkid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libmount1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libsmartcols1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "libuuid1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "mount",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-78408",
-          "installed": "2.38.1-5+deb12u3",
-          "package": "util-linux-extra",
           "severity": "High"
         },
         {
@@ -30266,9 +30210,9 @@
     {
       "counts": {
         "critical": 29,
-        "high": 133,
-        "low": 12,
-        "medium": 80
+        "high": 136,
+        "low": 13,
+        "medium": 95
       },
       "digests": [
         "sha256:dfaefaea21028ea3024b708330b0aed27c4a448a49a3e174e49962f3e0789fc4",
@@ -30651,6 +30595,27 @@
           "id": "CVE-2026-107929",
           "installed": "8.14.1-2+deb13u5",
           "package": "libcurl4t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
           "severity": "High"
         },
         {
@@ -31913,9 +31878,9 @@
     {
       "counts": {
         "critical": 41,
-        "high": 415,
-        "low": 40,
-        "medium": 288
+        "high": 418,
+        "low": 41,
+        "medium": 366
       },
       "digests": [
         "sha256:1994d77ab18293108c449f2429fdf7877f69d56b61110da16812902223fbff7d",
@@ -32753,6 +32718,27 @@
           "id": "CVE-2026-119197",
           "installed": "0.6.4",
           "package": "pyasn1",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.46.1-7+deb13u2",
+          "package": "libsqlite3-0",
           "severity": "High"
         },
         {
@@ -38374,10 +38360,10 @@
   ],
   "omitted": {
     "critical": 422,
-    "high": 4631
+    "high": 4620
   },
   "scanner": {
-    "dbBuilt": "2026-11-01T06:20:12Z",
+    "dbBuilt": "2026-11-02T06:26:52Z",
     "name": "grype",
     "version": "0.120.1"
   },
