@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-03T11:36:50Z",
+  "generated": "2026-11-04T12:00:54Z",
   "images": [
     {
       "counts": {
@@ -1966,9 +1966,9 @@
     {
       "counts": {
         "critical": 27,
-        "high": 382,
-        "low": 14,
-        "medium": 295
+        "high": 386,
+        "low": 15,
+        "medium": 300
       },
       "digests": [
         "sha256:38dc2727bfcfd5ede290f8ada114fc90368146f265ae4701ddddbcbe2a44ee52",
@@ -2715,6 +2715,34 @@
           "id": "CVE-2026-118370",
           "installed": "2.8.5-r0",
           "package": "libexpat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.49.2-r1",
+          "package": "sqlite",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.49.2-r1",
+          "package": "sqlite",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.49.2-r1",
+          "package": "sqlite",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119586",
+          "installed": "3.49.2-r1",
+          "package": "sqlite",
           "severity": "High"
         },
         {
@@ -4844,9 +4872,9 @@
     {
       "counts": {
         "critical": 18,
-        "high": 63,
-        "low": 12,
-        "medium": 48
+        "high": 67,
+        "low": 13,
+        "medium": 53
       },
       "digests": [
         "sha256:6373d89ab2767c52875aee1aafd3731781abb4a5774f5633f7d9d8762efde536",
@@ -5166,6 +5194,34 @@
           "id": "CVE-2026-119197",
           "installed": "0.6.4",
           "package": "pyasn1",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.53.4-r0",
+          "package": "sqlite-libs",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.53.4-r0",
+          "package": "sqlite-libs",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.53.4-r0",
+          "package": "sqlite-libs",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119586",
+          "installed": "3.53.4-r0",
+          "package": "sqlite-libs",
           "severity": "High"
         },
         {
@@ -6912,9 +6968,9 @@
     {
       "counts": {
         "critical": 417,
-        "high": 1596,
-        "low": 190,
-        "medium": 1504
+        "high": 1609,
+        "low": 193,
+        "medium": 1518
       },
       "digests": [
         "sha256:3922767afb52a5777759fd8b28a3c9eee864daea96018a791f2429eae2a76571",
@@ -12951,9 +13007,9 @@
     {
       "counts": {
         "critical": 60,
-        "high": 440,
-        "low": 38,
-        "medium": 287
+        "high": 444,
+        "low": 39,
+        "medium": 292
       },
       "digests": [
         "sha256:130241f28d01fa80dfa3b44f7d89781c188d8642ecab9024f079f19f9f82baa0",
@@ -13878,10 +13934,38 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.53.2-r0",
+          "package": "sqlite-libs",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.53.2-r0",
+          "package": "sqlite-libs",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.53.2-r0",
+          "package": "sqlite-libs",
+          "severity": "High"
+        },
+        {
           "fixed": "3.10.21, 3.11.16, 3.12.14",
           "id": "CVE-2026-11940",
           "installed": "3.14.6",
           "package": "python",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119586",
+          "installed": "3.53.2-r0",
+          "package": "sqlite-libs",
           "severity": "High"
         },
         {
@@ -16430,34 +16514,6 @@
           "id": "CVE-2026-97031",
           "installed": "go1.25.6",
           "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.26.9",
-          "id": "CVE-2026-97032",
-          "installed": "go1.25.6",
-          "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "9.20.30-r0",
-          "id": "CVE-2026-97313",
-          "installed": "9.20.23-r0",
-          "package": "bind-libs",
-          "severity": "High"
-        },
-        {
-          "fixed": "9.20.30-r0",
-          "id": "CVE-2026-97313",
-          "installed": "9.20.23-r0",
-          "package": "bind-tools",
-          "severity": "High"
-        },
-        {
-          "fixed": "13.0.0",
-          "id": "GHSA-78g4-xqwv-q3g8",
-          "installed": "12.3.0",
-          "package": "pillow",
           "severity": "High"
         }
       ],
@@ -20835,9 +20891,9 @@
     {
       "counts": {
         "critical": 18,
-        "high": 216,
-        "low": 73,
-        "medium": 371
+        "high": 234,
+        "low": 67,
+        "medium": 359
       },
       "digests": [
         "sha256:3ce2f1f06b5bd75e4a324ba34a93cb69fb74aa1561f48b6c5318537feef66890",
@@ -21374,6 +21430,132 @@
           "id": "CVE-2026-107929",
           "installed": "8.14.1-2+deb13u7",
           "package": "libcurl4t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109258",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "imagemagick-7-common",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109258",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickcore-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109258",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickwand-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109260",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "imagemagick-7-common",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109260",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickcore-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109260",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickwand-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": "8:7.1.1.43+dfsg1-1+deb13u13",
+          "id": "CVE-2026-109261",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "imagemagick-7-common",
+          "severity": "High"
+        },
+        {
+          "fixed": "8:7.1.1.43+dfsg1-1+deb13u13",
+          "id": "CVE-2026-109261",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickcore-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": "8:7.1.1.43+dfsg1-1+deb13u13",
+          "id": "CVE-2026-109261",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickwand-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109262",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "imagemagick-7-common",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109262",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickcore-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109262",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickwand-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109263",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "imagemagick-7-common",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109263",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickcore-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109263",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickwand-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109268",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "imagemagick-7-common",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109268",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickcore-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-109268",
+          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
+          "package": "libmagickwand-7.q16-10",
           "severity": "High"
         },
         {
@@ -22488,7 +22670,7 @@
     {
       "counts": {
         "critical": 922,
-        "high": 3122,
+        "high": 3124,
         "low": 323,
         "medium": 3245
       },
@@ -28580,7 +28762,7 @@
         "critical": 7,
         "high": 249,
         "low": 25,
-        "medium": 186
+        "medium": 185
       },
       "digests": [
         "sha256:4a1029867755efae922b562be89d4a842e7325f486f506c47241eab60fa9b431",
@@ -31569,9 +31751,9 @@
     {
       "counts": {
         "critical": 16,
-        "high": 57,
-        "low": 19,
-        "medium": 20
+        "high": 65,
+        "low": 21,
+        "medium": 30
       },
       "digests": [
         "sha256:1de3b99b9e3e080ba73b4028324b425274ad00d676803603f7f19efdc416045b",
@@ -31744,6 +31926,62 @@
           "id": "CVE-2026-118370",
           "installed": "2.8.5-r0",
           "package": "libexpat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.53.4-r0",
+          "package": "sqlite",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119373",
+          "installed": "3.53.4-r0",
+          "package": "sqlite-libs",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.53.4-r0",
+          "package": "sqlite",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119374",
+          "installed": "3.53.4-r0",
+          "package": "sqlite-libs",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.53.4-r0",
+          "package": "sqlite",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119379",
+          "installed": "3.53.4-r0",
+          "package": "sqlite-libs",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119586",
+          "installed": "3.53.4-r0",
+          "package": "sqlite",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-119586",
+          "installed": "3.53.4-r0",
+          "package": "sqlite-libs",
           "severity": "High"
         },
         {
@@ -38598,10 +38836,10 @@
   ],
   "omitted": {
     "critical": 422,
-    "high": 4635
+    "high": 4654
   },
   "scanner": {
-    "dbBuilt": "2026-11-03T06:20:47Z",
+    "dbBuilt": "2026-11-04T06:20:59Z",
     "name": "grype",
     "version": "0.120.1"
   },
