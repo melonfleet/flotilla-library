@@ -1,10 +1,10 @@
 {
-  "generated": "2026-11-05T11:50:51Z",
+  "generated": "2026-11-06T11:50:43Z",
   "images": [
     {
       "counts": {
         "critical": 42,
-        "high": 235,
+        "high": 236,
         "low": 38,
         "medium": 259
       },
@@ -1597,6 +1597,13 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-76844",
+          "installed": "1:1.2.13.dfsg-1",
+          "package": "zlib1g",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-78410",
           "installed": "1:2.38.1-5+deb12u3",
           "package": "bsdutils",
@@ -1958,15 +1965,29 @@
     {
       "counts": {
         "critical": 0,
-        "high": 1,
+        "high": 3,
         "low": 26,
-        "medium": 143
+        "medium": 145
       },
       "digests": [
         "sha256:387ebbcca253026def04dc79e83d2323ac7d97bf309ddd090a8a3c702573e01a",
         "sha256:c385478e02a90c851880232e7d266d9eef1aecd6f41a238675ecd1ff4d355b47"
       ],
       "findings": [
+        {
+          "fixed": "2.4.15ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.4.14",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.4.15ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.4.14",
+          "package": "libapt-pkg6.0",
+          "severity": "High"
+        },
         {
           "fixed": "3.0.2-0ubuntu1.30",
           "id": "CVE-2026-84782",
@@ -1980,9 +2001,9 @@
     {
       "counts": {
         "critical": 27,
-        "high": 387,
+        "high": 388,
         "low": 15,
-        "medium": 300
+        "medium": 355
       },
       "digests": [
         "sha256:38dc2727bfcfd5ede290f8ada114fc90368146f265ae4701ddddbcbe2a44ee52",
@@ -2680,6 +2701,20 @@
           "id": "CVE-2026-107696",
           "installed": "6.1.2-r2",
           "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.5-r13",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.5-r12",
+          "package": "musl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.5-r13",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.5-r12",
+          "package": "musl-utils",
           "severity": "High"
         },
         {
@@ -3406,13 +3441,6 @@
         {
           "fixed": null,
           "id": "CVE-2026-59850",
-          "installed": "0.11.2-r0",
-          "package": "libssh",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59851",
           "installed": "0.11.2-r0",
           "package": "libssh",
           "severity": "High"
@@ -4893,7 +4921,7 @@
     {
       "counts": {
         "critical": 18,
-        "high": 67,
+        "high": 69,
         "low": 13,
         "medium": 54
       },
@@ -5027,6 +5055,20 @@
           "installed": "2026.7.22",
           "package": "certifi",
           "severity": "Critical"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl-utils",
+          "severity": "High"
         },
         {
           "fixed": "8.23.0-r0",
@@ -5253,7 +5295,7 @@
           "severity": "High"
         },
         {
-          "fixed": "4.0.0",
+          "fixed": "4.0.1",
           "id": "CVE-2026-49272",
           "installed": "3.3.1",
           "package": "oauthlib",
@@ -5502,8 +5544,8 @@
     },
     {
       "counts": {
-        "critical": 1,
-        "high": 13,
+        "critical": 2,
+        "high": 14,
         "low": 3,
         "medium": 6
       },
@@ -5513,11 +5555,25 @@
       ],
       "findings": [
         {
+          "fixed": "1.2.7",
+          "id": "CVE-2026-111497",
+          "installed": "v1.2.2",
+          "package": "github.com/andybalholm/brotli",
+          "severity": "Critical"
+        },
+        {
           "fixed": "1.26.9",
           "id": "CVE-2026-78663",
           "installed": "go1.26.5",
           "package": "stdlib",
           "severity": "Critical"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.19.1",
+          "package": "github.com/klauspost/compress",
+          "severity": "High"
         },
         {
           "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
@@ -5616,7 +5672,7 @@
     {
       "counts": {
         "critical": 18,
-        "high": 178,
+        "high": 179,
         "low": 32,
         "medium": 182
       },
@@ -6246,6 +6302,13 @@
           "id": "CVE-2026-76642",
           "installed": "2.41.5-0+deb13u1",
           "package": "util-linux",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-76844",
+          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
+          "package": "zlib1g",
           "severity": "High"
         },
         {
@@ -7002,10 +7065,10 @@
     },
     {
       "counts": {
-        "critical": 443,
-        "high": 1663,
-        "low": 193,
-        "medium": 1518
+        "critical": 446,
+        "high": 1692,
+        "low": 194,
+        "medium": 1585
       },
       "digests": [
         "sha256:3922767afb52a5777759fd8b28a3c9eee864daea96018a791f2429eae2a76571",
@@ -7819,6 +7882,13 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-121073",
+          "installed": "149.0.7827.53-r0",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-121074",
           "installed": "149.0.7827.53-r0",
           "package": "chromium",
@@ -7967,6 +8037,20 @@
         {
           "fixed": null,
           "id": "CVE-2026-121249",
+          "installed": "149.0.7827.53-r0",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121250",
+          "installed": "149.0.7827.53-r0",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121257",
           "installed": "149.0.7827.53-r0",
           "package": "chromium",
           "severity": "Critical"
@@ -10490,27 +10574,6 @@
           "installed": "1.13.1",
           "package": "@grpc/grpc-js",
           "severity": "High"
-        },
-        {
-          "fixed": "1.14.5",
-          "id": "CVE-2026-101916",
-          "installed": "1.14.4",
-          "package": "@grpc/grpc-js",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.1.19",
-          "id": "CVE-2026-102276",
-          "installed": "1.1.14",
-          "package": "brace-expansion",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.1.19",
-          "id": "CVE-2026-102276",
-          "installed": "1.1.17",
-          "package": "brace-expansion",
-          "severity": "High"
         }
       ],
       "reference": "docker.io/flowiseai/flowise:3.1.4"
@@ -10518,7 +10581,7 @@
     {
       "counts": {
         "critical": 38,
-        "high": 179,
+        "high": 180,
         "low": 19,
         "medium": 95
       },
@@ -11508,6 +11571,13 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-76844",
+          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
+          "package": "zlib1g",
+          "severity": "High"
+        },
+        {
           "fixed": "2.9.0-1~deb13u1",
           "id": "CVE-2026-76956",
           "installed": "2.8.3-1~deb13u1",
@@ -12051,8 +12121,8 @@
     },
     {
       "counts": {
-        "critical": 19,
-        "high": 75,
+        "critical": 20,
+        "high": 77,
         "low": 11,
         "medium": 24
       },
@@ -12066,6 +12136,13 @@
           "id": "CVE-2026-111497",
           "installed": "1.2.0-r1",
           "package": "brotli-libs",
+          "severity": "Critical"
+        },
+        {
+          "fixed": "1.2.7",
+          "id": "CVE-2026-111497",
+          "installed": "v1.2.2",
+          "package": "github.com/andybalholm/brotli",
           "severity": "Critical"
         },
         {
@@ -12195,29 +12272,8 @@
           "severity": "Critical"
         },
         {
-          "fixed": "0.146.0",
-          "id": "CVE-2026-100349",
-          "installed": "v0.144.0",
-          "package": "github.com/getkin/kin-openapi",
-          "severity": "High"
-        },
-        {
-          "fixed": "0.147.0",
-          "id": "CVE-2026-100351",
-          "installed": "v0.144.0",
-          "package": "github.com/getkin/kin-openapi",
-          "severity": "High"
-        },
-        {
           "fixed": "0.148.0",
           "id": "CVE-2026-100352",
-          "installed": "v0.144.0",
-          "package": "github.com/getkin/kin-openapi",
-          "severity": "High"
-        },
-        {
-          "fixed": "0.149.0",
-          "id": "CVE-2026-100353",
           "installed": "v0.144.0",
           "package": "github.com/getkin/kin-openapi",
           "severity": "High"
@@ -12227,6 +12283,20 @@
           "id": "CVE-2026-100354",
           "installed": "v0.144.0",
           "package": "github.com/getkin/kin-openapi",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl-utils",
           "severity": "High"
         },
         {
@@ -12262,6 +12332,27 @@
           "id": "CVE-2026-116587",
           "installed": "v4.1.4",
           "package": "github.com/go-jose/go-jose/v4",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.19.1",
+          "package": "github.com/klauspost/compress",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.19.2",
+          "package": "github.com/klauspost/compress",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.20.0",
+          "package": "github.com/klauspost/compress",
           "severity": "High"
         },
         {
@@ -12724,8 +12815,8 @@
     },
     {
       "counts": {
-        "critical": 3,
-        "high": 13,
+        "critical": 4,
+        "high": 14,
         "low": 4,
         "medium": 8
       },
@@ -12734,6 +12825,13 @@
         "sha256:a2753977b07471e0bb271f421677036fb1c84a2fd409e14fa19dfc7cc3b789b5"
       ],
       "findings": [
+        {
+          "fixed": "1.2.7",
+          "id": "CVE-2026-111497",
+          "installed": "v1.2.2",
+          "package": "github.com/andybalholm/brotli",
+          "severity": "Critical"
+        },
         {
           "fixed": "1.26.9, 1.27.2",
           "id": "CVE-2026-56857",
@@ -12760,6 +12858,13 @@
           "id": "CVE-2026-116587",
           "installed": "v4.1.4",
           "package": "github.com/go-jose/go-jose/v4",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.18.7",
+          "package": "github.com/klauspost/compress",
           "severity": "High"
         },
         {
@@ -12851,8 +12956,8 @@
     },
     {
       "counts": {
-        "critical": 3,
-        "high": 24,
+        "critical": 4,
+        "high": 27,
         "low": 8,
         "medium": 21
       },
@@ -12861,6 +12966,13 @@
         "sha256:c2f666266f383d2cf424d86b8bb8ce7d065562173ffec2b476d762943608bb55"
       ],
       "findings": [
+        {
+          "fixed": "1.2.7",
+          "id": "CVE-2026-111497",
+          "installed": "v1.2.0",
+          "package": "github.com/andybalholm/brotli",
+          "severity": "Critical"
+        },
         {
           "fixed": "1.26.9, 1.27.2",
           "id": "CVE-2026-56857",
@@ -12883,6 +12995,20 @@
           "severity": "Critical"
         },
         {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl-utils",
+          "severity": "High"
+        },
+        {
           "fixed": null,
           "id": "CVE-2026-116587",
           "installed": "v3.0.5",
@@ -12894,6 +13020,13 @@
           "id": "CVE-2026-116587",
           "installed": "v4.1.4",
           "package": "github.com/go-jose/go-jose/v4",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.19.1",
+          "package": "github.com/klauspost/compress",
           "severity": "High"
         },
         {
@@ -13056,9 +13189,9 @@
     {
       "counts": {
         "critical": 60,
-        "high": 444,
+        "high": 446,
         "low": 39,
-        "medium": 293
+        "medium": 347
       },
       "digests": [
         "sha256:130241f28d01fa80dfa3b44f7d89781c188d8642ecab9024f079f19f9f82baa0",
@@ -13507,6 +13640,13 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-0011",
+          "installed": "7.99-r0",
+          "package": "nmap",
+          "severity": "High"
+        },
+        {
           "fixed": "1.10.7-r0",
           "id": "CVE-2026-0799",
           "installed": "1.10.6-r1",
@@ -13637,6 +13777,20 @@
           "id": "CVE-2026-107696",
           "installed": "8.1.2-r0",
           "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl-utils",
           "severity": "High"
         },
         {
@@ -14361,7 +14515,7 @@
           "severity": "High"
         },
         {
-          "fixed": "4.0.0",
+          "fixed": "4.0.1",
           "id": "CVE-2026-49272",
           "installed": "3.3.1",
           "package": "oauthlib",
@@ -14687,13 +14841,6 @@
           "id": "CVE-2026-59851",
           "installed": "0.12.0-r0",
           "package": "libssh",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59851",
-          "installed": "1.11.1-r3",
-          "package": "libssh2",
           "severity": "High"
         },
         {
@@ -16550,20 +16697,6 @@
           "installed": "9.20.23-r0",
           "package": "bind-libs",
           "severity": "High"
-        },
-        {
-          "fixed": "9.20.30-r0",
-          "id": "CVE-2026-96888",
-          "installed": "9.20.23-r0",
-          "package": "bind-tools",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.26.9, 1.27.2",
-          "id": "CVE-2026-97031",
-          "installed": "go1.25.6",
-          "package": "stdlib",
-          "severity": "High"
         }
       ],
       "reference": "docker.io/homeassistant/home-assistant:2026.10.1"
@@ -16571,7 +16704,7 @@
     {
       "counts": {
         "critical": 41,
-        "high": 271,
+        "high": 272,
         "low": 43,
         "medium": 198
       },
@@ -18037,6 +18170,13 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-76844",
+          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
+          "package": "zlib1g",
+          "severity": "High"
+        },
+        {
           "fixed": "2.9.0-1~deb13u1",
           "id": "CVE-2026-76956",
           "installed": "2.7.1-2",
@@ -18770,9 +18910,9 @@
     {
       "counts": {
         "critical": 1,
-        "high": 11,
+        "high": 13,
         "low": 47,
-        "medium": 280
+        "medium": 283
       },
       "digests": [
         "sha256:19ecfcc825f5925fdc7142a605335a54fd83fb0101be1232b6f5062cee01f785",
@@ -18785,6 +18925,20 @@
           "installed": "go1.26.7",
           "package": "stdlib",
           "severity": "Critical"
+        },
+        {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "libapt-pkg7.0",
+          "severity": "High"
         },
         {
           "fixed": "1.2.0-3ubuntu0.1",
@@ -18869,9 +19023,9 @@
     {
       "counts": {
         "critical": 14,
-        "high": 73,
+        "high": 77,
         "low": 80,
-        "medium": 305
+        "medium": 306
       },
       "digests": [
         "sha256:89fd95ee2942880ca00eae964266958a394421ddbdf69bca62e38afc55f5900e",
@@ -19026,6 +19180,20 @@
           "severity": "High"
         },
         {
+          "fixed": "2.4.15ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.4.14",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.4.15ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.4.14",
+          "package": "libapt-pkg6.0",
+          "severity": "High"
+        },
+        {
           "fixed": "1.0.9-2ubuntu0.1",
           "id": "CVE-2026-111497",
           "installed": "1.0.9-2build6",
@@ -19037,6 +19205,20 @@
           "id": "CVE-2026-116587",
           "installed": "v4.1.4",
           "package": "github.com/go-jose/go-jose/v4",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.17.9",
+          "package": "github.com/klauspost/compress",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.18.6",
+          "package": "github.com/klauspost/compress",
           "severity": "High"
         },
         {
@@ -19493,23 +19675,38 @@
     {
       "counts": {
         "critical": 0,
-        "high": 0,
+        "high": 2,
         "low": 10,
-        "medium": 1273
+        "medium": 1277
       },
       "digests": [
         "sha256:6d882f903b25c6517caf5d14422ebfc371f4c34ebb8fd3c64320a6dc43c9271d",
         "sha256:f4054da26e3a9dd6c8b5cc97363e544408b15c0fb369d7359c25dc04826eb6e1"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "libapt-pkg7.0",
+          "severity": "High"
+        }
+      ],
       "reference": "docker.io/library/mariadb:13.0.2"
     },
     {
       "counts": {
         "critical": 2,
-        "high": 16,
+        "high": 19,
         "low": 16,
-        "medium": 107
+        "medium": 108
       },
       "digests": [
         "sha256:a18a67668df9389cbfe49d81ca9bd20428fa6b82ce9ae0b79961dadf56281493",
@@ -19531,10 +19728,31 @@
           "severity": "Critical"
         },
         {
+          "fixed": "2.8.4ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.8.3",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.8.4ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.8.3",
+          "package": "libapt-pkg6.0t64",
+          "severity": "High"
+        },
+        {
           "fixed": "1.1.0-2ubuntu0.1",
           "id": "CVE-2026-111497",
           "installed": "1.1.0-2build2",
           "package": "libbrotli1",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.20.0",
+          "package": "github.com/klauspost/compress",
           "severity": "High"
         },
         {
@@ -19726,7 +19944,7 @@
     {
       "counts": {
         "critical": 1,
-        "high": 92,
+        "high": 93,
         "low": 34,
         "medium": 101
       },
@@ -20041,6 +20259,13 @@
           "id": "CVE-2026-76642",
           "installed": "2.41.5-0+deb13u1",
           "package": "util-linux",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-76844",
+          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
+          "package": "zlib1g",
           "severity": "High"
         },
         {
@@ -20392,21 +20617,36 @@
     {
       "counts": {
         "critical": 0,
-        "high": 0,
+        "high": 2,
         "low": 8,
-        "medium": 70
+        "medium": 71
       },
       "digests": [
         "sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
         "sha256:de03afc2c596b635196692c18425149f1e85d13ba8c1990c1a78684f693dc459"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "fixed": "2.8.4ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.8.3",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.8.4ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.8.3",
+          "package": "libapt-pkg6.0t64",
+          "severity": "High"
+        }
+      ],
       "reference": "docker.io/library/rabbitmq:4.3.6-management"
     },
     {
       "counts": {
         "critical": 0,
-        "high": 61,
+        "high": 62,
         "low": 12,
         "medium": 62
       },
@@ -20595,6 +20835,13 @@
           "id": "CVE-2026-76642",
           "installed": "2.41.5-0+deb13u1",
           "package": "util-linux",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-76844",
+          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
+          "package": "zlib1g",
           "severity": "High"
         },
         {
@@ -20848,13 +21095,13 @@
     {
       "counts": {
         "critical": 2,
-        "high": 14,
+        "high": 15,
         "low": 3,
         "medium": 8
       },
       "digests": [
-        "sha256:271591ba794f68af935b71c1c7c353e6b9b242d6a4a7ee1b3e1c2f1b290dc341",
-        "sha256:d4032d4cc323c1731c707931ecada07a53076eac38e3b61ae57533f170f2c6c3"
+        "sha256:38907510915c3f1604c7e83d6ab602ab3020d092f73bdaed8696773693ff768c",
+        "sha256:f3d00d4a9323fe175d9359ee9b86cbf21b2ce922636504d1438c6fbf1938e1e0"
       ],
       "findings": [
         {
@@ -20876,6 +21123,13 @@
           "id": "CVE-2026-116587",
           "installed": "v4.1.4",
           "package": "github.com/go-jose/go-jose/v4",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.18.4",
+          "package": "github.com/klauspost/compress",
           "severity": "High"
         },
         {
@@ -20975,9 +21229,9 @@
     {
       "counts": {
         "critical": 18,
-        "high": 236,
-        "low": 67,
-        "medium": 359
+        "high": 237,
+        "low": 58,
+        "medium": 368
       },
       "digests": [
         "sha256:3ce2f1f06b5bd75e4a324ba34a93cb69fb74aa1561f48b6c5318537feef66890",
@@ -21931,6 +22185,13 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-76844",
+          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
+          "package": "zlib1g",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-78408",
           "installed": "1:2.41.5-0+deb13u1",
           "package": "bsdutils",
@@ -22768,7 +23029,7 @@
     {
       "counts": {
         "critical": 984,
-        "high": 3295,
+        "high": 3296,
         "low": 325,
         "medium": 3340
       },
@@ -24780,28 +25041,28 @@
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "156.0.8078.79-1~deb12u1",
           "id": "CVE-2026-119261",
           "installed": "148.0.7778.178-1~deb12u1",
           "package": "chromium",
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "156.0.8078.79-1~deb12u1",
           "id": "CVE-2026-119261",
           "installed": "148.0.7778.178-1~deb12u1",
           "package": "chromium-common",
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "156.0.8078.79-1~deb12u1",
           "id": "CVE-2026-119263",
           "installed": "148.0.7778.178-1~deb12u1",
           "package": "chromium",
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "156.0.8078.79-1~deb12u1",
           "id": "CVE-2026-119263",
           "installed": "148.0.7778.178-1~deb12u1",
           "package": "chromium-common",
@@ -26283,7 +26544,7 @@
     {
       "counts": {
         "critical": 15,
-        "high": 41,
+        "high": 43,
         "low": 1,
         "medium": 20
       },
@@ -26409,6 +26670,20 @@
           "id": "CVE-2026-106451",
           "installed": "1.11.1",
           "package": "lz4-java",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl-utils",
           "severity": "High"
         },
         {
@@ -26690,9 +26965,9 @@
     {
       "counts": {
         "critical": 4,
-        "high": 33,
+        "high": 36,
         "low": 11,
-        "medium": 101
+        "medium": 102
       },
       "digests": [
         "sha256:56587518b22609f472d56847251d1453a2796aea8a1cb84b7ce22ff9adad77ce",
@@ -26726,6 +27001,27 @@
           "installed": "go1.26.0",
           "package": "stdlib",
           "severity": "Critical"
+        },
+        {
+          "fixed": "2.8.4ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.8.3",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.8.4ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.8.3",
+          "package": "libapt-pkg6.0t64",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.18.3",
+          "package": "github.com/klauspost/compress",
+          "severity": "High"
         },
         {
           "fixed": "1.25.8, 1.26.1",
@@ -27560,7 +27856,7 @@
     {
       "counts": {
         "critical": 3,
-        "high": 16,
+        "high": 17,
         "low": 0,
         "medium": 3
       },
@@ -27589,6 +27885,13 @@
           "installed": "go1.27.1",
           "package": "stdlib",
           "severity": "Critical"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.20.0",
+          "package": "github.com/klauspost/compress",
+          "severity": "High"
         },
         {
           "fixed": null,
@@ -27708,7 +28011,7 @@
     {
       "counts": {
         "critical": 0,
-        "high": 70,
+        "high": 71,
         "low": 19,
         "medium": 72
       },
@@ -27932,6 +28235,13 @@
           "id": "CVE-2026-76642",
           "installed": "2.41.5-0+deb13u1",
           "package": "util-linux",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-76844",
+          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
+          "package": "zlib1g",
           "severity": "High"
         },
         {
@@ -28213,7 +28523,7 @@
     {
       "counts": {
         "critical": 9,
-        "high": 85,
+        "high": 86,
         "low": 16,
         "medium": 121
       },
@@ -28763,6 +29073,13 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-76844",
+          "installed": "1:1.2.13.dfsg-1",
+          "package": "zlib1g",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-78410",
           "installed": "1:2.38.1-5+deb12u3",
           "package": "bsdutils",
@@ -28886,9 +29203,9 @@
     {
       "counts": {
         "critical": 7,
-        "high": 249,
+        "high": 251,
         "low": 25,
-        "medium": 184
+        "medium": 232
       },
       "digests": [
         "sha256:4a1029867755efae922b562be89d4a842e7325f486f506c47241eab60fa9b431",
@@ -29187,6 +29504,20 @@
           "id": "CVE-2026-107696",
           "installed": "8.1.2-r0",
           "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl-utils",
           "severity": "High"
         },
         {
@@ -30693,7 +31024,7 @@
     {
       "counts": {
         "critical": 0,
-        "high": 1,
+        "high": 4,
         "low": 0,
         "medium": 5
       },
@@ -30702,6 +31033,27 @@
         "sha256:94f6b70c1436defae6799d9ac7ff0eeff9540465b842026d5cdb018f1c0234ea"
       ],
       "findings": [
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl-utils",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.20.1",
+          "package": "github.com/klauspost/compress",
+          "severity": "High"
+        },
         {
           "fixed": "0.62.0",
           "id": "CVE-2026-78661",
@@ -30715,7 +31067,7 @@
     {
       "counts": {
         "critical": 29,
-        "high": 138,
+        "high": 139,
         "low": 13,
         "medium": 95
       },
@@ -31328,6 +31680,13 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-76844",
+          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
+          "package": "zlib1g",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-78408",
           "installed": "1:2.41.5-0+deb13u1",
           "package": "bsdutils",
@@ -31898,8 +32257,8 @@
     },
     {
       "counts": {
-        "critical": 16,
-        "high": 66,
+        "critical": 17,
+        "high": 69,
         "low": 21,
         "medium": 31
       },
@@ -31913,6 +32272,13 @@
           "id": "CVE-2026-111497",
           "installed": "1.2.0-r1",
           "package": "brotli-libs",
+          "severity": "Critical"
+        },
+        {
+          "fixed": "1.2.7",
+          "id": "CVE-2026-111497",
+          "installed": "v1.2.1",
+          "package": "github.com/andybalholm/brotli",
           "severity": "Critical"
         },
         {
@@ -32021,6 +32387,20 @@
           "severity": "Critical"
         },
         {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.2.6-r3",
+          "id": "CVE-2026-107891",
+          "installed": "1.2.6-r2",
+          "package": "musl-utils",
+          "severity": "High"
+        },
+        {
           "fixed": "8.23.0-r0",
           "id": "CVE-2026-107928",
           "installed": "8.22.0-r0",
@@ -32060,6 +32440,13 @@
           "id": "CVE-2026-115506",
           "installed": "2.8.5-r0",
           "package": "libexpat",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.20.0",
+          "package": "github.com/klauspost/compress",
           "severity": "High"
         },
         {
@@ -32488,9 +32875,9 @@
     {
       "counts": {
         "critical": 41,
-        "high": 423,
+        "high": 424,
         "low": 41,
-        "medium": 364
+        "medium": 355
       },
       "digests": [
         "sha256:1994d77ab18293108c449f2429fdf7877f69d56b61110da16812902223fbff7d",
@@ -33520,7 +33907,7 @@
           "severity": "High"
         },
         {
-          "fixed": "4.0.0",
+          "fixed": "4.0.1",
           "id": "CVE-2026-49272",
           "installed": "3.3.1",
           "package": "oauthlib",
@@ -34955,6 +35342,13 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-76844",
+          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
+          "package": "zlib1g",
+          "severity": "High"
+        },
+        {
           "fixed": "2.9.0-1~deb13u1",
           "id": "CVE-2026-76956",
           "installed": "2.8.3-1~deb13u1",
@@ -35751,9 +36145,9 @@
     {
       "counts": {
         "critical": 28,
-        "high": 165,
+        "high": 167,
         "low": 125,
-        "medium": 1351
+        "medium": 1365
       },
       "digests": [
         "sha256:63859e7302a0533a773655c99071756bbc4a0c710ea3259f1e02671b56cdf8dd",
@@ -36192,6 +36586,20 @@
           "id": "CVE-2026-107928",
           "installed": "8.5.0",
           "package": "curl",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.8.4ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.8.3",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.8.4ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "2.8.3",
+          "package": "libapt-pkg6.0t64",
           "severity": "High"
         },
         {
@@ -37116,8 +37524,8 @@
     },
     {
       "counts": {
-        "critical": 1,
-        "high": 18,
+        "critical": 2,
+        "high": 19,
         "low": 0,
         "medium": 6
       },
@@ -37126,6 +37534,13 @@
         "sha256:f6f885fca6b994c5f5a75081003e0db93e91977b1febe605d38ae0b5eb3cb2df"
       ],
       "findings": [
+        {
+          "fixed": "1.2.7",
+          "id": "CVE-2026-111497",
+          "installed": "v1.2.1",
+          "package": "github.com/andybalholm/brotli",
+          "severity": "Critical"
+        },
         {
           "fixed": "0.60.0",
           "id": "CVE-2026-78663",
@@ -37138,6 +37553,13 @@
           "id": "CVE-2026-116587",
           "installed": "v4.1.4",
           "package": "github.com/go-jose/go-jose/v4",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.20.2",
+          "id": "CVE-2026-116591",
+          "installed": "v1.18.6",
+          "package": "github.com/klauspost/compress",
           "severity": "High"
         },
         {
@@ -37265,9 +37687,9 @@
     {
       "counts": {
         "critical": 17,
-        "high": 65,
+        "high": 68,
         "low": 178,
-        "medium": 1323
+        "medium": 1332
       },
       "digests": [
         "sha256:05f7c3e37f3ef3e3a28377c36c0c953c8ed3e6fab371b1afbde74f994b21096d",
@@ -37457,6 +37879,20 @@
           "severity": "High"
         },
         {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "libapt-pkg7.0",
+          "severity": "High"
+        },
+        {
           "fixed": "1.2.0-3ubuntu0.1",
           "id": "CVE-2026-111497",
           "installed": "1.2.0-3build1",
@@ -37629,6 +38065,13 @@
           "id": "CVE-2026-40356",
           "installed": "1.22.2",
           "package": "krb5",
+          "severity": "High"
+        },
+        {
+          "fixed": "4.0.1",
+          "id": "CVE-2026-49272",
+          "installed": "4.0.0",
+          "package": "oauthlib",
           "severity": "High"
         },
         {
@@ -37854,9 +38297,9 @@
     {
       "counts": {
         "critical": 10,
-        "high": 47,
+        "high": 50,
         "low": 178,
-        "medium": 1308
+        "medium": 1317
       },
       "digests": [
         "sha256:3bae1c4713264797c24c1dbd1d4e3abacece147dc42669af61d240083353ecce",
@@ -37959,6 +38402,20 @@
           "id": "CVE-2026-107778",
           "installed": "1.22.2",
           "package": "krb5",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "libapt-pkg7.0",
           "severity": "High"
         },
         {
@@ -38137,6 +38594,13 @@
           "severity": "High"
         },
         {
+          "fixed": "4.0.1",
+          "id": "CVE-2026-49272",
+          "installed": "4.0.0",
+          "package": "oauthlib",
+          "severity": "High"
+        },
+        {
           "fixed": "1.26.9, 1.27.2",
           "id": "CVE-2026-56866",
           "installed": "go1.26.7",
@@ -38268,9 +38732,9 @@
     {
       "counts": {
         "critical": 10,
-        "high": 54,
+        "high": 57,
         "low": 178,
-        "medium": 1310
+        "medium": 1319
       },
       "digests": [
         "sha256:82c7e35b8f19fd040eeaf4129e0f2baec950d8a11eeba159723ef042f3744bbb",
@@ -38394,6 +38858,20 @@
           "id": "CVE-2026-107778",
           "installed": "1.22.2",
           "package": "krb5",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "libapt-pkg7.0",
           "severity": "High"
         },
         {
@@ -38586,6 +39064,13 @@
           "severity": "High"
         },
         {
+          "fixed": "4.0.1",
+          "id": "CVE-2026-49272",
+          "installed": "4.0.0",
+          "package": "oauthlib",
+          "severity": "High"
+        },
+        {
           "fixed": "1.26.9, 1.27.2",
           "id": "CVE-2026-56866",
           "installed": "go1.26.7",
@@ -38731,7 +39216,7 @@
     {
       "counts": {
         "critical": 5,
-        "high": 32,
+        "high": 35,
         "low": 23,
         "medium": 697
       },
@@ -38780,6 +39265,20 @@
           "id": "CVE-2022-25881",
           "installed": "4.1.0",
           "package": "http-cache-semantics",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "apt",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.2.1ubuntu0.1",
+          "id": "CVE-2026-109518",
+          "installed": "3.2.0",
+          "package": "libapt-pkg7.0",
           "severity": "High"
         },
         {
@@ -38878,6 +39377,13 @@
           "id": "CVE-2026-44728",
           "installed": "7.20.11",
           "package": "@babel/plugin-transform-modules-systemjs",
+          "severity": "High"
+        },
+        {
+          "fixed": "4.0.1",
+          "id": "CVE-2026-49272",
+          "installed": "4.0.0",
+          "package": "oauthlib",
           "severity": "High"
         },
         {
@@ -39005,10 +39511,10 @@
   ],
   "omitted": {
     "critical": 484,
-    "high": 4905
+    "high": 4940
   },
   "scanner": {
-    "dbBuilt": "2026-11-05T06:21:06Z",
+    "dbBuilt": "2026-11-06T06:21:59Z",
     "name": "grype",
     "version": "0.120.1"
   },
