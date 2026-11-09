@@ -8,7 +8,7 @@
     "env": [
       "ACTUAL_PORT=5006"
     ],
-    "image": "ghcr.io/actualbudget/actual-server:26.10.0",
+    "image": "ghcr.io/actualbudget/actual-server:26.11.0",
     "name": "actual-budget",
     "note": "Fresh volume root directories must be writeable by non-root user uid 1000.",
     "ports": [
@@ -26,9 +26,6 @@
   "id": "actual-budget",
   "kind": "container",
   "summary": "Privacy-first personal finance system using envelope budgeting.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Actual Budget"
 }
