@@ -9,7 +9,7 @@
       "WEBSOCKET_ENABLED=true",
       "SIGNUPS_ALLOWED=true"
     ],
-    "image": "ghcr.io/dani-garcia/vaultwarden:1.37.4",
+    "image": "ghcr.io/dani-garcia/vaultwarden:1.37.5",
     "name": "vaultwarden",
     "note": "Requires HTTPS when accessed outside localhost due to browser WebCrypto security standards.",
     "ports": [
@@ -28,9 +28,6 @@
   "kind": "container",
   "licenceNote": "Licensed under GPL-3.0-or-later, a copyleft licence rather than a permissive one.",
   "summary": "Lightweight Bitwarden-compatible password manager server written in Rust.",
-  "tested": {
-    "date": "2026-10-13",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Vaultwarden Password Manager"
 }
