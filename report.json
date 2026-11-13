@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-12T12:08:09Z",
+  "generated": "2026-11-13T11:56:16Z",
   "images": [
     {
       "counts": {
@@ -2135,7 +2135,7 @@
         "critical": 0,
         "high": 3,
         "low": 26,
-        "medium": 100
+        "medium": 144
       },
       "digests": [
         "sha256:387ebbcca253026def04dc79e83d2323ac7d97bf309ddd090a8a3c702573e01a",
@@ -5110,9 +5110,9 @@
     {
       "counts": {
         "critical": 20,
-        "high": 84,
+        "high": 85,
         "low": 13,
-        "medium": 53
+        "medium": 54
       },
       "digests": [
         "sha256:6373d89ab2767c52875aee1aafd3731781abb4a5774f5633f7d9d8762efde536",
@@ -5582,6 +5582,13 @@
           "severity": "High"
         },
         {
+          "fixed": "13.0.0",
+          "id": "CVE-2026-128067",
+          "installed": "12.3.0",
+          "package": "pillow",
+          "severity": "High"
+        },
+        {
           "fixed": "3.10.22, 3.11.17, 3.12.15",
           "id": "CVE-2026-19553",
           "installed": "3.14.7",
@@ -5980,9 +5987,9 @@
     {
       "counts": {
         "critical": 18,
-        "high": 203,
-        "low": 58,
-        "medium": 195
+        "high": 241,
+        "low": 60,
+        "medium": 207
       },
       "digests": [
         "sha256:6915a020d5b0c97f7dd1c0ff19221536510ac117c1aac84dc53ea54981b255a6",
@@ -6523,6 +6530,160 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-116304",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116306",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116307",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116309",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116313",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116314",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116315",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116316",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116317",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116318",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116319",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116320",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116323",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116325",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116326",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116328",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116329",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116330",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116331",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116332",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116335",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116336",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-117610",
           "installed": "2.9.0-1~deb13u1",
           "package": "libexpat1",
@@ -6586,6 +6747,90 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-120139",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120141",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120142",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120143",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120144",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120145",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120147",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120148",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120149",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120150",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120151",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120153",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-12064",
           "installed": "8.14.1-2+deb13u7",
           "package": "curl",
@@ -6610,6 +6855,20 @@
           "id": "CVE-2026-13608",
           "installed": "8.14.1-2+deb13u7",
           "package": "libcurl4t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-14661",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-18447",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
           "severity": "High"
         },
         {
@@ -6708,6 +6967,20 @@
           "id": "CVE-2026-54370",
           "installed": "2.3.2-2+b1",
           "package": "libacl1",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-6460",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-6467",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
           "severity": "High"
         },
         {
@@ -7541,10 +7814,10 @@
     },
     {
       "counts": {
-        "critical": 449,
-        "high": 1734,
-        "low": 201,
-        "medium": 1629
+        "critical": 451,
+        "high": 1746,
+        "low": 207,
+        "medium": 1642
       },
       "digests": [
         "sha256:3922767afb52a5777759fd8b28a3c9eee864daea96018a791f2429eae2a76571",
@@ -8534,6 +8807,20 @@
         {
           "fixed": null,
           "id": "CVE-2026-121257",
+          "installed": "149.0.7827.53-r0",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125347",
+          "installed": "149.0.7827.53-r0",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126859",
           "installed": "149.0.7827.53-r0",
           "package": "chromium",
           "severity": "Critical"
@@ -11036,20 +11323,6 @@
           "installed": "1.18.1",
           "package": "axios",
           "severity": "High"
-        },
-        {
-          "fixed": "1.20.0",
-          "id": "CVE-2026-101907",
-          "installed": "1.18.0",
-          "package": "axios",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.20.0",
-          "id": "CVE-2026-101907",
-          "installed": "1.18.1",
-          "package": "axios",
-          "severity": "High"
         }
       ],
       "reference": "docker.io/flowiseai/flowise:3.1.4"
@@ -11057,9 +11330,9 @@
     {
       "counts": {
         "critical": 38,
-        "high": 205,
-        "low": 24,
-        "medium": 114
+        "high": 243,
+        "low": 26,
+        "medium": 126
       },
       "digests": [
         "sha256:48b63b9bc3d042a1301c32971b01af8841c7f059b452589c5bf77f475ba44c61",
@@ -11719,6 +11992,160 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-116304",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116306",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116307",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116309",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116313",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116314",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116315",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116316",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116317",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116318",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116319",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116320",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116323",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116325",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116326",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116328",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116329",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116330",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116331",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116332",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116335",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116336",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-117610",
           "installed": "2.8.3-1~deb13u1",
           "package": "libexpat1",
@@ -11782,6 +12209,90 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-120139",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120141",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120142",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120143",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120144",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120145",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120147",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120148",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120149",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120150",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120151",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120153",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-12064",
           "installed": "8.14.1-2+deb13u5",
           "package": "libcurl4t64",
@@ -11792,6 +12303,20 @@
           "id": "CVE-2026-13608",
           "installed": "8.14.1-2+deb13u5",
           "package": "libcurl4t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-14661",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-18447",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
           "severity": "High"
         },
         {
@@ -12086,6 +12611,20 @@
           "id": "CVE-2026-63718",
           "installed": "2.4.68-1~deb13u1",
           "package": "apache2-utils",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-6460",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-6467",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
           "severity": "High"
         },
         {
@@ -13966,9 +14505,9 @@
     {
       "counts": {
         "critical": 62,
-        "high": 450,
-        "low": 39,
-        "medium": 347
+        "high": 451,
+        "low": 43,
+        "medium": 352
       },
       "digests": [
         "sha256:130241f28d01fa80dfa3b44f7d89781c188d8642ecab9024f079f19f9f82baa0",
@@ -15121,6 +15660,13 @@
           "id": "CVE-2026-12617",
           "installed": "9.20.23-r0",
           "package": "bind-tools",
+          "severity": "High"
+        },
+        {
+          "fixed": "13.0.0",
+          "id": "CVE-2026-128067",
+          "installed": "12.3.0",
+          "package": "pillow",
           "severity": "High"
         },
         {
@@ -17466,13 +18012,6 @@
           "id": "CVE-2026-96611",
           "installed": "8.1.2-r0",
           "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": "13.0.0",
-          "id": "CVE-2026-96637",
-          "installed": "12.3.0",
-          "package": "pillow",
           "severity": "High"
         }
       ],
@@ -19864,7 +20403,7 @@
         "critical": 2,
         "high": 16,
         "low": 47,
-        "medium": 267
+        "medium": 311
       },
       "digests": [
         "sha256:19ecfcc825f5925fdc7142a605335a54fd83fb0101be1232b6f5062cee01f785",
@@ -20003,9 +20542,9 @@
     {
       "counts": {
         "critical": 14,
-        "high": 78,
+        "high": 77,
         "low": 80,
-        "medium": 266
+        "medium": 310
       },
       "digests": [
         "sha256:89fd95ee2942880ca00eae964266958a394421ddbdf69bca62e38afc55f5900e",
@@ -20199,13 +20738,6 @@
           "id": "CVE-2026-116591",
           "installed": "v1.18.6",
           "package": "github.com/klauspost/compress",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-123158",
-          "installed": "1:8.9p1-3ubuntu0.15",
-          "package": "openssh-client",
           "severity": "High"
         },
         {
@@ -20664,7 +21196,7 @@
         "critical": 0,
         "high": 0,
         "low": 8,
-        "medium": 1251
+        "medium": 1291
       },
       "digests": [
         "sha256:3339b0a9443f11155d966e3a5259641bd48acb0251fdc060744709a2a0408dde",
@@ -20678,7 +21210,7 @@
         "critical": 2,
         "high": 19,
         "low": 16,
-        "medium": 83
+        "medium": 139
       },
       "digests": [
         "sha256:a18a67668df9389cbfe49d81ca9bd20428fa6b82ce9ae0b79961dadf56281493",
@@ -21759,7 +22291,7 @@
         "critical": 0,
         "high": 2,
         "low": 8,
-        "medium": 46
+        "medium": 47
       },
       "digests": [
         "sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
@@ -24364,10 +24896,10 @@
     },
     {
       "counts": {
-        "critical": 990,
-        "high": 3366,
-        "low": 334,
-        "medium": 3437
+        "critical": 1004,
+        "high": 3468,
+        "low": 354,
+        "medium": 3467
       },
       "digests": [
         "sha256:9912da7d7d9b6ddc0c2d904beb84d24689c1ed9c33b81419eb9008663a92a329",
@@ -26937,6 +27469,104 @@
           "severity": "Critical"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-126842",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126842",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium-common",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126846",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126846",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium-common",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126859",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126859",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium-common",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126872",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126872",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium-common",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126885",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126885",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium-common",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126909",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126909",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium-common",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126912",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-126912",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium-common",
+          "severity": "Critical"
+        },
+        {
           "fixed": "149.0.7827.196-1~deb12u1",
           "id": "CVE-2026-13028",
           "installed": "148.0.7778.178-1~deb12u1",
@@ -27775,104 +28405,6 @@
           "installed": "148.0.7778.178-1~deb12u1",
           "package": "chromium-common",
           "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14417",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14417",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium-common",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14419",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14419",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium-common",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14420",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14420",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium-common",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14423",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14423",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium-common",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14424",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14424",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium-common",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14425",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14425",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium-common",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "1.643-4+deb12u2",
-          "id": "CVE-2026-14739",
-          "installed": "1.643-4",
-          "package": "libdbi-perl",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "1.643-4+deb12u2",
-          "id": "CVE-2026-14740",
-          "installed": "1.643-4",
-          "package": "libdbi-perl",
-          "severity": "Critical"
         }
       ],
       "reference": "docker.io/louislam/uptime-kuma:2.5.6"
@@ -28317,7 +28849,7 @@
         "critical": 4,
         "high": 36,
         "low": 11,
-        "medium": 78
+        "medium": 79
       },
       "digests": [
         "sha256:56587518b22609f472d56847251d1453a2796aea8a1cb84b7ce22ff9adad77ce",
@@ -32326,9 +32858,9 @@
     {
       "counts": {
         "critical": 29,
-        "high": 165,
-        "low": 18,
-        "medium": 114
+        "high": 203,
+        "low": 20,
+        "medium": 126
       },
       "digests": [
         "sha256:dfaefaea21028ea3024b708330b0aed27c4a448a49a3e174e49962f3e0789fc4",
@@ -32883,6 +33415,160 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-116304",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116306",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116307",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116309",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116313",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116314",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116315",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116316",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116317",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116318",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116319",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116320",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116323",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116325",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116326",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116328",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116329",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116330",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116331",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116332",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116335",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-116336",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
@@ -32932,6 +33618,90 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-120139",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120141",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120142",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120143",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120144",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120145",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120147",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120148",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120149",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120150",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120151",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-120153",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-12064",
           "installed": "8.14.1-2+deb13u5",
           "package": "curl",
@@ -32956,6 +33726,20 @@
           "id": "CVE-2026-13608",
           "installed": "8.14.1-2+deb13u5",
           "package": "libcurl4t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-14661",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-18447",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
           "severity": "High"
         },
         {
@@ -33054,6 +33838,20 @@
           "id": "CVE-2026-54370",
           "installed": "2.3.2-2+b1",
           "package": "libacl1",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-6460",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-6467",
+          "installed": "17.11-0+deb13u1",
+          "package": "libpq5",
           "severity": "High"
         },
         {
@@ -33700,8 +34498,8 @@
       "counts": {
         "critical": 18,
         "high": 79,
-        "low": 21,
-        "medium": 32
+        "low": 25,
+        "medium": 36
       },
       "digests": [
         "sha256:1de3b99b9e3e080ba73b4028324b425274ad00d676803603f7f19efdc416045b",
@@ -34393,9 +35191,9 @@
     {
       "counts": {
         "critical": 42,
-        "high": 455,
+        "high": 456,
         "low": 49,
-        "medium": 365
+        "medium": 369
       },
       "digests": [
         "sha256:1994d77ab18293108c449f2429fdf7877f69d56b61110da16812902223fbff7d",
@@ -35527,6 +36325,13 @@
           "id": "CVE-2026-12064",
           "installed": "8.14.1-2+deb13u5",
           "package": "libcurl4t64",
+          "severity": "High"
+        },
+        {
+          "fixed": "13.0.0",
+          "id": "CVE-2026-128067",
+          "installed": "12.3.0",
+          "package": "pillow",
           "severity": "High"
         },
         {
@@ -37887,9 +38692,9 @@
     {
       "counts": {
         "critical": 31,
-        "high": 172,
-        "low": 124,
-        "medium": 1356
+        "high": 173,
+        "low": 123,
+        "medium": 1887
       },
       "digests": [
         "sha256:63859e7302a0533a773655c99071756bbc4a0c710ea3259f1e02671b56cdf8dd",
@@ -38538,6 +39343,13 @@
           "id": "CVE-2026-12064",
           "installed": "8.5.0",
           "package": "curl",
+          "severity": "High"
+        },
+        {
+          "fixed": "13.0.0",
+          "id": "CVE-2026-128067",
+          "installed": "12.3.0",
+          "package": "pillow",
           "severity": "High"
         },
         {
@@ -39486,8 +40298,8 @@
       "counts": {
         "critical": 18,
         "high": 74,
-        "low": 159,
-        "medium": 1273
+        "low": 150,
+        "medium": 2277
       },
       "digests": [
         "sha256:05f7c3e37f3ef3e3a28377c36c0c953c8ed3e6fab371b1afbde74f994b21096d",
@@ -39887,10 +40699,10 @@
           "severity": "High"
         },
         {
-          "fixed": null,
-          "id": "CVE-2026-123158",
-          "installed": "1:10.2p1-2ubuntu3.7",
-          "package": "openssh-client",
+          "fixed": "13.0.0",
+          "id": "CVE-2026-128067",
+          "installed": "12.3.0",
+          "package": "pillow",
           "severity": "High"
         },
         {
@@ -40145,8 +40957,8 @@
       "counts": {
         "critical": 11,
         "high": 56,
-        "low": 159,
-        "medium": 1258
+        "low": 150,
+        "medium": 2262
       },
       "digests": [
         "sha256:3bae1c4713264797c24c1dbd1d4e3abacece147dc42669af61d240083353ecce",
@@ -40462,10 +41274,10 @@
           "severity": "High"
         },
         {
-          "fixed": null,
-          "id": "CVE-2026-123158",
-          "installed": "1:10.2p1-2ubuntu3.7",
-          "package": "openssh-client",
+          "fixed": "13.0.0",
+          "id": "CVE-2026-128067",
+          "installed": "12.3.0",
+          "package": "pillow",
           "severity": "High"
         },
         {
@@ -40629,8 +41441,8 @@
       "counts": {
         "critical": 11,
         "high": 63,
-        "low": 159,
-        "medium": 1260
+        "low": 150,
+        "medium": 2264
       },
       "digests": [
         "sha256:82c7e35b8f19fd040eeaf4129e0f2baec950d8a11eeba159723ef042f3744bbb",
@@ -40967,10 +41779,10 @@
           "severity": "High"
         },
         {
-          "fixed": null,
-          "id": "CVE-2026-123158",
-          "installed": "1:10.2p1-2ubuntu3.7",
-          "package": "openssh-client",
+          "fixed": "13.0.0",
+          "id": "CVE-2026-128067",
+          "installed": "12.3.0",
+          "package": "pillow",
           "severity": "High"
         },
         {
@@ -41163,7 +41975,7 @@
         "critical": 5,
         "high": 35,
         "low": 22,
-        "medium": 690
+        "medium": 735
       },
       "digests": [
         "sha256:03351170e47f8e04eea9edcc0d14fb3433f4e5ec5d7e64e2012084b80819eb9b",
@@ -41455,11 +42267,11 @@
     }
   ],
   "omitted": {
-    "critical": 490,
-    "high": 5061
+    "critical": 504,
+    "high": 5178
   },
   "scanner": {
-    "dbBuilt": "2026-11-12T06:20:58Z",
+    "dbBuilt": "2026-11-13T06:20:21Z",
     "name": "grype",
     "version": "0.120.1"
   },
