@@ -8,7 +8,7 @@
     "env": [
       "RABBITMQ_DEFAULT_USER=guest"
     ],
-    "image": "docker.io/library/rabbitmq:4.3.6-management",
+    "image": "docker.io/library/rabbitmq:4.4.0-management",
     "name": "rabbitmq",
     "note": "Container user is rabbitmq (uid 999). Persistent volume mount must permit non-root writes.",
     "ports": [
@@ -29,9 +29,6 @@
   "kind": "container",
   "licenceNote": "Licensed under MPL-2.0, which has file-level copyleft rather than being fully permissive.",
   "summary": "Feature-rich AMQP and MQTT message broker supporting distributed queues and exchanges.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "RabbitMQ Message Broker"
 }

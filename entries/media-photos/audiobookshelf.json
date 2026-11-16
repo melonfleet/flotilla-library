@@ -8,7 +8,7 @@
     "env": [
       "AUDIOBOOKSHELF_TYPE=single"
     ],
-    "image": "ghcr.io/advplyr/audiobookshelf:2.37.1",
+    "image": "ghcr.io/advplyr/audiobookshelf:2.37.2",
     "name": "audiobookshelf",
     "note": "Runs as non-root user 1000; persistent volumes must allow non-root file creation. Its files volume starts empty.",
     "ports": [
@@ -35,9 +35,6 @@
   "kind": "container",
   "licenceNote": "Licensed under GPL-3.0-only, a copyleft licence rather than a permissive one.",
   "summary": "Self-hosted audiobook and podcast server featuring playback position sync across apps.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Audiobookshelf Audiobooks & Podcasts"
 }

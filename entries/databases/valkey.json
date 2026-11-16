@@ -11,7 +11,7 @@
       "1"
     ],
     "env": [],
-    "image": "docker.io/valkey/valkey:9.1.2",
+    "image": "docker.io/valkey/valkey:9.1.3",
     "name": "valkey",
     "note": "Drop-in compatible replacement for Redis CLI and Redis protocol drivers.",
     "ports": [
@@ -29,9 +29,6 @@
   "id": "valkey",
   "kind": "container",
   "summary": "Open-source BSD-licensed fork of Redis for caching, queuing, and key-value storage.",
-  "tested": {
-    "date": "2026-10-12",
-    "macs": 1
-  },
+  "tested": null,
   "title": "Valkey Datastore"
 }
