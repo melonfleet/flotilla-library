@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-16T12:28:54Z",
+  "generated": "2026-11-17T12:45:56Z",
   "images": [
     {
       "counts": {
         "critical": 44,
-        "high": 258,
+        "high": 265,
         "low": 43,
-        "medium": 282
+        "medium": 285
       },
       "digests": [
         "sha256:7c2ac97dfc3881daf4a5a4b6c50c9b7848f504e4eec26edf61c7a8a6ab2a0ba3",
@@ -725,6 +725,20 @@
           "id": "CVE-2026-107161",
           "installed": "2.1.28+dfsg-10",
           "package": "libsasl2-modules-db",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.0.15-1~deb12u1",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.0.15-1~deb12u1",
+          "package": "openssl",
           "severity": "High"
         },
         {
@@ -1765,13 +1779,6 @@
         },
         {
           "fixed": null,
-          "id": "CVE-2026-76844",
-          "installed": "1:1.2.13.dfsg-1",
-          "package": "zlib1g",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
           "id": "CVE-2026-78410",
           "installed": "1:2.38.1-5+deb12u3",
           "package": "bsdutils",
@@ -1981,6 +1988,20 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.0.15-1~deb12u1",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.0.15-1~deb12u1",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
           "fixed": "10.42-1+deb12u1",
           "id": "CVE-2026-89157",
           "installed": "10.42-1",
@@ -2107,6 +2128,34 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.0.15-1~deb12u1",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.0.15-1~deb12u1",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.0.15-1~deb12u1",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.0.15-1~deb12u1",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
           "fixed": "3.10.21, 3.11.16, 3.12.14",
           "id": "CVE-2026-9669",
           "installed": "3.11.11",
@@ -2135,7 +2184,7 @@
         "critical": 0,
         "high": 3,
         "low": 26,
-        "medium": 181
+        "medium": 208
       },
       "digests": [
         "sha256:387ebbcca253026def04dc79e83d2323ac7d97bf309ddd090a8a3c702573e01a",
@@ -2171,7 +2220,7 @@
         "critical": 28,
         "high": 390,
         "low": 15,
-        "medium": 354
+        "medium": 355
       },
       "digests": [
         "sha256:38dc2727bfcfd5ede290f8ada114fc90368146f265ae4701ddddbcbe2a44ee52",
@@ -5869,7 +5918,7 @@
         "critical": 2,
         "high": 14,
         "low": 3,
-        "medium": 6
+        "medium": 7
       },
       "digests": [
         "sha256:6ab3014ea7bae5a383be090c9812b2afadc522645b5969fcc4a7dbad3478c759",
@@ -5994,9 +6043,9 @@
     {
       "counts": {
         "critical": 18,
-        "high": 237,
+        "high": 248,
         "low": 61,
-        "medium": 239
+        "medium": 245
       },
       "digests": [
         "sha256:6915a020d5b0c97f7dd1c0ff19221536510ac117c1aac84dc53ea54981b255a6",
@@ -6309,6 +6358,27 @@
           "id": "CVE-2026-107161",
           "installed": "2.1.28+dfsg1-9",
           "package": "libsasl2-modules-db",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
           "severity": "High"
         },
         {
@@ -7033,13 +7103,6 @@
           "severity": "High"
         },
         {
-          "fixed": "1:1.3.dfsg+really1.3.1-1+deb13u1",
-          "id": "CVE-2026-76844",
-          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
-          "package": "zlib1g",
-          "severity": "High"
-        },
-        {
           "fixed": null,
           "id": "CVE-2026-78408",
           "installed": "1:2.41.5-0+deb13u1",
@@ -7489,6 +7552,27 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-8932",
           "installed": "8.14.1-2+deb13u7",
           "package": "curl",
@@ -7782,6 +7866,48 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
           "fixed": "1.26.2-0+deb13u1",
           "id": "CVE-2026-97206",
           "installed": "1.26.1-0+deb13u1",
@@ -7794,9 +7920,9 @@
     {
       "counts": {
         "critical": 453,
-        "high": 1766,
-        "low": 212,
-        "medium": 1653
+        "high": 1771,
+        "low": 211,
+        "medium": 1654
       },
       "digests": [
         "sha256:3922767afb52a5777759fd8b28a3c9eee864daea96018a791f2429eae2a76571",
@@ -11309,9 +11435,9 @@
     {
       "counts": {
         "critical": 38,
-        "high": 243,
+        "high": 254,
         "low": 26,
-        "medium": 129
+        "medium": 133
       },
       "digests": [
         "sha256:48b63b9bc3d042a1301c32971b01af8841c7f059b452589c5bf77f475ba44c61",
@@ -11659,6 +11785,27 @@
           "id": "CVE-2026-107161",
           "installed": "2.1.28+dfsg1-9",
           "package": "libsasl2-modules-db",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
           "severity": "High"
         },
         {
@@ -12740,13 +12887,6 @@
           "severity": "High"
         },
         {
-          "fixed": "1:1.3.dfsg+really1.3.1-1+deb13u1",
-          "id": "CVE-2026-76844",
-          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
-          "package": "zlib1g",
-          "severity": "High"
-        },
-        {
           "fixed": "2.9.0-1~deb13u1",
           "id": "CVE-2026-76956",
           "installed": "2.8.3-1~deb13u1",
@@ -13133,6 +13273,27 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-8932",
           "installed": "8.14.1-2+deb13u5",
           "package": "libcurl4t64",
@@ -13284,6 +13445,48 @@
           "installed": "14.2.0-19",
           "package": "libstdc++6",
           "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
         }
       ],
       "reference": "docker.io/freshrss/freshrss:1.30.1"
@@ -13293,7 +13496,7 @@
         "critical": 21,
         "high": 82,
         "low": 11,
-        "medium": 30
+        "medium": 32
       },
       "digests": [
         "sha256:b28bae15e219c998fb0e0424ed724930cc61b1f61fb404d47c862f9a23f9e572",
@@ -14029,7 +14232,7 @@
         "critical": 4,
         "high": 19,
         "low": 4,
-        "medium": 11
+        "medium": 12
       },
       "digests": [
         "sha256:1107dd5274e0ada47e42472b7a7e71f3b2a2fe878878108f3e2f9e51528f0193",
@@ -14205,7 +14408,7 @@
         "critical": 5,
         "high": 33,
         "low": 8,
-        "medium": 25
+        "medium": 26
       },
       "digests": [
         "sha256:7d8aca849b113b416a5b90b73659c46190c3720463f0b53da22440c2ada3b36e",
@@ -14484,9 +14687,9 @@
     {
       "counts": {
         "critical": 62,
-        "high": 453,
+        "high": 455,
         "low": 43,
-        "medium": 353
+        "medium": 354
       },
       "digests": [
         "sha256:130241f28d01fa80dfa3b44f7d89781c188d8642ecab9024f079f19f9f82baa0",
@@ -15149,6 +15352,20 @@
           "id": "CVE-2026-107929",
           "installed": "8.20.0-r1",
           "package": "libcurl",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.54.1-r0",
+          "id": "CVE-2026-111760",
+          "installed": "2.54.0-r0",
+          "package": "git",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.54.1-r0",
+          "id": "CVE-2026-111760",
+          "installed": "2.54.0-r0",
+          "package": "git-init-template",
           "severity": "High"
         },
         {
@@ -17978,20 +18195,6 @@
           "installed": "8.1.2-r0",
           "package": "ffmpeg-libavfilter",
           "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-96611",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-96611",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
         }
       ],
       "reference": "docker.io/homeassistant/home-assistant:2026.10.1"
@@ -17999,9 +18202,9 @@
     {
       "counts": {
         "critical": 41,
-        "high": 297,
+        "high": 308,
         "low": 50,
-        "medium": 223
+        "medium": 227
       },
       "digests": [
         "sha256:7536c1009c6ea50dadd2b244165efb357504ca0f2670abefbceb1c773cc7e13d",
@@ -18384,6 +18587,27 @@
           "id": "CVE-2026-107161",
           "installed": "2.1.28+dfsg1-9",
           "package": "libsasl2-modules-db",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "openssl-provider-legacy",
           "severity": "High"
         },
         {
@@ -19640,13 +19864,6 @@
           "severity": "High"
         },
         {
-          "fixed": "1:1.3.dfsg+really1.3.1-1+deb13u1",
-          "id": "CVE-2026-76844",
-          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
-          "package": "zlib1g",
-          "severity": "High"
-        },
-        {
           "fixed": "2.9.0-1~deb13u1",
           "id": "CVE-2026-76956",
           "installed": "2.7.1-2",
@@ -20165,6 +20382,27 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
           "fixed": "10.46-1~deb13u2",
           "id": "CVE-2026-89157",
           "installed": "10.46-1~deb13u1",
@@ -20373,6 +20611,48 @@
           "installed": "14.2.0-19",
           "package": "libstdc++6",
           "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
         }
       ],
       "reference": "docker.io/jellyfin/jellyfin:10.11.11"
@@ -20382,7 +20662,7 @@
         "critical": 2,
         "high": 16,
         "low": 47,
-        "medium": 336
+        "medium": 368
       },
       "digests": [
         "sha256:19ecfcc825f5925fdc7142a605335a54fd83fb0101be1232b6f5062cee01f785",
@@ -20523,7 +20803,7 @@
         "critical": 14,
         "high": 77,
         "low": 80,
-        "medium": 334
+        "medium": 362
       },
       "digests": [
         "sha256:89fd95ee2942880ca00eae964266958a394421ddbdf69bca62e38afc55f5900e",
@@ -21175,7 +21455,7 @@
         "critical": 0,
         "high": 0,
         "low": 8,
-        "medium": 1299
+        "medium": 1326
       },
       "digests": [
         "sha256:3339b0a9443f11155d966e3a5259641bd48acb0251fdc060744709a2a0408dde",
@@ -21189,7 +21469,7 @@
         "critical": 2,
         "high": 19,
         "low": 16,
-        "medium": 158
+        "medium": 191
       },
       "digests": [
         "sha256:a18a67668df9389cbfe49d81ca9bd20428fa6b82ce9ae0b79961dadf56281493",
@@ -21351,7 +21631,7 @@
         "critical": 1,
         "high": 8,
         "low": 0,
-        "medium": 1
+        "medium": 2
       },
       "digests": [
         "sha256:c5385888c04605faecc3379bdaa0cf9862cab97e40d328e0f1d9a505e5c12634",
@@ -21427,9 +21707,9 @@
     {
       "counts": {
         "critical": 1,
-        "high": 117,
+        "high": 128,
         "low": 41,
-        "medium": 125
+        "medium": 129
       },
       "digests": [
         "sha256:a8a18afebc8b2b529112c931f193151b712e566b7a49563dc0f328d51f652087",
@@ -21504,6 +21784,27 @@
           "id": "CVE-2026-107161",
           "installed": "2.1.28+dfsg1-9",
           "package": "libsasl2-modules-db",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
           "severity": "High"
         },
         {
@@ -21913,13 +22214,6 @@
           "severity": "High"
         },
         {
-          "fixed": "1:1.3.dfsg+really1.3.1-1+deb13u1",
-          "id": "CVE-2026-76844",
-          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
-          "package": "zlib1g",
-          "severity": "High"
-        },
-        {
           "fixed": null,
           "id": "CVE-2026-78408",
           "installed": "1:2.41.5-0+deb13u1",
@@ -22215,6 +22509,27 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-9538",
           "installed": "5.40.1-6+deb13u1",
           "package": "libperl5.40",
@@ -22261,6 +22576,48 @@
           "installed": "14.2.0-19",
           "package": "libstdc++6",
           "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
         }
       ],
       "reference": "docker.io/library/postgres:18.6"
@@ -22270,7 +22627,7 @@
         "critical": 0,
         "high": 2,
         "low": 8,
-        "medium": 66
+        "medium": 68
       },
       "digests": [
         "sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
@@ -22297,9 +22654,9 @@
     {
       "counts": {
         "critical": 0,
-        "high": 62,
+        "high": 69,
         "low": 17,
-        "medium": 64
+        "medium": 67
       },
       "digests": [
         "sha256:701d27eed8cbd5042c98ec4035146ed036c2390a31ddd9f3f617b4a5e316e12d",
@@ -22346,6 +22703,20 @@
           "id": "CVE-2026-102010",
           "installed": "14.2.0-19",
           "package": "libstdc++6",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
           "severity": "High"
         },
         {
@@ -22486,13 +22857,6 @@
           "id": "CVE-2026-76642",
           "installed": "2.41.5-0+deb13u1",
           "package": "util-linux",
-          "severity": "High"
-        },
-        {
-          "fixed": "1:1.3.dfsg+really1.3.1-1+deb13u1",
-          "id": "CVE-2026-76844",
-          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
-          "package": "zlib1g",
           "severity": "High"
         },
         {
@@ -22714,6 +23078,20 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-9538",
           "installed": "5.40.1-6+deb13u1",
           "package": "perl-base",
@@ -22739,6 +23117,34 @@
           "installed": "14.2.0-19",
           "package": "libstdc++6",
           "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
         }
       ],
       "reference": "docker.io/library/redis:8.10.2"
@@ -22748,7 +23154,7 @@
         "critical": 3,
         "high": 15,
         "low": 3,
-        "medium": 11
+        "medium": 12
       },
       "digests": [
         "sha256:82f6ff4a7f982960c8aa51617fea3aabc485df6e55cce80d22deb1de36f1bc3c",
@@ -22887,9 +23293,9 @@
     {
       "counts": {
         "critical": 18,
-        "high": 268,
+        "high": 279,
         "low": 82,
-        "medium": 397
+        "medium": 403
       },
       "digests": [
         "sha256:3ce2f1f06b5bd75e4a324ba34a93cb69fb74aa1561f48b6c5318537feef66890",
@@ -23370,6 +23776,27 @@
           "id": "CVE-2026-107209",
           "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
           "package": "libmagickwand-7.q16-10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
           "severity": "High"
         },
         {
@@ -24059,13 +24486,6 @@
           "severity": "High"
         },
         {
-          "fixed": "1:1.3.dfsg+really1.3.1-1+deb13u1",
-          "id": "CVE-2026-76844",
-          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
-          "package": "zlib1g",
-          "severity": "High"
-        },
-        {
           "fixed": null,
           "id": "CVE-2026-78408",
           "installed": "1:2.41.5-0+deb13u1",
@@ -24564,6 +24984,27 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-8932",
           "installed": "8.14.1-2+deb13u7",
           "package": "curl",
@@ -24897,6 +25338,48 @@
           "installed": "14.2.0-19",
           "package": "libubsan1",
           "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
         }
       ],
       "reference": "docker.io/library/wordpress:7.1.3-apache"
@@ -24904,9 +25387,9 @@
     {
       "counts": {
         "critical": 1004,
-        "high": 3472,
+        "high": 3481,
         "low": 362,
-        "medium": 3499
+        "medium": 3502
       },
       "digests": [
         "sha256:9912da7d7d9b6ddc0c2d904beb84d24689c1ed9c33b81419eb9008663a92a329",
@@ -28856,7 +29339,7 @@
         "critical": 4,
         "high": 36,
         "low": 11,
-        "medium": 98
+        "medium": 102
       },
       "digests": [
         "sha256:56587518b22609f472d56847251d1453a2796aea8a1cb84b7ce22ff9adad77ce",
@@ -29151,7 +29634,7 @@
         "critical": 6,
         "high": 77,
         "low": 273,
-        "medium": 1247
+        "medium": 1248
       },
       "digests": [
         "sha256:1c4392ae5e6c4e58ba7034c2c4b11411be4136a6e0e9f83ba68434c61be1fa34",
@@ -29747,7 +30230,7 @@
         "critical": 3,
         "high": 17,
         "low": 0,
-        "medium": 5
+        "medium": 6
       },
       "digests": [
         "sha256:6b41f7a45cfbd1d259a78701ee5e14fc2ad9383c9aa5d0427345a18539bc3c91",
@@ -29900,9 +30383,9 @@
     {
       "counts": {
         "critical": 0,
-        "high": 71,
+        "high": 78,
         "low": 24,
-        "medium": 74
+        "medium": 77
       },
       "digests": [
         "sha256:418652cfb58ef879d4978c33553735d7147016032d5aefaa14c828e611eb9dfd",
@@ -29956,6 +30439,20 @@
           "id": "CVE-2026-103111",
           "installed": "10.46-1~deb13u2",
           "package": "libpcre2-8-0",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "openssl-provider-legacy",
           "severity": "High"
         },
         {
@@ -30124,13 +30621,6 @@
           "id": "CVE-2026-76642",
           "installed": "2.41.5-0+deb13u1",
           "package": "util-linux",
-          "severity": "High"
-        },
-        {
-          "fixed": "1:1.3.dfsg+really1.3.1-1+deb13u1",
-          "id": "CVE-2026-76844",
-          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
-          "package": "zlib1g",
           "severity": "High"
         },
         {
@@ -30380,6 +30870,20 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-9538",
           "installed": "5.40.1-6+deb13u1",
           "package": "perl-base",
@@ -30405,6 +30909,34 @@
           "installed": "14.2.0-19",
           "package": "libstdc++6",
           "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
         }
       ],
       "reference": "docker.io/valkey/valkey:9.1.2"
@@ -30412,9 +30944,9 @@
     {
       "counts": {
         "critical": 9,
-        "high": 90,
+        "high": 89,
         "low": 21,
-        "medium": 123
+        "medium": 124
       },
       "digests": [
         "sha256:24645e971da6bb1a1f953d6859e307a0b29be1e8b4130a35b3220c209b5b860c",
@@ -30986,13 +31518,6 @@
           "id": "CVE-2026-73566",
           "installed": "7.5.19",
           "package": "tar",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-76844",
-          "installed": "1:1.2.13.dfsg-1",
-          "package": "zlib1g",
           "severity": "High"
         },
         {
@@ -32845,7 +33370,7 @@
         "critical": 1,
         "high": 4,
         "low": 0,
-        "medium": 5
+        "medium": 6
       },
       "digests": [
         "sha256:1c1bda89291dff96ea8aa5a760ae644413c3526302fbf25f996a2987eaf0db78",
@@ -32893,9 +33418,9 @@
     {
       "counts": {
         "critical": 29,
-        "high": 199,
+        "high": 210,
         "low": 20,
-        "medium": 128
+        "medium": 132
       },
       "digests": [
         "sha256:dfaefaea21028ea3024b708330b0aed27c4a448a49a3e174e49962f3e0789fc4",
@@ -33180,6 +33705,27 @@
           "id": "CVE-2026-107161",
           "installed": "2.1.28+dfsg1-9",
           "package": "libsasl2-modules-db",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
           "severity": "High"
         },
         {
@@ -33925,13 +34471,6 @@
           "severity": "High"
         },
         {
-          "fixed": "1:1.3.dfsg+really1.3.1-1+deb13u1",
-          "id": "CVE-2026-76844",
-          "installed": "1:1.3.dfsg+really1.3.1-1+b1",
-          "package": "zlib1g",
-          "severity": "High"
-        },
-        {
           "fixed": null,
           "id": "CVE-2026-78408",
           "installed": "1:2.41.5-0+deb13u1",
@@ -34318,6 +34857,27 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-88823",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-8932",
           "installed": "8.14.1-2+deb13u5",
           "package": "curl",
@@ -34486,6 +35046,48 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95691",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-95692",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-97380",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
@@ -34504,9 +35106,9 @@
     {
       "counts": {
         "critical": 18,
-        "high": 79,
+        "high": 81,
         "low": 25,
-        "medium": 36
+        "medium": 37
       },
       "digests": [
         "sha256:1de3b99b9e3e080ba73b4028324b425274ad00d676803603f7f19efdc416045b",
@@ -34700,6 +35302,20 @@
           "id": "CVE-2026-107929",
           "installed": "8.22.0-r0",
           "package": "libcurl",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.54.1-r0",
+          "id": "CVE-2026-111760",
+          "installed": "2.54.0-r0",
+          "package": "git",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.54.1-r0",
+          "id": "CVE-2026-111760",
+          "installed": "2.54.0-r0",
+          "package": "git-init-template",
           "severity": "High"
         },
         {
@@ -35198,9 +35814,9 @@
     {
       "counts": {
         "critical": 42,
-        "high": 678,
+        "high": 753,
         "low": 58,
-        "medium": 806
+        "medium": 857
       },
       "digests": [
         "sha256:1994d77ab18293108c449f2429fdf7877f69d56b61110da16812902223fbff7d",
@@ -35618,6 +36234,27 @@
           "id": "CVE-2026-107161",
           "installed": "2.1.28+dfsg1-9",
           "package": "libsasl2-modules-db",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107496",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "openssl-provider-legacy",
           "severity": "High"
         },
         {
@@ -36651,6 +37288,321 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-125210",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125210",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavcodec61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125210",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavdevice61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125210",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavfilter10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125210",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavformat61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125210",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavutil59",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125210",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libpostproc58",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125210",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswresample5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125210",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswscale8",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125211",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125211",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavcodec61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125211",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavdevice61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125211",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavfilter10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125211",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavformat61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125211",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavutil59",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125211",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libpostproc58",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125211",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswresample5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125211",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswscale8",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125212",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125212",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavcodec61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125212",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavdevice61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125212",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavfilter10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125212",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavformat61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125212",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavutil59",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125212",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libpostproc58",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125212",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswresample5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125212",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswscale8",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125213",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125213",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavcodec61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125213",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavdevice61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125213",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavfilter10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125213",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavformat61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125213",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavutil59",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125213",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libpostproc58",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125213",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswresample5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125213",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswscale8",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125214",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125214",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavcodec61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125214",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavdevice61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125214",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavfilter10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125214",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavformat61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125214",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavutil59",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125214",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libpostproc58",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125214",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswresample5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125214",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswscale8",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-125218",
           "installed": "7:7.1.5-0+deb13u1",
           "package": "ffmpeg",
@@ -37842,6 +38794,132 @@
         {
           "fixed": null,
           "id": "CVE-2026-125262",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswscale8",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125267",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125267",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavcodec61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125267",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavdevice61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125267",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavfilter10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125267",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavformat61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125267",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavutil59",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125267",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libpostproc58",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125267",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswresample5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125267",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswscale8",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125269",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125269",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavcodec61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125269",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavdevice61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125269",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavfilter10",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125269",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavformat61",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125269",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavutil59",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125269",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libpostproc58",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125269",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswresample5",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-125269",
           "installed": "7:7.1.5-0+deb13u1",
           "package": "libswscale8",
           "severity": "High"
@@ -37900,6 +38978,13 @@
           "id": "CVE-2026-128067",
           "installed": "12.3.0",
           "package": "pillow",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.10.4",
+          "id": "CVE-2026-128134",
+          "installed": "3.10.3",
+          "package": "nltk",
           "severity": "High"
         },
         {
@@ -38237,475 +39322,6 @@
           "installed": "7:7.1.5-0+deb13u1",
           "package": "libavfilter10",
           "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavformat61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavutil59",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libpostproc58",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswresample5",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswscale8",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavcodec61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavdevice61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavfilter10",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavformat61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavutil59",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libpostproc58",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswresample5",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswscale8",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavcodec61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavdevice61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavfilter10",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavformat61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavutil59",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libpostproc58",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswresample5",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswscale8",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavcodec61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavdevice61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavfilter10",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavformat61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavutil59",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libpostproc58",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswresample5",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswscale8",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavcodec61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavdevice61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavfilter10",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavformat61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavutil59",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libpostproc58",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswresample5",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswscale8",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavcodec61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavdevice61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavfilter10",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavformat61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavutil59",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libpostproc58",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswresample5",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswscale8",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavcodec61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavdevice61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavfilter10",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavformat61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavutil59",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libpostproc58",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswresample5",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswscale8",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavcodec61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavdevice61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavfilter10",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavformat61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavutil59",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libpostproc58",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswresample5",
-          "severity": "High"
         }
       ],
       "reference": "ghcr.io/mealie-recipes/mealie:v3.28.0"
@@ -38715,7 +39331,7 @@
         "critical": 31,
         "high": 173,
         "low": 123,
-        "medium": 1927
+        "medium": 1983
       },
       "digests": [
         "sha256:63859e7302a0533a773655c99071756bbc4a0c710ea3259f1e02671b56cdf8dd",
@@ -40158,7 +40774,7 @@
         "critical": 2,
         "high": 19,
         "low": 0,
-        "medium": 7
+        "medium": 8
       },
       "digests": [
         "sha256:094eb186e55235db367e90e9d56140e5897b7044c41de23cde4cc18e6da1242e",
@@ -40320,7 +40936,7 @@
         "critical": 18,
         "high": 75,
         "low": 151,
-        "medium": 2332
+        "medium": 2375
       },
       "digests": [
         "sha256:05f7c3e37f3ef3e3a28377c36c0c953c8ed3e6fab371b1afbde74f994b21096d",
@@ -40986,7 +41602,7 @@
         "critical": 11,
         "high": 57,
         "low": 151,
-        "medium": 2315
+        "medium": 2358
       },
       "digests": [
         "sha256:3bae1c4713264797c24c1dbd1d4e3abacece147dc42669af61d240083353ecce",
@@ -41477,7 +42093,7 @@
         "critical": 11,
         "high": 64,
         "low": 151,
-        "medium": 2317
+        "medium": 2360
       },
       "digests": [
         "sha256:82c7e35b8f19fd040eeaf4129e0f2baec950d8a11eeba159723ef042f3744bbb",
@@ -42017,7 +42633,7 @@
         "critical": 5,
         "high": 35,
         "low": 23,
-        "medium": 814
+        "medium": 847
       },
       "digests": [
         "sha256:03351170e47f8e04eea9edcc0d14fb3433f4e5ec5d7e64e2012084b80819eb9b",
@@ -42310,10 +42926,10 @@
   ],
   "omitted": {
     "critical": 504,
-    "high": 5426
+    "high": 5517
   },
   "scanner": {
-    "dbBuilt": "2026-11-16T06:30:54Z",
+    "dbBuilt": "2026-11-17T06:20:58Z",
     "name": "grype",
     "version": "0.120.1"
   },
