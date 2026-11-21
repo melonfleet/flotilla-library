@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-20T12:32:00Z",
+  "generated": "2026-11-21T12:06:54Z",
   "images": [
     {
       "counts": {
         "critical": 44,
         "high": 263,
         "low": 46,
-        "medium": 297
+        "medium": 302
       },
       "digests": [
         "sha256:7c2ac97dfc3881daf4a5a4b6c50c9b7848f504e4eec26edf61c7a8a6ab2a0ba3",
@@ -2204,9 +2204,9 @@
     {
       "counts": {
         "critical": 28,
-        "high": 641,
+        "high": 651,
         "low": 51,
-        "medium": 987
+        "medium": 994
       },
       "digests": [
         "sha256:38dc2727bfcfd5ede290f8ada114fc90368146f265ae4701ddddbcbe2a44ee52",
@@ -2796,6 +2796,34 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-107496",
           "installed": "3.5.8-r0",
           "package": "libcrypto3",
@@ -3034,9 +3062,37 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-123095",
           "installed": "0.40.0-r1",
           "package": "mpv",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
           "severity": "High"
         },
         {
@@ -5656,62 +5712,6 @@
           "installed": "6.1.2-r2",
           "package": "ffmpeg-libavcodec",
           "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libpostproc",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg",
-          "severity": "High"
         }
       ],
       "reference": "docker.io/deluan/navidrome:0.64.2"
@@ -5719,9 +5719,9 @@
     {
       "counts": {
         "critical": 20,
-        "high": 95,
+        "high": 105,
         "low": 14,
-        "medium": 59
+        "medium": 63
       },
       "digests": [
         "sha256:6373d89ab2767c52875aee1aafd3731781abb4a5774f5633f7d9d8762efde536",
@@ -5867,6 +5867,34 @@
           "installed": "2026.7.22",
           "package": "certifi",
           "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
         },
         {
           "fixed": "3.5.9-r1",
@@ -6205,6 +6233,34 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
           "fixed": "13.0.0",
           "id": "CVE-2026-128066",
           "installed": "12.3.0",
@@ -6305,6 +6361,20 @@
         {
           "fixed": null,
           "id": "CVE-2026-84784",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
           "installed": "3.5.8-r0",
           "package": "libssl3",
           "severity": "High"
@@ -6668,7 +6738,7 @@
         "critical": 31,
         "high": 227,
         "low": 64,
-        "medium": 272
+        "medium": 276
       },
       "digests": [
         "sha256:0ec38c38e9019e42ce380d8bb90d86131ffbfb7f44ec61b90a5a71e61bfb824a",
@@ -8486,10 +8556,10 @@
     },
     {
       "counts": {
-        "critical": 471,
-        "high": 1981,
-        "low": 243,
-        "medium": 2011
+        "critical": 473,
+        "high": 2014,
+        "low": 247,
+        "medium": 2054
       },
       "digests": [
         "sha256:3922767afb52a5777759fd8b28a3c9eee864daea96018a791f2429eae2a76571",
@@ -9656,6 +9726,20 @@
           "id": "CVE-2026-131088",
           "installed": "149.0.7827.53-r0",
           "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": "25.1.1-r2",
+          "id": "CVE-2026-133949",
+          "installed": "25.1.1-r1",
+          "package": "py3-pip",
+          "severity": "Critical"
+        },
+        {
+          "fixed": "25.1.1-r2",
+          "id": "CVE-2026-133949",
+          "installed": "25.1.1-r1",
+          "package": "py3-pip-pyc",
           "severity": "Critical"
         },
         {
@@ -11981,20 +12065,6 @@
           "installed": "go1.20.7",
           "package": "stdlib",
           "severity": "High"
-        },
-        {
-          "fixed": "10.5.0",
-          "id": "CVE-2025-64756",
-          "installed": "10.4.2",
-          "package": "glob",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.24.0",
-          "id": "CVE-2025-66414",
-          "installed": "1.0.1",
-          "package": "@modelcontextprotocol/sdk",
-          "severity": "High"
         }
       ],
       "reference": "docker.io/flowiseai/flowise:3.1.4"
@@ -12004,7 +12074,7 @@
         "critical": 108,
         "high": 323,
         "low": 28,
-        "medium": 222
+        "medium": 224
       },
       "digests": [
         "sha256:48b63b9bc3d042a1301c32971b01af8841c7f059b452589c5bf77f475ba44c61",
@@ -15034,9 +15104,9 @@
     {
       "counts": {
         "critical": 21,
-        "high": 90,
+        "high": 100,
         "low": 11,
-        "medium": 34
+        "medium": 38
       },
       "digests": [
         "sha256:b28bae15e219c998fb0e0424ed724930cc61b1f61fb404d47c862f9a23f9e572",
@@ -15205,6 +15275,34 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
           "fixed": "3.5.9-r1",
           "id": "CVE-2026-107496",
           "installed": "3.5.8-r0",
@@ -15286,6 +15384,34 @@
           "id": "CVE-2026-116591",
           "installed": "v1.20.0",
           "package": "github.com/klauspost/compress",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
           "severity": "High"
         },
         {
@@ -15487,6 +15613,20 @@
         {
           "fixed": null,
           "id": "CVE-2026-84784",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
           "installed": "3.5.8-r0",
           "package": "libssl3",
           "severity": "High"
@@ -16002,9 +16142,9 @@
     {
       "counts": {
         "critical": 5,
-        "high": 41,
+        "high": 51,
         "low": 8,
-        "medium": 28
+        "medium": 32
       },
       "digests": [
         "sha256:7d8aca849b113b416a5b90b73659c46190c3720463f0b53da22440c2ada3b36e",
@@ -16045,6 +16185,34 @@
           "installed": "go1.26.8",
           "package": "stdlib",
           "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
         },
         {
           "fixed": "3.5.9-r1",
@@ -16093,6 +16261,34 @@
           "id": "CVE-2026-116591",
           "installed": "v1.19.1",
           "package": "github.com/klauspost/compress",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
           "severity": "High"
         },
         {
@@ -16236,6 +16432,20 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
           "fixed": "1.3.2-r1",
           "id": "CVE-2026-85091",
           "installed": "1.3.2-r0",
@@ -16339,9 +16549,9 @@
     {
       "counts": {
         "critical": 62,
-        "high": 758,
+        "high": 761,
         "low": 80,
-        "medium": 1095
+        "medium": 1099
       },
       "digests": [
         "sha256:130241f28d01fa80dfa3b44f7d89781c188d8642ecab9024f079f19f9f82baa0",
@@ -16836,6 +17046,34 @@
           "id": "CVE-2026-105437",
           "installed": "2.54.0-r0",
           "package": "git-init-template",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.7-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.7-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.7-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.7-r0",
+          "package": "libssl3",
           "severity": "High"
         },
         {
@@ -17497,6 +17735,20 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
           "fixed": "10.3_p1-r2",
           "id": "CVE-2026-123158",
           "installed": "10.3_p1-r0",
@@ -17515,6 +17767,20 @@
           "id": "CVE-2026-123158",
           "installed": "10.3_p1-r0",
           "package": "openssh-keygen",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.7-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.7-r0",
+          "package": "libssl3",
           "severity": "High"
         },
         {
@@ -19791,62 +20057,6 @@
           "installed": "go1.25.6",
           "package": "stdlib",
           "severity": "High"
-        },
-        {
-          "fixed": "1.25.9, 1.26.2",
-          "id": "CVE-2026-32280",
-          "installed": "go1.25.6",
-          "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.25.9, 1.26.2",
-          "id": "CVE-2026-32281",
-          "installed": "go1.25.6",
-          "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.25.9, 1.26.2",
-          "id": "CVE-2026-32283",
-          "installed": "go1.25.6",
-          "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.8.2-r0",
-          "id": "CVE-2026-32316",
-          "installed": "1.8.1-r0",
-          "package": "jq",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.34.8-r0",
-          "id": "CVE-2026-33630",
-          "installed": "1.34.6-r0",
-          "package": "c-ares",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.25.10, 1.26.3",
-          "id": "CVE-2026-33811",
-          "installed": "go1.25.6",
-          "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.25.10, 1.26.3",
-          "id": "CVE-2026-33814",
-          "installed": "go1.25.6",
-          "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
-          "id": "CVE-2026-33818",
-          "installed": "go1.23.3",
-          "package": "stdlib",
-          "severity": "High"
         }
       ],
       "reference": "docker.io/homeassistant/home-assistant:2026.10.1"
@@ -19856,7 +20066,7 @@
         "critical": 41,
         "high": 317,
         "low": 54,
-        "medium": 248
+        "medium": 250
       },
       "digests": [
         "sha256:7536c1009c6ea50dadd2b244165efb357504ca0f2670abefbceb1c773cc7e13d",
@@ -23445,7 +23655,7 @@
         "critical": 1,
         "high": 137,
         "low": 45,
-        "medium": 150
+        "medium": 152
       },
       "digests": [
         "sha256:a8a18afebc8b2b529112c931f193151b712e566b7a49563dc0f328d51f652087",
@@ -24424,15 +24634,29 @@
     {
       "counts": {
         "critical": 0,
-        "high": 6,
+        "high": 11,
         "low": 8,
-        "medium": 95
+        "medium": 97
       },
       "digests": [
         "sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
         "sha256:de03afc2c596b635196692c18425149f1e85d13ba8c1990c1a78684f693dc459"
       ],
       "findings": [
+        {
+          "fixed": "1.0.2zt, 1.1.1zk, 3.0.24",
+          "id": "CVE-2026-107493",
+          "installed": "3.5.9",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.5.10, 4.0.4, 4.1.1",
+          "id": "CVE-2026-107494",
+          "installed": "3.5.9",
+          "package": "openssl",
+          "severity": "High"
+        },
         {
           "fixed": "1.0.2zt, 1.1.1zk, 3.0.24",
           "id": "CVE-2026-107496",
@@ -24452,6 +24676,27 @@
           "id": "CVE-2026-109518",
           "installed": "2.8.3",
           "package": "libapt-pkg6.0t64",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.5.10, 4.0.4, 4.1.1",
+          "id": "CVE-2026-121482",
+          "installed": "3.5.9",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": "3.5.10, 4.0.4, 4.1.1",
+          "id": "CVE-2026-124709",
+          "installed": "3.5.9",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.1.1zk, 3.0.24, 3.5.10",
+          "id": "CVE-2026-84786",
+          "installed": "3.5.9",
+          "package": "openssl",
           "severity": "High"
         },
         {
@@ -25021,9 +25266,9 @@
     {
       "counts": {
         "critical": 3,
-        "high": 23,
+        "high": 33,
         "low": 3,
-        "medium": 14
+        "medium": 18
       },
       "digests": [
         "sha256:82f6ff4a7f982960c8aa51617fea3aabc485df6e55cce80d22deb1de36f1bc3c",
@@ -25052,6 +25297,34 @@
           "severity": "Critical"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
           "fixed": "3.5.9-r1",
           "id": "CVE-2026-107496",
           "installed": "3.5.9-r0",
@@ -25077,6 +25350,34 @@
           "id": "CVE-2026-116591",
           "installed": "v1.18.4",
           "package": "github.com/klauspost/compress",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
           "severity": "High"
         },
         {
@@ -25133,6 +25434,20 @@
           "id": "CVE-2026-78669",
           "installed": "go1.26.8",
           "package": "stdlib",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
           "severity": "High"
         },
         {
@@ -25219,8 +25534,8 @@
       "counts": {
         "critical": 28,
         "high": 301,
-        "low": 86,
-        "medium": 436
+        "low": 95,
+        "medium": 489
       },
       "digests": [
         "sha256:3ce2f1f06b5bd75e4a324ba34a93cb69fb74aa1561f48b6c5318537feef66890",
@@ -27538,7 +27853,7 @@
         "critical": 1028,
         "high": 3626,
         "low": 389,
-        "medium": 3648
+        "medium": 3652
       },
       "digests": [
         "sha256:9912da7d7d9b6ddc0c2d904beb84d24689c1ed9c33b81419eb9008663a92a329",
@@ -31051,9 +31366,9 @@
     {
       "counts": {
         "critical": 16,
-        "high": 62,
+        "high": 78,
         "low": 12,
-        "medium": 55
+        "medium": 61
       },
       "digests": [
         "sha256:cd9678e37413b986d0ab9ca661570e1512126a734f74e14b79dbb7fb47fd30f1",
@@ -31194,6 +31509,48 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.9-r0",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.9-r0",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
           "fixed": "3.5.9-r1",
           "id": "CVE-2026-107496",
           "installed": "3.5.9-r0",
@@ -31254,6 +31611,13 @@
           "id": "CVE-2026-107929",
           "installed": "8.22.0-r0",
           "package": "libcurl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.1.10-r0",
+          "id": "CVE-2026-109908",
+          "installed": "1.1.9-r0",
+          "package": "libfontenc",
           "severity": "High"
         },
         {
@@ -31320,10 +31684,73 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.9-r0",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.9-r0",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
           "fixed": "2.9.0-r0",
           "id": "CVE-2026-77214",
           "installed": "2.8.5-r0",
           "package": "libexpat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.9-r0",
+          "package": "openssl",
           "severity": "High"
         },
         {
@@ -34011,9 +34438,9 @@
     {
       "counts": {
         "critical": 8,
-        "high": 515,
+        "high": 518,
         "low": 59,
-        "medium": 895
+        "medium": 899
       },
       "digests": [
         "sha256:4a1029867755efae922b562be89d4a842e7325f486f506c47241eab60fa9b431",
@@ -34217,6 +34644,34 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
           "fixed": "3.5.9-r1",
           "id": "CVE-2026-107496",
           "installed": "3.5.8-r0",
@@ -34413,6 +34868,20 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
           "fixed": "24.22.3, 26.13.1",
           "id": "CVE-2026-123863",
           "installed": "24.21.0",
@@ -34452,6 +34921,20 @@
           "id": "CVE-2026-123874",
           "installed": "24.21.0",
           "package": "node",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
           "severity": "High"
         },
         {
@@ -37463,62 +37946,6 @@
           "installed": "8.1.2-r0",
           "package": "ffmpeg-libswscale",
           "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-72897",
-          "installed": "3.5.8-r0",
-          "package": "libcrypto3",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-72897",
-          "installed": "3.5.8-r0",
-          "package": "libssl3",
-          "severity": "High"
-        },
-        {
-          "fixed": "7.5.21",
-          "id": "CVE-2026-73566",
-          "installed": "6.1.15",
-          "package": "tar",
-          "severity": "High"
-        },
-        {
-          "fixed": "7.5.21",
-          "id": "CVE-2026-73566",
-          "installed": "7.5.19",
-          "package": "tar",
-          "severity": "High"
-        },
-        {
-          "fixed": "2.9.0-r0",
-          "id": "CVE-2026-77214",
-          "installed": "2.8.4-r0",
-          "package": "libexpat",
-          "severity": "High"
-        },
-        {
-          "fixed": "9.0.1",
-          "id": "CVE-2026-82659",
-          "installed": "6.9.13",
-          "package": "nodemailer",
-          "severity": "High"
-        },
-        {
-          "fixed": "8.0.8",
-          "id": "CVE-2026-82662",
-          "installed": "6.9.13",
-          "package": "nodemailer",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-84782",
-          "installed": "3.5.8-r0",
-          "package": "libcrypto3",
-          "severity": "High"
         }
       ],
       "reference": "ghcr.io/advplyr/audiobookshelf:2.37.1"
@@ -37526,9 +37953,9 @@
     {
       "counts": {
         "critical": 1,
-        "high": 12,
+        "high": 22,
         "low": 0,
-        "medium": 8
+        "medium": 12
       },
       "digests": [
         "sha256:1c1bda89291dff96ea8aa5a760ae644413c3526302fbf25f996a2987eaf0db78",
@@ -37541,6 +37968,34 @@
           "installed": "1.3.2-r1",
           "package": "zlib",
           "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
         },
         {
           "fixed": "3.5.9-r1",
@@ -37578,10 +38033,52 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
           "fixed": "0.62.0",
           "id": "CVE-2026-78661",
           "installed": "v0.61.0",
           "package": "golang.org/x/net",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.9-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.9-r0",
+          "package": "libssl3",
           "severity": "High"
         },
         {
@@ -37634,7 +38131,7 @@
         "critical": 29,
         "high": 219,
         "low": 22,
-        "medium": 147
+        "medium": 149
       },
       "digests": [
         "sha256:dfaefaea21028ea3024b708330b0aed27c4a448a49a3e174e49962f3e0789fc4",
@@ -39383,9 +39880,9 @@
     {
       "counts": {
         "critical": 18,
-        "high": 89,
+        "high": 100,
         "low": 25,
-        "medium": 42
+        "medium": 46
       },
       "digests": [
         "sha256:1de3b99b9e3e080ba73b4028324b425274ad00d676803603f7f19efdc416045b",
@@ -39537,6 +40034,34 @@
           "id": "CVE-2026-105437",
           "installed": "2.54.0-r0",
           "package": "git-init-template",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107493",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-107494",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
           "severity": "High"
         },
         {
@@ -39701,6 +40226,20 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
           "fixed": "10.3_p1-r2",
           "id": "CVE-2026-123158",
           "installed": "10.3_p1-r1",
@@ -39747,6 +40286,20 @@
           "id": "CVE-2026-123158",
           "installed": "10.3_p1-r1",
           "package": "openssh-sftp-server",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-124709",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
           "severity": "High"
         },
         {
@@ -39855,10 +40408,31 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.8-r0",
+          "package": "libcrypto3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-84786",
+          "installed": "3.5.8-r0",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
           "fixed": "1.3.2-r1",
           "id": "CVE-2026-85091",
           "installed": "1.3.2-r0",
           "package": "zlib",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.13.9-r3",
+          "id": "CVE-2026-86144",
+          "installed": "2.13.9-r2",
+          "package": "libxml2",
           "severity": "High"
         },
         {
@@ -40149,7 +40723,7 @@
         "critical": 43,
         "high": 769,
         "low": 61,
-        "medium": 887
+        "medium": 891
       },
       "digests": [
         "sha256:1994d77ab18293108c449f2429fdf7877f69d56b61110da16812902223fbff7d",
@@ -43664,7 +44238,7 @@
         "critical": 31,
         "high": 241,
         "low": 144,
-        "medium": 2889
+        "medium": 2890
       },
       "digests": [
         "sha256:63859e7302a0533a773655c99071756bbc4a0c710ea3259f1e02671b56cdf8dd",
@@ -44082,6 +44656,13 @@
           "id": "CVE-2026-102554",
           "installed": "33.6.0-jre",
           "package": "guava",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.0.2zt, 1.1.1zk, 3.0.24",
+          "id": "CVE-2026-107493",
+          "installed": "3.0.13",
+          "package": "openssl",
           "severity": "High"
         },
         {
@@ -44932,30 +45513,16 @@
           "severity": "High"
         },
         {
-          "fixed": "9.0",
+          "fixed": "7.1.4, 8.0.2, 8.1.1",
           "id": "CVE-2026-52296",
           "installed": "6.1.1",
           "package": "ffmpeg",
           "severity": "High"
         },
         {
-          "fixed": "9.0",
-          "id": "CVE-2026-52296",
-          "installed": "8.1.1",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": "9.0",
+          "fixed": "7.1.4, 8.0.2, 8.1.1",
           "id": "CVE-2026-52297",
           "installed": "6.1.1",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": "9.0",
-          "id": "CVE-2026-52297",
-          "installed": "8.1.1",
           "package": "ffmpeg",
           "severity": "High"
         },
@@ -45226,14 +45793,14 @@
           "severity": "High"
         },
         {
-          "fixed": "9",
+          "fixed": "8.1.3",
           "id": "CVE-2026-70628",
           "installed": "6.1.1",
           "package": "ffmpeg",
           "severity": "High"
         },
         {
-          "fixed": "9",
+          "fixed": "8.1.3",
           "id": "CVE-2026-70628",
           "installed": "8.1.1",
           "package": "ffmpeg",
@@ -45355,6 +45922,13 @@
           "fixed": "3.0.13-0ubuntu3.16",
           "id": "CVE-2026-84782",
           "installed": "3.0.13-0ubuntu3.12",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": "1.1.1zk, 3.0.24, 3.5.10",
+          "id": "CVE-2026-84786",
+          "installed": "3.0.13",
           "package": "openssl",
           "severity": "High"
         },
@@ -45506,14 +46080,14 @@
           "severity": "High"
         },
         {
-          "fixed": "9.0",
+          "fixed": "7.1.5, 8.0.3, 8.1.2",
           "id": "CVE-2026-96611",
           "installed": "6.1.1",
           "package": "ffmpeg",
           "severity": "High"
         },
         {
-          "fixed": "9.0",
+          "fixed": "7.1.5, 8.0.3, 8.1.2",
           "id": "CVE-2026-96611",
           "installed": "8.1.1",
           "package": "ffmpeg",
@@ -47756,10 +48330,10 @@
   ],
   "omitted": {
     "critical": 528,
-    "high": 6402
+    "high": 6453
   },
   "scanner": {
-    "dbBuilt": "2026-11-20T06:21:00Z",
+    "dbBuilt": "2026-11-21T06:20:06Z",
     "name": "grype",
     "version": "0.120.1"
   },
