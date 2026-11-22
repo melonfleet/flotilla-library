@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-21T12:06:54Z",
+  "generated": "2026-11-22T12:20:08Z",
   "images": [
     {
       "counts": {
         "critical": 44,
-        "high": 263,
+        "high": 265,
         "low": 46,
-        "medium": 302
+        "medium": 304
       },
       "digests": [
         "sha256:7c2ac97dfc3881daf4a5a4b6c50c9b7848f504e4eec26edf61c7a8a6ab2a0ba3",
@@ -1068,6 +1068,20 @@
           "id": "CVE-2026-12064",
           "installed": "7.88.1-10+deb12u8",
           "package": "libcurl4",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.0.15-1~deb12u1",
+          "package": "libssl3",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.0.15-1~deb12u1",
+          "package": "openssl",
           "severity": "High"
         },
         {
@@ -6736,9 +6750,9 @@
     {
       "counts": {
         "critical": 31,
-        "high": 227,
+        "high": 230,
         "low": 64,
-        "medium": 276
+        "medium": 279
       },
       "digests": [
         "sha256:0ec38c38e9019e42ce380d8bb90d86131ffbfb7f44ec61b90a5a71e61bfb824a",
@@ -7475,6 +7489,27 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-124709",
           "installed": "3.5.7-1~deb13u3",
           "package": "libssl3t64",
@@ -7565,84 +7600,84 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-dev-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-l10n",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc6-dev",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "locales",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-dev-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-l10n",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc6-dev",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "locales",
@@ -12072,9 +12107,9 @@
     {
       "counts": {
         "critical": 108,
-        "high": 323,
+        "high": 326,
         "low": 28,
-        "medium": 224
+        "medium": 227
       },
       "digests": [
         "sha256:48b63b9bc3d042a1301c32971b01af8841c7f059b452589c5bf77f475ba44c61",
@@ -13602,6 +13637,27 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-124709",
           "installed": "3.5.7-1~deb13u3",
           "package": "libssl3t64",
@@ -14035,14 +14091,14 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
@@ -14133,14 +14189,14 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
@@ -20064,9 +20120,9 @@
     {
       "counts": {
         "critical": 41,
-        "high": 317,
+        "high": 320,
         "low": 54,
-        "medium": 250
+        "medium": 253
       },
       "digests": [
         "sha256:7536c1009c6ea50dadd2b244165efb357504ca0f2670abefbceb1c773cc7e13d",
@@ -20803,6 +20859,27 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.6-1~deb13u1",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-124709",
           "installed": "3.5.6-1~deb13u1",
           "package": "libssl3t64",
@@ -20900,28 +20977,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u3",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u3",
           "package": "libc-l10n",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u3",
           "package": "libc6",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u3",
           "package": "locales",
@@ -21376,28 +21453,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u3",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u3",
           "package": "libc-l10n",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u3",
           "package": "libc6",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u3",
           "package": "locales",
@@ -23653,9 +23730,9 @@
     {
       "counts": {
         "critical": 1,
-        "high": 137,
+        "high": 140,
         "low": 45,
-        "medium": 152
+        "medium": 155
       },
       "digests": [
         "sha256:a8a18afebc8b2b529112c931f193151b712e566b7a49563dc0f328d51f652087",
@@ -23993,6 +24070,27 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-124709",
           "installed": "3.5.7-1~deb13u3",
           "package": "libssl3t64",
@@ -24013,28 +24111,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-l10n",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "locales",
@@ -24090,28 +24188,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-l10n",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "locales",
@@ -24726,9 +24824,9 @@
     {
       "counts": {
         "critical": 0,
-        "high": 75,
+        "high": 77,
         "low": 19,
-        "medium": 77
+        "medium": 79
       },
       "digests": [
         "sha256:701d27eed8cbd5042c98ec4035146ed036c2390a31ddd9f3f617b4a5e316e12d",
@@ -24842,6 +24940,20 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-124709",
           "installed": "3.5.7-1~deb13u3",
           "package": "libssl3t64",
@@ -24855,28 +24967,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
@@ -25534,8 +25646,8 @@
       "counts": {
         "critical": 28,
         "high": 301,
-        "low": 95,
-        "medium": 489
+        "low": 92,
+        "medium": 498
       },
       "digests": [
         "sha256:3ce2f1f06b5bd75e4a324ba34a93cb69fb74aa1561f48b6c5318537feef66890",
@@ -26580,27 +26692,6 @@
         },
         {
           "fixed": null,
-          "id": "CVE-2026-119123",
-          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
-          "package": "imagemagick-7-common",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-119123",
-          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
-          "package": "libmagickcore-7.q16-10",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-119123",
-          "installed": "8:7.1.1.43+dfsg1-1+deb13u12",
-          "package": "libmagickwand-7.q16-10",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
           "id": "CVE-2026-119373",
           "installed": "3.46.1-7+deb13u2",
           "package": "libsqlite3-0",
@@ -26660,6 +26751,27 @@
           "id": "CVE-2026-12064",
           "installed": "8.14.1-2+deb13u7",
           "package": "libcurl4t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
           "severity": "High"
         },
         {
@@ -26775,28 +26887,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-dev-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc6-dev",
@@ -26817,28 +26929,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-dev-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc6-dev",
@@ -27851,9 +27963,9 @@
     {
       "counts": {
         "critical": 1028,
-        "high": 3626,
-        "low": 389,
-        "medium": 3652
+        "high": 3628,
+        "low": 388,
+        "medium": 3657
       },
       "digests": [
         "sha256:9912da7d7d9b6ddc0c2d904beb84d24689c1ed9c33b81419eb9008663a92a329",
@@ -33085,9 +33197,9 @@
     {
       "counts": {
         "critical": 0,
-        "high": 84,
+        "high": 86,
         "low": 26,
-        "medium": 87
+        "medium": 89
       },
       "digests": [
         "sha256:418652cfb58ef879d4978c33553735d7147016032d5aefaa14c828e611eb9dfd",
@@ -33208,6 +33320,20 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-124709",
           "installed": "3.5.7-1~deb13u2",
           "package": "libssl3t64",
@@ -33221,28 +33347,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
@@ -38129,9 +38255,9 @@
     {
       "counts": {
         "critical": 29,
-        "high": 219,
+        "high": 222,
         "low": 22,
-        "medium": 149
+        "medium": 152
       },
       "digests": [
         "sha256:dfaefaea21028ea3024b708330b0aed27c4a448a49a3e174e49962f3e0789fc4",
@@ -38202,42 +38328,42 @@
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-44172",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-44172",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-1",
           "id": "CVE-2026-49261",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-1",
           "id": "CVE-2026-49261",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.9+ds-0+deb13u1",
           "id": "CVE-2026-85746",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.9+ds-0+deb13u1",
           "id": "CVE-2026-85746",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
@@ -38314,14 +38440,14 @@
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.9+ds-0+deb13u1",
           "id": "CVE-2026-92262",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "Critical"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.9+ds-0+deb13u1",
           "id": "CVE-2026-92262",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
@@ -38384,14 +38510,14 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.9+ds-0+deb13u1",
           "id": "CVE-2026-102523",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.9+ds-0+deb13u1",
           "id": "CVE-2026-102523",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
@@ -38489,56 +38615,56 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-107815",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-107815",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-107818",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-107818",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-107821",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-107821",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-107823",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-107823",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
@@ -39001,6 +39127,27 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u3",
+          "package": "openssl-provider-legacy",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-124709",
           "installed": "3.5.7-1~deb13u3",
           "package": "libssl3t64",
@@ -39049,84 +39196,84 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-44168",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-44168",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-44171",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-44171",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-48163",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-48163",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-48165",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.8-0+deb13u1",
           "id": "CVE-2026-48165",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
@@ -39532,14 +39679,14 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.9+ds-0+deb13u1",
           "id": "CVE-2026-86047",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.9+ds-0+deb13u1",
           "id": "CVE-2026-86047",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
@@ -39861,14 +40008,14 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.9+ds-0+deb13u1",
           "id": "CVE-2026-97380",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "libmariadb3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1:11.8.9+ds-0+deb13u1",
           "id": "CVE-2026-97380",
           "installed": "1:11.8.6-0+deb13u1",
           "package": "mariadb-common",
@@ -40721,9 +40868,9 @@
     {
       "counts": {
         "critical": 43,
-        "high": 769,
+        "high": 772,
         "low": 61,
-        "medium": 891
+        "medium": 894
       },
       "digests": [
         "sha256:1994d77ab18293108c449f2429fdf7877f69d56b61110da16812902223fbff7d",
@@ -41904,6 +42051,27 @@
           "id": "CVE-2026-12064",
           "installed": "8.14.1-2+deb13u5",
           "package": "libcurl4t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "libssl3t64",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "openssl",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-121482",
+          "installed": "3.5.7-1~deb13u2",
+          "package": "openssl-provider-legacy",
           "severity": "High"
         },
         {
@@ -44014,14 +44182,14 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-19499",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
@@ -44126,14 +44294,14 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "2.41-12+deb13u5",
           "id": "CVE-2026-5435",
           "installed": "2.41-12+deb13u4",
           "package": "libc6",
@@ -44207,27 +44375,6 @@
           "id": "CVE-2026-58049",
           "installed": "7:7.1.5-0+deb13u1",
           "package": "libavformat61",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-58049",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavutil59",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-58049",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libpostproc58",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-58049",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libswresample5",
           "severity": "High"
         }
       ],
@@ -48330,10 +48477,10 @@
   ],
   "omitted": {
     "critical": 528,
-    "high": 6453
+    "high": 6458
   },
   "scanner": {
-    "dbBuilt": "2026-11-21T06:20:06Z",
+    "dbBuilt": "2026-11-22T06:19:59Z",
     "name": "grype",
     "version": "0.120.1"
   },
