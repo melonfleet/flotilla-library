@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-22T12:20:08Z",
+  "generated": "2026-11-23T13:55:31Z",
   "images": [
     {
       "counts": {
@@ -6751,8 +6751,8 @@
       "counts": {
         "critical": 31,
         "high": 230,
-        "low": 64,
-        "medium": 279
+        "low": 65,
+        "medium": 283
       },
       "digests": [
         "sha256:0ec38c38e9019e42ce380d8bb90d86131ffbfb7f44ec61b90a5a71e61bfb824a",
@@ -7257,140 +7257,140 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -7425,28 +7425,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -12108,8 +12108,8 @@
       "counts": {
         "critical": 108,
         "high": 326,
-        "low": 28,
-        "medium": 227
+        "low": 29,
+        "medium": 231
       },
       "digests": [
         "sha256:48b63b9bc3d042a1301c32971b01af8841c7f059b452589c5bf77f475ba44c61",
@@ -13174,140 +13174,140 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -13475,28 +13475,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -20121,8 +20121,8 @@
       "counts": {
         "critical": 41,
         "high": 320,
-        "low": 54,
-        "medium": 253
+        "low": 55,
+        "medium": 257
       },
       "digests": [
         "sha256:7536c1009c6ea50dadd2b244165efb357504ca0f2670abefbceb1c773cc7e13d",
@@ -20620,140 +20620,140 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -20795,28 +20795,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -23732,7 +23732,7 @@
         "critical": 1,
         "high": 140,
         "low": 45,
-        "medium": 155
+        "medium": 159
       },
       "digests": [
         "sha256:a8a18afebc8b2b529112c931f193151b712e566b7a49563dc0f328d51f652087",
@@ -23880,168 +23880,168 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -25646,8 +25646,8 @@
       "counts": {
         "critical": 28,
         "high": 301,
-        "low": 92,
-        "medium": 498
+        "low": 90,
+        "medium": 496
       },
       "digests": [
         "sha256:3ce2f1f06b5bd75e4a324ba34a93cb69fb74aa1561f48b6c5318537feef66890",
@@ -26474,140 +26474,140 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -26663,28 +26663,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -27964,7 +27964,7 @@
       "counts": {
         "critical": 1028,
         "high": 3628,
-        "low": 388,
+        "low": 389,
         "medium": 3657
       },
       "digests": [
@@ -38257,7 +38257,7 @@
         "critical": 29,
         "high": 222,
         "low": 22,
-        "medium": 152
+        "medium": 156
       },
       "digests": [
         "sha256:dfaefaea21028ea3024b708330b0aed27c4a448a49a3e174e49962f3e0789fc4",
@@ -38713,140 +38713,140 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -38986,28 +38986,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -40869,8 +40869,8 @@
       "counts": {
         "critical": 43,
         "high": 772,
-        "low": 61,
-        "medium": 894
+        "low": 62,
+        "medium": 898
       },
       "digests": [
         "sha256:1994d77ab18293108c449f2429fdf7877f69d56b61110da16812902223fbff7d",
@@ -41550,140 +41550,140 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112314",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112320",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112321",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112322",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-112323",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -41963,28 +41963,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libgssapi-krb5-2",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libk5crypto3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5-3",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.21.3-5+deb13u2",
           "id": "CVE-2026-119079",
           "installed": "1.21.3-5+deb13u1",
           "package": "libkrb5support0",
@@ -48480,7 +48480,7 @@
     "high": 6458
   },
   "scanner": {
-    "dbBuilt": "2026-11-22T06:19:59Z",
+    "dbBuilt": "2026-11-23T06:28:32Z",
     "name": "grype",
     "version": "0.120.1"
   },
