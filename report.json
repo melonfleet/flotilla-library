@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-24T14:34:58Z",
+  "generated": "2026-11-25T13:48:49Z",
   "images": [
     {
       "counts": {
         "critical": 44,
-        "high": 267,
-        "low": 46,
+        "high": 263,
+        "low": 44,
         "medium": 304
       },
       "digests": [
@@ -743,20 +743,6 @@
         },
         {
           "fixed": null,
-          "id": "CVE-2026-107494",
-          "installed": "3.0.15-1~deb12u1",
-          "package": "libssl3",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-107494",
-          "installed": "3.0.15-1~deb12u1",
-          "package": "openssl",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
           "id": "CVE-2026-107496",
           "installed": "3.0.15-1~deb12u1",
           "package": "libssl3",
@@ -1082,20 +1068,6 @@
           "id": "CVE-2026-12064",
           "installed": "7.88.1-10+deb12u8",
           "package": "libcurl4",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-121482",
-          "installed": "3.0.15-1~deb12u1",
-          "package": "libssl3",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-121482",
-          "installed": "3.0.15-1~deb12u1",
-          "package": "openssl",
           "severity": "High"
         },
         {
@@ -2198,7 +2170,7 @@
         "critical": 0,
         "high": 3,
         "low": 26,
-        "medium": 235
+        "medium": 238
       },
       "digests": [
         "sha256:387ebbcca253026def04dc79e83d2323ac7d97bf309ddd090a8a3c702573e01a",
@@ -2231,10 +2203,10 @@
     },
     {
       "counts": {
-        "critical": 28,
-        "high": 651,
+        "critical": 46,
+        "high": 723,
         "low": 51,
-        "medium": 994
+        "medium": 1084
       },
       "digests": [
         "sha256:38dc2727bfcfd5ede290f8ada114fc90368146f265ae4701ddddbcbe2a44ee52",
@@ -2267,6 +2239,132 @@
           "id": "CVE-2026-11856",
           "installed": "8.14.1-r3",
           "package": "curl",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavcodec",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavdevice",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavfilter",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavformat",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavutil",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libpostproc",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswresample",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswscale",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavcodec",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavdevice",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavfilter",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavformat",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavutil",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libpostproc",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswresample",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswscale",
           "severity": "Critical"
         },
         {
@@ -4826,6 +4924,510 @@
         },
         {
           "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libpostproc",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libpostproc",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libpostproc",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libpostproc",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libpostproc",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libpostproc",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libpostproc",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libpostproc",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "6.1.2-r2",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
           "id": "CVE-2026-13608",
           "installed": "8.14.1-r3",
           "package": "curl",
@@ -5109,636 +5711,6 @@
           "id": "CVE-2026-3805",
           "installed": "8.14.1-r3",
           "package": "curl",
-          "severity": "High"
-        },
-        {
-          "fixed": "8.14.1-r4",
-          "id": "CVE-2026-3805",
-          "installed": "8.14.1-r3",
-          "package": "libcurl",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-4424",
-          "installed": "3.8.3-r0",
-          "package": "libarchive",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52296",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52296",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52296",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52296",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52296",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52296",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52296",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libpostproc",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52296",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52296",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52297",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52297",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52297",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52297",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52297",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52297",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52297",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libpostproc",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52297",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-52297",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-54873",
-          "installed": "3.5.8-r0",
-          "package": "libcrypto3",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-54873",
-          "installed": "3.5.8-r0",
-          "package": "libssl3",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-56109",
-          "installed": "1.2.14-r0",
-          "package": "alsa-lib",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.26.9, 1.27.2",
-          "id": "CVE-2026-56866",
-          "installed": "go1.27.1",
-          "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "8.14.1-r4",
-          "id": "CVE-2026-5773",
-          "installed": "8.14.1-r3",
-          "package": "curl",
-          "severity": "High"
-        },
-        {
-          "fixed": "8.14.1-r4",
-          "id": "CVE-2026-5773",
-          "installed": "8.14.1-r3",
-          "package": "libcurl",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-58010",
-          "installed": "2.84.4-r0",
-          "package": "glib",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-58011",
-          "installed": "2.84.4-r0",
-          "package": "glib",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-58012",
-          "installed": "2.84.4-r0",
-          "package": "glib",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-58013",
-          "installed": "2.84.4-r0",
-          "package": "glib",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-58014",
-          "installed": "2.84.4-r0",
-          "package": "glib",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-58015",
-          "installed": "2.84.4-r0",
-          "package": "glib",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59184",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libiex",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59184",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libilmthread",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59184",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexr",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59184",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexrcore",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59186",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libiex",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59186",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libilmthread",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59186",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexr",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59186",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexrcore",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59187",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libiex",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59187",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libilmthread",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59187",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexr",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59187",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexrcore",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59189",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libiex",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59189",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libilmthread",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59189",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexr",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59189",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexrcore",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59847",
-          "installed": "0.11.2-r0",
-          "package": "libssh",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59849",
-          "installed": "0.11.2-r0",
-          "package": "libssh",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59850",
-          "installed": "0.11.2-r0",
-          "package": "libssh",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59981",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libiex",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59981",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libilmthread",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59981",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexr",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59981",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexrcore",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59982",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libiex",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59982",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libilmthread",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59982",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexr",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-59982",
-          "installed": "3.3.11-r0",
-          "package": "openexr-libopenexrcore",
-          "severity": "High"
-        },
-        {
-          "fixed": "8.14.1-r4",
-          "id": "CVE-2026-6276",
-          "installed": "8.14.1-r3",
-          "package": "curl",
-          "severity": "High"
-        },
-        {
-          "fixed": "8.14.1-r4",
-          "id": "CVE-2026-6276",
-          "installed": "8.14.1-r3",
-          "package": "libcurl",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64830",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64830",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64830",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64830",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64830",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64830",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64830",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libpostproc",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64830",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64830",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libpostproc",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64832",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libpostproc",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64834",
-          "installed": "6.1.2-r2",
-          "package": "ffmpeg-libavcodec",
           "severity": "High"
         }
       ],
@@ -6765,7 +6737,7 @@
       "counts": {
         "critical": 17,
         "high": 213,
-        "low": 46,
+        "low": 40,
         "medium": 218
       },
       "digests": [
@@ -8388,10 +8360,10 @@
     },
     {
       "counts": {
-        "critical": 475,
-        "high": 2021,
+        "critical": 483,
+        "high": 2057,
         "low": 246,
-        "medium": 2059
+        "medium": 2099
       },
       "digests": [
         "sha256:3922767afb52a5777759fd8b28a3c9eee864daea96018a791f2429eae2a76571",
@@ -9586,6 +9558,62 @@
           "id": "CVE-2026-133949",
           "installed": "25.1.1-r1",
           "package": "py3-pip-pyc",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.0.1-r1",
+          "package": "ffmpeg-libavcodec",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.0.1-r1",
+          "package": "ffmpeg-libavformat",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.0.1-r1",
+          "package": "ffmpeg-libavutil",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.0.1-r1",
+          "package": "ffmpeg-libswresample",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.0.1-r1",
+          "package": "ffmpeg-libavcodec",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.0.1-r1",
+          "package": "ffmpeg-libavformat",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.0.1-r1",
+          "package": "ffmpeg-libavutil",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.0.1-r1",
+          "package": "ffmpeg-libswresample",
           "severity": "Critical"
         },
         {
@@ -11841,62 +11869,6 @@
           "installed": "1.7.7",
           "package": "axios",
           "severity": "High"
-        },
-        {
-          "fixed": "2.0.0",
-          "id": "CVE-2025-47935",
-          "installed": "1.4.5-lts.2",
-          "package": "multer",
-          "severity": "High"
-        },
-        {
-          "fixed": "2.0.0",
-          "id": "CVE-2025-47944",
-          "installed": "1.4.5-lts.2",
-          "package": "multer",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.0.9",
-          "id": "CVE-2025-48387",
-          "installed": "3.0.4",
-          "package": "tar-fs",
-          "severity": "High"
-        },
-        {
-          "fixed": "2.0.1",
-          "id": "CVE-2025-48997",
-          "installed": "1.4.5-lts.2",
-          "package": "multer",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.24.9, 1.25.3",
-          "id": "CVE-2025-58187",
-          "installed": "go1.20.7",
-          "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.24.8, 1.25.2",
-          "id": "CVE-2025-58188",
-          "installed": "go1.20.7",
-          "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.12.0",
-          "id": "CVE-2025-58754",
-          "installed": "1.7.7",
-          "package": "axios",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.1.1",
-          "id": "CVE-2025-59343",
-          "installed": "3.0.4",
-          "package": "tar-fs",
-          "severity": "High"
         }
       ],
       "reference": "docker.io/flowiseai/flowise:3.1.4"
@@ -11905,7 +11877,7 @@
       "counts": {
         "critical": 108,
         "high": 329,
-        "low": 28,
+        "low": 24,
         "medium": 232
       },
       "digests": [
@@ -16422,10 +16394,10 @@
     },
     {
       "counts": {
-        "critical": 62,
-        "high": 761,
+        "critical": 80,
+        "high": 842,
         "low": 78,
-        "medium": 1099
+        "medium": 1189
       },
       "digests": [
         "sha256:130241f28d01fa80dfa3b44f7d89781c188d8642ecab9024f079f19f9f82baa0",
@@ -16535,6 +16507,132 @@
           "id": "CVE-2026-11856",
           "installed": "8.20.0-r1",
           "package": "libcurl",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135736",
+          "installed": "9.0.2",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135743",
+          "installed": "9.0.2",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
           "severity": "Critical"
         },
         {
@@ -19779,157 +19877,31 @@
           "severity": "High"
         },
         {
-          "fixed": "8.22.0-r0",
-          "id": "CVE-2026-13608",
-          "installed": "8.20.0-r1",
-          "package": "curl",
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
           "severity": "High"
         },
         {
-          "fixed": "8.22.0-r0",
-          "id": "CVE-2026-13608",
-          "installed": "8.20.0-r1",
-          "package": "libcurl",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.5.8-r0",
-          "id": "CVE-2026-14456",
-          "installed": "3.5.7-r0",
-          "package": "libcrypto3",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.5.8-r0",
-          "id": "CVE-2026-14456",
-          "installed": "3.5.7-r0",
-          "package": "libssl3",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.5.8-r0",
-          "id": "CVE-2026-14457",
-          "installed": "3.5.7-r0",
-          "package": "libcrypto3",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.5.8-r0",
-          "id": "CVE-2026-14457",
-          "installed": "3.5.7-r0",
-          "package": "libssl3",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.10.21, 3.11.16, 3.12.14",
-          "id": "CVE-2026-15308",
-          "installed": "3.14.6",
-          "package": "python",
-          "severity": "High"
-        },
-        {
-          "fixed": "0.12.1-r0",
-          "id": "CVE-2026-15370",
-          "installed": "0.12.0-r0",
-          "package": "libssh",
+          "fixed": "9.1",
+          "id": "CVE-2026-135722",
+          "installed": "9.0.2",
+          "package": "ffmpeg",
           "severity": "High"
         },
         {
           "fixed": null,
-          "id": "CVE-2026-16554",
-          "installed": "1.7.19-r1",
-          "package": "cjson",
+          "id": "CVE-2026-135722",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
           "severity": "High"
         },
         {
-          "fixed": "3.5.8-r0",
-          "id": "CVE-2026-18798",
-          "installed": "3.5.7-r0",
-          "package": "libcrypto3",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.5.8-r0",
-          "id": "CVE-2026-18798",
-          "installed": "3.5.7-r0",
-          "package": "libssl3",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.10.22, 3.11.17, 3.12.15",
-          "id": "CVE-2026-19553",
-          "installed": "3.14.6",
-          "package": "python",
-          "severity": "High"
-        },
-        {
-          "fixed": "9.20.30-r0",
-          "id": "CVE-2026-19630",
-          "installed": "9.20.23-r0",
-          "package": "bind-libs",
-          "severity": "High"
-        },
-        {
-          "fixed": "9.20.30-r0",
-          "id": "CVE-2026-19630",
-          "installed": "9.20.23-r0",
-          "package": "bind-tools",
-          "severity": "High"
-        },
-        {
-          "fixed": "9.20.29-r0",
-          "id": "CVE-2026-19666",
-          "installed": "9.20.23-r0",
-          "package": "bind-libs",
-          "severity": "High"
-        },
-        {
-          "fixed": "9.20.29-r0",
-          "id": "CVE-2026-19666",
-          "installed": "9.20.23-r0",
-          "package": "bind-tools",
-          "severity": "High"
-        },
-        {
-          "fixed": "9.20.29-r0",
-          "id": "CVE-2026-19667",
-          "installed": "9.20.23-r0",
-          "package": "bind-libs",
-          "severity": "High"
-        },
-        {
-          "fixed": "9.20.29-r0",
-          "id": "CVE-2026-19667",
-          "installed": "9.20.23-r0",
-          "package": "bind-tools",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.25.8, 1.26.1",
-          "id": "CVE-2026-25679",
-          "installed": "go1.23.3",
-          "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.25.8, 1.26.1",
-          "id": "CVE-2026-25679",
-          "installed": "go1.25.6",
-          "package": "stdlib",
-          "severity": "High"
-        },
-        {
-          "fixed": "5.2.2-r2",
-          "id": "CVE-2026-26740",
-          "installed": "5.2.2-r1",
-          "package": "giflib",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.25.11, 1.26.4",
-          "id": "CVE-2026-27145",
-          "installed": "go1.25.6",
-          "package": "stdlib",
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
           "severity": "High"
         }
       ],
@@ -19939,7 +19911,7 @@
       "counts": {
         "critical": 41,
         "high": 323,
-        "low": 54,
+        "low": 52,
         "medium": 258
       },
       "digests": [
@@ -22503,7 +22475,7 @@
         "critical": 2,
         "high": 19,
         "low": 55,
-        "medium": 429
+        "medium": 434
       },
       "digests": [
         "sha256:19ecfcc825f5925fdc7142a605335a54fd83fb0101be1232b6f5062cee01f785",
@@ -22665,7 +22637,7 @@
         "critical": 14,
         "high": 78,
         "low": 79,
-        "medium": 389
+        "medium": 391
       },
       "digests": [
         "sha256:89fd95ee2942880ca00eae964266958a394421ddbdf69bca62e38afc55f5900e",
@@ -23324,7 +23296,7 @@
         "critical": 0,
         "high": 0,
         "low": 8,
-        "medium": 1415
+        "medium": 1418
       },
       "digests": [
         "sha256:3339b0a9443f11155d966e3a5259641bd48acb0251fdc060744709a2a0408dde",
@@ -23338,7 +23310,7 @@
         "critical": 2,
         "high": 19,
         "low": 16,
-        "medium": 223
+        "medium": 225
       },
       "digests": [
         "sha256:a18a67668df9389cbfe49d81ca9bd20428fa6b82ce9ae0b79961dadf56281493",
@@ -23577,7 +23549,7 @@
       "counts": {
         "critical": 1,
         "high": 143,
-        "low": 45,
+        "low": 43,
         "medium": 159
       },
       "digests": [
@@ -24601,7 +24573,7 @@
         "critical": 0,
         "high": 11,
         "low": 7,
-        "medium": 97
+        "medium": 99
       },
       "digests": [
         "sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
@@ -24692,7 +24664,7 @@
       "counts": {
         "critical": 0,
         "high": 79,
-        "low": 19,
+        "low": 17,
         "medium": 79
       },
       "digests": [
@@ -25527,7 +25499,7 @@
       "counts": {
         "critical": 28,
         "high": 304,
-        "low": 89,
+        "low": 87,
         "medium": 497
       },
       "digests": [
@@ -27864,9 +27836,9 @@
     },
     {
       "counts": {
-        "critical": 1028,
-        "high": 3631,
-        "low": 387,
+        "critical": 1030,
+        "high": 3627,
+        "low": 381,
         "medium": 3661
       },
       "digests": [
@@ -30843,6 +30815,20 @@
           "severity": "Critical"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-134401",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-134401",
+          "installed": "148.0.7778.178-1~deb12u1",
+          "package": "chromium-common",
+          "severity": "Critical"
+        },
+        {
           "fixed": "150.0.7871.46-1~deb12u1",
           "id": "CVE-2026-13775",
           "installed": "148.0.7778.178-1~deb12u1",
@@ -31356,20 +31342,6 @@
         {
           "fixed": "150.0.7871.46-1~deb12u1",
           "id": "CVE-2026-14093",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium-common",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14095",
-          "installed": "148.0.7778.178-1~deb12u1",
-          "package": "chromium",
-          "severity": "Critical"
-        },
-        {
-          "fixed": "150.0.7871.46-1~deb12u1",
-          "id": "CVE-2026-14095",
           "installed": "148.0.7778.178-1~deb12u1",
           "package": "chromium-common",
           "severity": "Critical"
@@ -32055,7 +32027,7 @@
         "critical": 4,
         "high": 36,
         "low": 10,
-        "medium": 128
+        "medium": 131
       },
       "digests": [
         "sha256:56587518b22609f472d56847251d1453a2796aea8a1cb84b7ce22ff9adad77ce",
@@ -33100,7 +33072,7 @@
       "counts": {
         "critical": 0,
         "high": 88,
-        "low": 26,
+        "low": 24,
         "medium": 89
       },
       "digests": [
@@ -33731,7 +33703,7 @@
       "counts": {
         "critical": 9,
         "high": 96,
-        "low": 25,
+        "low": 23,
         "medium": 143
       },
       "digests": [
@@ -34479,10 +34451,10 @@
     },
     {
       "counts": {
-        "critical": 8,
-        "high": 518,
+        "critical": 24,
+        "high": 590,
         "low": 59,
-        "medium": 899
+        "medium": 979
       },
       "digests": [
         "sha256:4a1029867755efae922b562be89d4a842e7325f486f506c47241eab60fa9b431",
@@ -34508,6 +34480,118 @@
           "id": "CVE-2026-111497",
           "installed": "24.21.0",
           "package": "node",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
           "severity": "Critical"
         },
         {
@@ -36842,6 +36926,510 @@
           "severity": "High"
         },
         {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135722",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135723",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135725",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135734",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135737",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135738",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135739",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135739",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135739",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135739",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135739",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135739",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135739",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135739",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135740",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavcodec",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavdevice",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavfilter",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavformat",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libavutil",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswresample",
+          "severity": "High"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135742",
+          "installed": "8.1.2-r0",
+          "package": "ffmpeg-libswscale",
+          "severity": "High"
+        },
+        {
           "fixed": "1.1.17",
           "id": "CVE-2026-14257",
           "installed": "1.1.11",
@@ -37372,622 +37960,6 @@
           "installed": "8.1.2-r0",
           "package": "ffmpeg-libavutil",
           "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64835",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65703",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65704",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65705",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-65706",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66036",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66036",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66036",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66036",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66036",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66036",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66036",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66036",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66039",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66039",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66039",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66039",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66039",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66039",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66039",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66039",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66040",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66040",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66040",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66040",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66040",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66040",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66040",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66040",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66041",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66041",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66041",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66041",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66041",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66041",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66041",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-66041",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-67215",
-          "installed": "1.7.19-r1",
-          "package": "cjson",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-67216",
-          "installed": "1.7.19-r1",
-          "package": "cjson",
-          "severity": "High"
-        },
-        {
-          "fixed": "1.1.18",
-          "id": "CVE-2026-69152",
-          "installed": "1.1.11",
-          "package": "brace-expansion",
-          "severity": "High"
-        },
-        {
-          "fixed": "5.0.9",
-          "id": "CVE-2026-69152",
-          "installed": "5.0.7",
-          "package": "brace-expansion",
-          "severity": "High"
-        },
-        {
-          "fixed": "4.2.7",
-          "id": "CVE-2026-69185",
-          "installed": "4.2.4",
-          "package": "socket.io-parser",
-          "severity": "High"
-        },
-        {
-          "fixed": "10.3.1",
-          "id": "CVE-2026-69192",
-          "installed": "10.2.0",
-          "package": "ip-address",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70628",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70628",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70628",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70628",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70628",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70628",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70628",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70628",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70632",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70632",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavcodec",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70632",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70632",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavfilter",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70632",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavformat",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70632",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70632",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswresample",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-70632",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libswscale",
-          "severity": "High"
         }
       ],
       "reference": "ghcr.io/advplyr/audiobookshelf:2.37.1"
@@ -38172,7 +38144,7 @@
       "counts": {
         "critical": 29,
         "high": 225,
-        "low": 22,
+        "low": 20,
         "medium": 156
       },
       "digests": [
@@ -40804,10 +40776,10 @@
     },
     {
       "counts": {
-        "critical": 43,
-        "high": 793,
-        "low": 87,
-        "medium": 1151
+        "critical": 61,
+        "high": 892,
+        "low": 112,
+        "medium": 1376
       },
       "digests": [
         "sha256:1994d77ab18293108c449f2429fdf7877f69d56b61110da16812902223fbff7d",
@@ -40896,6 +40868,132 @@
           "id": "CVE-2026-128138",
           "installed": "3.10.3",
           "package": "nltk",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavcodec61",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavdevice61",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavfilter10",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavformat61",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavutil59",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libpostproc58",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswresample5",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135736",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswscale8",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavcodec61",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavdevice61",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavfilter10",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavformat61",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libavutil59",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libpostproc58",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswresample5",
+          "severity": "Critical"
+        },
+        {
+          "fixed": null,
+          "id": "CVE-2026-135743",
+          "installed": "7:7.1.5-0+deb13u1",
+          "package": "libswscale8",
           "severity": "Critical"
         },
         {
@@ -44187,142 +44285,16 @@
           "installed": "12.3.0",
           "package": "pillow",
           "severity": "High"
-        },
-        {
-          "fixed": "13.0.0",
-          "id": "CVE-2026-128067",
-          "installed": "12.3.0",
-          "package": "pillow",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.10.4",
-          "id": "CVE-2026-128134",
-          "installed": "3.10.3",
-          "package": "nltk",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.10.4",
-          "id": "CVE-2026-128135",
-          "installed": "3.10.3",
-          "package": "nltk",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.10.4",
-          "id": "CVE-2026-128139",
-          "installed": "3.10.3",
-          "package": "nltk",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.10.4",
-          "id": "CVE-2026-129222",
-          "installed": "3.10.3",
-          "package": "nltk",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.10.4",
-          "id": "CVE-2026-129223",
-          "installed": "3.10.3",
-          "package": "nltk",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.10.4",
-          "id": "CVE-2026-129229",
-          "installed": "3.10.3",
-          "package": "nltk",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.10.4",
-          "id": "CVE-2026-129234",
-          "installed": "3.10.3",
-          "package": "nltk",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-13608",
-          "installed": "8.14.1-2+deb13u5",
-          "package": "curl",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-13608",
-          "installed": "8.14.1-2+deb13u5",
-          "package": "libcurl4t64",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-16554",
-          "installed": "1.7.18-3.1+deb13u1",
-          "package": "libcjson1",
-          "severity": "High"
-        },
-        {
-          "fixed": "2.41-12+deb13u5",
-          "id": "CVE-2026-19499",
-          "installed": "2.41-12+deb13u4",
-          "package": "libc-bin",
-          "severity": "High"
-        },
-        {
-          "fixed": "2.41-12+deb13u5",
-          "id": "CVE-2026-19499",
-          "installed": "2.41-12+deb13u4",
-          "package": "libc6",
-          "severity": "High"
-        },
-        {
-          "fixed": "3.10.22, 3.11.17, 3.12.15",
-          "id": "CVE-2026-19553",
-          "installed": "3.14.7",
-          "package": "python",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-29036",
-          "installed": "1.7.18-3.1+deb13u1",
-          "package": "libcjson1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-37555",
-          "installed": "1.2.2-2+deb13u1",
-          "package": "libsndfile1",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-38350",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "ffmpeg",
-          "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-38350",
-          "installed": "7:7.1.5-0+deb13u1",
-          "package": "libavcodec61",
-          "severity": "High"
         }
       ],
       "reference": "ghcr.io/mealie-recipes/mealie:v3.28.0"
     },
     {
       "counts": {
-        "critical": 31,
-        "high": 241,
+        "critical": 35,
+        "high": 258,
         "low": 144,
-        "medium": 2890
+        "medium": 2918
       },
       "digests": [
         "sha256:63859e7302a0533a773655c99071756bbc4a0c710ea3259f1e02671b56cdf8dd",
@@ -44446,6 +44418,34 @@
           "id": "CVE-2026-11856",
           "installed": "8.5.0",
           "package": "curl",
+          "severity": "Critical"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135736",
+          "installed": "6.1.1",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135736",
+          "installed": "8.1.1",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135743",
+          "installed": "6.1.1",
+          "package": "ffmpeg",
+          "severity": "Critical"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135743",
+          "installed": "8.1.1",
+          "package": "ffmpeg",
           "severity": "Critical"
         },
         {
@@ -45457,6 +45457,125 @@
           "severity": "High"
         },
         {
+          "fixed": "9.1",
+          "id": "CVE-2026-135722",
+          "installed": "6.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135722",
+          "installed": "8.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135723",
+          "installed": "6.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135723",
+          "installed": "8.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135725",
+          "installed": "6.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135725",
+          "installed": "8.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135734",
+          "installed": "6.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135734",
+          "installed": "8.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135737",
+          "installed": "6.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135737",
+          "installed": "8.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135738",
+          "installed": "6.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135738",
+          "installed": "8.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135739",
+          "installed": "8.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135740",
+          "installed": "6.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135740",
+          "installed": "8.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135742",
+          "installed": "6.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
+          "fixed": "9.1",
+          "id": "CVE-2026-135742",
+          "installed": "8.1.1",
+          "package": "ffmpeg",
+          "severity": "High"
+        },
+        {
           "fixed": "8.14.2, 8.16.1, 8.20.1",
           "id": "CVE-2026-13608",
           "installed": "8.5.0",
@@ -46402,8 +46521,8 @@
       "counts": {
         "critical": 18,
         "high": 76,
-        "low": 152,
-        "medium": 2384
+        "low": 151,
+        "medium": 2412
       },
       "digests": [
         "sha256:05f7c3e37f3ef3e3a28377c36c0c953c8ed3e6fab371b1afbde74f994b21096d",
@@ -47075,8 +47194,8 @@
       "counts": {
         "critical": 11,
         "high": 58,
-        "low": 152,
-        "medium": 2367
+        "low": 151,
+        "medium": 2395
       },
       "digests": [
         "sha256:3bae1c4713264797c24c1dbd1d4e3abacece147dc42669af61d240083353ecce",
@@ -47573,8 +47692,8 @@
       "counts": {
         "critical": 11,
         "high": 65,
-        "low": 152,
-        "medium": 2369
+        "low": 151,
+        "medium": 2397
       },
       "digests": [
         "sha256:82c7e35b8f19fd040eeaf4129e0f2baec950d8a11eeba159723ef042f3744bbb",
@@ -48121,7 +48240,7 @@
         "critical": 5,
         "high": 35,
         "low": 23,
-        "medium": 885
+        "medium": 894
       },
       "digests": [
         "sha256:03351170e47f8e04eea9edcc0d14fb3433f4e5ec5d7e64e2012084b80819eb9b",
@@ -48413,11 +48532,11 @@
     }
   ],
   "omitted": {
-    "critical": 528,
-    "high": 6491
+    "critical": 530,
+    "high": 6925
   },
   "scanner": {
-    "dbBuilt": "2026-11-24T06:22:05Z",
+    "dbBuilt": "2026-11-25T06:22:21Z",
     "name": "grype",
     "version": "0.120.1"
   },
