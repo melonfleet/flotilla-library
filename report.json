@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26T13:28:29Z",
+  "generated": "2026-11-27T13:22:35Z",
   "images": [
     {
       "counts": {
@@ -483,28 +483,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.5.2-6+deb12u3",
           "id": "CVE-2025-6020",
           "installed": "1.5.2-6+deb12u1",
           "package": "libpam-modules",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.5.2-6+deb12u3",
           "id": "CVE-2025-6020",
           "installed": "1.5.2-6+deb12u1",
           "package": "libpam-modules-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.5.2-6+deb12u3",
           "id": "CVE-2025-6020",
           "installed": "1.5.2-6+deb12u1",
           "package": "libpam-runtime",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.5.2-6+deb12u3",
           "id": "CVE-2025-6020",
           "installed": "1.5.2-6+deb12u1",
           "package": "libpam0g",
@@ -2170,7 +2170,7 @@
         "critical": 0,
         "high": 3,
         "low": 26,
-        "medium": 235
+        "medium": 242
       },
       "digests": [
         "sha256:387ebbcca253026def04dc79e83d2323ac7d97bf309ddd090a8a3c702573e01a",
@@ -2205,8 +2205,8 @@
       "counts": {
         "critical": 46,
         "high": 741,
-        "low": 60,
-        "medium": 1161
+        "low": 69,
+        "medium": 1170
       },
       "digests": [
         "sha256:38dc2727bfcfd5ede290f8ada114fc90368146f265ae4701ddddbcbe2a44ee52",
@@ -6737,8 +6737,8 @@
       "counts": {
         "critical": 17,
         "high": 213,
-        "low": 40,
-        "medium": 217
+        "low": 41,
+        "medium": 224
       },
       "digests": [
         "sha256:10bbe21fbdc68b8fa955d85827aeed197ab46d62c8c745e949d322b9f4b73ff5",
@@ -8362,8 +8362,8 @@
       "counts": {
         "critical": 484,
         "high": 2065,
-        "low": 254,
-        "medium": 2150
+        "low": 258,
+        "medium": 2154
       },
       "digests": [
         "sha256:3922767afb52a5777759fd8b28a3c9eee864daea96018a791f2429eae2a76571",
@@ -11877,8 +11877,8 @@
       "counts": {
         "critical": 108,
         "high": 329,
-        "low": 24,
-        "medium": 230
+        "low": 25,
+        "medium": 237
       },
       "digests": [
         "sha256:48b63b9bc3d042a1301c32971b01af8841c7f059b452589c5bf77f475ba44c61",
@@ -16395,9 +16395,9 @@
     {
       "counts": {
         "critical": 80,
-        "high": 860,
-        "low": 96,
-        "medium": 1282
+        "high": 866,
+        "low": 108,
+        "medium": 1294
       },
       "digests": [
         "sha256:130241f28d01fa80dfa3b44f7d89781c188d8642ecab9024f079f19f9f82baa0",
@@ -17690,6 +17690,13 @@
           "id": "CVE-2026-11972",
           "installed": "3.14.6",
           "package": "python",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.13.9-r5",
+          "id": "CVE-2026-11979",
+          "installed": "2.13.9-r2",
+          "package": "libxml2",
           "severity": "High"
         },
         {
@@ -19896,13 +19903,6 @@
           "installed": "8.1.2-r0",
           "package": "ffmpeg-libavcodec",
           "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-135706",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavdevice",
-          "severity": "High"
         }
       ],
       "reference": "docker.io/homeassistant/home-assistant:2026.10.1"
@@ -19911,8 +19911,8 @@
       "counts": {
         "critical": 41,
         "high": 323,
-        "low": 52,
-        "medium": 256
+        "low": 53,
+        "medium": 263
       },
       "digests": [
         "sha256:7536c1009c6ea50dadd2b244165efb357504ca0f2670abefbceb1c773cc7e13d",
@@ -22475,7 +22475,7 @@
         "critical": 2,
         "high": 22,
         "low": 55,
-        "medium": 434
+        "medium": 440
       },
       "digests": [
         "sha256:19ecfcc825f5925fdc7142a605335a54fd83fb0101be1232b6f5062cee01f785",
@@ -22658,7 +22658,7 @@
         "critical": 14,
         "high": 78,
         "low": 79,
-        "medium": 388
+        "medium": 393
       },
       "digests": [
         "sha256:89fd95ee2942880ca00eae964266958a394421ddbdf69bca62e38afc55f5900e",
@@ -23317,7 +23317,7 @@
         "critical": 0,
         "high": 0,
         "low": 8,
-        "medium": 1419
+        "medium": 1428
       },
       "digests": [
         "sha256:3339b0a9443f11155d966e3a5259641bd48acb0251fdc060744709a2a0408dde",
@@ -23331,7 +23331,7 @@
         "critical": 2,
         "high": 19,
         "low": 16,
-        "medium": 221
+        "medium": 226
       },
       "digests": [
         "sha256:a18a67668df9389cbfe49d81ca9bd20428fa6b82ce9ae0b79961dadf56281493",
@@ -23570,8 +23570,8 @@
       "counts": {
         "critical": 1,
         "high": 143,
-        "low": 43,
-        "medium": 157
+        "low": 44,
+        "medium": 164
       },
       "digests": [
         "sha256:a8a18afebc8b2b529112c931f193151b712e566b7a49563dc0f328d51f652087",
@@ -24594,7 +24594,7 @@
         "critical": 0,
         "high": 11,
         "low": 7,
-        "medium": 100
+        "medium": 105
       },
       "digests": [
         "sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
@@ -25520,8 +25520,8 @@
       "counts": {
         "critical": 28,
         "high": 304,
-        "low": 87,
-        "medium": 495
+        "low": 88,
+        "medium": 502
       },
       "digests": [
         "sha256:3ce2f1f06b5bd75e4a324ba34a93cb69fb74aa1561f48b6c5318537feef66890",
@@ -27859,8 +27859,8 @@
       "counts": {
         "critical": 1030,
         "high": 3627,
-        "low": 381,
-        "medium": 3659
+        "low": 382,
+        "medium": 3666
       },
       "digests": [
         "sha256:9912da7d7d9b6ddc0c2d904beb84d24689c1ed9c33b81419eb9008663a92a329",
@@ -32048,7 +32048,7 @@
         "critical": 4,
         "high": 36,
         "low": 10,
-        "medium": 132
+        "medium": 137
       },
       "digests": [
         "sha256:56587518b22609f472d56847251d1453a2796aea8a1cb84b7ce22ff9adad77ce",
@@ -33803,28 +33803,28 @@
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.5.2-6+deb12u3",
           "id": "CVE-2025-6020",
           "installed": "1.5.2-6+deb12u2",
           "package": "libpam-modules",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.5.2-6+deb12u3",
           "id": "CVE-2025-6020",
           "installed": "1.5.2-6+deb12u2",
           "package": "libpam-modules-bin",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.5.2-6+deb12u3",
           "id": "CVE-2025-6020",
           "installed": "1.5.2-6+deb12u2",
           "package": "libpam-runtime",
           "severity": "High"
         },
         {
-          "fixed": null,
+          "fixed": "1.5.2-6+deb12u3",
           "id": "CVE-2025-6020",
           "installed": "1.5.2-6+deb12u2",
           "package": "libpam0g",
@@ -34473,9 +34473,9 @@
     {
       "counts": {
         "critical": 24,
-        "high": 606,
-        "low": 75,
-        "medium": 1062
+        "high": 612,
+        "low": 86,
+        "medium": 1073
       },
       "digests": [
         "sha256:4a1029867755efae922b562be89d4a842e7325f486f506c47241eab60fa9b431",
@@ -35005,6 +35005,13 @@
           "id": "CVE-2026-118370",
           "installed": "2.8.4-r0",
           "package": "libexpat",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.13.9-r5",
+          "id": "CVE-2026-11979",
+          "installed": "2.13.9-r2",
+          "package": "libxml2",
           "severity": "High"
         },
         {
@@ -37974,13 +37981,6 @@
           "installed": "8.1.2-r0",
           "package": "ffmpeg-libavformat",
           "severity": "High"
-        },
-        {
-          "fixed": null,
-          "id": "CVE-2026-64833",
-          "installed": "8.1.2-r0",
-          "package": "ffmpeg-libavutil",
-          "severity": "High"
         }
       ],
       "reference": "ghcr.io/advplyr/audiobookshelf:2.37.1"
@@ -39957,9 +39957,9 @@
     {
       "counts": {
         "critical": 18,
-        "high": 100,
-        "low": 25,
-        "medium": 49
+        "high": 106,
+        "low": 28,
+        "medium": 52
       },
       "digests": [
         "sha256:1de3b99b9e3e080ba73b4028324b425274ad00d676803603f7f19efdc416045b",
@@ -40303,6 +40303,13 @@
           "severity": "High"
         },
         {
+          "fixed": "2.13.9-r5",
+          "id": "CVE-2026-11979",
+          "installed": "2.13.9-r2",
+          "package": "libxml2",
+          "severity": "High"
+        },
+        {
           "fixed": null,
           "id": "CVE-2026-121482",
           "installed": "3.5.8-r0",
@@ -40503,6 +40510,41 @@
           "id": "CVE-2026-85091",
           "installed": "1.3.2-r0",
           "package": "zlib",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.13.9-r4",
+          "id": "CVE-2026-86138",
+          "installed": "2.13.9-r2",
+          "package": "libxml2",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.13.9-r4",
+          "id": "CVE-2026-86139",
+          "installed": "2.13.9-r2",
+          "package": "libxml2",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.13.9-r4",
+          "id": "CVE-2026-86140",
+          "installed": "2.13.9-r2",
+          "package": "libxml2",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.13.9-r4",
+          "id": "CVE-2026-86142",
+          "installed": "2.13.9-r2",
+          "package": "libxml2",
+          "severity": "High"
+        },
+        {
+          "fixed": "2.13.9-r4",
+          "id": "CVE-2026-86143",
+          "installed": "2.13.9-r2",
+          "package": "libxml2",
           "severity": "High"
         },
         {
@@ -40799,8 +40841,8 @@
       "counts": {
         "critical": 61,
         "high": 892,
-        "low": 112,
-        "medium": 1374
+        "low": 113,
+        "medium": 1381
       },
       "digests": [
         "sha256:1994d77ab18293108c449f2429fdf7877f69d56b61110da16812902223fbff7d",
@@ -44314,8 +44356,8 @@
       "counts": {
         "critical": 35,
         "high": 262,
-        "low": 147,
-        "medium": 3108
+        "low": 149,
+        "medium": 3115
       },
       "digests": [
         "sha256:63859e7302a0533a773655c99071756bbc4a0c710ea3259f1e02671b56cdf8dd",
@@ -46571,7 +46613,7 @@
         "critical": 18,
         "high": 76,
         "low": 103,
-        "medium": 2764
+        "medium": 2765
       },
       "digests": [
         "sha256:05f7c3e37f3ef3e3a28377c36c0c953c8ed3e6fab371b1afbde74f994b21096d",
@@ -47244,7 +47286,7 @@
         "critical": 11,
         "high": 58,
         "low": 103,
-        "medium": 2747
+        "medium": 2748
       },
       "digests": [
         "sha256:3bae1c4713264797c24c1dbd1d4e3abacece147dc42669af61d240083353ecce",
@@ -47742,7 +47784,7 @@
         "critical": 11,
         "high": 65,
         "low": 103,
-        "medium": 2749
+        "medium": 2750
       },
       "digests": [
         "sha256:82c7e35b8f19fd040eeaf4129e0f2baec950d8a11eeba159723ef042f3744bbb",
@@ -48289,7 +48331,7 @@
         "critical": 5,
         "high": 35,
         "low": 23,
-        "medium": 896
+        "medium": 905
       },
       "digests": [
         "sha256:03351170e47f8e04eea9edcc0d14fb3433f4e5ec5d7e64e2012084b80819eb9b",
@@ -48582,10 +48624,10 @@
   ],
   "omitted": {
     "critical": 530,
-    "high": 6986
+    "high": 6998
   },
   "scanner": {
-    "dbBuilt": "2026-11-26T06:22:34Z",
+    "dbBuilt": "2026-11-27T06:22:11Z",
     "name": "grype",
     "version": "0.120.1"
   },
